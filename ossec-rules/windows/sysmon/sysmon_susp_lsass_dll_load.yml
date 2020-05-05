@@ -1,0 +1,8 @@
+<rule id="255000" level="12">
+	<if_group>sysmon_event_%</if_group>
+	<description>DLL Load via LSASS</description>
+	<info type="text">Detects a method to load DLL via LSASS process using an undocumented Registry key</info>
+	<info type="link">https://blog.xpnsec.com/exploring-mimikatz-part-1/</info>
+	<info type="link">https://twitter.com/SBousseaden/status/1183745981189427200</info>
+	<group>attack.execution,attack.t1177,MITRE</group>
+</rule>

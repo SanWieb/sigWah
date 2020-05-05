@@ -1,0 +1,8 @@
+<rule id="255000" level="12">
+	<if_group>sysmon_event_%</if_group>
+	<description>Dumpert Process Dumper</description>
+	<info type="text">Detects the use of Dumpert process dumper, which dumps the lsass.exe process memory</info>
+	<info type="link">https://github.com/outflanknl/Dumpert</info>
+	<info type="link">https://unit42.paloaltonetworks.com/actors-still-exploiting-sharepoint-vulnerability/</info>
+	<group>attack.credential_access,attack.t1003,MITRE</group>
+</rule>

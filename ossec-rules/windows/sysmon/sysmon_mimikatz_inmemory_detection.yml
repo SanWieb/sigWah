@@ -1,0 +1,7 @@
+<rule id="255000" level="8">
+	<if_group>sysmon_event_%</if_group>
+	<description>Mimikatz In-Memory</description>
+	<info type="text">Detects certain DLL loads when Mimikatz gets executed</info>
+	<info type="link">https://securityriskadvisors.com/blog/post/detecting-in-memory-mimikatz/</info>
+	<group>attack.s0002,attack.t1003,attack.lateral_movement,attack.credential_access,car.2019-04-004,MITRE</group>
+</rule>

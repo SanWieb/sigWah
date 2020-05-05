@@ -1,0 +1,7 @@
+<rule id="255000" level="12">
+	<if_group>sysmon_event_%</if_group>
+	<description>Cred Dump-Tools Named Pipes</description>
+	<info type="text">Detects well-known credential dumping tools execution via specific named pipes</info>
+	<info type="link">https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment</info>
+	<group>attack.credential_access,attack.t1003,MITRE</group>
+</rule>

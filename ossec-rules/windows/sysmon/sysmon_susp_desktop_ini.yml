@@ -1,0 +1,7 @@
+<rule id="255000" level="8">
+	<if_group>sysmon_event_%</if_group>
+	<description>Suspicious desktop.ini Action</description>
+	<info type="text">Detects unusual processes accessing desktop.ini, which can be leveraged to alter how Explorer displays a folder's content (i.e. renaming files) without changing them on disk.</info>
+	<info type="link">https://isc.sans.edu/forums/diary/Desktopini+as+a+postexploitation+tool/25912/</info>
+	<group>attack.persistence,attack.t1023,MITRE</group>
+</rule>

@@ -1,0 +1,6 @@
+<rule id="255000" level="8">
+	<if_group>sysmon_event_%</if_group>
+	<description>Suspicious Driver Load from Temp</description>
+	<info type="text">Detects a driver load from a temporary directory</info>
+	<group>attack.persistence,attack.t1050,MITRE</group>
+</rule>

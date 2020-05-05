@@ -1,0 +1,7 @@
+<rule id="255000" level="12">
+	<if_group>sysmon_event_%</if_group>
+	<description>Turla Group Named Pipes</description>
+	<info type="text">Detects a named pipe used by Turla group samples</info>
+	<info type="link">Internal Research</info>
+	<group>attack.g0010,MITRE</group>
+</rule>

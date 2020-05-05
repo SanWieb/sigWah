@@ -1,0 +1,7 @@
+<rule id="255000" level="12">
+	<if_group>sysmon_event_%</if_group>
+	<description>CreateRemoteThread API and LoadLibrary</description>
+	<info type="text">Detects potential use of CreateRemoteThread api and LoadLibrary function to inject DLL into a process</info>
+	<info type="link">https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/05_defense_evasion/T1055_process_injection/dll_injection_createremotethread_loadlibrary.md</info>
+	<group>attack.defense_evasion,attack.t1055,MITRE</group>
+</rule>

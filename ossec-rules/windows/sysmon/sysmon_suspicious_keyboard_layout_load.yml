@@ -1,0 +1,8 @@
+<rule id="255000" level="8">
+	<if_group>sysmon_event_%</if_group>
+	<description>Suspicious Keyboard Layout Load</description>
+	<info type="text">Detects the keyboard preload installation with a suspicious keyboard layout, e.g. Chinese, Iranian or Vietnamese layout load in user session on systems maintained by US staff only</info>
+	<info type="link">https://renenyffenegger.ch/notes/Windows/registry/tree/HKEY_CURRENT_USER/Keyboard-Layout/Preload/index</info>
+	<info type="link">https://github.com/SwiftOnSecurity/sysmon-config/pull/92/files</info>
+	<group>MITRE</group>
+</rule>

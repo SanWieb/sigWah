@@ -1,0 +1,7 @@
+<rule id="255000" level="12">
+	<if_group>sysmon_event_%</if_group>
+	<description>Malicious Named Pipe</description>
+	<info type="text">Detects the creation of a named pipe used by known APT malware</info>
+	<info type="link">Various sources</info>
+	<group>attack.defense_evasion,attack.privilege_escalation,attack.t1055,MITRE</group>
+</rule>

@@ -1,0 +1,7 @@
+<rule id="255000" level="12">
+	<if_group>sysmon_event_%</if_group>
+	<description>RDP Over Reverse SSH Tunnel</description>
+	<info type="text">Detects svchost hosting RDP termsvcs communicating with the loopback address and on TCP port 3389</info>
+	<info type="link">https://twitter.com/SBousseaden/status/1096148422984384514</info>
+	<group>attack.defense_evasion,attack.command_and_control,attack.t1076,car.2013-07-002,MITRE</group>
+</rule>

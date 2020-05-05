@@ -1,0 +1,7 @@
+<rule id="255000" level="12">
+	<if_group>sysmon_event_%</if_group>
+	<description>WMI Event Subscription</description>
+	<info type="text">Detects creation of WMI event subscription persistence method</info>
+	<info type="link">https://attack.mitre.org/techniques/T1084/</info>
+	<group>attack.t1084,attack.persistence,MITRE</group>
+</rule>

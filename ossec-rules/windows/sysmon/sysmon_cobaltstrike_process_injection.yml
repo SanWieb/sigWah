@@ -1,0 +1,8 @@
+<rule id="255000" level="12">
+	<if_group>sysmon_event_%</if_group>
+	<description>CobaltStrike Process Injection</description>
+	<info type="text">Detects a possible remote threat creation with certain characteristics which are typical for Cobalt Strike beacons</info>
+	<info type="link">https://medium.com/@olafhartong/cobalt-strike-remote-threads-detection-206372d11d0f</info>
+	<info type="link">https://blog.cobaltstrike.com/2018/04/09/cobalt-strike-3-11-the-snake-that-eats-its-tail/</info>
+	<group>attack.defense_evasion,attack.t1055,MITRE</group>
+</rule>

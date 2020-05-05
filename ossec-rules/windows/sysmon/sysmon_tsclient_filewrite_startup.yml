@@ -1,0 +1,6 @@
+<rule id="255000" level="12">
+	<if_group>sysmon_event_%</if_group>
+	<description>Hijack Legit RDP Session to Move Laterally</description>
+	<info type="text">Detects the usage of tsclient share to place a backdoor on the RDP source machine's startup folder</info>
+	<group>MITRE</group>
+</rule>

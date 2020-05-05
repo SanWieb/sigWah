@@ -1,0 +1,7 @@
+<rule id="255000" level="8">
+	<if_group>sysmon_event_%</if_group>
+	<description>Windows Registry Persistence COM Search Order Hijacking</description>
+	<info type="text">Detects potential COM object hijacking leveraging the COM Search Order</info>
+	<info type="link">https://www.cyberbit.com/blog/endpoint-security/com-hijacking-windows-overlooked-security-vulnerability/</info>
+	<group>attack.persistence,attack.t1038,MITRE</group>
+</rule>

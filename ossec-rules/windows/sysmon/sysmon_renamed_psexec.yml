@@ -1,0 +1,7 @@
+<rule id="255000" level="12">
+	<if_group>sysmon_event_%</if_group>
+	<description>Renamed PsExec</description>
+	<info type="text">Detects the execution of a renamed PsExec often used by attackers or malware</info>
+	<info type="link">https://www.trendmicro.com/vinfo/hk-en/security/news/cybercrime-and-digital-threats/megacortex-ransomware-spotted-attacking-enterprise-networks</info>
+	<group>car.2013-05-009,MITRE</group>
+</rule>

@@ -1,0 +1,7 @@
+<rule id="255000" level="12">
+	<if_group>sysmon_event_%</if_group>
+	<description>WMI Persistence - Command Line Event Consumer</description>
+	<info type="text">Detects WMI command line event consumers</info>
+	<info type="link">https://www.eideon.com/2018-03-02-THL03-WMIBackdoors/</info>
+	<group>attack.t1084,attack.persistence,MITRE</group>
+</rule>

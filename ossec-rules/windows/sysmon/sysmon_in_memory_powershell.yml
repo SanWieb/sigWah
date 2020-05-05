@@ -1,0 +1,8 @@
+<rule id="255000" level="12">
+	<if_group>sysmon_event_%</if_group>
+	<description>In-memory PowerShell</description>
+	<info type="text">Detects loading of essential DLL used by PowerShell, but not by the process powershell.exe. Detects meterpreter's "load powershell" extension.</info>
+	<info type="link">https://adsecurity.org/?p=2921</info>
+	<info type="link">https://github.com/p3nt4/PowerShdll</info>
+	<group>attack.t1086,attack.execution,MITRE</group>
+</rule>

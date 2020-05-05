@@ -1,0 +1,7 @@
+<rule id="255000" level="8">
+	<if_group>sysmon_event_%</if_group>
+	<description>Raw Disk Access Using Illegitimate Tools</description>
+	<info type="text">Raw disk access using illegitimate tools, possible defence evasion</info>
+	<info type="link">https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment</info>
+	<group>attack.defense_evasion,attack.t1006,MITRE</group>
+</rule>

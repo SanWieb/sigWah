@@ -1,0 +1,7 @@
+<rule id="255000" level="12">
+	<if_group>sysmon_event_%</if_group>
+	<description>QuarksPwDump Dump File</description>
+	<info type="text">Detects a dump file written by QuarksPwDump password dumper</info>
+	<info type="link">https://jpcertcc.github.io/ToolAnalysisResultSheet/details/QuarksPWDump.htm</info>
+	<group>attack.credential_access,attack.t1003,MITRE</group>
+</rule>

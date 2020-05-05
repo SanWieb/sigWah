@@ -1,0 +1,7 @@
+<rule id="255000" level="5">
+	<if_group>sysmon_event_%</if_group>
+	<description>PowerShell Network Connections</description>
+	<info type="text">Detects a Powershell process that opens network connections - check for suspicious target ports and target systems - adjust to your environment (e.g. extend filters with company's ip range')</info>
+	<info type="link">https://www.youtube.com/watch?v=DLtJTxMWZ2o</info>
+	<group>attack.execution,attack.t1086,MITRE</group>
+</rule>

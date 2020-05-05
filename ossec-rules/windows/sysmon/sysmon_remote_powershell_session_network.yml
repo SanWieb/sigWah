@@ -1,0 +1,7 @@
+<rule id="255000" level="12">
+	<if_group>sysmon_event_%</if_group>
+	<description>Remote PowerShell Session</description>
+	<info type="text">Detects remote PowerShell connections by monitoring network outbount connections to ports 5985 or 5986 from not network service account</info>
+	<info type="link">https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1086_powershell/powershell_remote_session.md</info>
+	<group>attack.execution,attack.t1086,MITRE</group>
+</rule>

@@ -1,0 +1,7 @@
+<rule id="255000" level="12">
+	<if_group>sysmon_event_%</if_group>
+	<description>WMI Persistence - Script Event Consumer File Write</description>
+	<info type="text">Detects file writes of WMI script event consumer</info>
+	<info type="link">https://www.eideon.com/2018-03-02-THL03-WMIBackdoors/</info>
+	<group>attack.t1084,attack.persistence,MITRE</group>
+</rule>

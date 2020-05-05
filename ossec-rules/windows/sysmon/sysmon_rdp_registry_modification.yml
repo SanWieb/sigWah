@@ -1,0 +1,7 @@
+<rule id="255000" level="12">
+	<if_group>sysmon_event_%</if_group>
+	<description>RDP Registry Modification</description>
+	<info type="text">Detects potential malicious modification of the property value of fDenyTSConnections and UserAuthentication to enable remote desktop connections.</info>
+	<info type="link">https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/05_defense_evasion/T1112_Modify_Registry/enable_rdp_registry.md</info>
+	<group>attack.defense_evasion,attack.t1112,MITRE</group>
+</rule>
