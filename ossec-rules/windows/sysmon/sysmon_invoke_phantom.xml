@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>Suspect Svchost Memory Asccess</description>
+	<description>ATT&CK T1089: Suspect Svchost Memory Asccess</description>
 	<info type="text">Detects suspect access to svchost process memory such as that used by Invoke-Phantom to kill the winRM windows event logging service.</info>
 	<info type="link">https://github.com/hlldz/Invoke-Phant0m</info>
 	<info type="link">https://twitter.com/timbmsft/status/900724491076214784</info>

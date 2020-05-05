@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>VBA DLL Loaded Via Microsoft Word</description>
+	<description>ATT&CK T1193: VBA DLL Loaded Via Microsoft Word</description>
 	<info type="text">Detects DLL's Loaded Via Word Containing VBA Macros</info>
 	<info type="link">https://medium.com/threatpunter/detecting-adversary-tradecraft-with-image-load-event-logging-and-eql-8de93338c16</info>
 	<group>attack.initial_access,attack.t1193,MITRE</group>

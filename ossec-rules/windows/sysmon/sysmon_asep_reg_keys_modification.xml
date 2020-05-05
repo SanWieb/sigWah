@@ -1,6 +1,6 @@
 <rule id="255000" level="8">
 	<if_group>sysmon_event_%</if_group>
-	<description>Autorun Keys Modification</description>
+	<description>ATT&CK T1060: Autorun Keys Modification</description>
 	<info type="text">Detects modification of autostart extensibility point (ASEP) in registry</info>
 	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1060/T1060.yaml</info>
 	<group>attack.persistence,attack.t1060,MITRE</group>

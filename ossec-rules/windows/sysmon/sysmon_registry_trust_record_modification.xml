@@ -1,6 +1,6 @@
 <rule id="255000" level="8">
 	<if_group>sysmon_event_%</if_group>
-	<description>Windows Registry Trust Record Modification</description>
+	<description>ATT&CK T1193: Windows Registry Trust Record Modification</description>
 	<info type="text">Alerts on trust record modification within the registry, indicating usage of macros</info>
 	<info type="link">https://outflank.nl/blog/2018/01/16/hunting-for-evil-detect-macros-being-executed/</info>
 	<info type="link">http://az4n6.blogspot.com/2016/02/more-on-trust-records-macros-and.html</info>

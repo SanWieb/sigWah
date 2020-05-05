@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>Windows Webshell Creation</description>
+	<description>ATT&CK T1100: Windows Webshell Creation</description>
 	<info type="text">Possible webshell file creation on a static web site</info>
 	<info type="link">PT ESC rule and personal experience</info>
 	<group>attack.persistence,attack.t1100,MITRE</group>

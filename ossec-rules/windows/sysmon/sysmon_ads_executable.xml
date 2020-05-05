@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>Executable in ADS</description>
+	<description>ATT&CK T1027 S0139: Executable in ADS</description>
 	<info type="text">Detects the creation of an ADS data stream that contains an executable (non-empty imphash)</info>
 	<info type="link">https://twitter.com/0xrawsec/status/1002478725605273600?s=21</info>
 	<group>attack.defense_evasion,attack.t1027,attack.s0139,MITRE</group>

@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>LSASS Memory Dump</description>
+	<description>ATT&CK T1003 S0002: LSASS Memory Dump</description>
 	<info type="text">Detects process LSASS memory dump using procdump or taskmgr based on the CallTrace pointing to dbghelp.dll or dbgcore.dll for win10</info>
 	<info type="link">https://blog.menasec.net/2019/02/threat-hunting-21-procdump-or-taskmgr.html</info>
 	<group>attack.t1003,attack.s0002,attack.credential_access,MITRE</group>

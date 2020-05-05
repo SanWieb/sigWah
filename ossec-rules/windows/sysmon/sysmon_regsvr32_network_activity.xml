@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>Regsvr32 Network Activity</description>
+	<description>ATT&CK T1117: Regsvr32 Network Activity</description>
 	<info type="text">Detects network connections and DNS queries initiated by Regsvr32.exe</info>
 	<info type="link">https://pentestlab.blog/2017/05/11/applocker-bypass-regsvr32/</info>
 	<info type="link">https://oddvar.moe/2017/12/13/applocker-case-study-how-insecure-is-it-really-part-1/</info>

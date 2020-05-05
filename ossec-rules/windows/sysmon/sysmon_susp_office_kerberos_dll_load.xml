@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>Active Directory Kerberos DLL Loaded Via Office Applications</description>
+	<description>ATT&CK T1193: Active Directory Kerberos DLL Loaded Via Office Applications</description>
 	<info type="text">Detects Kerberos DLL being loaded by an Office Product</info>
 	<info type="link">https://medium.com/threatpunter/detecting-adversary-tradecraft-with-image-load-event-logging-and-eql-8de93338c16</info>
 	<group>attack.initial_access,attack.t1193,MITRE</group>

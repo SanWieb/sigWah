@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>Detection of SafetyKatz</description>
+	<description>ATT&CK T1003: Detection of SafetyKatz</description>
 	<info type="text">Detects possible SafetyKatz Behaviour</info>
 	<info type="link">https://github.com/GhostPack/SafetyKatz</info>
 	<group>attack.credential_access,attack.t1003,MITRE</group>

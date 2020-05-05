@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>Suspicious Scripting in a WMI Consumer</description>
+	<description>ATT&CK T1086: Suspicious Scripting in a WMI Consumer</description>
 	<info type="text">Detects suspicious scripting in WMI Event Consumers</info>
 	<info type="link">https://in.security/an-intro-into-abusing-and-identifying-wmi-event-subscriptions-for-persistence/</info>
 	<info type="link">https://github.com/Neo23x0/signature-base/blob/master/yara/gen_susp_lnk_files.yar#L19</info>

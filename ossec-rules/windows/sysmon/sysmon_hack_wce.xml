@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>Windows Credential Editor</description>
+	<description>ATT&CK T1003 S0005: Windows Credential Editor</description>
 	<info type="text">Detects the use of Windows Credential Editor (WCE)</info>
 	<info type="link">https://www.ampliasecurity.com/research/windows-credentials-editor/</info>
 	<group>attack.credential_access,attack.t1003,attack.s0005,MITRE</group>

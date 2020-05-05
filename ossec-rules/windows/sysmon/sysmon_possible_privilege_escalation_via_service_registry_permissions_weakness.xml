@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>Possible Privilege Escalation via Service Permissions Weakness</description>
+	<description>ATT&CK T1058: Possible Privilege Escalation via Service Permissions Weakness</description>
 	<info type="text">Detect modification of services configuration (ImagePath, FailureCommand and ServiceDLL) in registry by processes with Medium integrity level</info>
 	<info type="link">https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment</info>
 	<info type="link">https://pentestlab.blog/2017/03/31/insecure-registry-permissions/</info>

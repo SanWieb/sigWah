@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>Dumping Lsass.exe Memory with MiniDumpWriteDump API</description>
+	<description>ATT&CK T1003: Dumping Lsass.exe Memory with MiniDumpWriteDump API</description>
 	<info type="text">Detects the use of MiniDumpWriteDump API for dumping lsass.exe memory in a stealth way. Tools like ProcessHacker and some attacker tradecract use this API found in dbghelp.dll or dbgcore.dll. As an example, SilentTrynity C2 Framework has a module that leverages this API to dump the contents of Lsass.exe and transfer it over the network back to the attacker's machine.</info>
 	<info type="link">https://docs.microsoft.com/en-us/windows/win32/api/minidumpapiset/nf-minidumpapiset-minidumpwritedump</info>
 	<info type="link">https://www.pinvoke.net/default.aspx/dbghelp/MiniDumpWriteDump.html</info>

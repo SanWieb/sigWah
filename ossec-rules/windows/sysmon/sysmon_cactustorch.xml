@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>CACTUSTORCH Remote Thread Creation</description>
+	<description>ATT&CK T1055 T1064: CACTUSTORCH Remote Thread Creation</description>
 	<info type="text">Detects remote thread creation from CACTUSTORCH as described in references.</info>
 	<info type="link">https://twitter.com/SBousseaden/status/1090588499517079552</info>
 	<info type="link">https://github.com/mdsecactivebreach/CACTUSTORCH</info>

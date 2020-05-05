@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>Renamed jusched.exe</description>
+	<description>ATT&CK T1036: Renamed jusched.exe</description>
 	<info type="text">Detects renamed jusched.exe used by cobalt group</info>
 	<info type="link">https://www.bitdefender.com/files/News/CaseStudies/study/262/Bitdefender-WhitePaper-An-APT-Blueprint-Gaining-New-Visibility-into-Financial-Threats-interactive.pdf</info>
 	<group>attack.t1036,attack.execution,MITRE</group>

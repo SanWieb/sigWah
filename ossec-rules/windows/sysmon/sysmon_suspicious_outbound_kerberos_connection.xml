@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>Suspicious Outbound Kerberos Connection</description>
+	<description>ATT&CK T1208: Suspicious Outbound Kerberos Connection</description>
 	<info type="text">Detects suspicious outbound network activity via kerberos default port indicating possible lateral movement or first stage PrivEsc via delegation.</info>
 	<info type="link">https://github.com/GhostPack/Rubeus8</info>
 	<group>attack.lateral_movement,attack.t1208,MITRE</group>

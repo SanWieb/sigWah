@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>CMSTP Execution</description>
+	<description>ATT&CK T1191: CMSTP Execution</description>
 	<info type="text">Detects various indicators of Microsoft Connection Manager Profile Installer execution</info>
 	<info type="link">http://www.endurant.io/cmstp/detecting-cmstp-enabled-code-execution-and-uac-bypass-with-sysmon/</info>
 	<group>attack.defense_evasion,attack.execution,attack.t1191,attack.g0069,car.2019-04-001,MITRE</group>

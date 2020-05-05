@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>Cred Dump Tools Dropped Files</description>
+	<description>ATT&CK T1003: Cred Dump Tools Dropped Files</description>
 	<info type="text">Files with well-known filenames (parts of credential dump software or files produced by them) creation</info>
 	<info type="link">https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment</info>
 	<group>attack.credential_access,attack.t1003,MITRE</group>

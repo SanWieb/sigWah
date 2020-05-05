@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>Renamed ProcDump</description>
+	<description>ATT&CK T1036: Renamed ProcDump</description>
 	<info type="text">Detects the execution of a renamed ProcDump executable often used by attackers or malware</info>
 	<info type="link">https://docs.microsoft.com/en-us/sysinternals/downloads/procdump</info>
 	<group>attack.defense_evasion,attack.t1036,MITRE</group>

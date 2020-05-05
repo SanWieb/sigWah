@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>Renamed PowerShell</description>
+	<description>ATT&CK: Renamed PowerShell</description>
 	<info type="text">Detects the execution of a renamed PowerShell often used by attackers or malware</info>
 	<info type="link">https://twitter.com/christophetd/status/1164506034720952320</info>
 	<group>car.2013-05-009,MITRE</group>

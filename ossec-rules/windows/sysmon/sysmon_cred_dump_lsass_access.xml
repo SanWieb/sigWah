@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>Credentials Dumping Tools Accessing LSASS Memory</description>
+	<description>ATT&CK T1003 S0002: Credentials Dumping Tools Accessing LSASS Memory</description>
 	<info type="text">Detects process access LSASS memory which is typical for credentials dumping tools</info>
 	<info type="link">https://onedrive.live.com/view.aspx?resid=D026B4699190F1E6!2843&ithint=file%2cpptx&app=PowerPoint&authkey=!AMvCRTKB_V1J5ow</info>
 	<info type="link">https://cyberwardog.blogspot.com/2017/03/chronicles-of-threat-hunter-hunting-for_22.html</info>

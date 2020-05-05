@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>New RUN Key Pointing to Suspicious Folder</description>
+	<description>ATT&CK T1060: New RUN Key Pointing to Suspicious Folder</description>
 	<info type="text">Detects suspicious new RUN key element pointing to an executable in a suspicious folder</info>
 	<info type="link">https://www.fireeye.com/blog/threat-research/2018/08/fin7-pursuing-an-enigmatic-and-evasive-global-criminal-operation.html</info>
 	<group>attack.persistence,attack.t1060,MITRE</group>

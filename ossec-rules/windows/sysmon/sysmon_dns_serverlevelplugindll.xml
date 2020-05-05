@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>DNS ServerLevelPluginDll Install</description>
+	<description>ATT&CK T1073: DNS ServerLevelPluginDll Install</description>
 	<info type="text">Detects the installation of a plugin DLL via ServerLevelPluginDll parameter in Registry, which can be used to execute code in context of the DNS server (restart required)</info>
 	<info type="link">https://medium.com/@esnesenon/feature-not-bug-dnsadmin-to-dc-compromise-in-one-line-a0f779b8dc83</info>
 	<group>attack.defense_evasion,attack.t1073,MITRE</group>

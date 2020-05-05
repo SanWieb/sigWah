@@ -1,6 +1,6 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
-	<description>Suspicious RUN Key from Download</description>
+	<description>ATT&CK T1060: Suspicious RUN Key from Download</description>
 	<info type="text">Detects the suspicious RUN keys created by software located in Download or temporary Outlook/Internet Explorer directories</info>
 	<info type="link">https://app.any.run/tasks/c5bef5b7-f484-4c43-9cf3-d5c5c7839def/</info>
 	<group>attack.persistence,attack.t1060,MITRE</group>
