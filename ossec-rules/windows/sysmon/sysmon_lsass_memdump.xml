@@ -1,5 +1,8 @@
 <rule id="250240" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event_10</if_group>
+	<field name="win.eventdata.targetimage">\\windows\\system32\\lsass.exe</field>
+	<field name="win.eventdata.grantedaccess">0x1fffff</field>
+	<field name="win.eventdata.calltrace">dbghelp.dll|dbgcore.dll</field>
 	<description>ATT&CK T1003 S0002: LSASS Memory Dump</description>
 	<info type="text">Detects process LSASS memory dump using procdump or taskmgr based on the CallTrace pointing to dbghelp.dll or dbgcore.dll for win10 </info>
 	<info type="text">Falsepositives: unknown. </info>

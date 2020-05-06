@@ -1,5 +1,77 @@
 <rule id="250230" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\\userinit.exe</field>
+	<field name="win.eventdata.targetobject"></field>
+	<description>ATT&CK T1037: Logon Scripts (UserInitMprLogonScript)</description>
+	<info type="text">Detects creation or execution of UserInitMprLogonScript persistence method </info>
+	<info type="text">Falsepositives: exclude legitimate logon scripts. penetration tests, red teaming. </info>
+	<info type="text">Sigma UUID: 0a98a10c-685d-4ab0-bddc-b6bdd1d48458 </info>
+	<info type="link">https://attack.mitre.org/techniques/T1037/ </info>
+	<group>attack.t1037,attack.persistence,attack.lateral_movement,MITRE</group>
+</rule>
+
+<rule id="250231" level="0">
+	<if_sid>250230<if_sid>
+	<field name="win.eventdata.image">\\explorer.exe</field>
+	<field name="win.eventdata.targetobject"></field>
+	<description>Whitelist Interaction: Logon Scripts (UserInitMprLogonScript)</description>
+	<group>attack.t1037,attack.persistence,attack.lateral_movement,MITRE</group>
+</rule>
+
+<rule id="250232" level="0">
+	<if_sid>250230<if_sid>
+	<field name="win.eventdata.commandline">\netlogon.bat|\UsrLogon.cmd</field>
+	<description>Whitelist Interaction: Logon Scripts (UserInitMprLogonScript)</description>
+	<group>attack.t1037,attack.persistence,attack.lateral_movement,MITRE</group>
+</rule>
+
+<rule id="250233" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.commandline">UserInitMprLogonScript</field>
+	<description>ATT&CK T1037: Logon Scripts (UserInitMprLogonScript)</description>
+	<info type="text">Detects creation or execution of UserInitMprLogonScript persistence method </info>
+	<info type="text">Falsepositives: exclude legitimate logon scripts. penetration tests, red teaming. </info>
+	<info type="text">Sigma UUID: 0a98a10c-685d-4ab0-bddc-b6bdd1d48458 </info>
+	<info type="link">https://attack.mitre.org/techniques/T1037/ </info>
+	<group>attack.t1037,attack.persistence,attack.lateral_movement,MITRE</group>
+</rule>
+
+<rule id="250234" level="12">
+	<if_group>sysmon_event_11</if_group>
+	<field name="win.eventdata.targetobject">UserInitMprLogonScript</field>
+	<description>ATT&CK T1037: Logon Scripts (UserInitMprLogonScript)</description>
+	<info type="text">Detects creation or execution of UserInitMprLogonScript persistence method </info>
+	<info type="text">Falsepositives: exclude legitimate logon scripts. penetration tests, red teaming. </info>
+	<info type="text">Sigma UUID: 0a98a10c-685d-4ab0-bddc-b6bdd1d48458 </info>
+	<info type="link">https://attack.mitre.org/techniques/T1037/ </info>
+	<group>attack.t1037,attack.persistence,attack.lateral_movement,MITRE</group>
+</rule>
+
+<rule id="250235" level="12">
+	<if_group>sysmon_event_12</if_group>
+	<field name="win.eventdata.targetobject">UserInitMprLogonScript</field>
+	<description>ATT&CK T1037: Logon Scripts (UserInitMprLogonScript)</description>
+	<info type="text">Detects creation or execution of UserInitMprLogonScript persistence method </info>
+	<info type="text">Falsepositives: exclude legitimate logon scripts. penetration tests, red teaming. </info>
+	<info type="text">Sigma UUID: 0a98a10c-685d-4ab0-bddc-b6bdd1d48458 </info>
+	<info type="link">https://attack.mitre.org/techniques/T1037/ </info>
+	<group>attack.t1037,attack.persistence,attack.lateral_movement,MITRE</group>
+</rule>
+
+<rule id="250236" level="12">
+	<if_group>sysmon_event_13</if_group>
+	<field name="win.eventdata.targetobject">UserInitMprLogonScript</field>
+	<description>ATT&CK T1037: Logon Scripts (UserInitMprLogonScript)</description>
+	<info type="text">Detects creation or execution of UserInitMprLogonScript persistence method </info>
+	<info type="text">Falsepositives: exclude legitimate logon scripts. penetration tests, red teaming. </info>
+	<info type="text">Sigma UUID: 0a98a10c-685d-4ab0-bddc-b6bdd1d48458 </info>
+	<info type="link">https://attack.mitre.org/techniques/T1037/ </info>
+	<group>attack.t1037,attack.persistence,attack.lateral_movement,MITRE</group>
+</rule>
+
+<rule id="250237" level="12">
+	<if_group>sysmon_event_14</if_group>
+	<field name="win.eventdata.targetobject">UserInitMprLogonScript</field>
 	<description>ATT&CK T1037: Logon Scripts (UserInitMprLogonScript)</description>
 	<info type="text">Detects creation or execution of UserInitMprLogonScript persistence method </info>
 	<info type="text">Falsepositives: exclude legitimate logon scripts. penetration tests, red teaming. </info>

@@ -1,5 +1,8 @@
 <rule id="250200" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event_10</if_group>
+	<field name="win.eventdata.targetimage">\\windows\\system32\\svchost.exe</field>
+	<field name="win.eventdata.grantedaccess">0x1f3fff</field>
+	<field name="win.eventdata.calltrace">unknown</field>
 	<description>ATT&CK T1089: Suspect Svchost Memory Asccess</description>
 	<info type="text">Detects suspect access to svchost process memory such as that used by Invoke-Phantom to kill the winRM windows event logging service. </info>
 	<info type="text">Falsepositives: unknown. </info>

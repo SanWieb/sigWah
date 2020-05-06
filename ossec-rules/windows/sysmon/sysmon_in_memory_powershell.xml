@@ -1,10 +1,19 @@
 <rule id="250220" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event7</if_group>
+	<field name="win.eventdata.imageloaded">\\System.Management.Automation.Dll|\\System.Management.Automation.ni.Dll</field>
 	<description>ATT&CK T1086: In-memory PowerShell</description>
 	<info type="text">Detects loading of essential DLL used by PowerShell, but not by the process powershell.exe. Detects meterpreter's "load powershell" extension. </info>
 	<info type="text">Falsepositives: Used by some .NET binaries, minimal on user workstation.. </info>
 	<info type="text">Sigma UUID: 092bc4b9-3d1d-43b4-a6b4-8c8acd83522f </info>
 	<info type="link">https://adsecurity.org/?p=2921 </info>
 	<info type="link">https://github.com/p3nt4/PowerShdll </info>
+	<group>attack.t1086,attack.execution,MITRE</group>
+</rule>
+
+<rule id="250221" level="0">
+	<if_sid>250220</if_sid>
+	<field name="win.eventdata.image">\\powershell.exe|\\WINDOWS\\System32\\sdiagnhost.exe</field>
+	<field name="win.eventdata.user">NT AUTHORITY\SYSTEM</field>
+	<description>Whitelist Interaction: In-memory PowerShell</description>
 	<group>attack.t1086,attack.execution,MITRE</group>
 </rule>

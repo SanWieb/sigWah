@@ -1,5 +1,19 @@
-<rule id="250290" level="8">
-	<if_group>sysmon_event_%</if_group>
+<rule id="250290" level="10">
+	<if_group>sysmon_event7</if_group>
+	<field name="win.eventdata.image">\\rundll32.exe</field>
+	<field name="win.eventdata.ImageLoaded">\\vaultcli.dll</field>
+	<description>ATT&CK S0002 T1003: Mimikatz In-Memory</description>
+	<info type="text">Detects certain DLL loads when Mimikatz gets executed </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: c0478ead-5336-46c2-bd5e-b4c84bc3a36e </info>
+	<info type="link">https://securityriskadvisors.com/blog/post/detecting-in-memory-mimikatz/ </info>
+	<group>attack.s0002,attack.t1003,attack.lateral_movement,attack.credential_access,car.2019-04-004,MITRE</group>
+</rule>
+
+<rule id="250291" level="10">
+	<if_group>sysmon_event7</if_group>
+	<field name="win.eventdata.image">\\rundll32.exe</field>
+	<field name="win.eventdata.ImageLoaded">\\wlanapi.dll</field>
 	<description>ATT&CK S0002 T1003: Mimikatz In-Memory</description>
 	<info type="text">Detects certain DLL loads when Mimikatz gets executed </info>
 	<info type="text">Falsepositives: unknown. </info>
