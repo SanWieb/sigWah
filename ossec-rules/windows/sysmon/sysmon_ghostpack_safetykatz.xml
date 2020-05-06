@@ -1,5 +1,6 @@
 <rule id="250170" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event_11</if_group>
+	<field name="win.eventdata.targetfilename">\\Temp\\debug.bin</field>
 	<description>ATT&CK T1003: Detection of SafetyKatz</description>
 	<info type="text">Detects possible SafetyKatz Behaviour </info>
 	<info type="text">Falsepositives: Unknown. </info>

@@ -1,5 +1,19 @@
 <rule id="250190" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event_13</if_group>
+	<field name="win.eventdata.targetobject">Services\\WCESERVICE\\Start</field>
+	<description>ATT&CK T1003 S0005: Windows Credential Editor</description>
+	<info type="text">Detects the use of Windows Credential Editor (WCE) </info>
+	<info type="text">Falsepositives: Another service that uses a single -s command line switch. </info>
+	<info type="text">Sigma UUID: 7aa7009a-28b9-4344-8c1f-159489a390df </info>
+	<info type="link">https://www.ampliasecurity.com/research/windows-credentials-editor/ </info>
+	<group>attack.credential_access,attack.t1003,attack.s0005,MITRE</group>
+</rule>
+
+<rule id="250191" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.hashes">IMPHASH=a53a02b997935fd8eedcb5f7abab9b9f|IMPHASH=e96a73c7bf33a464c510ede582318bf2</field>
+	<field name="win.eventdata.commandline">.exe -S</field>
+  <field name="win.eventdata.parentImage">\\services.exe</field>
 	<description>ATT&CK T1003 S0005: Windows Credential Editor</description>
 	<info type="text">Detects the use of Windows Credential Editor (WCE) </info>
 	<info type="text">Falsepositives: Another service that uses a single -s command line switch. </info>

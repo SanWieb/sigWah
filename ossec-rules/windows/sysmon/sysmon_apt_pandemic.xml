@@ -1,5 +1,18 @@
 <rule id="250040" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event_13</if_group>
+	<field name="win.eventdata.targetObject">HKLM\\SYSTEM\\CurrentControlSet\\services\\null\\Instance</field>
+	<description>ATT&CK T1105: Pandemic Registry Key</description>
+	<info type="text">Detects Pandemic Windows Implant </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: 47e0852a-cf81-4494-a8e6-31864f8c86ed </info>
+	<info type="link">https://wikileaks.org/vault7/#Pandemic </info>
+	<info type="link">https://twitter.com/MalwareJake/status/870349480356454401 </info>
+	<group>attack.lateral_movement,attack.t1105,MITRE</group>
+</rule>
+
+<rule id="250041" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.commandline">loaddll -a </field>
 	<description>ATT&CK T1105: Pandemic Registry Key</description>
 	<info type="text">Detects Pandemic Windows Implant </info>
 	<info type="text">Falsepositives: unknown. </info>

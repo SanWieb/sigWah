@@ -1,9 +1,17 @@
 <rule id="250020" level="8">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event_17</if_group>
+	<field name="win.eventdata.pipename">\PSHost</field>
 	<description>ATT&CK T1086: Alternate PowerShell Hosts Pipe</description>
 	<info type="text">Detects alternate PowerShell hosts potentially bypassing detections looking for powershell.exe </info>
 	<info type="text">Falsepositives: Programs using PowerShell directly without invocation of a dedicated interpreter.. </info>
 	<info type="text">Sigma UUID: 58cb02d5-78ce-4692-b3e1-dce850aae41a </info>
 	<info type="link">https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1086_powershell/alternate_signed_powershell_hosts.md </info>
+	<group>attack.execution,attack.t1086,MITRE</group>
+</rule>
+
+<rule id="250021" level="0">
+	<if_sid>250020</if_sid>
+	<field name="win.eventdata.image">\\powershell.exe</field>
+	<description>Whitelist Interaction: Alternate PowerShell Hosts Pipe</description>
 	<group>attack.execution,attack.t1086,MITRE</group>
 </rule>

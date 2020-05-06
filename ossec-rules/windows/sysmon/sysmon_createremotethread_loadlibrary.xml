@@ -1,5 +1,7 @@
 <rule id="250100" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event_10</if_group>
+	<field name="win.eventdata.startmodule">\\kernel32.dll</field>
+  <field name="win.eventdata.startfunction">LoadLibraryA</field>
 	<description>ATT&CK T1055: CreateRemoteThread API and LoadLibrary</description>
 	<info type="text">Detects potential use of CreateRemoteThread api and LoadLibrary function to inject DLL into a process </info>
 	<info type="text">Falsepositives: Unknown. </info>

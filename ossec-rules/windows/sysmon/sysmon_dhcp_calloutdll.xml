@@ -1,5 +1,6 @@
 <rule id="250140" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event_13</if_group>
+	<field name="win.eventdata.targetobject">\\Services\\DHCPServer\\Parameters\\CalloutDlls|\\Services\\DHCPServer\\Parameters\\CalloutEnabled</field>
 	<description>ATT&CK T1073 T1112: DHCP Callout DLL Installation</description>
 	<info type="text">Detects the installation of a Callout DLL via CalloutDlls and CalloutEnabled parameter in Registry, which can be used to execute code in context of the DHCP server (restart required) </info>
 	<info type="text">Falsepositives: unknown. </info>
