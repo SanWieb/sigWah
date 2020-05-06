@@ -1,7 +1,9 @@
 <rule id="255000" level="8">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1086: PowerShell Execution</description>
-	<info type="text">Detects execution of PowerShell</info>
-	<info type="link">https://github.com/hunters-forge/ThreatHunter-Playbook/blob/8869b7a58dba1cff63bae1d7ab923974b8c0539b/playbooks/WIN-190410151110.yaml</info>
+	<info type="text">Detects execution of PowerShell </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 867613fb-fa60-4497-a017-a82df74a172c </info>
+	<info type="link">https://github.com/hunters-forge/ThreatHunter-Playbook/blob/8869b7a58dba1cff63bae1d7ab923974b8c0539b/playbooks/WIN-190410151110.yaml </info>
 	<group>attack.execution,attack.t1086,MITRE</group>
 </rule>

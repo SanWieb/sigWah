@@ -1,7 +1,9 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1100: Windows Webshell Creation</description>
-	<info type="text">Possible webshell file creation on a static web site</info>
-	<info type="link">PT ESC rule and personal experience</info>
+	<info type="text">Possible webshell file creation on a static web site </info>
+	<info type="text">Falsepositives: Legitimate administrator or developer creating legitimate executable files in a web application folder. </info>
+	<info type="text">Sigma UUID: 39f1f9f2-9636-45de-98f6-a4046aa8e4b9 </info>
+	<info type="link">PT ESC rule and personal experience </info>
 	<group>attack.persistence,attack.t1100,MITRE</group>
 </rule>

@@ -1,7 +1,9 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1073 T1038 T1112: Svchost DLL Search Order Hijack</description>
-	<info type="text">IKEEXT and SessionEnv service, as they call LoadLibrary on files that do not exist within C:\Windows\System32\ by default. An attacker can place their malicious logic within the PROCESS_ATTACH block of their library and restart the aforementioned services "svchost.exe -k netsvcs" to gain code execution on a remote machine.</info>
-	<info type="link">https://posts.specterops.io/lateral-movement-scm-and-dll-hijacking-primer-d2f61e8ab992</info>
+	<info type="text">IKEEXT and SessionEnv service, as they call LoadLibrary on files that do not exist within C:\Windows\System32\ by default. An attacker can place their malicious logic within the PROCESS_ATTACH block of their library and restart the aforementioned services "svchost.exe -k netsvcs" to gain code execution on a remote machine. </info>
+	<info type="text">Falsepositives: Pentest. </info>
+	<info type="text">Sigma UUID: 602a1f13-c640-4d73-b053-be9a2fa58b77 </info>
+	<info type="link">https://posts.specterops.io/lateral-movement-scm-and-dll-hijacking-primer-d2f61e8ab992 </info>
 	<group>attack.persistence,attack.defense_evasion,attack.t1073,attack.t1038,attack.t1112,MITRE</group>
 </rule>

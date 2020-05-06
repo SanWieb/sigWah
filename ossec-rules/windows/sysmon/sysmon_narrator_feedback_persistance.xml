@@ -1,7 +1,9 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1060: Narrator's Feedback-Hub Persistence</description>
-	<info type="text">Detects abusing Windows 10 Narrator's Feedback-Hub</info>
-	<info type="link">https://giuliocomi.blogspot.com/2019/10/abusing-windows-10-narrators-feedback.html</info>
+	<info type="text">Detects abusing Windows 10 Narrator's Feedback-Hub </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: f663a6d9-9d1b-49b8-b2b1-0637914d199a </info>
+	<info type="link">https://giuliocomi.blogspot.com/2019/10/abusing-windows-10-narrators-feedback.html </info>
 	<group>attack.persistence,attack.t1060,MITRE</group>
 </rule>

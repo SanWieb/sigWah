@@ -1,7 +1,9 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1003: QuarksPwDump Dump File</description>
-	<info type="text">Detects a dump file written by QuarksPwDump password dumper</info>
-	<info type="link">https://jpcertcc.github.io/ToolAnalysisResultSheet/details/QuarksPWDump.htm</info>
+	<info type="text">Detects a dump file written by QuarksPwDump password dumper </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 847def9e-924d-4e90-b7c4-5f581395a2b4 </info>
+	<info type="link">https://jpcertcc.github.io/ToolAnalysisResultSheet/details/QuarksPWDump.htm </info>
 	<group>attack.credential_access,attack.t1003,MITRE</group>
 </rule>

@@ -1,7 +1,9 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1112: OceanLotus Registry Activity</description>
-	<info type="text">Detects registry keys created in OceanLotus (also known as APT32) attacks</info>
-	<info type="link">https://www.welivesecurity.com/2019/03/20/fake-or-fake-keeping-up-with-oceanlotus-decoys/</info>
+	<info type="text">Detects registry keys created in OceanLotus (also known as APT32) attacks </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 4ac5fc44-a601-4c06-955b-309df8c4e9d4 </info>
+	<info type="link">https://www.welivesecurity.com/2019/03/20/fake-or-fake-keeping-up-with-oceanlotus-decoys/ </info>
 	<group>attack.t1112,MITRE</group>
 </rule>

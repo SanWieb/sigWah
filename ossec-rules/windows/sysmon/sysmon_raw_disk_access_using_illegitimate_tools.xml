@@ -1,7 +1,9 @@
 <rule id="255000" level="8">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1006: Raw Disk Access Using Illegitimate Tools</description>
-	<info type="text">Raw disk access using illegitimate tools, possible defence evasion</info>
-	<info type="link">https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment</info>
+	<info type="text">Raw disk access using illegitimate tools, possible defence evasion </info>
+	<info type="text">Falsepositives: Legitimate Administrator using tool for raw access or ongoing forensic investigation. </info>
+	<info type="text">Sigma UUID: db809f10-56ce-4420-8c86-d6a7d793c79c </info>
+	<info type="link">https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment </info>
 	<group>attack.defense_evasion,attack.t1006,MITRE</group>
 </rule>

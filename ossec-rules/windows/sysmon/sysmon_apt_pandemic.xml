@@ -1,8 +1,10 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1105: Pandemic Registry Key</description>
-	<info type="text">Detects Pandemic Windows Implant</info>
-	<info type="link">https://wikileaks.org/vault7/#Pandemic</info>
-	<info type="link">https://twitter.com/MalwareJake/status/870349480356454401</info>
+	<info type="text">Detects Pandemic Windows Implant </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: 47e0852a-cf81-4494-a8e6-31864f8c86ed </info>
+	<info type="link">https://wikileaks.org/vault7/#Pandemic </info>
+	<info type="link">https://twitter.com/MalwareJake/status/870349480356454401 </info>
 	<group>attack.lateral_movement,attack.t1105,MITRE</group>
 </rule>

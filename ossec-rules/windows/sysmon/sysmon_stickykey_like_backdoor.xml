@@ -1,7 +1,9 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1015: Sticky Key Like Backdoor Usage</description>
-	<info type="text">Detects the usage and installation of a backdoor that uses an option to register a malicious debugger for built-in tools that are accessible in the login screen</info>
-	<info type="link">https://blogs.technet.microsoft.com/jonathantrull/2016/10/03/detecting-sticky-key-backdoors/</info>
+	<info type="text">Detects the usage and installation of a backdoor that uses an option to register a malicious debugger for built-in tools that are accessible in the login screen </info>
+	<info type="text">Falsepositives: Unlikely. </info>
+	<info type="text">Sigma UUID: baca5663-583c-45f9-b5dc-ea96a22ce542 </info>
+	<info type="link">https://blogs.technet.microsoft.com/jonathantrull/2016/10/03/detecting-sticky-key-backdoors/ </info>
 	<group>attack.privilege_escalation,attack.persistence,attack.t1015,car.2014-11-003,car.2014-11-008,MITRE</group>
 </rule>

@@ -1,7 +1,9 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1073: Possible Process Hollowing Image Loading</description>
-	<info type="text">Detects Loading of samlib.dll, WinSCard.dll from untypical process e.g. through process hollowing by Mimikatz</info>
-	<info type="link">https://cyberwardog.blogspot.com/2017/03/chronicles-of-threat-hunter-hunting-for.html</info>
+	<info type="text">Detects Loading of samlib.dll, WinSCard.dll from untypical process e.g. through process hollowing by Mimikatz </info>
+	<info type="text">Falsepositives: Very likely, needs more tuning. </info>
+	<info type="text">Sigma UUID: e32ce4f5-46c6-4c47-ba69-5de3c9193cd7 </info>
+	<info type="link">https://cyberwardog.blogspot.com/2017/03/chronicles-of-threat-hunter-hunting-for.html </info>
 	<group>attack.defense_evasion,attack.t1073,MITRE</group>
 </rule>

@@ -1,7 +1,9 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1193: GAC DLL Loaded Via Office Applications</description>
-	<info type="text">Detects any GAC DLL being loaded by an Office Product</info>
-	<info type="link">https://medium.com/threatpunter/detecting-adversary-tradecraft-with-image-load-event-logging-and-eql-8de93338c16</info>
+	<info type="text">Detects any GAC DLL being loaded by an Office Product </info>
+	<info type="text">Falsepositives: Alerts on legitimate macro usage as well, will need to filter as appropriate. </info>
+	<info type="text">Sigma UUID: 90217a70-13fc-48e4-b3db-0d836c5824ac </info>
+	<info type="link">https://medium.com/threatpunter/detecting-adversary-tradecraft-with-image-load-event-logging-and-eql-8de93338c16 </info>
 	<group>attack.initial_access,attack.t1193,MITRE</group>
 </rule>

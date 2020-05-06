@@ -1,7 +1,9 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1084: WMI Persistence - Script Event Consumer File Write</description>
-	<info type="text">Detects file writes of WMI script event consumer</info>
-	<info type="link">https://www.eideon.com/2018-03-02-THL03-WMIBackdoors/</info>
+	<info type="text">Detects file writes of WMI script event consumer </info>
+	<info type="text">Falsepositives: Unknown (data set is too small; further testing needed). </info>
+	<info type="text">Sigma UUID: 33f41cdd-35ac-4ba8-814b-c6a4244a1ad4 </info>
+	<info type="link">https://www.eideon.com/2018-03-02-THL03-WMIBackdoors/ </info>
 	<group>attack.t1084,attack.persistence,MITRE</group>
 </rule>

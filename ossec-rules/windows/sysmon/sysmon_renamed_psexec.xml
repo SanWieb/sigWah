@@ -1,7 +1,9 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK: Renamed PsExec</description>
-	<info type="text">Detects the execution of a renamed PsExec often used by attackers or malware</info>
-	<info type="link">https://www.trendmicro.com/vinfo/hk-en/security/news/cybercrime-and-digital-threats/megacortex-ransomware-spotted-attacking-enterprise-networks</info>
+	<info type="text">Detects the execution of a renamed PsExec often used by attackers or malware </info>
+	<info type="text">Falsepositives: Software that illegaly integrates PsExec in a renamed form. Administrators that have renamed PsExec and no one knows why. </info>
+	<info type="text">Sigma UUID: a7a7e0e5-1d57-49df-9c58-9fe5bc0346a2 </info>
+	<info type="link">https://www.trendmicro.com/vinfo/hk-en/security/news/cybercrime-and-digital-threats/megacortex-ransomware-spotted-attacking-enterprise-networks </info>
 	<group>car.2013-05-009,MITRE</group>
 </rule>

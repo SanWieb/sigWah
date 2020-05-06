@@ -1,7 +1,9 @@
 <rule id="255000" level="5">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1086: PowerShell Network Connections</description>
-	<info type="text">Detects a Powershell process that opens network connections - check for suspicious target ports and target systems - adjust to your environment (e.g. extend filters with company's ip range')</info>
-	<info type="link">https://www.youtube.com/watch?v=DLtJTxMWZ2o</info>
+	<info type="text">Detects a Powershell process that opens network connections - check for suspicious target ports and target systems - adjust to your environment (e.g. extend filters with company's ip range') </info>
+	<info type="text">Falsepositives: Administrative scripts. </info>
+	<info type="text">Sigma UUID: 1f21ec3f-810d-4b0e-8045-322202e22b4b </info>
+	<info type="link">https://www.youtube.com/watch?v=DLtJTxMWZ2o </info>
 	<group>attack.execution,attack.t1086,MITRE</group>
 </rule>

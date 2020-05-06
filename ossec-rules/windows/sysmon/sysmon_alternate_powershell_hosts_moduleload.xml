@@ -1,7 +1,9 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1086: Alternate PowerShell Hosts Module Load</description>
-	<info type="text">Detects alternate PowerShell hosts potentially bypassing detections looking for powershell.exe</info>
-	<info type="link">https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1086_powershell/alternate_signed_powershell_hosts.md</info>
+	<info type="text">Detects alternate PowerShell hosts potentially bypassing detections looking for powershell.exe </info>
+	<info type="text">Falsepositives: Programs using PowerShell directly without invocation of a dedicated interpreter.. </info>
+	<info type="text">Sigma UUID: f67f6c57-257d-4919-a416-69cd31f9aac3 </info>
+	<info type="link">https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1086_powershell/alternate_signed_powershell_hosts.md </info>
 	<group>attack.execution,attack.t1086,MITRE</group>
 </rule>

@@ -1,6 +1,8 @@
 <rule id="255000" level="8">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1050: Suspicious Driver Load from Temp</description>
-	<info type="text">Detects a driver load from a temporary directory</info>
+	<info type="text">Detects a driver load from a temporary directory </info>
+	<info type="text">Falsepositives: there is a relevant set of false positives depending on applications in the environment. </info>
+	<info type="text">Sigma UUID: 2c4523d5-d481-4ed0-8ec3-7fbf0cb41a75 </info>
 	<group>attack.persistence,attack.t1050,MITRE</group>
 </rule>

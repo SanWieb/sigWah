@@ -1,8 +1,10 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1088: UAC Bypass via Event Viewer</description>
-	<info type="text">Detects UAC bypass method using Windows event viewer</info>
-	<info type="link">https://enigma0x3.net/2016/08/15/fileless-uac-bypass-using-eventvwr-exe-and-registry-hijacking/</info>
-	<info type="link">https://www.hybrid-analysis.com/sample/e122bc8bf291f15cab182a5d2d27b8db1e7019e4e96bb5cdbd1dfe7446f3f51f?environmentId=100</info>
+	<info type="text">Detects UAC bypass method using Windows event viewer </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: 7c81fec3-1c1d-43b0-996a-46753041b1b6 </info>
+	<info type="link">https://enigma0x3.net/2016/08/15/fileless-uac-bypass-using-eventvwr-exe-and-registry-hijacking/ </info>
+	<info type="link">https://www.hybrid-analysis.com/sample/e122bc8bf291f15cab182a5d2d27b8db1e7019e4e96bb5cdbd1dfe7446f3f51f?environmentId=100 </info>
 	<group>attack.defense_evasion,attack.privilege_escalation,attack.t1088,car.2019-04-001,MITRE</group>
 </rule>

@@ -1,7 +1,9 @@
 <rule id="255000" level="8">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1003: LSASS Memory Dump File Creation</description>
-	<info type="text">LSASS memory dump creation using operating systems utilities. Procdump will use process name in output file if no name is specified</info>
-	<info type="link">https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment</info>
+	<info type="text">LSASS memory dump creation using operating systems utilities. Procdump will use process name in output file if no name is specified </info>
+	<info type="text">Falsepositives: Dumping lsass memory for forensic investigation purposes by legitimate incident responder or forensic invetigator. </info>
+	<info type="text">Sigma UUID: 5e3d3601-0662-4af0-b1d2-36a05e90c40a </info>
+	<info type="link">https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment </info>
 	<group>attack.credential_access,attack.t1003,MITRE</group>
 </rule>

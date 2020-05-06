@@ -1,9 +1,11 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1117: Regsvr32 Network Activity</description>
-	<info type="text">Detects network connections and DNS queries initiated by Regsvr32.exe</info>
-	<info type="link">https://pentestlab.blog/2017/05/11/applocker-bypass-regsvr32/</info>
-	<info type="link">https://oddvar.moe/2017/12/13/applocker-case-study-how-insecure-is-it-really-part-1/</info>
-	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1117/T1117.md</info>
+	<info type="text">Detects network connections and DNS queries initiated by Regsvr32.exe </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: c7e91a02-d771-4a6d-a700-42587e0b1095 </info>
+	<info type="link">https://pentestlab.blog/2017/05/11/applocker-bypass-regsvr32/ </info>
+	<info type="link">https://oddvar.moe/2017/12/13/applocker-case-study-how-insecure-is-it-really-part-1/ </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1117/T1117.md </info>
 	<group>attack.execution,attack.defense_evasion,attack.t1117,MITRE</group>
 </rule>

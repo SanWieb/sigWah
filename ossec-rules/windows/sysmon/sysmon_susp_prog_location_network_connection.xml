@@ -1,7 +1,9 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK: Suspicious Program Location with Network Connections</description>
-	<info type="text">Detects programs with network connections running in suspicious files system locations</info>
-	<info type="link">https://docs.google.com/spreadsheets/d/17pSTDNpa0sf6pHeRhusvWG6rThciE8CsXTSlDUAZDyo</info>
+	<info type="text">Detects programs with network connections running in suspicious files system locations </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: 7b434893-c57d-4f41-908d-6a17bf1ae98f </info>
+	<info type="link">https://docs.google.com/spreadsheets/d/17pSTDNpa0sf6pHeRhusvWG6rThciE8CsXTSlDUAZDyo </info>
 	<group>MITRE</group>
 </rule>

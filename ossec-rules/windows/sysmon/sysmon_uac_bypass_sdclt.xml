@@ -1,7 +1,9 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1088: UAC Bypass via Sdclt</description>
-	<info type="text">Detects changes to HKCU:\Software\Classes\exefile\shell\runas\command\isolatedCommand</info>
-	<info type="link">https://enigma0x3.net/2017/03/17/fileless-uac-bypass-using-sdclt-exe/</info>
+	<info type="text">Detects changes to HKCU:\Software\Classes\exefile\shell\runas\command\isolatedCommand </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: 5b872a46-3b90-45c1-8419-f675db8053aa </info>
+	<info type="link">https://enigma0x3.net/2017/03/17/fileless-uac-bypass-using-sdclt-exe/ </info>
 	<group>attack.defense_evasion,attack.privilege_escalation,attack.t1088,car.2019-04-001,MITRE</group>
 </rule>

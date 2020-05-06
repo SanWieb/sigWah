@@ -1,7 +1,9 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1027 S0139: Executable in ADS</description>
-	<info type="text">Detects the creation of an ADS data stream that contains an executable (non-empty imphash)</info>
-	<info type="link">https://twitter.com/0xrawsec/status/1002478725605273600?s=21</info>
+	<info type="text">Detects the creation of an ADS data stream that contains an executable (non-empty imphash) </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: b69888d4-380c-45ce-9cf9-d9ce46e67821 </info>
+	<info type="link">https://twitter.com/0xrawsec/status/1002478725605273600?s=21 </info>
 	<group>attack.defense_evasion,attack.t1027,attack.s0139,MITRE</group>
 </rule>

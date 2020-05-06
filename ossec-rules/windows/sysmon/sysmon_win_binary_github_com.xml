@@ -1,8 +1,10 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1105: Microsoft Binary Github Communication</description>
-	<info type="text">Detects an executable in the Windows folder accessing github.com</info>
-	<info type="link">https://twitter.com/M_haggis/status/900741347035889665</info>
-	<info type="link">https://twitter.com/M_haggis/status/1032799638213066752</info>
+	<info type="text">Detects an executable in the Windows folder accessing github.com </info>
+	<info type="text">Falsepositives: Unknown. @subTee in your network. </info>
+	<info type="text">Sigma UUID: 635dbb88-67b3-4b41-9ea5-a3af2dd88153 </info>
+	<info type="link">https://twitter.com/M_haggis/status/900741347035889665 </info>
+	<info type="link">https://twitter.com/M_haggis/status/1032799638213066752 </info>
 	<group>attack.lateral_movement,attack.t1105,MITRE</group>
 </rule>

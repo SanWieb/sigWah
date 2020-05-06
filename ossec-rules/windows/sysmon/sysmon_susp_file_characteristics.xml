@@ -1,8 +1,10 @@
 <rule id="255000" level="8">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1064: Suspicious File Characteristics Due to Missing Fields</description>
-	<info type="text">Detects Executables without FileVersion,Description,Product,Company likely created with py2exe</info>
-	<info type="link">https://securelist.com/muddywater/88059/</info>
-	<info type="link">https://www.virustotal.com/#/file/276a765a10f98cda1a38d3a31e7483585ca3722ecad19d784441293acf1b7beb/detection</info>
+	<info type="text">Detects Executables without FileVersion,Description,Product,Company likely created with py2exe </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 9637e8a5-7131-4f7f-bdc7-2b05d8670c43 </info>
+	<info type="link">https://securelist.com/muddywater/88059/ </info>
+	<info type="link">https://www.virustotal.com/#/file/276a765a10f98cda1a38d3a31e7483585ca3722ecad19d784441293acf1b7beb/detection </info>
 	<group>attack.defense_evasion,attack.execution,attack.t1064,MITRE</group>
 </rule>

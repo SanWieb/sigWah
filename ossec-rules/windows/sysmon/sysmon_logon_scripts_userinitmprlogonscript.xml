@@ -1,7 +1,9 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1037: Logon Scripts (UserInitMprLogonScript)</description>
-	<info type="text">Detects creation or execution of UserInitMprLogonScript persistence method</info>
-	<info type="link">https://attack.mitre.org/techniques/T1037/</info>
+	<info type="text">Detects creation or execution of UserInitMprLogonScript persistence method </info>
+	<info type="text">Falsepositives: exclude legitimate logon scripts. penetration tests, red teaming. </info>
+	<info type="text">Sigma UUID: 0a98a10c-685d-4ab0-bddc-b6bdd1d48458 </info>
+	<info type="link">https://attack.mitre.org/techniques/T1037/ </info>
 	<group>attack.t1037,attack.persistence,attack.lateral_movement,MITRE</group>
 </rule>

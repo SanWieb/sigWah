@@ -1,7 +1,9 @@
 <rule id="255000" level="8">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1038: Windows Registry Persistence COM Search Order Hijacking</description>
-	<info type="text">Detects potential COM object hijacking leveraging the COM Search Order</info>
-	<info type="link">https://www.cyberbit.com/blog/endpoint-security/com-hijacking-windows-overlooked-security-vulnerability/</info>
+	<info type="text">Detects potential COM object hijacking leveraging the COM Search Order </info>
+	<info type="text">Falsepositives: Some installed utilities (i.e. OneDrive) may serve new COM objects at user-level. </info>
+	<info type="text">Sigma UUID: a0ff33d8-79e4-4cef-b4f3-9dc4133ccd12 </info>
+	<info type="link">https://www.cyberbit.com/blog/endpoint-security/com-hijacking-windows-overlooked-security-vulnerability/ </info>
 	<group>attack.persistence,attack.t1038,MITRE</group>
 </rule>

@@ -1,8 +1,10 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1086: Suspicious Scripting in a WMI Consumer</description>
-	<info type="text">Detects suspicious scripting in WMI Event Consumers</info>
-	<info type="link">https://in.security/an-intro-into-abusing-and-identifying-wmi-event-subscriptions-for-persistence/</info>
-	<info type="link">https://github.com/Neo23x0/signature-base/blob/master/yara/gen_susp_lnk_files.yar#L19</info>
+	<info type="text">Detects suspicious scripting in WMI Event Consumers </info>
+	<info type="text">Falsepositives: Administrative scripts. </info>
+	<info type="text">Sigma UUID: fe21810c-2a8c-478f-8dd3-5a287fb2a0e0 </info>
+	<info type="link">https://in.security/an-intro-into-abusing-and-identifying-wmi-event-subscriptions-for-persistence/ </info>
+	<info type="link">https://github.com/Neo23x0/signature-base/blob/master/yara/gen_susp_lnk_files.yar#L19 </info>
 	<group>attack.t1086,attack.execution,MITRE</group>
 </rule>

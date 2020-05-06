@@ -1,7 +1,9 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1089: Disable Security Events Logging Adding Reg Key MiniNt</description>
-	<info type="text">Detects the addition of a key 'MiniNt' to the registry. Upon a reboot, Windows Event Log service will stopped write events.</info>
-	<info type="link">https://twitter.com/0gtweet/status/1182516740955226112</info>
+	<info type="text">Detects the addition of a key 'MiniNt' to the registry. Upon a reboot, Windows Event Log service will stopped write events. </info>
+	<info type="text">Falsepositives: Unkown. </info>
+	<info type="text">Sigma UUID: 919f2ef0-be2d-4a7a-b635-eb2b41fde044 </info>
+	<info type="link">https://twitter.com/0gtweet/status/1182516740955226112 </info>
 	<group>attack.defense_evasion,attack.t1089,MITRE</group>
 </rule>

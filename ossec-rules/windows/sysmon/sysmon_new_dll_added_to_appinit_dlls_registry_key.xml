@@ -1,7 +1,9 @@
 <rule id="255000" level="8">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1103: New DLL Added to AppInit_DLLs Registry Key</description>
-	<info type="text">DLLs that are specified in the AppInit_DLLs value in the Registry key HKLM\Software\Microsoft\Windows NT\CurrentVersion\Windows are loaded by user32.dll into every process that loads user32.dll</info>
-	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/822dc4c5-b355-4df8-bd37-29c458997b8f.html</info>
+	<info type="text">DLLs that are specified in the AppInit_DLLs value in the Registry key HKLM\Software\Microsoft\Windows NT\CurrentVersion\Windows are loaded by user32.dll into every process that loads user32.dll </info>
+	<info type="text">Falsepositives: Unkown. </info>
+	<info type="text">Sigma UUID: 4f84b697-c9ed-4420-8ab5-e09af5b2345d </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/822dc4c5-b355-4df8-bd37-29c458997b8f.html </info>
 	<group>attack.persistence,attack.t1103,MITRE</group>
 </rule>

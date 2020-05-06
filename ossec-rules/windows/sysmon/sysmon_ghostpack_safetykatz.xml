@@ -1,7 +1,9 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1003: Detection of SafetyKatz</description>
-	<info type="text">Detects possible SafetyKatz Behaviour</info>
-	<info type="link">https://github.com/GhostPack/SafetyKatz</info>
+	<info type="text">Detects possible SafetyKatz Behaviour </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: e074832a-eada-4fd7-94a1-10642b130e16 </info>
+	<info type="link">https://github.com/GhostPack/SafetyKatz </info>
 	<group>attack.credential_access,attack.t1003,MITRE</group>
 </rule>

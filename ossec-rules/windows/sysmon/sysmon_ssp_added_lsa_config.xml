@@ -1,8 +1,10 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1011: Security Support Provider (SSP) Added to LSA Configuration</description>
-	<info type="text">Detects the addition of a SSP to the registry. Upon a reboot or API call, SSP DLLs gain access to encrypted and plaintext passwords stored in Windows.</info>
-	<info type="link">https://attack.mitre.org/techniques/T1101/</info>
-	<info type="link">https://powersploit.readthedocs.io/en/latest/Persistence/Install-SSP/</info>
+	<info type="text">Detects the addition of a SSP to the registry. Upon a reboot or API call, SSP DLLs gain access to encrypted and plaintext passwords stored in Windows. </info>
+	<info type="text">Falsepositives: Unlikely. </info>
+	<info type="text">Sigma UUID: eeb30123-9fbd-4ee8-aaa0-2e545bbed6dc </info>
+	<info type="link">https://attack.mitre.org/techniques/T1101/ </info>
+	<info type="link">https://powersploit.readthedocs.io/en/latest/Persistence/Install-SSP/ </info>
 	<group>attack.persistence,attack.t1011,MITRE</group>
 </rule>

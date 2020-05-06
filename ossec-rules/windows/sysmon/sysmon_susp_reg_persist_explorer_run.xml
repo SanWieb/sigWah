@@ -1,7 +1,9 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1060: Registry Persistence via Explorer Run Key</description>
-	<info type="text">Detects a possible persistence mechanism using RUN key for Windows Explorer and pointing to a suspicious folder</info>
-	<info type="link">https://researchcenter.paloaltonetworks.com/2018/07/unit42-upatre-continues-evolve-new-anti-analysis-techniques/</info>
+	<info type="text">Detects a possible persistence mechanism using RUN key for Windows Explorer and pointing to a suspicious folder </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: b7916c2a-fa2f-4795-9477-32b731f70f11 </info>
+	<info type="link">https://researchcenter.paloaltonetworks.com/2018/07/unit42-upatre-continues-evolve-new-anti-analysis-techniques/ </info>
 	<group>attack.persistence,attack.t1060,capec.270,MITRE</group>
 </rule>

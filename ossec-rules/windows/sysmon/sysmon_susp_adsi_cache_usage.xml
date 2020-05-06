@@ -1,9 +1,11 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1041: Suspicious ADSI-Cache Usage By Unknown Tool</description>
-	<info type="text">detects the usage of ADSI (LDAP) operations by tools. This may also detect tools like LDAPFragger.</info>
-	<info type="link">https://medium.com/@ivecodoe/detecting-ldapfragger-a-newly-released-cobalt-strike-beacon-using-ldap-for-c2-communication-c274a7f00961</info>
-	<info type="link">https://blog.fox-it.com/2020/03/19/ldapfragger-command-and-control-over-ldap-attributes/</info>
-	<info type="link">https://github.com/fox-it/LDAPFragger</info>
+	<info type="text">detects the usage of ADSI (LDAP) operations by tools. This may also detect tools like LDAPFragger. </info>
+	<info type="text">Falsepositives: Other legimate tools, which do ADSI (LDAP) operations, e.g. any remoting activity by MMC, Powershell, Windows etc.. </info>
+	<info type="text">Sigma UUID: 75bf09fa-1dd7-4d18-9af9-dd9e492562eb </info>
+	<info type="link">https://medium.com/@ivecodoe/detecting-ldapfragger-a-newly-released-cobalt-strike-beacon-using-ldap-for-c2-communication-c274a7f00961 </info>
+	<info type="link">https://blog.fox-it.com/2020/03/19/ldapfragger-command-and-control-over-ldap-attributes/ </info>
+	<info type="link">https://github.com/fox-it/LDAPFragger </info>
 	<group>attack.t1041,attack.persistence,MITRE</group>
 </rule>

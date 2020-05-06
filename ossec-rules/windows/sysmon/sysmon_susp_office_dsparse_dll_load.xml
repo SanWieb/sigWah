@@ -1,7 +1,9 @@
 <rule id="255000" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1193: Active Directory Parsing DLL Loaded Via Office Applications</description>
-	<info type="text">Detects DSParse DLL being loaded by an Office Product</info>
-	<info type="link">https://medium.com/threatpunter/detecting-adversary-tradecraft-with-image-load-event-logging-and-eql-8de93338c16</info>
+	<info type="text">Detects DSParse DLL being loaded by an Office Product </info>
+	<info type="text">Falsepositives: Alerts on legitimate macro usage as well, will need to filter as appropriate. </info>
+	<info type="text">Sigma UUID: a2a3b925-7bb0-433b-b508-db9003263cc4 </info>
+	<info type="link">https://medium.com/threatpunter/detecting-adversary-tradecraft-with-image-load-event-logging-and-eql-8de93338c16 </info>
 	<group>attack.initial_access,attack.t1193,MITRE</group>
 </rule>

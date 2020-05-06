@@ -1,7 +1,9 @@
 <rule id="255000" level="8">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1122: Windows Registry Persistence COM Key Linking</description>
-	<info type="text">Detects COM object hijacking via TreatAs subkey</info>
-	<info type="link">https://bohops.com/2018/08/18/abusing-the-com-registry-structure-part-2-loading-techniques-for-evasion-and-persistence/</info>
+	<info type="text">Detects COM object hijacking via TreatAs subkey </info>
+	<info type="text">Falsepositives: Maybe some system utilities in rare cases use linking keys for backward compability. </info>
+	<info type="text">Sigma UUID: 9b0f8a61-91b2-464f-aceb-0527e0a45020 </info>
+	<info type="link">https://bohops.com/2018/08/18/abusing-the-com-registry-structure-part-2-loading-techniques-for-evasion-and-persistence/ </info>
 	<group>attack.persistence,attack.t1122,MITRE</group>
 </rule>
