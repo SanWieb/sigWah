@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250300" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1003 T1028 S0005: Mimikatz through Windows Remote Management</description>
 	<info type="text">Detects usage of mimikatz through WinRM protocol by monitoring access to lsass process by wsmprovhost.exe. </info>

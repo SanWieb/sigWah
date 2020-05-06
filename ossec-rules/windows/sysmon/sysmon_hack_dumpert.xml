@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250180" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1003: Dumpert Process Dumper</description>
 	<info type="text">Detects the use of Dumpert process dumper, which dumps the lsass.exe process memory </info>

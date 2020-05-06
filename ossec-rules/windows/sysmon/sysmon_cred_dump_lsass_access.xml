@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250110" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1003 S0002: Credentials Dumping Tools Accessing LSASS Memory</description>
 	<info type="text">Detects process access LSASS memory which is typical for credentials dumping tools </info>

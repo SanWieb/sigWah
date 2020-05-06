@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250670" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1177: DLL Load via LSASS</description>
 	<info type="text">Detects a method to load DLL via LSASS process using an undocumented Registry key </info>

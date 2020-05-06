@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250370" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1058: Possible Privilege Escalation via Service Permissions Weakness</description>
 	<info type="text">Detect modification of services configuration (ImagePath, FailureCommand and ServiceDLL) in registry by processes with Medium integrity level </info>

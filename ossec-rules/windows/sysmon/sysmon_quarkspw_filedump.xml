@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250410" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1003: QuarksPwDump Dump File</description>
 	<info type="text">Detects a dump file written by QuarksPwDump password dumper </info>

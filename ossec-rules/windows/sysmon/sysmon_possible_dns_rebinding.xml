@@ -1,4 +1,4 @@
-<rule id="255000" level="8">
+<rule id="250360" level="8">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1043: Possible DNS Rebinding</description>
 	<info type="text">Detects several different DNS-answers by one domain with IPs from internal and external networks. Normally, DNS-answer contain TTL >100. (DNS-record will saved in host cache for a while TTL). </info>

@@ -1,4 +1,4 @@
-<rule id="255000" level="8">
+<rule id="250460" level="8">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1122: Windows Registry Persistence COM Key Linking</description>
 	<info type="text">Detects COM object hijacking via TreatAs subkey </info>

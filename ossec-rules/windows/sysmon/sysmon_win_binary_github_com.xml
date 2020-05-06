@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250890" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1105: Microsoft Binary Github Communication</description>
 	<info type="text">Detects an executable in the Windows folder accessing github.com </info>

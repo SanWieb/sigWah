@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250680" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1193: dotNET DLL Loaded Via Office Applications</description>
 	<info type="text">Detects any assembly DLL being loaded by an Office Product </info>

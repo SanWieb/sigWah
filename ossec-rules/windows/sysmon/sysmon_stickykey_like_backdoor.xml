@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250570" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1015: Sticky Key Like Backdoor Usage</description>
 	<info type="text">Detects the usage and installation of a backdoor that uses an option to register a malicious debugger for built-in tools that are accessible in the login screen </info>

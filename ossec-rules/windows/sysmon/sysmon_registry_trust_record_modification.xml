@@ -1,4 +1,4 @@
-<rule id="255000" level="8">
+<rule id="250480" level="8">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1193: Windows Registry Trust Record Modification</description>
 	<info type="text">Alerts on trust record modification within the registry, indicating usage of macros </info>

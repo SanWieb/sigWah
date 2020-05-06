@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250490" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1117: Regsvr32 Network Activity</description>
 	<info type="text">Detects network connections and DNS queries initiated by Regsvr32.exe </info>

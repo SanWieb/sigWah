@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250940" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1084: WMI Persistence - Command Line Event Consumer</description>
 	<info type="text">Detects WMI command line event consumers </info>

@@ -1,4 +1,4 @@
-<rule id="255000" level="8">
+<rule id="250330" level="8">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1182: New DLL Added to AppCertDlls Registry Key</description>
 	<info type="text">Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs value in the Registry key can be abused to obtain persistence and privilege escalation by causing a malicious DLL to be loaded and run in the context of separate processes on the computer. </info>

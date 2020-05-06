@@ -1,4 +1,4 @@
-<rule id="255000" level="8">
+<rule id="250060" level="8">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1060: Autorun Keys Modification</description>
 	<info type="text">Detects modification of autostart extensibility point (ASEP) in registry </info>

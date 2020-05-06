@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250430" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1112: RDP Registry Modification</description>
 	<info type="text">Detects potential malicious modification of the property value of fDenyTSConnections and UserAuthentication to enable remote desktop connections. </info>

@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250730" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1085 T1086: PowerShell Rundll32 Remote Thread Creation</description>
 	<info type="text">Detects PowerShell remote thread creation in Rundll32.exe </info>

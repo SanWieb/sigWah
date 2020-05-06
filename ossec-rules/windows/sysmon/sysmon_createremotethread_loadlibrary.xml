@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250100" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1055: CreateRemoteThread API and LoadLibrary</description>
 	<info type="text">Detects potential use of CreateRemoteThread api and LoadLibrary function to inject DLL into a process </info>

@@ -1,4 +1,4 @@
-<rule id="255000" level="8">
+<rule id="250470" level="8">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1038: Windows Registry Persistence COM Search Order Hijacking</description>
 	<info type="text">Detects potential COM object hijacking leveraging the COM Search Order </info>

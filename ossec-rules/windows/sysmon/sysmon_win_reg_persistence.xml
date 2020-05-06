@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250910" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1183: Registry Persistence Mechanisms</description>
 	<info type="text">Detects persistence registry keys </info>

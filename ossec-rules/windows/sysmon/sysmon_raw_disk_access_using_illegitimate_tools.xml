@@ -1,4 +1,4 @@
-<rule id="255000" level="8">
+<rule id="250420" level="8">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1006: Raw Disk Access Using Illegitimate Tools</description>
 	<info type="text">Raw disk access using illegitimate tools, possible defence evasion </info>

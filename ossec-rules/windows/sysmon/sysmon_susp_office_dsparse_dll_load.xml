@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250710" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1193: Active Directory Parsing DLL Loaded Via Office Applications</description>
 	<info type="text">Detects DSParse DLL being loaded by an Office Product </info>

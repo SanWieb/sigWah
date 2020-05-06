@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250660" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1073: Possible Process Hollowing Image Loading</description>
 	<info type="text">Detects Loading of samlib.dll, WinSCard.dll from untypical process e.g. through process hollowing by Mimikatz </info>

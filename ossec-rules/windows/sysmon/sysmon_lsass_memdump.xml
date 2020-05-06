@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250240" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1003 S0002: LSASS Memory Dump</description>
 	<info type="text">Detects process LSASS memory dump using procdump or taskmgr based on the CallTrace pointing to dbghelp.dll or dbgcore.dll for win10 </info>

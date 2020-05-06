@@ -1,4 +1,4 @@
-<rule id="255000" level="8">
+<rule id="250380" level="8">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1086: PowerShell Execution</description>
 	<info type="text">Detects execution of PowerShell </info>

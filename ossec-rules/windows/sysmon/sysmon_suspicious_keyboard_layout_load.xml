@@ -1,4 +1,4 @@
-<rule id="255000" level="8">
+<rule id="250580" level="8">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK: Suspicious Keyboard Layout Load</description>
 	<info type="text">Detects the keyboard preload installation with a suspicious keyboard layout, e.g. Chinese, Iranian or Vietnamese layout load in user session on systems maintained by US staff only </info>

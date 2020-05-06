@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250810" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1047: Windows Mangement Instrumentation DLL Loaded Via Microsoft Word</description>
 	<info type="text">Detects DLL's Loaded Via Word Containing VBA Macros Executing WMI Commands </info>

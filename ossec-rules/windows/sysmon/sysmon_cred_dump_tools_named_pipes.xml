@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250130" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1003: Cred Dump-Tools Named Pipes</description>
 	<info type="text">Detects well-known credential dumping tools execution via specific named pipes </info>

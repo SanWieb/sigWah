@@ -1,4 +1,4 @@
-<rule id="255000" level="8">
+<rule id="250620" level="8">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1023: Suspicious desktop.ini Action</description>
 	<info type="text">Detects unusual processes accessing desktop.ini, which can be leveraged to alter how Explorer displays a folder's content (i.e. renaming files) without changing them on disk. </info>

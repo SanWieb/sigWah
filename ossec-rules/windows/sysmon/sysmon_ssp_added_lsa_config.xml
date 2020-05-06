@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250560" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1011: Security Support Provider (SSP) Added to LSA Configuration</description>
 	<info type="text">Detects the addition of a SSP to the registry. Upon a reboot or API call, SSP DLLs gain access to encrypted and plaintext passwords stored in Windows. </info>

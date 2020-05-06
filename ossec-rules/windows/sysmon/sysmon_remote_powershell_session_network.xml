@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250500" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1086: Remote PowerShell Session</description>
 	<info type="text">Detects remote PowerShell connections by monitoring network outbount connections to ports 5985 or 5986 from not network service account </info>

@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250090" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1055: CobaltStrike Process Injection</description>
 	<info type="text">Detects a possible remote threat creation with certain characteristics which are typical for Cobalt Strike beacons </info>

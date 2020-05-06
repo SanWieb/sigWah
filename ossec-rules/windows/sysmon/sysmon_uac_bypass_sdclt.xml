@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250860" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1088: UAC Bypass via Sdclt</description>
 	<info type="text">Detects changes to HKCU:\Software\Classes\exefile\shell\runas\command\isolatedCommand </info>

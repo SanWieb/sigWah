@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250150" level="12">
 	<if_group>sysmon_event_%</if_group>
 	<description>ATT&CK T1089: Disable Security Events Logging Adding Reg Key MiniNt</description>
 	<info type="text">Detects the addition of a key 'MiniNt' to the registry. Upon a reboot, Windows Event Log service will stopped write events. </info>
