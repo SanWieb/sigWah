@@ -1,5 +1,7 @@
 <rule id="250380" level="8">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event7</if_group>
+	<field name="win.eventdata.description">system.management.automation</field>
+	<field name="win.eventdata.ImageLoaded">system.management.automation</field>
 	<description>ATT&CK T1086: PowerShell Execution</description>
 	<info type="text">Detects execution of PowerShell </info>
 	<info type="text">Falsepositives: Unknown. </info>

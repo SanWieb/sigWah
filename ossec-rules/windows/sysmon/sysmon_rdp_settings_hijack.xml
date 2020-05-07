@@ -1,5 +1,6 @@
 <rule id="250450" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event_13</if_group>
+	<field name="win.eventdata.targetobject">\\services\\TermService\\Parameters\\ServiceDll|\\Control\\Terminal Server\\fSingleSessionPerUser|\\Control\\Terminal Server\\fDenyTSConnections</field>
 	<description>ATT&CK: RDP Sensitive Settings Changed</description>
 	<info type="text">Detects changes to RDP terminal service sensitive settings </info>
 	<info type="text">Falsepositives: unknown. </info>

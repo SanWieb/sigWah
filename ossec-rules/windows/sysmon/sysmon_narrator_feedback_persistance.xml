@@ -1,5 +1,18 @@
 <rule id="250320" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event_12</if_group>
+	<field name="win.eventdata.EventType">DeleteValue</field>
+	<field name="win.eventdata.targetobject">\\AppXypsaf9f1qserqevf0sws76dx4k9a5206\\Shell\\open\\command\\DelegateExecute</field>
+	<description>ATT&CK T1060: Narrator's Feedback-Hub Persistence</description>
+	<info type="text">Detects abusing Windows 10 Narrator's Feedback-Hub </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: f663a6d9-9d1b-49b8-b2b1-0637914d199a </info>
+	<info type="link">https://giuliocomi.blogspot.com/2019/10/abusing-windows-10-narrators-feedback.html </info>
+	<group>attack.persistence,attack.t1060,MITRE</group>
+</rule>
+
+<rule id="250321" level="12">
+	<if_group>sysmon_event_13</if_group>
+	<field name="win.eventdata.targetobject">\\AppXypsaf9f1qserqevf0sws76dx4k9a5206\\Shell\\open\\command\\(Default)</field>
 	<description>ATT&CK T1060: Narrator's Feedback-Hub Persistence</description>
 	<info type="text">Detects abusing Windows 10 Narrator's Feedback-Hub </info>
 	<info type="text">Falsepositives: unknown. </info>

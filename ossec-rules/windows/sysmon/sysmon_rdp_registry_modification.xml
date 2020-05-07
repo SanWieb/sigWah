@@ -1,5 +1,7 @@
 <rule id="250430" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event_13</if_group>
+	<field name="win.eventdata.targetobject">\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\RDP-Tcp\\UserAuthentication|\\CurrentControlSet\\Control\\Terminal Server\\fDenyTSConnections</field>
+	<field name="win.eventdata.details">0x00000000</field>
 	<description>ATT&CK T1112: RDP Registry Modification</description>
 	<info type="text">Detects potential malicious modification of the property value of fDenyTSConnections and UserAuthentication to enable remote desktop connections. </info>
 	<info type="text">Falsepositives: Unknown. </info>
