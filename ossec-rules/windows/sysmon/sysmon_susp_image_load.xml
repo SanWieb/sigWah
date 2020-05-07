@@ -1,5 +1,7 @@
-<rule id="250660" level="12">
-	<if_group>sysmon_event_%</if_group>
+<rule id="250660" level="10">
+	<if_group>sysmon_event7</if_group>
+	<field name="win.eventdata.Image">\\notepad.exe</field>
+	<field name="win.eventdata.ImageLoaded">\\samlib.dll|\\WinSCard.dll</field>
 	<description>ATT&CK T1073: Possible Process Hollowing Image Loading</description>
 	<info type="text">Detects Loading of samlib.dll, WinSCard.dll from untypical process e.g. through process hollowing by Mimikatz </info>
 	<info type="text">Falsepositives: Very likely, needs more tuning. </info>

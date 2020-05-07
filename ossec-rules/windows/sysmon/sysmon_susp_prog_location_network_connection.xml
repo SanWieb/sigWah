@@ -1,5 +1,6 @@
 <rule id="250750" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event3</if_group>
+	<field name="win.eventdata.image">\\$Recycle.bin|\\Users\\All Users\\|\\Users\\Default\\|\\Users\\Public\\|\\Users\\Contacts\\|\\Users\\Searches\\|:\\Perflogs\\|\\config\\systemprofile\\|\\Windows\\Fonts\\|\\Windows\\IME\\|\\Windows\\addins\\</field>
 	<description>ATT&CK: Suspicious Program Location with Network Connections</description>
 	<info type="text">Detects programs with network connections running in suspicious files system locations </info>
 	<info type="text">Falsepositives: unknown. </info>

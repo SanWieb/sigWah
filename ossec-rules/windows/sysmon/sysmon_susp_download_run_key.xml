@@ -1,5 +1,7 @@
 <rule id="250630" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event_13</if_group>
+	<field name="win.eventdata.image">\\Downloads\\|\\Temporary Internet Files\\Content.Outlook\\|\\Local Settings\\Temporary Internet Files\\</field>
+	<field name="win.eventdata.targetobject">\\software\\Microsoft\\Windows\\CurrentVersion\\Run|\\software\\Microsoft\\Windows\\CurrentVersion\\RunOnce|\\software\\Microsoft\\Windows\\CurrentVersion\\RunOnceEx</field>
 	<description>ATT&CK T1060: Suspicious RUN Key from Download</description>
 	<info type="text">Detects the suspicious RUN keys created by software located in Download or temporary Outlook/Internet Explorer directories </info>
 	<info type="text">Falsepositives: Software installers downloaded and used by users. </info>

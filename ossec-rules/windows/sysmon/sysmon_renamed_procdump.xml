@@ -1,9 +1,17 @@
 <rule id="250530" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.OriginalFileName">procdump</field>
 	<description>ATT&CK T1036: Renamed ProcDump</description>
 	<info type="text">Detects the execution of a renamed ProcDump executable often used by attackers or malware </info>
 	<info type="text">Falsepositives: Procdump illegaly bundled with legitimate software. Weird admins who renamed binaries. </info>
 	<info type="text">Sigma UUID: 4a0b2c7e-7cb2-495d-8b63-5f268e7bfd67 </info>
 	<info type="link">https://docs.microsoft.com/en-us/sysinternals/downloads/procdump </info>
+	<group>attack.defense_evasion,attack.t1036,MITRE</group>
+</rule>
+
+<rule id="250531" level="12">
+	<if_sid>250530</if_sid>
+	<field name="win.eventdata.image">\\procdump.exe|\\procdump64.exe</field>
+	<description>Whitelist Interaction: Renamed ProcDump</description>
 	<group>attack.defense_evasion,attack.t1036,MITRE</group>
 </rule>

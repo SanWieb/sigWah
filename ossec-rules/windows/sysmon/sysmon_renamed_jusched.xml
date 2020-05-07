@@ -1,9 +1,17 @@
 <rule id="250510" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.description">Java Update Scheduler|Java(TM) Update Scheduler</field>
 	<description>ATT&CK T1036: Renamed jusched.exe</description>
 	<info type="text">Detects renamed jusched.exe used by cobalt group </info>
 	<info type="text">Falsepositives: penetration tests, red teaming. </info>
 	<info type="text">Sigma UUID: edd8a48c-1b9f-4ba1-83aa-490338cd1ccb </info>
 	<info type="link">https://www.bitdefender.com/files/News/CaseStudies/study/262/Bitdefender-WhitePaper-An-APT-Blueprint-Gaining-New-Visibility-into-Financial-Threats-interactive.pdf </info>
+	<group>attack.t1036,attack.execution,MITRE</group>
+</rule>
+
+<rule id="250511" level="0">
+	<if_sid>250510</if_sid>
+	<field name="win.eventdata.image">\\jusched.exe</field>
+	<description>Whitelist Interaction: Renamed jusched.exe</description>
 	<group>attack.t1036,attack.execution,MITRE</group>
 </rule>

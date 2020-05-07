@@ -1,5 +1,19 @@
 <rule id="250570" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event_13</if_group>
+	<field name="win.eventdata.targetobject">\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\sethc.exe\\Debugger|\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\utilman.exe\\Debugger|\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\osk.exe\\Debugger|\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\Magnify.exe\\Debugger|\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\Narrator.exe\\Debugger|\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\DisplaySwitch.exe\\Debugger</field>
+	<field name="win.eventdata.EventType">SetValue</field>
+	<description>ATT&CK T1015: Sticky Key Like Backdoor Usage</description>
+	<info type="text">Detects the usage and installation of a backdoor that uses an option to register a malicious debugger for built-in tools that are accessible in the login screen </info>
+	<info type="text">Falsepositives: Unlikely. </info>
+	<info type="text">Sigma UUID: baca5663-583c-45f9-b5dc-ea96a22ce542 </info>
+	<info type="link">https://blogs.technet.microsoft.com/jonathantrull/2016/10/03/detecting-sticky-key-backdoors/ </info>
+	<group>attack.privilege_escalation,attack.persistence,attack.t1015,car.2014-11-003,car.2014-11-008,MITRE</group>
+</rule>
+
+<rule id="250571" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\\winlogon.exe</field>
+	<regex>cmd.exe \.sethc.exe|cmd.exe \.utilman.exe|cmd.exe \.osk.exe|cmd.exe \.Magnify.exe|cmd.exe \.Narrator.exe|cmd.exe \.DisplaySwitch.exe</regex>
 	<description>ATT&CK T1015: Sticky Key Like Backdoor Usage</description>
 	<info type="text">Detects the usage and installation of a backdoor that uses an option to register a malicious debugger for built-in tools that are accessible in the login screen </info>
 	<info type="text">Falsepositives: Unlikely. </info>

@@ -1,5 +1,7 @@
 <rule id="250730" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event8</if_group>
+	<field name="win.eventdata.SourceImage">\\powershell.exe</field>
+	<field name="win.eventdata.TargetImage">\\rundll32.exe</field>
 	<description>ATT&CK T1085 T1086: PowerShell Rundll32 Remote Thread Creation</description>
 	<info type="text">Detects PowerShell remote thread creation in Rundll32.exe </info>
 	<info type="text">Falsepositives: Unkown. </info>

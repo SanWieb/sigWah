@@ -1,9 +1,18 @@
 <rule id="250540" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Description">Execute processes remotely</field>
+	<field name="win.eventdata.Product">Sysinternals PsExec</field>
 	<description>ATT&CK: Renamed PsExec</description>
 	<info type="text">Detects the execution of a renamed PsExec often used by attackers or malware </info>
 	<info type="text">Falsepositives: Software that illegaly integrates PsExec in a renamed form. Administrators that have renamed PsExec and no one knows why. </info>
 	<info type="text">Sigma UUID: a7a7e0e5-1d57-49df-9c58-9fe5bc0346a2 </info>
 	<info type="link">https://www.trendmicro.com/vinfo/hk-en/security/news/cybercrime-and-digital-threats/megacortex-ransomware-spotted-attacking-enterprise-networks </info>
+	<group>car.2013-05-009,MITRE</group>
+</rule>
+
+<rule id="250541" level="0">
+	<if_sid>250540</if_sid>
+	<field name="win.eventdata.image">\\\PsExec.exe|\\PsExec64.exe</field>
+	<description>Whitelist Interaction: Renamed PsExec</description>
 	<group>car.2013-05-009,MITRE</group>
 </rule>

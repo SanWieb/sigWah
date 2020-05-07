@@ -1,9 +1,17 @@
 <rule id="250620" level="8">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event_11</if_group>
+	<field name="win.eventdata.TargetFilename">\\desktop.ini</field>
 	<description>ATT&CK T1023: Suspicious desktop.ini Action</description>
 	<info type="text">Detects unusual processes accessing desktop.ini, which can be leveraged to alter how Explorer displays a folder's content (i.e. renaming files) without changing them on disk. </info>
 	<info type="text">Falsepositives: Operations performed through Windows SCCM or equivalent. </info>
 	<info type="text">Sigma UUID: 81315b50-6b60-4d8f-9928-3466e1022515 </info>
 	<info type="link">https://isc.sans.edu/forums/diary/Desktopini+as+a+postexploitation+tool/25912/ </info>
+	<group>attack.persistence,attack.t1023,MITRE</group>
+</rule>
+
+<rule id="250620" level="0">
+	<if_sid>250620</if_sid>
+	<field name="win.eventdata.TargetFilename">\\Windows\\explorer.exe|\\Windows\\System32\\msiexec.exe|\\Windows\\System32\\mmc.exe</field>
+	<description>ATT&CK T1023: Suspicious desktop.ini Action</description>
 	<group>attack.persistence,attack.t1023,MITRE</group>
 </rule>
