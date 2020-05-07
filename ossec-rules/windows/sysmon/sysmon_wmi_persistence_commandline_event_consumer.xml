@@ -1,5 +1,7 @@
 <rule id="250940" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event7</if_group>
+	<field name="win.eventdata.Image">\\Windows\\System32\\wbem\\WmiPrvSE.exe</field>
+	<field name="win.eventdata.ImageLoaded">wbemcons.dll</field>
 	<description>ATT&CK T1084: WMI Persistence - Command Line Event Consumer</description>
 	<info type="text">Detects WMI command line event consumers </info>
 	<info type="text">Falsepositives: Unknown (data set is too small; further testing needed). </info>

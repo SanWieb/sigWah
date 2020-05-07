@@ -1,10 +1,30 @@
 <rule id="250850" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event_13</if_group>
+	<regex>HKU\\\\\.\\\\mscfile\\\\shell\\\\open\\\\command</regex>
 	<description>ATT&CK T1088: UAC Bypass via Event Viewer</description>
 	<info type="text">Detects UAC bypass method using Windows event viewer </info>
 	<info type="text">Falsepositives: unknown. </info>
 	<info type="text">Sigma UUID: 7c81fec3-1c1d-43b0-996a-46753041b1b6 </info>
 	<info type="link">https://enigma0x3.net/2016/08/15/fileless-uac-bypass-using-eventvwr-exe-and-registry-hijacking/ </info>
 	<info type="link">https://www.hybrid-analysis.com/sample/e122bc8bf291f15cab182a5d2d27b8db1e7019e4e96bb5cdbd1dfe7446f3f51f?environmentId=100 </info>
+	<group>attack.defense_evasion,attack.privilege_escalation,attack.t1088,car.2019-04-001,MITRE</group>
+</rule>
+
+<rule id="250851" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\\eventvwr.exe</field>
+	<description>ATT&CK T1088: UAC Bypass via Event Viewer</description>
+	<info type="text">Detects UAC bypass method using Windows event viewer </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: 7c81fec3-1c1d-43b0-996a-46753041b1b6 </info>
+	<info type="link">https://enigma0x3.net/2016/08/15/fileless-uac-bypass-using-eventvwr-exe-and-registry-hijacking/ </info>
+	<info type="link">https://www.hybrid-analysis.com/sample/e122bc8bf291f15cab182a5d2d27b8db1e7019e4e96bb5cdbd1dfe7446f3f51f?environmentId=100 </info>
+	<group>attack.defense_evasion,attack.privilege_escalation,attack.t1088,car.2019-04-001,MITRE</group>
+</rule>
+
+<rule id="250852" level="0">
+	<if_sid>sysmon_event1</if_sid>
+	<field name="win.eventdata.Image">\\mmc.exe</field>
+	<description>Whitelist Interaction: UAC Bypass via Event Viewer</description>
 	<group>attack.defense_evasion,attack.privilege_escalation,attack.t1088,car.2019-04-001,MITRE</group>
 </rule>

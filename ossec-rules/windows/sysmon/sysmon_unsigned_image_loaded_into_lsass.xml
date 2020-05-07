@@ -1,5 +1,7 @@
 <rule id="250870" level="8">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event7</if_group>
+	<field name="win.eventdata.Image">\\lsass.exe</field>
+	<field name="win.eventdata.Signed">false</field>
 	<description>ATT&CK T1003: Unsigned Image Loaded Into LSASS Process</description>
 	<info type="text">Loading unsigned image (DLL, EXE) into LSASS process </info>
 	<info type="text">Falsepositives: Valid user connecting using RDP. </info>

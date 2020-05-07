@@ -1,5 +1,6 @@
 <rule id="250860" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event_13</if_group>
+	<regex>HKU\\\\\._Classes\\\\exefile\\\\shell\\\\runas\\\\command\\\\isolatedCommand</regex>
 	<description>ATT&CK T1088: UAC Bypass via Sdclt</description>
 	<info type="text">Detects changes to HKCU:\Software\Classes\exefile\shell\runas\command\isolatedCommand </info>
 	<info type="text">Falsepositives: unknown. </info>

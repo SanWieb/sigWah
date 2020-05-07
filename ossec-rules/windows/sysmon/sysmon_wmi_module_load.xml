@@ -1,9 +1,17 @@
 <rule id="250930" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event7</if_group>
+	<field name="win.eventdata.ImageLoaded">\\wmiclnt.dll|\\WmiApRpl.dll|\\wmiprov.dll|\\wmiutils.dll|\\wbemcomn.dll|\\wbemprox.dll|\\WMINet_Utils.dll|\\wbemsvc.dll|\\fastprox.dll</field>
 	<description>ATT&CK T1047: WMI Modules Loaded</description>
 	<info type="text">Detects non wmiprvse loading WMI modules </info>
 	<info type="text">Falsepositives: Unknown. </info>
 	<info type="text">Sigma UUID: 671bb7e3-a020-4824-a00e-2ee5b55f385e </info>
 	<info type="link">https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1047_windows_management_instrumentation/wmi_wmi_module_load.md </info>
+	<group>attack.execution,attack.t1047,MITRE</group>
+</rule>
+
+<rule id="250931" level="0">
+	<if_sid>sysmon_event7</if_sid>
+	<field name="win.eventdata.image">\\WmiPrvSe.exe|\\WmiPrvSE.exe|\\WmiAPsrv.exe|\\svchost.exe</field>
+	<description>Whitelist Interaction: WMI Modules Loaded</description>
 	<group>attack.execution,attack.t1047,MITRE</group>
 </rule>

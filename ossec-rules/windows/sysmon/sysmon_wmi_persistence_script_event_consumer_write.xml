@@ -1,5 +1,6 @@
 <rule id="250950" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event_11</if_group>
+	<field name="win.eventdata.Image">\\WINDOWS\\system32\\wbem\\scrcons.exe</field>
 	<description>ATT&CK T1084: WMI Persistence - Script Event Consumer File Write</description>
 	<info type="text">Detects file writes of WMI script event consumer </info>
 	<info type="text">Falsepositives: Unknown (data set is too small; further testing needed). </info>

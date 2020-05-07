@@ -1,5 +1,6 @@
 <rule id="250960" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event_20</if_group>
+	<field name="win.eventdata.Destination">new-object system.net.webclient).downloadstring(|new-object system.net.webclient).downloadfile(|new-object net.webclient).downloadstring(|new-object net.webclient).downloadfile(| iex(|WScript.shell| -nop | -noprofile | -decode | -enc </field>
 	<description>ATT&CK T1086: Suspicious Scripting in a WMI Consumer</description>
 	<info type="text">Detects suspicious scripting in WMI Event Consumers </info>
 	<info type="text">Falsepositives: Administrative scripts. </info>
