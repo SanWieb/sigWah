@@ -1,5 +1,7 @@
 <rule id="250810" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event7</if_group>
+	<field name="win.eventdata.image">\\winword.exe|\\powerpnt.exe|\\excel.exe|\\outlook.exe</field>
+	<field name="win.eventdata.ImageLoaded">\wmiutils.dll|\wbemcomn.dll|\wbemprox.dll|\wbemdisp.dll|\wbemsvc.dll</field>
 	<description>ATT&CK T1047: Windows Mangement Instrumentation DLL Loaded Via Microsoft Word</description>
 	<info type="text">Detects DLL's Loaded Via Word Containing VBA Macros Executing WMI Commands </info>
 	<info type="text">Falsepositives: Possible. Requires further testing.. </info>

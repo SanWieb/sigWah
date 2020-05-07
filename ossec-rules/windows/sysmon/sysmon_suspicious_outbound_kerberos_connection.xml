@@ -1,9 +1,18 @@
 <rule id="250590" level="12">
-	<if_group>sysmon_event_%</if_group>
+	<if_group>sysmon_event3</if_group>
+	<field name="win.eventdata.DestinationPort">^88$</field>
+	<field name="win.eventdata.Initiated">true</field>
 	<description>ATT&CK T1208: Suspicious Outbound Kerberos Connection</description>
 	<info type="text">Detects suspicious outbound network activity via kerberos default port indicating possible lateral movement or first stage PrivEsc via delegation. </info>
 	<info type="text">Falsepositives: Other browsers. </info>
 	<info type="text">Sigma UUID: e54979bd-c5f9-4d6c-967b-a04b19ac4c74 </info>
 	<info type="link">https://github.com/GhostPack/Rubeus8 </info>
+	<group>attack.lateral_movement,attack.t1208,MITRE</group>
+</rule>
+
+<rule id="250591" level="0">
+	<if_sid>250590</if_sid>
+	<field name="win.eventdata.image">\\lsass.exe|\\opera.exe|\\chrome.exe|\\firefox.exe</field>
+	<description>Whitelist Interaction: Suspicious Outbound Kerberos Connection</description>
 	<group>attack.lateral_movement,attack.t1208,MITRE</group>
 </rule>
