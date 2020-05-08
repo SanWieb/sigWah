@@ -9,11 +9,15 @@ output_dir = 'ossec-rules/windows/process_creation'
 class SigmaOssec(object):
     rulenumber = 0
     data = {}
+    common_fields = ['utctime', 'processguid', 'processid', 'image', 'currentdirectory', 'user', 'logonguid',
+                     'logonid', 'terminalsessionid', 'integritylevel', 'parentprocessguid', 'parentprocessid',
+                     'parentimage', 'parentcommandline', 'originalfilename', 'company']
 
     def __init__(self, documentData, rulenumber):
         self.output = {}
         self.rulenumber = rulenumber
         if len(documentData) != 1:
+            print('XML')
             self.output['validation_failed_xml'] = 'Manual check needed! More than 1 XML document'
         self.data = documentData[0]
         self.output = self.validateSyntax(self.data, self.output)
@@ -24,39 +28,47 @@ class SigmaOssec(object):
         if 'detection' not in data.keys():
             output['validation_failed_detection'] = 'Manual check needed! No detection'
             output['opentag'] = self.getOpenTag(data)
-            output['if_group'] = '\t<if_group>sysmon_event_%</if_group>'
+            output['if_group'] = '\t<if_group>sysmon_event1</if_group>'
             output['title'] = self.getTitle(data)
             output = self.getLastPart(data, output)
             return output
 
         elif self.data['detection']['condition'] in ['selection', '1 of them', 'selection1 or selection2',
                                                 'selection1 or selection2 or selection3']:
-            output = self.handleOrRule(data, output)
+            output = self.handle_standard_or(data, output)
             return output
         elif self.data['detection']['condition'] in ['selection and not filter']:
+            print('selection and not filter')
             output['validation_failed_detection'] = 'Manual check needed! No detection'
             return output
         else:
             output['validation_failed_detection'] = 'Manual check needed! No detection'
+            print('anders')
             return output
 
-    def handleOrRule(self, data, output):
+    def handle_standard_or(self, data, output):
+        section_number = 1
         for selection in data['detection']:
             # for each selection a new rule (OR condition)
-            section_number = 1
             if selection != 'condition':
                 # start rule
                 output['opentag{}'.format(section_number)] = self.getOpenTag(data)
-                output['if_group'] = '\t<if_group>sysmon_event_%</if_group>'
+                output['if_group'] = '\t<if_group>sysmon_event1</if_group>'
                 # get the detection rules (fieldnames)
                 field_rule = []
                 for fieldname in data['detection'][selection]:
                     try:
-                        fieldname_stripped = fieldname.split('|')[0]
-                        if fieldname_stripped.lower() == 'commandline':
-                            query = self.parse_commandline(data['detection'][selection], fieldname)
-                            print(query)
-                            field_rule.append('\t<field name="win.eventdata.CommandLine">{}</field>'.format(query))
+                        fieldname_stripped = fieldname.split('|')[0].lower()
+                        rule = ''
+                        if fieldname_stripped in ['commandline', 'command']:
+                            rule = self.parse_commandline(data['detection'][selection], fieldname)
+                        elif fieldname_stripped in ['sha1', 'sha256', 'md5', 'imphash']:
+                            rule = self.parse_hash(data['detection'][selection], fieldname)
+                        elif fieldname_stripped in self.common_fields:
+                            rule = self.parse_common(data['detection'][selection], fieldname)
+                        else:
+                            rule = 'Manual check needed! Rule failed Field: {}'.format(fieldname)
+                        field_rule.append(rule)
                     except Exception as e:
                         field_rule.append('Manual check needed! Rule failed')
                 # finish with the last part of the rule
@@ -67,6 +79,8 @@ class SigmaOssec(object):
                 for part in lastpart:
                     output['{}{}'.format(part, section_number)] = lastpart[part]
                 output['empty_line{}'.format(section_number)] = ''
+            section_number += 1
+            self.rulenumber += 1
         return output
 
 # ------------- Parse Functions ------------- #
@@ -80,26 +94,81 @@ class SigmaOssec(object):
                     query += '|'
                 else:
                     first_key = False
-                # replace \* with \.
-                item = item.replace('\\*', '\\.')
-                # replace * with \.
-                item = item.replace('*', '\\.')
+                item = self.replace_wildcard(item)
                 item = self.replace_variables(item)
                 query += item
-            return query
+            return '\t<field name="win.eventdata.CommandLine">{}</field>'.format(query)
         elif type(selection[fieldname]) == str:
             item = selection[fieldname]
-            # replace \* with \.
-            item = item.replace('\\*', '\\.')
-            # replace * with \.
-            item = item.replace('*', '\\.')
+            item = self.replace_wildcard(item)
             item = self.replace_variables(item)
             query += item
-            return query
+            return '\t<field name="win.eventdata.CommandLine">{}</field>'.format(query)
         else:
-            return 'Manual check needed! Rule parse failed'
+            return 'Manual check needed! Rule parse failed (Parse Commandline)'
+
+    def parse_hash(self, selection, fieldname):
+        fieldname_stripped = fieldname.split('|')[0].lower()
+        hash = ''
+        if fieldname_stripped == 'sha1':
+            hash = 'SHA1='
+        elif fieldname_stripped == 'sha256':
+            hash = 'SHA256='
+        elif fieldname_stripped == 'md5':
+            hash = 'MD5='
+        elif fieldname_stripped == 'imphash':
+            hash = 'IMPHASH='
+        query = ''
+        if type(selection[fieldname]) == list:
+            first_key = True
+            for item in selection[fieldname]:
+                if not first_key:
+                    query += '|'
+                else:
+                    first_key = False
+                query += hash + item
+            return '\t<field name="win.eventdata.Hashes">{}</field>'.format(query)
+        elif type(selection[fieldname]) == str:
+            item = hash + selection[fieldname]
+            return '\t<field name="win.eventdata.Hashes">{}</field>'.format(query)
+        else:
+            return 'Manual check needed! Rule parse failed (Parse Hash)'
+
+    def parse_common(self, selection, fieldname):
+        fieldname_stripped = fieldname.split('|')[0]
+        query = ''
+        if type(selection[fieldname]) == list:
+            first_key = True
+            for item in selection[fieldname]:
+                if not first_key:
+                    query += '|'
+                else:
+                    first_key = False
+                item = self.replace_wildcard(item)
+                item = self.replace_variables(item)
+                item = self.replace_backslash(item)
+                query += item
+            return '\t<field name="win.eventdata.{}">{}</field>'.format(fieldname_stripped, query)
+        elif type(selection[fieldname]) == str:
+            item = selection[fieldname]
+            item = self.replace_wildcard(item)
+            item = self.replace_variables(item)
+            item = self.replace_backslash(item)
+            query += item
+            query += item
+            return '\t<field name="win.eventdata.{}">{}</field>'.format(fieldname_stripped, query)
+        else:
+            return 'Manual check needed! Rule parse failed (Parse Common)'
 
     def replace_variables(self, item):
+        # replace ( with \(  (must be escaped)
+        item = item.replace('(', '\\(').replace(')', '\\))')
+        # replace $ with \$  (must be escaped)
+        item = item.replace('$', '\\$')
+        # replace | with \|  (must be escaped)
+        item = item.replace('|', '\\|')
+        # replace < with \<  (must be escaped)
+        item = item.replace('<', '\\<')
         # replace ( with \(  (must be escaped)
         item = item.replace('(', '\\(').replace(')', '\\))')
         # replace C driveletter with \.
@@ -108,6 +177,17 @@ class SigmaOssec(object):
         item = item.replace('%AppData%', '\\.\\AppData\\\\.').replace('%APPDATA%', '\\.\\AppData\\\\.')
         # replace %WINDIR% with \.\Windows\\.
         item = item.replace('%WinDir%', '\\.\\Windows\\\\.').replace('%WINDIR%', '\\.\\Windows\\\\.')
+        return item
+
+    def replace_wildcard(self, item):
+        # replace \* with \.
+        item = item.replace('\\*', '\\.')
+        # replace * with \.
+        item = item.replace('*', '\\.')
+        return item
+
+    def replace_backslash(self, item):
+        item = item.replace('\\', '\\\\')
         return item
 
 
