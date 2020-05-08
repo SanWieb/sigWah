@@ -1,6 +1,6 @@
 <rule id="250470" level="8">
 	<if_group>sysmon_event_13</if_group>
-	<regex>HKU\\\\\._Classes\\\\CLSID\\\\\.\\\\InProcServer32\\\\(Default)</regex>
+	<regex>HKU\\\\\._Classes\\\\CLSID\\\\\.\\\\InProcServer32\\\\\(Default\)</regex>
 	<description>ATT&CK T1038: Windows Registry Persistence COM Search Order Hijacking</description>
 	<info type="text">Detects potential COM object hijacking leveraging the COM Search Order </info>
 	<info type="text">Falsepositives: Some installed utilities (i.e. OneDrive) may serve new COM objects at user-level. </info>
@@ -11,7 +11,7 @@
 
 <rule id="250471" level="0">
 	<if_sid>250470</if_sid>
-	<field name="win.eventdata.details">\\windows\\system32\\|\\windows\\SysWow64\\\\AppData\\Local\\Microsoft\\OneDrive\\|\\AppData\\Local\\Microsoft\\OneDrive\\|\\AppData\\Local\\Microsoft\\TeamsMeetingAddin\\</field>
+	<field name="win.eventdata.details">\\windows\\system32\\|\\windows\\SysWow64\\\\AppData\\Local\\Microsoft\\OneDrive\\|\\AppData\\Local\\Microsoft\\OneDrive\\|\\AppData\\Local\\Microsoft\\TeamsMeetingAddin\\\.</field>
 	<description>Whitelist Interaction: Windows Registry Persistence COM Search Order Hijacking</description>
 	<info type="text">Detects potential COM object hijacking leveraging the COM Search Order </info>
 	<info type="text">Falsepositives: Some installed utilities (i.e. OneDrive) may serve new COM objects at user-level. </info>

@@ -1,6 +1,6 @@
 <rule id="250020" level="8">
 	<if_group>sysmon_event_17</if_group>
-	<field name="win.eventdata.pipename">\PSHost</field>
+	<field name="win.eventdata.pipename">\\PSHost</field>
 	<description>ATT&CK T1086: Alternate PowerShell Hosts Pipe</description>
 	<info type="text">Detects alternate PowerShell hosts potentially bypassing detections looking for powershell.exe </info>
 	<info type="text">Falsepositives: Programs using PowerShell directly without invocation of a dedicated interpreter.. </info>

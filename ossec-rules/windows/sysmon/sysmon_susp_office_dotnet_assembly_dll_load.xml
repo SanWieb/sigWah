@@ -1,7 +1,7 @@
 <rule id="250680" level="10">
 	<if_group>sysmon_event7</if_group>
 	<field name="win.eventdata.image">\\winword.exe|\\powerpnt.exe|\\excel.exe|\\outlook.exe</field>
-	<field name="win.eventdata.ImageLoaded">\\Windows\\assembly\\</field>
+	<field name="win.eventdata.ImageLoaded">\\Windows\\assembly\\\.</field>
 	<description>ATT&CK T1193: dotNET DLL Loaded Via Office Applications</description>
 	<info type="text">Detects any assembly DLL being loaded by an Office Product </info>
 	<info type="text">Falsepositives: Alerts on legitimate macro usage as well, will need to filter as appropriate. </info>

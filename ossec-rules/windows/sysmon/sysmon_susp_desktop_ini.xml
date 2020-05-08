@@ -9,7 +9,7 @@
 	<group>attack.persistence,attack.t1023,MITRE</group>
 </rule>
 
-<rule id="250620" level="0">
+<rule id="250621" level="0">
 	<if_sid>250620</if_sid>
 	<field name="win.eventdata.TargetFilename">\\Windows\\explorer.exe|\\Windows\\System32\\msiexec.exe|\\Windows\\System32\\mmc.exe</field>
 	<description>ATT&CK T1023: Suspicious desktop.ini Action</description>

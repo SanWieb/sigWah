@@ -10,7 +10,7 @@
 </rule>
 
 <rule id="250931" level="0">
-	<if_sid>sysmon_event7</if_sid>
+	<if_sid>250930</if_sid>
 	<field name="win.eventdata.image">\\WmiPrvSe.exe|\\WmiPrvSE.exe|\\WmiAPsrv.exe|\\svchost.exe</field>
 	<description>Whitelist Interaction: WMI Modules Loaded</description>
 	<group>attack.execution,attack.t1047,MITRE</group>

@@ -2,7 +2,7 @@
 	<if_group>sysmon_event3</if_group>
 	<field name="win.eventdata.Initiated">true</field>
 	<field name="win.eventdata.DestinationHostname">.github.com|.githubusercontent.com</field>
-	<field name="win.eventdata.Image">:\\Windows\\</field>
+	<field name="win.eventdata.Image">:\\Windows\\\.</field>
 	<description>ATT&CK T1105: Microsoft Binary Github Communication</description>
 	<info type="text">Detects an executable in the Windows folder accessing github.com </info>
 	<info type="text">Falsepositives: Unknown. @subTee in your network. </info>

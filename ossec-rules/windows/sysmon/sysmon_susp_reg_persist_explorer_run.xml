@@ -1,7 +1,7 @@
 <rule id="250770" level="12">
 	<if_group>sysmon_event_13</if_group>
 	<field name="win.eventdata.targetobject">\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run</field>
-	<field name="win.eventdata.details">:\\Windows\\Temp\\|:\\ProgramData\\|\\AppData\\|\\$Recycle.bin\\|:\\Temp\\|:\\Users\\Public\\|:\\Users\\Default\\</field>
+	<field name="win.eventdata.details">:\\Windows\\Temp\\|:\\ProgramData\\|\\AppData\\|\\$Recycle.bin\\|:\\Temp\\|:\\Users\\Public\\|:\\Users\\Default\\\.</field>
 	<description>ATT&CK T1060: Registry Persistence via Explorer Run Key</description>
 	<info type="text">Detects a possible persistence mechanism using RUN key for Windows Explorer and pointing to a suspicious folder </info>
 	<info type="text">Falsepositives: Unknown. </info>

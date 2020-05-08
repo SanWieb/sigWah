@@ -10,7 +10,7 @@
 	<group>attack.execution,attack.t1177,MITRE</group>
 </rule>
 
-<rule id="250670" level="12">
+<rule id="250671" level="12">
 	<if_group>sysmon_event_13</if_group>
 	<field name="win.eventdata.targetobject">\\CurrentControlSet\\Services\\NTDS\\DirectoryServiceExtPt|\\CurrentControlSet\\Services\\NTDS\\LsaDbExtPt</field>
 	<description>ATT&CK T1177: DLL Load via LSASS</description>

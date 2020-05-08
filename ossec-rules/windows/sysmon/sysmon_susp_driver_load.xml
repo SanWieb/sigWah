@@ -1,6 +1,6 @@
 <rule id="250640" level="8">
 	<if_group>sysmon_event6</if_group>
-	<field name="win.eventdata.ImageLoaded">\\Temp\\</field>
+	<field name="win.eventdata.ImageLoaded">\\Temp\\\.</field>
 	<description>ATT&CK T1050: Suspicious Driver Load from Temp</description>
 	<info type="text">Detects a driver load from a temporary directory </info>
 	<info type="text">Falsepositives: there is a relevant set of false positives depending on applications in the environment. </info>

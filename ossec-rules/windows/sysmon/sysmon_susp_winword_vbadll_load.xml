@@ -1,7 +1,7 @@
 <rule id="250800" level="10">
 	<if_group>sysmon_event7</if_group>
 	<field name="win.eventdata.image">\\winword.exe|\\powerpnt.exe|\\excel.exe|\\outlook.exe</field>
-	<field name="win.eventdata.ImageLoaded">\VBE7.DLL|\VBEUI.DLL|\VBE7INTL.DLL</field>
+	<field name="win.eventdata.ImageLoaded">\\VBE7.DLL|\\VBEUI.DLL|\\VBE7INTL.DLL</field>
 	<description>ATT&CK T1193: VBA DLL Loaded Via Microsoft Word</description>
 	<info type="text">Detects DLL's Loaded Via Word Containing VBA Macros </info>
 	<info type="text">Falsepositives: Alerts on legitimate macro usage as well, will need to filter as appropriate. </info>

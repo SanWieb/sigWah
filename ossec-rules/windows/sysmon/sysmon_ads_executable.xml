@@ -8,7 +8,7 @@
 	<group>attack.defense_evasion,attack.t1027,attack.s0139,MITRE</group>
 </rule>
 
-<rule id="255000" level="0">
+<rule id="255001" level="0">
 	<if_sid>255000</if_sid>
 	<field name="win.eventdata.hash">IMPHASH=00000000000000000000000000000000|IMPHASH=null</field>
 	<description>Whitelist Interaction: Executable in ADS</description>

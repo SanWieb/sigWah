@@ -12,7 +12,7 @@
 
 <rule id="250541" level="0">
 	<if_sid>250540</if_sid>
-	<field name="win.eventdata.image">\\\PsExec.exe|\\PsExec64.exe</field>
+	<field name="win.eventdata.image">\\PsExec.exe|\\PsExec64.exe</field>
 	<description>Whitelist Interaction: Renamed PsExec</description>
 	<group>car.2013-05-009,MITRE</group>
 </rule>

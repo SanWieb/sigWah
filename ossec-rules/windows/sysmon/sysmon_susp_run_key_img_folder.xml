@@ -12,7 +12,7 @@
 
 <rule id="250781" level="0">
 	<if_sid>250780</if_sid>
-	<field name="win.eventdata.Details">\\AppData\\Local\\Microsoft\\OneDrive\\</field>
+	<field name="win.eventdata.Details">\\AppData\\Local\\Microsoft\\OneDrive\\\.</field>
 	<description>Whitelist Interaction: New RUN Key Pointing to Suspicious Folder</description>
 	<group>attack.persistence,attack.t1060,MITRE</group>
 </rule>
