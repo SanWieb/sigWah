@@ -28,7 +28,7 @@
 
 <rule id="260543" level="%">
 	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule failed Field: EventID
+	<field name="win.eventdata.EventID">11</field>
 Manual check needed! Rule failed Field: TargetFileName|contains
 	<description>ATT&CK T1003: CreateMiniDump Hacktool</description>
 	<info type="text">Detects the use of CreateMiniDump hack tool used to dump the LSASS process memory for credential extraction on the attacker's machine </info>

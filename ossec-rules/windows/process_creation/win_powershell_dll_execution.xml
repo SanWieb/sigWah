@@ -12,7 +12,7 @@ Manual check needed! Unknown condition
 
 <rule id="261031" level="14">
 	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule failed Field: Description
+	<field name="win.eventdata.Description">\.Windows-Hostprozess \(Rundll32\)\.</field>
 	<description>ATT&CK T1086: Detection of PowerShell Execution via DLL</description>
 	<info type="text">Detects PowerShell Strings applied to rundllas seen in PowerShdll.dll </info>
 	<info type="text">Falsepositives: Unknown. </info>

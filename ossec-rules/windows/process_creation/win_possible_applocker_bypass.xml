@@ -1,4 +1,4 @@
-<rule id="260970" level="6">
+<rule id="260970" level="8">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\\msdt.exe|\\installutil.exe|\\regsvcs.exe|\\regasm.exe|\\msbuild.exe|\\ieexec.exe</field>
 	<description>ATT&CK T1118 T1121 T1127 T1170: Possible Applocker Bypass</description>

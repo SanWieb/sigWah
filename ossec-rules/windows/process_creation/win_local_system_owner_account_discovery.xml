@@ -1,5 +1,5 @@
 Manual check needed! Unknown condition
-<rule id="260640" level="6">
+<rule id="260640" level="8">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\whoami.exe$</field>
 	<field name="win.eventdata.Image">\\\\wmic.exe$</field>
@@ -20,7 +20,7 @@ Manual check needed! Unknown condition
 	<group>attack.discovery,attack.t1033,attack.t1087,MITRE</group>
 </rule>
 
-<rule id="260641" level="6">
+<rule id="260641" level="8">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine"> rmdir </field>
 	<description>ATT&CK T1033 T1087: Local Accounts Discovery</description>
@@ -31,7 +31,7 @@ Manual check needed! Unknown condition
 	<group>attack.discovery,attack.t1033,attack.t1087,MITRE</group>
 </rule>
 
-<rule id="260642" level="6">
+<rule id="260642" level="8">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\net.exe$|\\\\net1.exe$</field>
 	<field name="win.eventdata.CommandLine">user</field>
@@ -43,7 +43,7 @@ Manual check needed! Unknown condition
 	<group>attack.discovery,attack.t1033,attack.t1087,MITRE</group>
 </rule>
 
-<rule id="260643" level="6">
+<rule id="260643" level="8">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">/domain|/add|/delete|/active|/expires|/passwordreq|/scriptpath|/times|/workstations</field>
 	<description>ATT&CK T1033 T1087: Local Accounts Discovery</description>

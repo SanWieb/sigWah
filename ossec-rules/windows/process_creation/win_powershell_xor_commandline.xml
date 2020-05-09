@@ -1,4 +1,4 @@
-<rule id="261080" level="12">
+<rule id="261080" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\. -bxor\.</field>
 	<description>ATT&CK T1086: Suspicious XOR Encoded PowerShell Command Line</description>

@@ -1,4 +1,4 @@
-<rule id="261860" level="12">
+<rule id="261860" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">net group "domain admins" /domain|net localgroup administrators</field>
 	<description>ATT&CK T1087: Suspicious Reconnaissance Activity</description>

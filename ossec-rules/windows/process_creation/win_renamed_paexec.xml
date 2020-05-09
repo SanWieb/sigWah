@@ -1,7 +1,7 @@
 Manual check needed! Unknown condition
-<rule id="261200" level="12">
+<rule id="261200" level="10">
 	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule failed Field: Product
+	<field name="win.eventdata.Product">\.PAExec\.</field>
 	<description>ATT&CK T1036: Execution of Renamed PaExec</description>
 	<info type="text">Detects execution of renamed paexec via imphash and executable product string </info>
 	<info type="text">Falsepositives: Unknown imphashes. </info>
@@ -11,7 +11,7 @@ Manual check needed! Rule failed Field: Product
 	<group>attack.defense_evasion,attack.t1036,FIN7,car.2013-05-009,MITRE</group>
 </rule>
 
-<rule id="261201" level="12">
+<rule id="261201" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Hashes">IMPHASH=11D40A7B7876288F919AB819CC2D9802|IMPHASH=6444f8a34e99b8f7d9647de66aabe516|IMPHASH=dfd6aa3f7b2b1035b76b718f1ddc689f|IMPHASH=1a6cca4d5460b1710a12dea39e4a592c</field>
 	<description>ATT&CK T1036: Execution of Renamed PaExec</description>
@@ -23,7 +23,7 @@ Manual check needed! Rule failed Field: Product
 	<group>attack.defense_evasion,attack.t1036,FIN7,car.2013-05-009,MITRE</group>
 </rule>
 
-<rule id="261202" level="12">
+<rule id="261202" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\.paexec\.</field>
 	<description>ATT&CK T1036: Execution of Renamed PaExec</description>

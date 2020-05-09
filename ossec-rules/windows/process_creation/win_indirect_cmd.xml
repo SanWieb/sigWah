@@ -1,4 +1,4 @@
-<rule id="260580" level="6">
+<rule id="260580" level="8">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentImage">\\\\pcalua.exe$|\\\\forfiles.exe$</field>
 	<description>ATT&CK T1202: Indirect Command Execution</description>

@@ -1,5 +1,5 @@
 Manual check needed! Unknown condition
-<rule id="261140" level="6">
+<rule id="261140" level="8">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\reg.exe$</field>
 	<field name="win.eventdata.CommandLine">query|save|export</field>
@@ -11,7 +11,7 @@ Manual check needed! Unknown condition
 	<group>attack.discovery,attack.t1012,attack.t1007,MITRE</group>
 </rule>
 
-<rule id="261141" level="6">
+<rule id="261141" level="8">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">currentVersion\\windows|currentVersion\\runServicesOnce|currentVersion\\runServices|winlogon\\|currentVersion\\shellServiceObjectDelayLoad|currentVersion\\runOnce|currentVersion\\runOnceEx|currentVersion\\run|currentVersion\\policies\\explorer\\run|currentcontrolset\\services</field>
 	<description>ATT&CK T1012 T1007: Query Registry</description>

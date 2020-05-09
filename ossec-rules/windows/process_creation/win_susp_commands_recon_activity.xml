@@ -1,5 +1,5 @@
 Manual check needed! Unknown condition
-<rule id="261410" level="12">
+<rule id="261410" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">tasklist|net time|systeminfo|whoami|nbtstat|net start|\.\\net1 start|qprocess|nslookup|hostname.exe|\.\\net1 user /domain|\.\\net1 group /domain|\.\\net1 group "domain admins" /domain|\.\\net1 group "Exchange Trusted Subsystem" /domain|\.\\net1 accounts /domain|\.\\net1 user net localgroup administrators|netstat -an</field>
 	<description>ATT&CK T1087 T1082: Reconnaissance Activity with Net Command</description>
@@ -12,7 +12,7 @@ Manual check needed! Unknown condition
 	<group>attack.discovery,attack.t1087,attack.t1082,car.2016-03-001,MITRE</group>
 </rule>
 
-<rule id="261411" level="12">
+<rule id="261411" level="10">
 	<if_group>sysmon_event1</if_group>
 Manual check needed! Rule failed Field: 1
 Manual check needed! Rule failed Field: 5

@@ -1,6 +1,6 @@
 <rule id="261750" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\. -NoP -NonI -w Hidden -c \$x=\$\\(\\(gp HKCU:Software\\\\Microsoft\\\\Windows Update\\)\).Update\\)\)\.|\. -NoP -NonI -c \$x=\$\\(\\(gp HKCU:Software\\\\Microsoft\\\\Windows Update\\)\).Update\\)\);\.</field>
+	<field name="win.eventdata.CommandLine">\. -NoP -NonI -w Hidden -c \$x=\$\(\(gp HKCU:Software\\\\Microsoft\\\\Windows Update\).Update\)\.|\. -NoP -NonI -c \$x=\$\(\(gp HKCU:Software\\\\Microsoft\\\\Windows Update\).Update\);\.</field>
 	<description>ATT&CK T1088: Empire PowerShell UAC Bypass</description>
 	<info type="text">Detects some Empire PowerShell UAC bypass methods </info>
 	<info type="text">Falsepositives: unknown. </info>

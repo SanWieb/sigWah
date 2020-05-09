@@ -1,4 +1,4 @@
-<rule id="261640" level="12">
+<rule id="261640" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\. msiexec\.://\.</field>
 	<description>ATT&CK: MsiExec Web Install</description>

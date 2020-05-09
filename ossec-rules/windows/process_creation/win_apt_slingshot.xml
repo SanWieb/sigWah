@@ -13,7 +13,7 @@ Manual check needed! Unknown condition
 Manual check needed! Unknown condition
 <rule id="260152" level="%">
 	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule failed Field: EventID
+	<field name="win.eventdata.EventID">4701</field>
 Manual check needed! Rule failed Field: TaskName
 	<description>ATT&CK T1053 S0111: Defrag Deactivation</description>
 	<info type="text">Detects the deactivation of the Scheduled defragmentation task as seen by Slingshot APT group </info>

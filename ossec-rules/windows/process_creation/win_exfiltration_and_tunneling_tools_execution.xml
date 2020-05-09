@@ -1,6 +1,6 @@
-<rule id="260390" level="12">
+<rule id="260390" level="10">
 	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule failed Field: NewProcessName|endswith
+	<field name="win.eventdata.Image">\\\\plink.exe$|\\\\socat.exe$|\\\\stunnel.exe$|\\\\httptunnel.exe$</field>
 	<description>ATT&CK T1020: Exfiltration and Tunneling Tools Execution</description>
 	<info type="text">Execution of well known tools for data exfiltration and tunneling </info>
 	<info type="text">Falsepositives: Legitimate Administrator using tools. </info>

@@ -1,5 +1,5 @@
 Manual check needed! Unknown condition
-<rule id="261780" level="12">
+<rule id="261780" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentImage">\.\\\\wscript.exe|\.\\\\cscript.exe</field>
 	<field name="win.eventdata.Image">\.\\\\powershell.exe</field>
@@ -11,7 +11,7 @@ Manual check needed! Unknown condition
 	<group>attack.execution,attack.t1086,MITRE</group>
 </rule>
 
-<rule id="261781" level="12">
+<rule id="261781" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CurrentDirectory">\.\\\\Health Service State\\\\\.</field>
 	<description>ATT&CK T1086: Suspicious PowerShell Invocation Based on Parent Process</description>

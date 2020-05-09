@@ -1,4 +1,4 @@
-<rule id="261980" level="12">
+<rule id="261980" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\.\\sysprep.exe \.\\AppData\\\.|sysprep.exe \.\\AppData\\\.</field>
 	<description>ATT&CK: Sysprep on AppData Folder</description>

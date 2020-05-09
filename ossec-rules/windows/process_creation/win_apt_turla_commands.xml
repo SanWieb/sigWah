@@ -16,7 +16,7 @@
 </rule>
 
 Manual check needed! Unknown condition
-<rule id="260192" level="12">
+<rule id="260192" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">net view /DOMAIN</field>
 	<description>ATT&CK T1059 T1077 T1083 T1135: Turla Group Lateral Movement</description>
@@ -27,7 +27,7 @@ Manual check needed! Unknown condition
 	<group>attack.g0010,attack.execution,attack.t1059,attack.lateral_movement,attack.t1077,attack.discovery,attack.t1083,attack.t1135,MITRE</group>
 </rule>
 
-<rule id="260193" level="12">
+<rule id="260193" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">net session</field>
 	<description>ATT&CK T1059 T1077 T1083 T1135: Turla Group Lateral Movement</description>
@@ -38,7 +38,7 @@ Manual check needed! Unknown condition
 	<group>attack.g0010,attack.execution,attack.t1059,attack.lateral_movement,attack.t1077,attack.discovery,attack.t1083,attack.t1135,MITRE</group>
 </rule>
 
-<rule id="260194" level="12">
+<rule id="260194" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">net share</field>
 	<description>ATT&CK T1059 T1077 T1083 T1135: Turla Group Lateral Movement</description>
@@ -49,7 +49,7 @@ Manual check needed! Unknown condition
 	<group>attack.g0010,attack.execution,attack.t1059,attack.lateral_movement,attack.t1077,attack.discovery,attack.t1083,attack.t1135,MITRE</group>
 </rule>
 
-<rule id="260195" level="12">
+<rule id="260195" level="10">
 	<if_group>sysmon_event1</if_group>
 Manual check needed! Rule failed Field: 1
 Manual check needed! Rule failed Field: m

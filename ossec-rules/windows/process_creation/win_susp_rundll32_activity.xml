@@ -1,4 +1,4 @@
-<rule id="261890" level="12">
+<rule id="261890" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\.\\rundll32.exe\. url.dll,\.OpenURL \.|\.\\rundll32.exe\. url.dll,\.OpenURLA \.|\.\\rundll32.exe\. url.dll,\.FileProtocolHandler \.|\.\\rundll32.exe\. zipfldr.dll,\.RouteTheCall \.|\.\\rundll32.exe\. Shell32.dll,\.Control_RunDLL \.|\.\\rundll32.exe javascript:\.|\. url.dll,\.OpenURL \.|\. url.dll,\.OpenURLA \.|\. url.dll,\.FileProtocolHandler \.|\. zipfldr.dll,\.RouteTheCall \.|\. Shell32.dll,\.Control_RunDLL \.|\. javascript:\.|\..RegisterXLL\.</field>
 	<description>ATT&CK T1085: Suspicious Rundll32 Activity</description>

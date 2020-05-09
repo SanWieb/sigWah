@@ -1,4 +1,4 @@
-<rule id="261570" level="12">
+<rule id="261570" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\.\\\\wwwroot\\\\\.|\.\\\\wmpub\\\\\.|\.\\\\htdocs\\\\\.</field>
 	<description>ATT&CK T1100: Execution in Webserver Root Folder</description>

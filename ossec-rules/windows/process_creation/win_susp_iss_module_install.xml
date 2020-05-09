@@ -1,4 +1,4 @@
-<rule id="261620" level="12">
+<rule id="261620" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\.\\APPCMD.EXE install module /name:\.</field>
 	<description>ATT&CK T1100: IIS Native-Code Module Command Line Installation</description>

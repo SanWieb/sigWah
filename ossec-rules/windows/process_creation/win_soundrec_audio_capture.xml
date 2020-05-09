@@ -1,4 +1,4 @@
-<rule id="261300" level="12">
+<rule id="261300" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\SoundRecorder.exe$</field>
 	<field name="win.eventdata.CommandLine">/FILE</field>

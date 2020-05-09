@@ -1,4 +1,4 @@
-<rule id="261100" level="12">
+<rule id="261100" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\.\\\\bitsadmin.exe</field>
 	<field name="win.eventdata.CommandLine">\. /transfer \.</field>
@@ -11,7 +11,7 @@
 	<group>attack.defense_evasion,attack.persistence,attack.t1197,attack.s0190,MITRE</group>
 </rule>
 
-<rule id="261101" level="12">
+<rule id="261101" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\.copy bitsadmin.exe\.</field>
 	<description>ATT&CK T1197 S0190: Bitsadmin Download</description>

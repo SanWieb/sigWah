@@ -1,4 +1,4 @@
-<rule id="262130" level="12">
+<rule id="262130" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\nltest.exe$</field>
 	<field name="win.eventdata.CommandLine">domain_trusts</field>

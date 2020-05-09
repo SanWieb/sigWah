@@ -1,7 +1,7 @@
-<rule id="261320" level="12">
+<rule id="261320" level="10">
 	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule failed Field: NewProcessName
-Manual check needed! Rule failed Field: ProcessCommandLine
+	<field name="win.eventdata.Image">\.\\\\bcdedit.exe</field>
+	<field name="win.eventdata.CommandLine">\.delete\.|\.deletevalue\.|\.import\.</field>
 	<description>ATT&CK T1070 T1067: Possible Ransomware or Unauthorized MBR Modifications</description>
 	<info type="text">Detects, possibly, malicious unauthorized usage of bcdedit.exe </info>
 	<info type="text">Falsepositives: Administrator Activity. </info>

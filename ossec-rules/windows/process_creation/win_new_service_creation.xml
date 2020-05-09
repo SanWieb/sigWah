@@ -1,4 +1,4 @@
-<rule id="260920" level="6">
+<rule id="260920" level="8">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\sc.exe$</field>
 	<field name="win.eventdata.CommandLine">create</field>

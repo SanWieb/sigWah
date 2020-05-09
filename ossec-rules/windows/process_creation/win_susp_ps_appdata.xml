@@ -1,4 +1,4 @@
-<rule id="261830" level="12">
+<rule id="261830" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\. /c powershell\.\\AppData\\Local\\\.|\. /c powershell\.\\AppData\\Roaming\\\.</field>
 	<description>ATT&CK T1086: PowerShell Script Run in AppData</description>

@@ -1,4 +1,4 @@
-<rule id="260930" level="12">
+<rule id="260930" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\powershell.exe$</field>
 	<description>ATT&CK T1086: Non Interactive PowerShell</description>

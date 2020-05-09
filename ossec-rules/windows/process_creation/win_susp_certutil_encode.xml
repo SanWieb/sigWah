@@ -1,4 +1,4 @@
-<rule id="261370" level="12">
+<rule id="261370" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">certutil -f -encode \.|certutil.exe -f -encode \.|certutil -encode -f \.|certutil.exe -encode -f \.</field>
 	<description>ATT&CK: Certutil Encode</description>

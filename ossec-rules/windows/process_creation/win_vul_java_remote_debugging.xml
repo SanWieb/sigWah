@@ -1,5 +1,5 @@
 Manual check needed! Unknown condition
-<rule id="262180" level="12">
+<rule id="262180" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\.transport=dt_socket,address=\.</field>
 	<description>ATT&CK T1046: Java Running with Remote Debugging</description>
@@ -9,7 +9,7 @@ Manual check needed! Unknown condition
 	<group>attack.discovery,attack.t1046,MITRE</group>
 </rule>
 
-<rule id="262181" level="12">
+<rule id="262181" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\.address=127.0.0.1\.</field>
 	<field name="win.eventdata.CommandLine">\.address=localhost\.</field>

@@ -1,4 +1,4 @@
-<rule id="261180" level="12">
+<rule id="261180" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.OriginalFileName">cmd.exe|powershell.exe|powershell_ise.exe|psexec.exe|psexec.c|cscript.exe|wscript.exe|mshta.exe|regsvr32.exe|wmic.exe|certutil.exe|rundll32.exe|cmstp.exe|msiexec.exe|7z.exe|winrar.exe|wevtutil.exe|net.exe|net1.exe|netsh.exe</field>
 	<description>ATT&CK T1036: Renamed Binary</description>

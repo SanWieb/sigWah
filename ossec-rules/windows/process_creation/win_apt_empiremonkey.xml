@@ -14,7 +14,7 @@ Manual check needed! Unknown condition
 <rule id="260092" level="%">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\./i:\.\AppData\\.\\logs.txt scrobj.dll</field>
-Manual check needed! Rule failed Field: Description
+	<field name="win.eventdata.Description">Microsoft\(C\) Registerserver</field>
 	<description>ATT&CK T1086: Empire Monkey</description>
 	<info type="text">Detects EmpireMonkey APT reported Activity </info>
 	<info type="text">Falsepositives: Very Unlikely. </info>

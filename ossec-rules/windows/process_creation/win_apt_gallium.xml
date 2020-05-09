@@ -21,7 +21,7 @@ Manual check needed! Unknown condition
 Manual check needed! Unknown condition
 <rule id="260112" level="%">
 	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule failed Field: EventID
+	<field name="win.eventdata.EventID">257</field>
 Manual check needed! Rule failed Field: QNAME
 	<description>ATT&CK: GALLIUM Artefacts</description>
 	<info type="text">Detects artefacts associated with activity group GALLIUM - Microsoft Threat Intelligence Center indicators released in December 2019. </info>
@@ -35,7 +35,7 @@ Manual check needed! Rule failed Field: QNAME
 Manual check needed! Unknown condition
 <rule id="260114" level="%">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">:\\\\Program Files\\(x86\\)\)\\\\|:\\\\Program Files\\\\</field>
+	<field name="win.eventdata.Image">:\\\\Program Files\(x86\)\\\\|:\\\\Program Files\\\\</field>
 	<description>ATT&CK: GALLIUM Artefacts</description>
 	<info type="text">Detects artefacts associated with activity group GALLIUM - Microsoft Threat Intelligence Center indicators released in December 2019. </info>
 	<info type="text">Falsepositives: unknown. </info>

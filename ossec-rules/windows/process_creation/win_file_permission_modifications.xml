@@ -1,4 +1,4 @@
-<rule id="260470" level="12">
+<rule id="260470" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\takeown.exe$|\\\\cacls.exe$|\\\\icacls.exe$</field>
 	<field name="win.eventdata.CommandLine">/grant</field>

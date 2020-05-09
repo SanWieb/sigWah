@@ -1,4 +1,4 @@
-<rule id="261400" level="12">
+<rule id="261400" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">chcp\. 936|chcp\. 1258</field>
 	<description>ATT&CK: Suspicious Code Page Switch</description>

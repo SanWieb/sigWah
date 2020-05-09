@@ -1,5 +1,5 @@
 Manual check needed! Unknown condition
-<rule id="260790" level="12">
+<rule id="260790" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">DumpCreds|invoke-mimikatz</field>
 	<description>ATT&CK T1003: Mimikatz Command Line</description>
@@ -10,7 +10,7 @@ Manual check needed! Unknown condition
 	<group>attack.credential_access,attack.t1003,MITRE</group>
 </rule>
 
-<rule id="260791" level="12">
+<rule id="260791" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">rpc|token|crypto|dpapi|sekurlsa|kerberos|lsadump|privilege|process</field>
 	<description>ATT&CK T1003: Mimikatz Command Line</description>
@@ -21,7 +21,7 @@ Manual check needed! Unknown condition
 	<group>attack.credential_access,attack.t1003,MITRE</group>
 </rule>
 
-<rule id="260792" level="12">
+<rule id="260792" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">::</field>
 	<description>ATT&CK T1003: Mimikatz Command Line</description>

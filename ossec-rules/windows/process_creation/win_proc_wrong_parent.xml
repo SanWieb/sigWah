@@ -1,5 +1,5 @@
 Manual check needed! Unknown condition
-<rule id="261120" level="6">
+<rule id="261120" level="8">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\.\\\\svchost.exe|\.\\\\taskhost.exe|\.\\\\lsm.exe|\.\\\\lsass.exe|\.\\\\services.exe|\.\\\\lsaiso.exe|\.\\\\csrss.exe|\.\\\\wininit.exe|\.\\\\winlogon.exe</field>
 	<description>ATT&CK T1036: Windows Processes Suspicious Parent Directory</description>
@@ -13,7 +13,7 @@ Manual check needed! Unknown condition
 	<group>attack.defense_evasion,attack.t1036,MITRE</group>
 </rule>
 
-<rule id="261121" level="6">
+<rule id="261121" level="8">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentImage">\.\\\\System32\\\\\.|\.\\\\SysWOW64\\\\\.|\.\\\\SavService.exe|\.\\\\Windows Defender\\\\\.\\\\MsMpEng.exe</field>
 	<description>ATT&CK T1036: Windows Processes Suspicious Parent Directory</description>
@@ -27,7 +27,7 @@ Manual check needed! Unknown condition
 	<group>attack.defense_evasion,attack.t1036,MITRE</group>
 </rule>
 
-<rule id="261122" level="6">
+<rule id="261122" level="8">
 	<if_group>sysmon_event1</if_group>
 Manual check needed! Rule parse failed (Parse Common)
 	<description>ATT&CK T1036: Windows Processes Suspicious Parent Directory</description>

@@ -1,4 +1,4 @@
-<rule id="261040" level="12">
+<rule id="261040" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine"> -version 2 | -versio 2 | -versi 2 | -vers 2 | -ver 2 | -ve 2 </field>
 	<field name="win.eventdata.Image">\\\\powershell.exe$</field>

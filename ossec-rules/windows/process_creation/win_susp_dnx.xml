@@ -1,4 +1,4 @@
-<rule id="261520" level="12">
+<rule id="261520" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\dnx.exe$</field>
 	<description>ATT&CK T1218: Application Whitelisting Bypass via Dnx.exe</description>

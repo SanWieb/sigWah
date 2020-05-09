@@ -1,6 +1,6 @@
 <rule id="261060" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">::FromBase64String\\(</field>
+	<field name="win.eventdata.CommandLine">::FromBase64String\(</field>
 	<description>ATT&CK T1027: FromBase64String Command Line</description>
 	<info type="text">Detects suspicious FromBase64String expressions in command line arguments </info>
 	<info type="text">Falsepositives: Administrative script libraries. </info>

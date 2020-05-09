@@ -1,4 +1,4 @@
-<rule id="261590" level="12">
+<rule id="261590" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">netsh firewall set opmode mode=disable|netsh advfirewall set \. state off</field>
 	<description>ATT&CK: Firewall Disabled via Netsh</description>

@@ -1,6 +1,6 @@
-<rule id="261260" level="12">
+<rule id="261260" level="10">
 	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule failed Field: NewProcessName|endswith
+	<field name="win.eventdata.Image">\\\\powershell.exe$|\\\\wmic.exe$|\\\\vssadmin.exe$</field>
 	<field name="win.eventdata.CommandLine">shadow</field>
 	<field name="win.eventdata.CommandLine">create</field>
 	<description>ATT&CK T1003: Shadow Copies Creation Using Operating Systems Utilities</description>

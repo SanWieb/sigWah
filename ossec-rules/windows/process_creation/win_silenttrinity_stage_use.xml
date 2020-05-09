@@ -1,6 +1,6 @@
 <rule id="261290" level="14">
 	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule failed Field: Description|contains
+	<field name="win.eventdata.Description">st2stager</field>
 	<description>ATT&CK: SILENTTRINITY Stager Execution</description>
 	<info type="text">Detects SILENTTRINITY stager use </info>
 	<info type="text">Falsepositives: unknown. </info>
@@ -18,7 +18,7 @@ Manual check needed! Rule failed Field: Description|contains
 Manual check needed! Unknown condition
 <rule id="261292" level="%">
 	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule failed Field: EventID
+	<field name="win.eventdata.EventID">7</field>
 	<description>ATT&CK: SILENTTRINITY Stager Execution</description>
 	<info type="text">Detects SILENTTRINITY stager use </info>
 	<info type="text">Falsepositives: unknown. </info>

@@ -1,6 +1,6 @@
 <rule id="261270" level="15">
 	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule failed Field: NewProcessName|endswith
+	<field name="win.eventdata.Image">\\\\powershell.exe$|\\\\wmic.exe$|\\\\vssadmin.exe$</field>
 	<field name="win.eventdata.CommandLine">shadow</field>
 	<field name="win.eventdata.CommandLine">delete</field>
 	<description>ATT&CK T1070 T1490: Shadow Copies Deletion Using Operating Systems Utilities</description>

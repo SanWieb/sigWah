@@ -1,7 +1,7 @@
-<rule id="261050" level="12">
+<rule id="261050" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\.\\\\powershell.exe</field>
-	<field name="win.eventdata.CommandLine">\.new-object system.net.webclient\\)\).downloadstring\\(\.|\.new-object system.net.webclient\\)\).downloadfile\\(\.|\.new-object net.webclient\\)\).downloadstring\\(\.|\.new-object net.webclient\\)\).downloadfile\\(\.</field>
+	<field name="win.eventdata.CommandLine">\.new-object system.net.webclient\).downloadstring\(\.|\.new-object system.net.webclient\).downloadfile\(\.|\.new-object net.webclient\).downloadstring\(\.|\.new-object net.webclient\).downloadfile\(\.</field>
 	<description>ATT&CK T1086: PowerShell Download from URL</description>
 	<info type="text">Detects a Powershell process that contains download commands in its command line string </info>
 	<info type="text">Falsepositives: unknown. </info>

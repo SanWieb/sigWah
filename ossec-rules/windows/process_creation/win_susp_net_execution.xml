@@ -1,5 +1,5 @@
 Manual check needed! Unknown condition
-<rule id="261670" level="6">
+<rule id="261670" level="8">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\.\\\\net.exe|\.\\\\net1.exe</field>
 	<description>ATT&CK S0039 T1027 T1049 T1077 T1135: Net.exe Execution</description>
@@ -13,7 +13,7 @@ Manual check needed! Unknown condition
 	<group>attack.s0039,attack.t1027,attack.t1049,attack.t1077,attack.t1135,attack.lateral_movement,attack.discovery,attack.defense_evasion,MITRE</group>
 </rule>
 
-<rule id="261671" level="6">
+<rule id="261671" level="8">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\. group\.|\. localgroup\.|\. user\.|\. view\.|\. share|\. accounts\.|\. use\.|\. stop \.</field>
 	<description>ATT&CK S0039 T1027 T1049 T1077 T1135: Net.exe Execution</description>

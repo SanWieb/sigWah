@@ -1,7 +1,7 @@
 Manual check needed! Unknown condition
 <rule id="260041" level="%">
 	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule failed Field: EventID
+	<field name="win.eventdata.EventID">7045</field>
 Manual check needed! Rule failed Field: ServiceName
 	<description>ATT&CK T1053 S0111 T1112: Chafer Activity</description>
 	<info type="text">Detects Chafer activity attributed to OilRig as reported in Nyotron report in March 2018 </info>
@@ -14,7 +14,7 @@ Manual check needed! Rule failed Field: ServiceName
 Manual check needed! Unknown condition
 <rule id="260042" level="%">
 	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule failed Field: EventID
+	<field name="win.eventdata.EventID">4698</field>
 Manual check needed! Rule failed Field: TaskName
 	<description>ATT&CK T1053 S0111 T1112: Chafer Activity</description>
 	<info type="text">Detects Chafer activity attributed to OilRig as reported in Nyotron report in March 2018 </info>
@@ -27,7 +27,7 @@ Manual check needed! Rule failed Field: TaskName
 Manual check needed! Unknown condition
 <rule id="260043" level="%">
 	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule failed Field: EventID
+	<field name="win.eventdata.EventID">13</field>
 Manual check needed! Rule failed Field: TargetObject
 Manual check needed! Rule failed Field: EventType
 	<description>ATT&CK T1053 S0111 T1112: Chafer Activity</description>
@@ -40,7 +40,7 @@ Manual check needed! Rule failed Field: EventType
 
 <rule id="260044" level="%">
 	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule failed Field: EventID
+	<field name="win.eventdata.EventID">13</field>
 Manual check needed! Rule failed Field: TargetObject
 Manual check needed! Rule failed Field: EventType
 Manual check needed! Rule failed Field: Details
