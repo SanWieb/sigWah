@@ -21,40 +21,47 @@ class SigmaOssec(object):
         self.static_lastpart = {}
         self.output = {}
         self.rulenumber = rulenumber
-        if len(documentData) != 1:
-            self.output['validation_failed_xml'] = 'Manual check needed! More than 1 XML document'
-        self.data = documentData[0]
+        self.documentData = documentData
         self.output = self.validate_syntax(self.data, self.output)
 
     def getOutput(self):
-        data = self.data
+        documentData = self.documentData
         # static rule entries #
         self.static_ifgroup = '\t<if_group>sysmon_event1</if_group>'
-        self.static_title = self.getTitle(data)
-        self.static_title_whitelist = self.getTitle(data, True)
-        self.static_lastpart = self.getLastPart(data)
-        output = self.output
-        if 'detection' not in data.keys():
-            output['validation_failed_detection'] = 'Manual check needed! No detection key'
-            output['opentag'] = self.getOpenTag(data)
-            output['if_group'] = '\t<if_group>sysmon_event1</if_group>'
-            output['title'] = self.getTitle(data)
-            output = self.getLastPart(data, output)
-            return output
-
-        elif self.data['detection']['condition'] in ['selection', '1 of them', 'selection1 or selection2',
-                                                'selection1 or selection2 or selection3']:
-            output = self.handle_standard_or(data, output)
-            return output
-        elif self.data['detection']['condition'] in ['selection and not filter']:
-            output = self.handle_and_not_filter(data, output)
-            output['validation_failed_detection'] = 'Manual check needed! Selection and not filter'
-            return output
-        else:
-            output['validation_failed_detection'] = 'Manual check needed! Unknown condition'
-            # manual check needed, for now it will be processed as OR statement
-            output = self.handle_standard_or(data, output)
-            return output
+        self.static_title = self.getTitle(documentData[0])
+        self.static_title_whitelist = self.getTitle(documentData[0], True)
+        self.static_lastpart = self.getLastPart(documentData[0])
+        if len(documentData) != 1:
+            self.output['validation_failed_xml'] = 'Manual check needed! More than 1 XML document'
+        output_all = {}
+        document_number = 1
+        for data in documentData:
+            output = {}
+            if 'detection' not in data.keys():
+                output['validation_failed_detection'] = 'Manual check needed! No detection key'
+                output['opentag'] = self.getOpenTag(data)
+                output['if_group'] = '\t<if_group>sysmon_event1</if_group>'
+                output['title'] = self.static_title
+                output = self.static_lastpart
+            elif 'condition' not in data['detection'].keys():
+                output['validation_failed_detection'] = 'Manual check needed! Unknown condition'
+                # manual check needed, for now it will be processed as OR statement
+                output = self.handle_standard_or(data, output)
+            elif data['detection']['condition'] in ['selection', '1 of them', 'selection1 or selection2',
+                                                    'selection1 or selection2 or selection3']:
+                output = self.handle_standard_or(data, output)
+            elif data['detection']['condition'] in ['selection and not filter']:
+                output = self.handle_and_not_filter(data, output)
+                output['validation_failed_detection'] = '!Selection and not filter'
+            else:
+                output['validation_failed_detection'] = 'Manual check needed! Unknown condition'
+                # manual check needed, for now it will be processed as OR statement
+                output = self.handle_standard_or(data, output)
+            # merge the document
+            for lines in output:
+                output_all['{}{}'.format(lines, document_number)] = output[lines]
+            document_number += 1
+        return output_all
 
     def handle_standard_or(self, data, output):
         section_number = 1
@@ -63,13 +70,9 @@ class SigmaOssec(object):
             if selection != 'condition':
                 # start rule
                 output['opentag{}'.format(section_number)] = self.getOpenTag(data)
-                output['if_group'] = self.static_ifgroup
+                output['if_group{}'.format(section_number)] = self.static_ifgroup
                 # get the detection rules (fieldnames)
-                all_rules = []
-                for fieldname in data['detection'][selection]:
-                    field_rule = self.start_parse(data['detection'][selection], fieldname)
-                    for rule in field_rule:
-                        all_rules.append(rule)
+                all_rules = self.start_parse(data['detection'][selection])
                 output['field_rule{}'.format(section_number)] = all_rules
                 # finish with the last part of the rule
                 output['title{}'.format(section_number)] = self.static_title
@@ -90,17 +93,13 @@ class SigmaOssec(object):
                 if selection != 'filter':
                     # start rule
                     output['opentag{}'.format(section_number)] = self.getOpenTag(data)
-                    output['if_group'] = self.static_ifgroup
+                    output['if_group{}'.format(section_number)] = self.static_ifgroup
                 else:
                     # start rule
                     output['opentag{}'.format(section_number)] = self.getOpenTag(data, True)
                     output['if_group{}'.format(section_number)] = '\t<if_sid>{}</if_sid>'.format(self.rulenumber - 1)
                 # get the detection rules (fieldnames)
-                all_rules = []
-                for fieldname in data['detection'][selection]:
-                    field_rule = self.start_parse(data['detection'][selection], fieldname)
-                    for rule in field_rule:
-                        all_rules.append(rule)
+                all_rules = self.start_parse(data['detection'][selection])
                 output['field_rule{}'.format(section_number)] = all_rules
                 # Whitelist rules only get the <description> tag
                 if selection == 'filter':
@@ -120,20 +119,18 @@ class SigmaOssec(object):
         return output
 
 # ------------- Parse Functions ------------- #
-    def start_parse(self, selection, fieldname):
+    def start_parse(self, selectionList):
+        # Change all types to list
+        # Some Sigma syntax is wrong (dict in a list)
+        # Easiest way to solve is to set everything in list
+        if type(selectionList) is dict:
+            selectionList = [selectionList]
         all_rules = []
-        if type(fieldname) == dict:
-            # for sub_fieldname in selection[0]:
-            #     dict_rules = (self.parse_value_modifiers(selection[0], sub_fieldname))
-            #     for rule in dict_rules:
-            #         all_rules.append(rule)
-            for sub_selection in selection:
-                for sub_fieldname in sub_selection:
-                    dict_rules = (self.parse_value_modifiers(sub_selection, sub_fieldname))
-                    for rule in dict_rules:
-                        all_rules.append(rule)
-        else:
-            all_rules = self.parse_value_modifiers(selection, fieldname)
+        for selection in selectionList:
+            for fieldname in selection:
+                sub_rules = self.parse_value_modifiers(selection, fieldname)
+                for rule in sub_rules:
+                    all_rules.append(rule)
         return all_rules
 
     def parse_value_modifiers(self, selection, fieldname):
@@ -165,8 +162,8 @@ class SigmaOssec(object):
 
     def parse_fieldtype(self, selection, fieldname, modifier=0):
         # check if type = dict, if not Sigma rule syntax is wrong
-        # Change type to right dict
         if type(selection) is str:
+            # Change type to  dict
             selection = {fieldname: selection}
         start_string = ''
         end_string = ''
@@ -372,10 +369,10 @@ class SigmaOssec(object):
 
     def convertLevel(self, level):
         return {
-            'critical': 12,
-            'high': 12,
-            'medium': 8,
-            'low': 5
+            'critical': 15,
+            'high': 14,
+            'medium': 12,
+            'low': 6
         }.get(level, '%')
 
 
@@ -399,9 +396,10 @@ def writeFile(output, filename):
 
 
 def main():
-    rule_number = 250000
+    rule_number = 260000
     for filename in os.listdir(directory):
         if filename.endswith(".yml"):
+            print(filename)
             documentData = readFile(os.path.join(directory, filename))
             sigmaconvert = SigmaOssec(documentData, rule_number)
             output = sigmaconvert.getOutput()
