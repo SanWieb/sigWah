@@ -52,7 +52,7 @@ class SigmaOssec(object):
             return output
         else:
             output['validation_failed_detection'] = 'Manual check needed! Unknown condition'
-            # manual check needen, for now it will be processed as OR statement
+            # manual check needed, for now it will be processed as OR statement
             output = self.handle_standard_or(data, output)
             return output
 
@@ -102,11 +102,12 @@ class SigmaOssec(object):
                     for rule in field_rule:
                         all_rules.append(rule)
                 output['field_rule{}'.format(section_number)] = all_rules
-                # finish with the last part of the rule
+                # Whitelist rules only get the <description> tag
                 if selection == 'filter':
                     output['title{}'.format(section_number)] = self.static_title_whitelist
                     output['close_rule{}'.format(section_number)] = '</rule>'
                 else:
+                    # finish with the last part of the rule
                     output['title{}'.format(section_number)] = self.static_title
                     lastpart = self.static_lastpart
                     # merge lastpart in output
@@ -122,22 +123,22 @@ class SigmaOssec(object):
     def start_parse(self, selection, fieldname):
         all_rules = []
         if type(fieldname) == dict:
+            # for sub_fieldname in selection[0]:
+            #     dict_rules = (self.parse_value_modifiers(selection[0], sub_fieldname))
+            #     for rule in dict_rules:
+            #         all_rules.append(rule)
             for sub_selection in selection:
                 for sub_fieldname in sub_selection:
-                    print(sub_selection)
                     dict_rules = (self.parse_value_modifiers(sub_selection, sub_fieldname))
                     for rule in dict_rules:
                         all_rules.append(rule)
-            print(all_rules)
         else:
             all_rules = self.parse_value_modifiers(selection, fieldname)
         return all_rules
 
     def parse_value_modifiers(self, selection, fieldname):
         field_rules = []
-        fieldname_splitted = fieldname
-        if type(fieldname) == str:
-            fieldname_splitted = fieldname.split('|')
+        fieldname_splitted = fieldname.split('|')
         # normal contains
         if len(fieldname_splitted) == 1:
             field_rules.append(self.parse_fieldtype(selection, fieldname))
@@ -163,29 +164,31 @@ class SigmaOssec(object):
         return field_rules
 
     def parse_fieldtype(self, selection, fieldname, modifier=0):
+        # check if type = dict, if not Sigma rule syntax is wrong
+        # Change type to right dict
+        if type(selection) is str:
+            selection = {fieldname: selection}
         start_string = ''
         end_string = ''
         if modifier == 1:
             start_string = '^'
         elif modifier == 2:
             end_string = '$'
-        try:
-            fieldname_stripped = fieldname.split('|')[0].lower()
-            rule = ''
-            if fieldname_stripped in ['commandline', 'command']:
-                rule = self.parse_commandline(selection, fieldname, start_string, end_string)
-            elif fieldname_stripped in ['sha1', 'sha256', 'md5', 'imphash']:
-                rule = self.parse_hash(selection, fieldname)
-            elif fieldname_stripped in self.common_fields:
-                rule = self.parse_common(selection, fieldname, start_string, end_string)
-            else:
-                rule = 'Manual check needed! Rule failed Field: {}'.format(fieldname)
-            return rule
-        except Exception as e:
-            return 'Manual check needed! Rule failed (exception)'
+        # try:
+        fieldname_stripped = fieldname.split('|')[0].lower()
+        if fieldname_stripped in ['commandline', 'command']:
+            rule = self.parse_commandline(selection, fieldname, start_string, end_string)
+        elif fieldname_stripped in ['sha1', 'sha256', 'md5', 'imphash']:
+            rule = self.parse_hash(selection, fieldname)
+        elif fieldname_stripped in self.common_fields:
+            rule = self.parse_common(selection, fieldname, start_string, end_string)
+        else:
+            rule = 'Manual check needed! Rule failed Field: {}'.format(fieldname)
+        return rule
 
     def parse_commandline(self, selection, fieldname, start_string, end_string):
         query = ''
+        # handle wrong syntax of Sigma > should be dict not str
         if type(selection[fieldname]) == list:
             first_key = True
             for item in selection[fieldname]:
