@@ -8,8 +8,8 @@
 <rule id="260220" level="%">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.EventID">4799</field>
-Manual check needed! Rule failed Field: GroupName
-Manual check needed! Rule failed Field: ProcessName
+	<field name="win.eventdata.GroupName">Administrators</field>
+	<field name="win.eventdata.ProcessName">\.\\\\checkadmin.exe</field>
 	<description>ATT&CK: Operation Wocao Activity</description>
 	<info type="text">Detects activity mentioned in Operation Wocao report </info>
 	<info type="text">Falsepositives: Administrators that use checkadmin.exe tool to enumerate local administrators. </info>

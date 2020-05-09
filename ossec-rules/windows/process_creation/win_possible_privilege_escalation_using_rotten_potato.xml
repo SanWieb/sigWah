@@ -1,7 +1,7 @@
 Manual check needed! Unknown condition
 <rule id="260980" level="14">
 	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule failed Field: ParentUser
+	<field name="win.eventdata.ParentUser">NT AUTHORITY\\\\NETWORK SERVICE|NT AUTHORITY\\\\LOCAL SERVICE</field>
 	<field name="win.eventdata.User">NT AUTHORITY\\\\SYSTEM</field>
 	<description>ATT&CK T1134: Detection of Possible Rotten Potato</description>
 	<info type="text">Detection of child processes spawned with SYSTEM privileges by parents with LOCAL SERVICE or NETWORK SERVICE privileges </info>

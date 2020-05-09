@@ -2,7 +2,7 @@ Manual check needed! Unknown condition
 <rule id="260041" level="%">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.EventID">7045</field>
-Manual check needed! Rule failed Field: ServiceName
+	<field name="win.eventdata.ServiceName">SC Scheduled Scan|UpdatMachine</field>
 	<description>ATT&CK T1053 S0111 T1112: Chafer Activity</description>
 	<info type="text">Detects Chafer activity attributed to OilRig as reported in Nyotron report in March 2018 </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -15,7 +15,7 @@ Manual check needed! Unknown condition
 <rule id="260042" level="%">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.EventID">4698</field>
-Manual check needed! Rule failed Field: TaskName
+	<field name="win.eventdata.TaskName">SC Scheduled Scan|UpdatMachine</field>
 	<description>ATT&CK T1053 S0111 T1112: Chafer Activity</description>
 	<info type="text">Detects Chafer activity attributed to OilRig as reported in Nyotron report in March 2018 </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -28,8 +28,8 @@ Manual check needed! Unknown condition
 <rule id="260043" level="%">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.EventID">13</field>
-Manual check needed! Rule failed Field: TargetObject
-Manual check needed! Rule failed Field: EventType
+	<field name="win.eventdata.TargetObject">\.SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\UMe|\.SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\UT</field>
+	<field name="win.eventdata.EventType">SetValue</field>
 	<description>ATT&CK T1053 S0111 T1112: Chafer Activity</description>
 	<info type="text">Detects Chafer activity attributed to OilRig as reported in Nyotron report in March 2018 </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -41,9 +41,9 @@ Manual check needed! Rule failed Field: EventType
 <rule id="260044" level="%">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.EventID">13</field>
-Manual check needed! Rule failed Field: TargetObject
-Manual check needed! Rule failed Field: EventType
-Manual check needed! Rule failed Field: Details
+	<field name="win.eventdata.TargetObject">\.\\\\Control\\\\SecurityProviders\\\\WDigest\\\\UseLogonCredential</field>
+	<field name="win.eventdata.EventType">SetValue</field>
+	<field name="win.eventdata.Details">DWORD \(0x00000001\)</field>
 	<description>ATT&CK T1053 S0111 T1112: Chafer Activity</description>
 	<info type="text">Detects Chafer activity attributed to OilRig as reported in Nyotron report in March 2018 </info>
 	<info type="text">Falsepositives: Unknown. </info>

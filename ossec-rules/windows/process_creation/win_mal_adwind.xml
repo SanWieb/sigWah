@@ -15,7 +15,7 @@ Manual check needed! Unknown condition
 <rule id="260762" level="%">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.EventID">11</field>
-Manual check needed! Rule failed Field: TargetFilename
+	<field name="win.eventdata.TargetFilename">\.\\\\AppData\\\\Roaming\\\\Oracle\\\\bin\\\\java\..exe|\.\\\\Retrive\..vbs</field>
 	<description>ATT&CK T1064: Adwind RAT / JRAT</description>
 	<info type="text">Detects javaw.exe in AppData folder as used by Adwind / JRAT </info>
 	<info type="text">Falsepositives: Diskpart.exe usage to manage partitions on the local hard drive. </info>
@@ -29,8 +29,8 @@ Manual check needed! Unknown condition
 <rule id="260763" level="%">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.EventID">13</field>
-Manual check needed! Rule failed Field: TargetObject
-Manual check needed! Rule failed Field: Details
+	<field name="win.eventdata.TargetObject">HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\.</field>
+	<field name="win.eventdata.Details">\.\AppData\\.\\\\Roaming\\\\Oracle\\\\bin\\\\\.</field>
 	<description>ATT&CK T1064: Adwind RAT / JRAT</description>
 	<info type="text">Detects javaw.exe in AppData folder as used by Adwind / JRAT </info>
 	<info type="text">Falsepositives: Diskpart.exe usage to manage partitions on the local hard drive. </info>
