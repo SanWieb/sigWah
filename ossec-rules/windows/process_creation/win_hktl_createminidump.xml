@@ -1,15 +1,4 @@
-Manual check needed! No detection key
 <rule id="260540" level="14">
-	<if_group>sysmon_event1</if_group>
-	<description>ATT&CK T1003: CreateMiniDump Hacktool</description>
-	<info type="text">Detects the use of CreateMiniDump hack tool used to dump the LSASS process memory for credential extraction on the attacker's machine </info>
-	<info type="text">Falsepositives: Unknown. </info>
-	<info type="text">Sigma UUID: 36d88494-1d43-4dc0-b3fa-35c8fea0ca9d </info>
-	<info type="link">https://ired.team/offensive-security/credential-access-and-credential-dumping/dumping-lsass-passwords-without-mimikatz-minidumpwritedump-av-signature-bypass </info>
-	<group>attack.credential_access,attack.t1003,MITRE</group>
-</rule>
-
-<rule id="260540" level="%">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\CreateMiniDump.exe</field>
 	<description>ATT&CK T1003: CreateMiniDump Hacktool</description>
@@ -20,9 +9,9 @@ Manual check needed! No detection key
 	<group>attack.credential_access,attack.t1003,MITRE</group>
 </rule>
 
-<rule id="260541" level="%">
+<rule id="260541" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Hashes"></field>
+	<field name="win.eventdata.Hashes">IMPHASH=4a07f944a83e8a7c2525efa35dd30e2f</field>
 	<description>ATT&CK T1003: CreateMiniDump Hacktool</description>
 	<info type="text">Detects the use of CreateMiniDump hack tool used to dump the LSASS process memory for credential extraction on the attacker's machine </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -31,8 +20,7 @@ Manual check needed! No detection key
 	<group>attack.credential_access,attack.t1003,MITRE</group>
 </rule>
 
-<rule id="260543" level="%">
-	<if_group>sysmon_event1</if_group>
+<rule id="260543" level="14">
 	<field name="win.eventdata.EventID">11</field>
 	<field name="win.eventdata.TargetFileName">\.\\\\lsass.dmp</field>
 	<description>ATT&CK T1003: CreateMiniDump Hacktool</description>
@@ -42,4 +30,3 @@ Manual check needed! No detection key
 	<info type="link">https://ired.team/offensive-security/credential-access-and-credential-dumping/dumping-lsass-passwords-without-mimikatz-minidumpwritedump-av-signature-bypass </info>
 	<group>attack.credential_access,attack.t1003,MITRE</group>
 </rule>
-

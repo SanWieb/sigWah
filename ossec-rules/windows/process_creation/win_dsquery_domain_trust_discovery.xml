@@ -3,6 +3,16 @@
 	<field name="win.eventdata.Image">\\\\dsquery.exe$</field>
 	<field name="win.eventdata.CommandLine">-filter</field>
 	<field name="win.eventdata.CommandLine">trustedDomain</field>
+	<description>ATT&CK T1482: Domain Trust Discovery</description>
+	<info type="text">Detects a discovery of domain trusts </info>
+	<info type="text">Falsepositives: Administration of systems. </info>
+	<info type="text">Sigma UUID: 77815820-246c-47b8-9741-e0def3f57308 </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1482/T1482.yaml </info>
+	<group>attack.discovery,attack.t1482,MITRE</group>
+</rule>
+
+<rule id="260351" level="10">
+	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\nltest.exe$</field>
 	<field name="win.eventdata.CommandLine">domain_trusts</field>
 	<description>ATT&CK T1482: Domain Trust Discovery</description>
@@ -12,4 +22,3 @@
 	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1482/T1482.yaml </info>
 	<group>attack.discovery,attack.t1482,MITRE</group>
 </rule>
-

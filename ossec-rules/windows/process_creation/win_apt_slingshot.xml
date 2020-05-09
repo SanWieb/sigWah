@@ -1,5 +1,5 @@
 Manual check needed! Unknown condition
-<rule id="260151" level="%">
+<rule id="260151" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\.schtasks\. /delete \.Defrag\\ScheduledDefrag\.</field>
 	<description>ATT&CK T1053 S0111: Defrag Deactivation</description>
@@ -10,9 +10,7 @@ Manual check needed! Unknown condition
 	<group>attack.persistence,attack.t1053,attack.s0111,MITRE</group>
 </rule>
 
-Manual check needed! Unknown condition
-<rule id="260152" level="%">
-	<if_group>sysmon_event1</if_group>
+<rule id="260152" level="10">
 	<field name="win.eventdata.EventID">4701</field>
 	<field name="win.eventdata.TaskName">\\\\Microsoft\\\\Windows\\\\Defrag\\\\ScheduledDefrag</field>
 	<description>ATT&CK T1053 S0111: Defrag Deactivation</description>
@@ -22,4 +20,3 @@ Manual check needed! Unknown condition
 	<info type="link">https://securelist.com/apt-slingshot/84312/ </info>
 	<group>attack.persistence,attack.t1053,attack.s0111,MITRE</group>
 </rule>
-

@@ -1,33 +1,8 @@
-Manual check needed! Unknown condition
 <rule id="260480" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\.\\\\reg.exe</field>
 	<field name="win.eventdata.CommandLine">save|export</field>
-	<description>ATT&CK T1003: Grabbing Sensitive Hives via Reg Utility</description>
-	<info type="text">Dump sam, system or security hives using REG.exe utility </info>
-	<info type="text">Falsepositives: Dumping hives for legitimate purpouse i.e. backup or forensic investigation. </info>
-	<info type="text">Sigma UUID: fd877b94-9bb5-4191-bb25-d79cbd93c167 </info>
-	<info type="link">https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment </info>
-	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/aed95fc6-5e3f-49dc-8b35-06508613f979.html </info>
-	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003/T1003.md </info>
-	<group>attack.credential_access,attack.t1003,car.2013-07-001,MITRE</group>
-</rule>
-
-<rule id="260481" level="10">
-	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">hklm|hkey_local_machine</field>
-	<description>ATT&CK T1003: Grabbing Sensitive Hives via Reg Utility</description>
-	<info type="text">Dump sam, system or security hives using REG.exe utility </info>
-	<info type="text">Falsepositives: Dumping hives for legitimate purpouse i.e. backup or forensic investigation. </info>
-	<info type="text">Sigma UUID: fd877b94-9bb5-4191-bb25-d79cbd93c167 </info>
-	<info type="link">https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment </info>
-	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/aed95fc6-5e3f-49dc-8b35-06508613f979.html </info>
-	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003/T1003.md </info>
-	<group>attack.credential_access,attack.t1003,car.2013-07-001,MITRE</group>
-</rule>
-
-<rule id="260482" level="10">
-	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\\system$|\\sam$|\\security$</field>
 	<description>ATT&CK T1003: Grabbing Sensitive Hives via Reg Utility</description>
 	<info type="text">Dump sam, system or security hives using REG.exe utility </info>
@@ -38,4 +13,3 @@ Manual check needed! Unknown condition
 	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003/T1003.md </info>
 	<group>attack.credential_access,attack.t1003,car.2013-07-001,MITRE</group>
 </rule>
-

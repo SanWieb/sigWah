@@ -1,6 +1,5 @@
 <rule id="260360" level="15">
 	<if_group>sysmon_event1</if_group>
-Manual check needed! Modifier parse failed:CommandLine|base64offset|contains
 	<field name="win.eventdata.CommandLine">::FromBase64String</field>
 	<description>ATT&CK T1086 T1140: Encoded FromBase64String</description>
 	<info type="text">Detects a base64 encoded FromBase64String keyword in a process command line </info>
@@ -8,4 +7,3 @@ Manual check needed! Modifier parse failed:CommandLine|base64offset|contains
 	<info type="text">Sigma UUID: fdb62a13-9a81-4e5c-a38f-ea93a16f6d7c </info>
 	<group>attack.t1086,attack.t1140,attack.execution,attack.defense_evasion,MITRE</group>
 </rule>
-

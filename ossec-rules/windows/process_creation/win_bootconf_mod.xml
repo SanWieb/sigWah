@@ -1,5 +1,5 @@
 Manual check needed! Unknown condition
-<rule id="260250" level="14">
+<rule id="260250" level="0">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\bcdedit.exe$</field>
 	<field name="win.eventdata.CommandLine">set</field>
@@ -13,9 +13,20 @@ Manual check needed! Unknown condition
 </rule>
 
 <rule id="260251" level="14">
-	<if_group>sysmon_event1</if_group>
+	<if_sid>260250</if_sid>
 	<field name="win.eventdata.CommandLine">bootstatuspolicy</field>
 	<field name="win.eventdata.CommandLine">ignoreallfailures</field>
+	<description>ATT&CK T1490: Modification of Boot Configuration</description>
+	<info type="text">Identifies use of the bcdedit command to delete boot configuration data. This tactic is sometimes used as by malware or an attacker as a destructive technique. </info>
+	<info type="text">Falsepositives: Unlikely. </info>
+	<info type="text">Sigma UUID: 1444443e-6757-43e4-9ea4-c8fc705f79a2 </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1490/T1490.yaml </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/c4732632-9c1d-4980-9fa8-1d98c93f918e.html </info>
+	<group>attack.impact,attack.t1490,MITRE</group>
+</rule>
+
+<rule id="260251" level="14">
+	<if_sid>260250</if_sid>
 	<field name="win.eventdata.CommandLine">recoveryenabled</field>
 	<field name="win.eventdata.CommandLine">no</field>
 	<description>ATT&CK T1490: Modification of Boot Configuration</description>
@@ -26,4 +37,3 @@ Manual check needed! Unknown condition
 	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/c4732632-9c1d-4980-9fa8-1d98c93f918e.html </info>
 	<group>attack.impact,attack.t1490,MITRE</group>
 </rule>
-

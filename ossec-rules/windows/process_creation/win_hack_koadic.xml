@@ -1,4 +1,3 @@
-Manual check needed! Unknown condition
 <rule id="260500" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\.cmd.exe\. /q /c chcp \.</field>
@@ -11,4 +10,3 @@ Manual check needed! Unknown condition
 	<info type="link">https://blog.f-secure.com/hunting-for-koadic-a-com-based-rootkit/ </info>
 	<group>attack.execution,attack.t1170,MITRE</group>
 </rule>
-

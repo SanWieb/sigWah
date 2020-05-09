@@ -1,17 +1,4 @@
-Manual check needed! No detection key
 <rule id="260220" level="14">
-	<if_group>sysmon_event1</if_group>
-	<description>ATT&CK: Operation Wocao Activity</description>
-	<info type="text">Detects activity mentioned in Operation Wocao report </info>
-	<info type="text">Falsepositives: Administrators that use checkadmin.exe tool to enumerate local administrators. </info>
-	<info type="text">Sigma UUID: 74ad4314-482e-4c3e-b237-3f7ed3b9ca8d </info>
-	<info type="link">https://www.fox-it.com/en/news/whitepapers/operation-wocao-shining-a-light-on-one-of-chinas-hidden-hacking-groups/ </info>
-	<info type="link">https://twitter.com/SBousseaden/status/1207671369963646976 </info>
-	<group>MITRE</group>
-</rule>
-
-<rule id="260220" level="%">
-	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.EventID">4799</field>
 	<field name="win.eventdata.GroupName">Administrators</field>
 	<field name="win.eventdata.ProcessName">\.\\\\checkadmin.exe</field>
@@ -24,9 +11,9 @@ Manual check needed! No detection key
 	<group>MITRE</group>
 </rule>
 
-<rule id="260222" level="%">
+<rule id="260222" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">checkadmin.exe 127.0.0.1 -all|netsh advfirewall firewall add rule name=powershell dir=in|cmd /c powershell.exe -ep bypass -file \.:\\s.ps1|/tn win32times /f|create win32times binPath=|\\c\$\\windows\\system32\\devmgr.dll| -exec bypass -enc JgAg|type \.keepass\\KeePass.config.xml|iie.exe iie.txt|reg query HKEY_CURRENT_USER\\Software*\\PuTTY\\Sessions\\</field>
+	<field name="win.eventdata.CommandLine">checkadmin.exe 127.0.0.1 -all|netsh advfirewall firewall add rule name=powershell dir=in|cmd /c powershell.exe -ep bypass -file \.:\\s.ps1|/tn win32times /f|create win32times binPath=|\\c\$\\windows\\system32\\devmgr.dll| -exec bypass -enc JgAg|type \.keepass\\KeePass.config.xml|iie.exe iie.txt|reg query HKEY_CURRENT_USER\\Software\.\\PuTTY\\Sessions\\</field>
 	<description>ATT&CK: Operation Wocao Activity</description>
 	<info type="text">Detects activity mentioned in Operation Wocao report </info>
 	<info type="text">Falsepositives: Administrators that use checkadmin.exe tool to enumerate local administrators. </info>
@@ -35,4 +22,3 @@ Manual check needed! No detection key
 	<info type="link">https://twitter.com/SBousseaden/status/1207671369963646976 </info>
 	<group>MITRE</group>
 </rule>
-

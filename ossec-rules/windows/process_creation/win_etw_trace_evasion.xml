@@ -1,4 +1,3 @@
-Manual check needed! Unknown condition
 <rule id="260380" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\. cl \./Trace\.</field>
@@ -50,4 +49,3 @@ Manual check needed! Unknown condition
 	<info type="link">https://abuse.io/lockergoga.txt </info>
 	<group>attack.execution,attack.t1070,car.2016-04-002,MITRE</group>
 </rule>
-

@@ -1,14 +1,3 @@
-Manual check needed! No detection key
-<rule id="260190" level="%">
-	<if_group>sysmon_event1</if_group>
-	<description>ATT&CK T1059 T1077 T1083 T1135: Turla Group Lateral Movement</description>
-	<info type="text">Detects automated lateral movement by Turla group </info>
-	<info type="text">Falsepositives: Unknown. </info>
-	<info type="text">Sigma UUID: c601f20d-570a-4cde-a7d6-e17f99cb8e7f </info>
-	<info type="link">https://securelist.com/the-epic-turla-operation/65545/ </info>
-	<group>attack.g0010,attack.execution,attack.t1059,attack.lateral_movement,attack.t1077,attack.discovery,attack.t1083,attack.t1135,MITRE</group>
-</rule>
-
 <rule id="260190" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">net use \\\\%DomainController%\\C\$ "P@ssw0rd" \.|dir \.:\\\..doc\. /s|dir %TEMP%\\\..exe</field>
@@ -20,11 +9,10 @@ Manual check needed! No detection key
 	<group>attack.g0010,attack.execution,attack.t1059,attack.lateral_movement,attack.t1077,attack.discovery,attack.t1083,attack.t1135,MITRE</group>
 </rule>
 
-Manual check needed! Unknown condition
-<rule id="260192" level="10">
+<rule id="260192" level="0">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">net view /DOMAIN</field>
-	<description>ATT&CK T1059 T1077 T1083 T1135: Turla Group Lateral Movement</description>
+	<field name="win.eventdata.CommandLine">net view /DOMAIN|net session|net share</field>
+	<description>If alert more than 3 times: ATT&CK T1059 T1077 T1083 T1135: Turla Group Lateral Movement</description>
 	<info type="text">Detects automated lateral movement by Turla group </info>
 	<info type="text">Falsepositives: Unknown. </info>
 	<info type="text">Sigma UUID: c601f20d-570a-4cde-a7d6-e17f99cb8e7f </info>
@@ -32,9 +20,8 @@ Manual check needed! Unknown condition
 	<group>attack.g0010,attack.execution,attack.t1059,attack.lateral_movement,attack.t1077,attack.discovery,attack.t1083,attack.t1135,MITRE</group>
 </rule>
 
-<rule id="260193" level="10">
-	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">net session</field>
+<rule id="260193" level="10" frequency="3" timeframe="60">
+	<if_group>260192</if_group>
 	<description>ATT&CK T1059 T1077 T1083 T1135: Turla Group Lateral Movement</description>
 	<info type="text">Detects automated lateral movement by Turla group </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -42,27 +29,3 @@ Manual check needed! Unknown condition
 	<info type="link">https://securelist.com/the-epic-turla-operation/65545/ </info>
 	<group>attack.g0010,attack.execution,attack.t1059,attack.lateral_movement,attack.t1077,attack.discovery,attack.t1083,attack.t1135,MITRE</group>
 </rule>
-
-<rule id="260194" level="10">
-	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">net share</field>
-	<description>ATT&CK T1059 T1077 T1083 T1135: Turla Group Lateral Movement</description>
-	<info type="text">Detects automated lateral movement by Turla group </info>
-	<info type="text">Falsepositives: Unknown. </info>
-	<info type="text">Sigma UUID: c601f20d-570a-4cde-a7d6-e17f99cb8e7f </info>
-	<info type="link">https://securelist.com/the-epic-turla-operation/65545/ </info>
-	<group>attack.g0010,attack.execution,attack.t1059,attack.lateral_movement,attack.t1077,attack.discovery,attack.t1083,attack.t1135,MITRE</group>
-</rule>
-
-<rule id="260195" level="10">
-	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule failed Field: 1
-Manual check needed! Rule failed Field: m
-	<description>ATT&CK T1059 T1077 T1083 T1135: Turla Group Lateral Movement</description>
-	<info type="text">Detects automated lateral movement by Turla group </info>
-	<info type="text">Falsepositives: Unknown. </info>
-	<info type="text">Sigma UUID: c601f20d-570a-4cde-a7d6-e17f99cb8e7f </info>
-	<info type="link">https://securelist.com/the-epic-turla-operation/65545/ </info>
-	<group>attack.g0010,attack.execution,attack.t1059,attack.lateral_movement,attack.t1077,attack.discovery,attack.t1083,attack.t1135,MITRE</group>
-</rule>
-

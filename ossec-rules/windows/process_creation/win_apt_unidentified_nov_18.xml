@@ -1,5 +1,5 @@
 Manual check needed! Unknown condition
-<rule id="260201" level="%">
+<rule id="260201" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\.cyzfc.dat, PointFunctionCall</field>
 	<description>ATT&CK T1085: Unidentified Attacker November 2018</description>
@@ -10,9 +10,7 @@ Manual check needed! Unknown condition
 	<group>attack.execution,attack.t1085,MITRE</group>
 </rule>
 
-Manual check needed! Unknown condition
-<rule id="260202" level="%">
-	<if_group>sysmon_event1</if_group>
+<rule id="260202" level="14">
 	<field name="win.eventdata.EventID">11</field>
 	<field name="win.eventdata.TargetFilename">\.ds7002.lnk\.</field>
 	<description>ATT&CK T1085: Unidentified Attacker November 2018</description>
@@ -22,4 +20,3 @@ Manual check needed! Unknown condition
 	<info type="link">https://twitter.com/DrunkBinary/status/1063075530180886529 </info>
 	<group>attack.execution,attack.t1085,MITRE</group>
 </rule>
-

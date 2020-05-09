@@ -1,5 +1,4 @@
-Manual check needed! Unknown condition
-<rule id="260761" level="%">
+<rule id="260761" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\.\\AppData\\Roaming\\Oracle\.\\java\..exe \.|\.cscript.exe \.Retrive\..vbs \.</field>
 	<description>ATT&CK T1064: Adwind RAT / JRAT</description>
@@ -11,9 +10,7 @@ Manual check needed! Unknown condition
 	<group>attack.execution,attack.t1064,MITRE</group>
 </rule>
 
-Manual check needed! Unknown condition
-<rule id="260762" level="%">
-	<if_group>sysmon_event1</if_group>
+<rule id="260762" level="14">
 	<field name="win.eventdata.EventID">11</field>
 	<field name="win.eventdata.TargetFilename">\.\\\\AppData\\\\Roaming\\\\Oracle\\\\bin\\\\java\..exe|\.\\\\Retrive\..vbs</field>
 	<description>ATT&CK T1064: Adwind RAT / JRAT</description>
@@ -25,9 +22,7 @@ Manual check needed! Unknown condition
 	<group>attack.execution,attack.t1064,MITRE</group>
 </rule>
 
-Manual check needed! Unknown condition
-<rule id="260763" level="%">
-	<if_group>sysmon_event1</if_group>
+<rule id="260763" level="14">
 	<field name="win.eventdata.EventID">13</field>
 	<field name="win.eventdata.TargetObject">HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\.</field>
 	<field name="win.eventdata.Details">\.\AppData\\.\\\\Roaming\\\\Oracle\\\\bin\\\\\.</field>
@@ -39,4 +34,3 @@ Manual check needed! Unknown condition
 	<info type="link">https://www.first.org/resources/papers/conf2017/Advanced-Incident-Detection-and-Threat-Hunting-using-Sysmon-and-Splunk.pdf </info>
 	<group>attack.execution,attack.t1064,MITRE</group>
 </rule>
-

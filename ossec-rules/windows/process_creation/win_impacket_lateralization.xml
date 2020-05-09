@@ -1,4 +1,3 @@
-Manual check needed! Unknown condition
 <rule id="260570" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentImage">\.\\\\wmiprvse.exe|\.\\\\mmc.exe|\.\\\\explorer.exe|\.\\\\services.exe</field>
@@ -28,4 +27,3 @@ Manual check needed! Unknown condition
 	<info type="link">https://github.com/SecureAuthCorp/impacket/blob/master/examples/dcomexec.py </info>
 	<group>attack.lateral_movement,attack.t1047,attack.t1175,MITRE</group>
 </rule>
-
