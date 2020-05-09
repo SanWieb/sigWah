@@ -1,0 +1,13 @@
+<rule id="261950" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\update.exe</field>
+	<field name="win.eventdata.CommandLine">\.--processStart\..exe\.|\.--processStartAndWait\..exe\.|\.--createShortcut\..exe\.</field>
+	<description>ATT&CK: Squirrel Lolbin</description>
+	<info type="text">Detects Possible Squirrel Packages Manager as Lolbin </info>
+	<info type="text">Falsepositives: 1Clipboard. Beaker Browser. Caret. Collectie. Discord. Figma. Flow. Ghost. GitHub Desktop. GitKraken. Hyper. Insomnia. JIBO. Kap. Kitematic. Now Desktop. Postman. PostmanCanary. Rambox. Simplenote. Skype. Slack. SourceTree. Stride. Svgsus. WebTorrent. WhatsApp. WordPress.com. atom. gitkraken. slack. teams. </info>
+	<info type="text">Sigma UUID: fa4b21c9-0057-4493-b289-2556416ae4d7 </info>
+	<info type="link">http://www.hexacorn.com/blog/2019/03/30/sqirrel-packages-manager-as-a-lolbin-a-k-a-many-electron-apps-are-lolbins-by-default/ </info>
+	<info type="link">http://www.hexacorn.com/blog/2018/08/16/squirrel-as-a-lolbin/ </info>
+	<group>attack.execution,MITRE</group>
+</rule>
+

@@ -1,0 +1,13 @@
+<rule id="261840" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">powershell</field>
+	<field name="win.eventdata.CommandLine">.DownloadFile</field>
+	<field name="win.eventdata.CommandLine">System.Net.WebClient</field>
+	<description>ATT&CK T1086: PowerShell DownloadFile</description>
+	<info type="text">Detects the execution of powershell, a WebClient object creation and the invocation of DownloadFile in a single command line </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 8f70ac5f-1f6f-4f8e-b454-db19561216c5 </info>
+	<info type="link">https://www.fireeye.com/blog/threat-research/2020/03/apt41-initiates-global-intrusion-campaign-using-multiple-exploits.html </info>
+	<group>attack.execution,attack.t1086,MITRE</group>
+</rule>
+

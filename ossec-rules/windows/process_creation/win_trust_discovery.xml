@@ -1,0 +1,15 @@
+<rule id="262130" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\nltest.exe$</field>
+	<field name="win.eventdata.CommandLine">domain_trusts</field>
+	<field name="win.eventdata.Image">\\\\dsquery.exe$</field>
+	<field name="win.eventdata.CommandLine">trustedDomain</field>
+	<description>ATT&CK T1482: Domain Trust Discovery</description>
+	<info type="text">Identifies execution of nltest.exe and dsquery.exe for domain trust discovery. This technique is used by attackers to enumerate Active Directory trusts. </info>
+	<info type="text">Falsepositives: Legitimate use of the utilities by legitimate user for legitimate reason. </info>
+	<info type="text">Sigma UUID: 3bad990e-4848-4a78-9530-b427d854aac0 </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1482/T1482.md </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/03e231a6-74bc-467a-acb1-e5676b0fb55e.html </info>
+	<group>attack.discovery,attack.t1482,MITRE</group>
+</rule>
+

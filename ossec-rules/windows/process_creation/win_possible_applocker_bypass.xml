@@ -1,0 +1,12 @@
+<rule id="260970" level="6">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\\msdt.exe|\\installutil.exe|\\regsvcs.exe|\\regasm.exe|\\msbuild.exe|\\ieexec.exe</field>
+	<description>ATT&CK T1118 T1121 T1127 T1170: Possible Applocker Bypass</description>
+	<info type="text">Detects execution of executables that can be used to bypass Applocker whitelisting </info>
+	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. Using installutil to add features for .NET applications (primarly would occur in developer environments). </info>
+	<info type="text">Sigma UUID: 82a19e3a-2bfe-4a91-8c0d-5d4c98fbb719 </info>
+	<info type="link">https://github.com/subTee/ApplicationWhitelistBypassTechniques/blob/master/TheList.txt </info>
+	<info type="link">https://room362.com/post/2014/2014-01-16-application-whitelist-bypass-using-ieexec-dot-exe/ </info>
+	<group>attack.defense_evasion,attack.t1118,attack.t1121,attack.t1127,attack.t1170,MITRE</group>
+</rule>
+

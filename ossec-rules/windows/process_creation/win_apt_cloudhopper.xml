@@ -1,0 +1,12 @@
+<rule id="260050" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\cscript.exe</field>
+	<field name="win.eventdata.CommandLine">\..vbs /shell \.</field>
+	<description>ATT&CK T1064: WMIExec VBS Script</description>
+	<info type="text">Detects suspicious file execution by wscript and cscript </info>
+	<info type="text">Falsepositives: Unlikely. </info>
+	<info type="text">Sigma UUID: 966e4016-627f-44f7-8341-f394905c361f </info>
+	<info type="link">https://www.pwc.co.uk/cyber-security/pdf/cloud-hopper-annex-b-final.pdf </info>
+	<group>attack.execution,attack.g0045,attack.t1064,MITRE</group>
+</rule>
+

@@ -1,0 +1,10 @@
+<rule id="261720" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\Temporary Internet Files\\\\Content.Outlook\\\\\.</field>
+	<description>ATT&CK T1193: Execution in Outlook Temp Folder</description>
+	<info type="text">Detects a suspicious program execution in Outlook temp folder </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: a018fdc3-46a3-44e5-9afb-2cd4af1d4b39 </info>
+	<group>attack.initial_access,attack.t1193,MITRE</group>
+</rule>
+

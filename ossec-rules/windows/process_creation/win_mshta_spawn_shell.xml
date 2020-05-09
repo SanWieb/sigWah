@@ -1,0 +1,12 @@
+<rule id="260820" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\.\\\\mshta.exe</field>
+	<field name="win.eventdata.Image">\.\\\\cmd.exe|\.\\\\powershell.exe|\.\\\\wscript.exe|\.\\\\cscript.exe|\.\\\\sh.exe|\.\\\\bash.exe|\.\\\\reg.exe|\.\\\\regsvr32.exe|\.\\\\BITSADMIN\.</field>
+	<description>ATT&CK T1170: MSHTA Spawning Windows Shell</description>
+	<info type="text">Detects a Windows command line executable started from MSHTA. </info>
+	<info type="text">Falsepositives: Printer software / driver installations. HP software. </info>
+	<info type="text">Sigma UUID: 03cc0c25-389f-4bf8-b48d-11878079f1ca </info>
+	<info type="link">https://www.trustedsec.com/july-2015/malicious-htas/ </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1170,car.2013-02-003,car.2013-03-001,car.2014-04-003,MITRE</group>
+</rule>
+

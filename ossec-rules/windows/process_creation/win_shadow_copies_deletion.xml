@@ -1,0 +1,17 @@
+<rule id="261270" level="15">
+	<if_group>sysmon_event1</if_group>
+Manual check needed! Rule failed Field: NewProcessName|endswith
+	<field name="win.eventdata.CommandLine">shadow</field>
+	<field name="win.eventdata.CommandLine">delete</field>
+	<description>ATT&CK T1070 T1490: Shadow Copies Deletion Using Operating Systems Utilities</description>
+	<info type="text">Shadow Copies deletion using operating systems utilities </info>
+	<info type="text">Falsepositives: Legitimate Administrator deletes Shadow Copies using operating systems utilities for legitimate reason. </info>
+	<info type="text">Sigma UUID: c947b146-0abc-4c87-9c64-b17e9d7274a2 </info>
+	<info type="link">https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment </info>
+	<info type="link">https://blog.talosintelligence.com/2017/05/wannacry.html </info>
+	<info type="link">https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/new-teslacrypt-ransomware-arrives-via-spam/ </info>
+	<info type="link">https://www.bleepingcomputer.com/news/security/why-everyone-should-disable-vssadmin-exe-now/ </info>
+	<info type="link">https://www.hybrid-analysis.com/sample/ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa?environmentId=100 </info>
+	<group>attack.defense_evasion,attack.impact,attack.t1070,attack.t1490,MITRE</group>
+</rule>
+

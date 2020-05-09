@@ -1,0 +1,12 @@
+<rule id="260840" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.netsh firewall add\.</field>
+	<description>ATT&CK T1090: Netsh</description>
+	<info type="text">Allow Incoming Connections by Port or Application on Windows Firewall </info>
+	<info type="text">Falsepositives: Legitimate administration. </info>
+	<info type="text">Sigma UUID: cd5cfd80-aa5f-44c0-9c20-108c4ae12e3c </info>
+	<info type="link">https://attack.mitre.org/software/S0246/ (Lazarus HARDRAIN) </info>
+	<info type="link">https://www.operationblockbuster.com/wp-content/uploads/2016/02/Operation-Blockbuster-RAT-and-Staging-Report.pdf </info>
+	<group>attack.lateral_movement,attack.command_and_control,attack.t1090,MITRE</group>
+</rule>
+

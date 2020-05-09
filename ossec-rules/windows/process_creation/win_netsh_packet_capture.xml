@@ -1,0 +1,13 @@
+<rule id="260850" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">netsh</field>
+	<field name="win.eventdata.CommandLine">trace</field>
+	<field name="win.eventdata.CommandLine">start</field>
+	<description>ATT&CK T1040: Capture a Network Trace with netsh.exe</description>
+	<info type="text">Detects capture a network trace via netsh.exe trace functionality </info>
+	<info type="text">Falsepositives: Legitimate administrator or user uses netsh.exe trace functionality for legitimate reason. </info>
+	<info type="text">Sigma UUID: d3c3861d-c504-4c77-ba55-224ba82d0118 </info>
+	<info type="link">https://blogs.msdn.microsoft.com/canberrapfe/2012/03/30/capture-a-network-trace-without-installing-anything-capture-a-network-trace-of-a-reboot/ </info>
+	<group>attack.discovery,attack.t1040,MITRE</group>
+</rule>
+

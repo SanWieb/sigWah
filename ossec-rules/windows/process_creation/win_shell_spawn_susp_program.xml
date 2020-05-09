@@ -1,0 +1,24 @@
+Manual check needed! Unknown condition
+<rule id="261280" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\.\\\\mshta.exe|\.\\\\powershell.exe|\.\\\\rundll32.exe|\.\\\\cscript.exe|\.\\\\wscript.exe|\.\\\\wmiprvse.exe</field>
+	<field name="win.eventdata.Image">\.\\\\schtasks.exe|\.\\\\nslookup.exe|\.\\\\certutil.exe|\.\\\\bitsadmin.exe|\.\\\\mshta.exe</field>
+	<description>ATT&CK T1064: Windows Shell Spawning Suspicious Program</description>
+	<info type="text">Detects a suspicious child process of a Windows shell </info>
+	<info type="text">Falsepositives: Administrative scripts. Microsoft SCCM. </info>
+	<info type="text">Sigma UUID: 3a6586ad-127a-4d3b-a677-1e6eacdf8fde </info>
+	<info type="link">https://mgreen27.github.io/posts/2018/04/02/DownloadCradle.html </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1064,MITRE</group>
+</rule>
+
+<rule id="261281" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CurrentDirectory">\.\\\\ccmcache\\\\\.</field>
+	<description>ATT&CK T1064: Windows Shell Spawning Suspicious Program</description>
+	<info type="text">Detects a suspicious child process of a Windows shell </info>
+	<info type="text">Falsepositives: Administrative scripts. Microsoft SCCM. </info>
+	<info type="text">Sigma UUID: 3a6586ad-127a-4d3b-a677-1e6eacdf8fde </info>
+	<info type="link">https://mgreen27.github.io/posts/2018/04/02/DownloadCradle.html </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1064,MITRE</group>
+</rule>
+

@@ -1,0 +1,11 @@
+<rule id="261620" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.\\APPCMD.EXE install module /name:\.</field>
+	<description>ATT&CK T1100: IIS Native-Code Module Command Line Installation</description>
+	<info type="text">Detects suspicious IIS native-code module installations via command line </info>
+	<info type="text">Falsepositives: Unknown as it may vary from organisation to arganisation how admins use to install IIS modules. </info>
+	<info type="text">Sigma UUID: 9465ddf4-f9e4-4ebd-8d98-702df3a93239 </info>
+	<info type="link">https://researchcenter.paloaltonetworks.com/2018/01/unit42-oilrig-uses-rgdoor-iis-backdoor-targets-middle-east/ </info>
+	<group>attack.persistence,attack.t1100,MITRE</group>
+</rule>
+

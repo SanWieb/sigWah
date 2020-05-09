@@ -1,0 +1,14 @@
+<rule id="261210" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\\\\powershell.exe$</field>
+	<field name="win.eventdata.Image">\\\\powershell.exe$</field>
+	<field name="win.eventdata.CommandLine">Get-Content</field>
+	<field name="win.eventdata.CommandLine">-Stream</field>
+	<description>ATT&CK T1096: Run PowerShell Script from ADS</description>
+	<info type="text">Detects PowerShell script execution from Alternate Data Stream (ADS) </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 45a594aa-1fbd-4972-a809-ff5a99dd81b8 </info>
+	<info type="link">https://github.com/p0shkatz/Get-ADS/blob/master/Get-ADS.ps1 </info>
+	<group>attack.defense_evasion,attack.t1096,MITRE</group>
+</rule>
+

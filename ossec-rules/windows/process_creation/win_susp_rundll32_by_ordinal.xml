@@ -1,0 +1,13 @@
+<rule id="261900" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.\\rundll32.exe \.,#\.</field>
+	<description>ATT&CK T1085: Suspicious Call by Ordinal</description>
+	<info type="text">Detects suspicious calls of DLLs in rundll32.dll exports by ordinal </info>
+	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. Windows contol panel elements have been identified as source (mmc). </info>
+	<info type="text">Sigma UUID: e79a9e79-eb72-4e78-a628-0e7e8f59e89c </info>
+	<info type="link">https://techtalk.pcmatic.com/2017/11/30/running-dll-files-malware-analysis/ </info>
+	<info type="link">https://github.com/Neo23x0/DLLRunner </info>
+	<info type="link">https://twitter.com/cyb3rops/status/1186631731543236608 </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1085,MITRE</group>
+</rule>
+

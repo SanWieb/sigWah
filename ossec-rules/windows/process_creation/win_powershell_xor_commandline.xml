@@ -1,0 +1,10 @@
+<rule id="261080" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\. -bxor\.</field>
+	<description>ATT&CK T1086: Suspicious XOR Encoded PowerShell Command Line</description>
+	<info type="text">Detects suspicious powershell process which includes bxor command, alternatvide obfuscation method to b64 encoded commands. </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: bb780e0c-16cf-4383-8383-1e5471db6cf9 </info>
+	<group>attack.execution,attack.t1086,MITRE</group>
+</rule>
+

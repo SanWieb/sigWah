@@ -1,0 +1,12 @@
+<rule id="261460" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\csc.exe\.</field>
+	<field name="win.eventdata.ParentImage">\.\\\\wscript.exe|\.\\\\cscript.exe|\.\\\\mshta.exe</field>
+	<description>ATT&CK T1036: Suspicious Parent of Csc.exe</description>
+	<info type="text">Detects a suspicious parent of csc.exe, which could by a sign of payload delivery </info>
+	<info type="text">Falsepositives: Unkown. </info>
+	<info type="text">Sigma UUID: b730a276-6b63-41b8-bcf8-55930c8fc6ee </info>
+	<info type="link">https://twitter.com/SBousseaden/status/1094924091256176641 </info>
+	<group>attack.defense_evasion,attack.t1036,MITRE</group>
+</rule>
+

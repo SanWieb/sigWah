@@ -1,0 +1,11 @@
+<rule id="261450" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">copy \.\\c\$|copy \.\\ADMIN\$</field>
+	<description>ATT&CK T1077 T1105: Copy from Admin Share</description>
+	<info type="text">Detects a suspicious copy command from a remote C$ or ADMIN$ share </info>
+	<info type="text">Falsepositives: Administrative scripts. </info>
+	<info type="text">Sigma UUID: 855bc8b5-2ae8-402e-a9ed-b889e6df1900 </info>
+	<info type="link">https://twitter.com/SBousseaden/status/1211636381086339073 </info>
+	<group>attack.lateral_movement,attack.t1077,attack.t1105,MITRE</group>
+</rule>
+

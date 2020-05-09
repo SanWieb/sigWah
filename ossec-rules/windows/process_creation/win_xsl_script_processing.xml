@@ -1,0 +1,13 @@
+<rule id="262290" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\wmic.exe$</field>
+	<field name="win.eventdata.CommandLine">/format</field>
+	<field name="win.eventdata.Image">\\\\msxsl.exe$</field>
+	<description>ATT&CK T1220: XSL Script Processing</description>
+	<info type="text">Extensible Stylesheet Language (XSL) files are commonly used to describe the processing and rendering of data within XML files, rule detects when adversaries abuse this functionality to execute arbitrary files while potentially bypassing application whitelisting defenses </info>
+	<info type="text">Falsepositives: WMIC.exe FP depend on scripts and administrative methods used in the monitored environment. msxsl.exe is not installed by default so unlikely.. </info>
+	<info type="text">Sigma UUID: 05c36dd6-79d6-4a9a-97da-3db20298ab2d </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1220/T1220.yaml </info>
+	<group>attack.execution,attack.t1220,MITRE</group>
+</rule>
+

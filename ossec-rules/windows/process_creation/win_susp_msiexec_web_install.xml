@@ -1,0 +1,11 @@
+<rule id="261640" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\. msiexec\.://\.</field>
+	<description>ATT&CK: MsiExec Web Install</description>
+	<info type="text">Detects suspicious msiexec process starts with web addreses as parameter </info>
+	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. </info>
+	<info type="text">Sigma UUID: f7b5f842-a6af-4da5-9e95-e32478f3cd2f </info>
+	<info type="link">https://blog.trendmicro.com/trendlabs-security-intelligence/attack-using-windows-installer-msiexec-exe-leads-lokibot/ </info>
+	<group>attack.defense_evasion,MITRE</group>
+</rule>
+

@@ -1,0 +1,14 @@
+Manual check needed! Unknown condition
+<rule id="260500" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.cmd.exe\. /q /c chcp \.</field>
+	<description>ATT&CK T1170: Koadic Execution</description>
+	<info type="text">Detects command line parameters used by Koadic hack tool </info>
+	<info type="text">Falsepositives: Pentest. </info>
+	<info type="text">Sigma UUID: 5cddf373-ef00-4112-ad72-960ac29bac34 </info>
+	<info type="link">https://unit42.paloaltonetworks.com/unit42-sofacy-groups-parallel-attacks/ </info>
+	<info type="link">https://github.com/zerosum0x0/koadic/blob/master/data/stager/js/stdlib.js#L955 </info>
+	<info type="link">https://blog.f-secure.com/hunting-for-koadic-a-com-based-rootkit/ </info>
+	<group>attack.execution,attack.t1170,MITRE</group>
+</rule>
+

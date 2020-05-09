@@ -1,0 +1,11 @@
+<rule id="260510" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\. asreproast \.|\. dump /service:krbtgt \.|\. kerberoast \.|\. createnetonly /program:\.|\. ptt /ticket:\.|\. /impersonateuser:\.|\. renew /ticket:\.|\. asktgt /user:\.|\. harvest /interval:\.</field>
+	<description>ATT&CK T1003 S0005: Rubeus Hack Tool</description>
+	<info type="text">Detects command line parameters used by Rubeus hack tool </info>
+	<info type="text">Falsepositives: unlikely. </info>
+	<info type="text">Sigma UUID: 7ec2c172-dceb-4c10-92c9-87c1881b7e18 </info>
+	<info type="link">https://www.harmj0y.net/blog/redteaming/from-kekeo-to-rubeus/ </info>
+	<group>attack.credential_access,attack.t1003,attack.s0005,MITRE</group>
+</rule>
+

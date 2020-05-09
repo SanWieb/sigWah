@@ -1,0 +1,14 @@
+<rule id="260910" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\net.exe$|\\\\net1.exe$</field>
+	<field name="win.eventdata.CommandLine">user</field>
+	<field name="win.eventdata.CommandLine">add</field>
+	<description>ATT&CK T1136: Net.exe User Account Creation</description>
+	<info type="text">Identifies creation of local users via the net.exe command </info>
+	<info type="text">Falsepositives: Legit user creation. Better use event ids for user creation rather than command line rules. </info>
+	<info type="text">Sigma UUID: cd219ff3-fa99-45d4-8380-a7d15116c6dc </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/014c3f51-89c6-40f1-ac9c-5688f26090ab.html </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1136/T1136.yaml </info>
+	<group>attack.persistence,attack.credential_access,attack.t1136,MITRE</group>
+</rule>
+

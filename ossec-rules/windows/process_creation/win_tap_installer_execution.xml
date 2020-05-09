@@ -1,0 +1,10 @@
+<rule id="262100" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\tapinstall.exe$</field>
+	<description>ATT&CK T1048: Tap Installer Execution</description>
+	<info type="text">Well-known TAP software installation. Possible preparation for data exfiltration using tunneling techniques </info>
+	<info type="text">Falsepositives: Legitimate OpenVPN TAP insntallation. </info>
+	<info type="text">Sigma UUID: 99793437-3e16-439b-be0f-078782cf953d </info>
+	<group>attack.exfiltration,attack.t1048,MITRE</group>
+</rule>
+

@@ -1,0 +1,11 @@
+<rule id="260340" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\iodine.exe$</field>
+	<field name="win.eventdata.Image">\\\\dnscat2</field>
+	<description>ATT&CK T1048: DNS Exfiltration Tools Execution</description>
+	<info type="text">Well-known DNS Exfiltration tools execution </info>
+	<info type="text">Falsepositives: Legitimate usage of iodine or dnscat2 — DNS Exfiltration tools (unlikely). </info>
+	<info type="text">Sigma UUID: 98a96a5a-64a0-4c42-92c5-489da3866cb0 </info>
+	<group>attack.exfiltration,attack.t1048,MITRE</group>
+</rule>
+

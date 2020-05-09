@@ -1,0 +1,17 @@
+<rule id="262010" level="6">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\.\\\\taskmgr.exe</field>
+	<description>ATT&CK T1036: Taskmgr as Parent</description>
+	<info type="text">Detects the creation of a process from Windows task manager </info>
+	<info type="text">Falsepositives: Administrative activity. </info>
+	<info type="text">Sigma UUID: 3d7679bd-0c00-440c-97b0-3f204273e6c7 </info>
+	<group>attack.defense_evasion,attack.t1036,MITRE</group>
+</rule>
+
+<rule id="262011" level="0">
+	<if_sid>262010</if_sid>
+	<field name="win.eventdata.Image">\.\\\\resmon.exe|\.\\\\mmc.exe|\.\\\\taskmgr.exe</field>
+	<description>Whitelist Interaction: Taskmgr as Parent</description>
+</rule>
+
+!Selection and not filter

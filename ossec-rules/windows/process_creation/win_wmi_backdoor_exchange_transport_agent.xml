@@ -1,0 +1,12 @@
+<rule id="262240" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\.\\\\EdgeTransport.exe</field>
+	<description>ATT&CK T1084: WMI Backdoor Exchange Transport Agent</description>
+	<info type="text">Detects a WMi backdoor in Exchange Transport Agents via WMi event filters </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 797011dc-44f4-4e6f-9f10-a8ceefbe566b </info>
+	<info type="link">https://twitter.com/cglyer/status/1182389676876980224 </info>
+	<info type="link">https://twitter.com/cglyer/status/1182391019633029120 </info>
+	<group>attack.persistence,attack.t1084,MITRE</group>
+</rule>
+

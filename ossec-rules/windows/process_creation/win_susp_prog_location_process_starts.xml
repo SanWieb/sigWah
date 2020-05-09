@@ -1,0 +1,11 @@
+<rule id="261810" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\\$Recycle.bin|\.\\\\Users\\\\Public\\\\\.|\.:\\\\Perflogs\\\\\.|\.\\\\Windows\\\\Fonts\\\\\.|\.\\\\Windows\\\\IME\\\\\.|\.\\\\Windows\\\\addins\\\\\.|\.\\\\Windows\\\\debug\\\\\.</field>
+	<description>ATT&CK T1036: Suspicious Program Location Process Starts</description>
+	<info type="text">Detects programs running in suspicious files system locations </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: f50bfd8b-e2a3-4c15-9373-7900b5a4c6d5 </info>
+	<info type="link">https://docs.google.com/spreadsheets/d/17pSTDNpa0sf6pHeRhusvWG6rThciE8CsXTSlDUAZDyo </info>
+	<group>attack.defense_evasion,attack.t1036,MITRE</group>
+</rule>
+

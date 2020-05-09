@@ -1,0 +1,12 @@
+<rule id="261520" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\dnx.exe$</field>
+	<description>ATT&CK T1218: Application Whitelisting Bypass via Dnx.exe</description>
+	<info type="text">Execute C# code located in the consoleapp folder </info>
+	<info type="text">Falsepositives: Legitimate use of dnx.exe by legitimate user. </info>
+	<info type="text">Sigma UUID: 81ebd28b-9607-4478-bf06-974ed9d53ed7 </info>
+	<info type="link">https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/OtherMSBinaries/Csi.yml </info>
+	<info type="link">https://enigma0x3.net/2016/11/17/bypassing-application-whitelisting-by-using-dnx-exe/ </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1218,MITRE</group>
+</rule>
+

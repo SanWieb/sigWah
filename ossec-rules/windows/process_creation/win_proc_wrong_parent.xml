@@ -1,0 +1,43 @@
+Manual check needed! Unknown condition
+<rule id="261120" level="6">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\svchost.exe|\.\\\\taskhost.exe|\.\\\\lsm.exe|\.\\\\lsass.exe|\.\\\\services.exe|\.\\\\lsaiso.exe|\.\\\\csrss.exe|\.\\\\wininit.exe|\.\\\\winlogon.exe</field>
+	<description>ATT&CK T1036: Windows Processes Suspicious Parent Directory</description>
+	<info type="text">Detect suspicious parent processes of well-known Windows processes </info>
+	<info type="text">Falsepositives: Some security products seem to spawn these. </info>
+	<info type="text">Sigma UUID: 96036718-71cc-4027-a538-d1587e0006a7 </info>
+	<info type="link">https://securitybytes.io/blue-team-fundamentals-part-two-windows-processes-759fe15965e2 </info>
+	<info type="link">https://www.carbonblack.com/2014/06/10/screenshot-demo-hunt-evil-faster-than-ever-with-carbon-black/ </info>
+	<info type="link">https://www.13cubed.com/downloads/windows_process_genealogy_v2.pdf </info>
+	<info type="link">https://attack.mitre.org/techniques/T1036/ </info>
+	<group>attack.defense_evasion,attack.t1036,MITRE</group>
+</rule>
+
+<rule id="261121" level="6">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\.\\\\System32\\\\\.|\.\\\\SysWOW64\\\\\.|\.\\\\SavService.exe|\.\\\\Windows Defender\\\\\.\\\\MsMpEng.exe</field>
+	<description>ATT&CK T1036: Windows Processes Suspicious Parent Directory</description>
+	<info type="text">Detect suspicious parent processes of well-known Windows processes </info>
+	<info type="text">Falsepositives: Some security products seem to spawn these. </info>
+	<info type="text">Sigma UUID: 96036718-71cc-4027-a538-d1587e0006a7 </info>
+	<info type="link">https://securitybytes.io/blue-team-fundamentals-part-two-windows-processes-759fe15965e2 </info>
+	<info type="link">https://www.carbonblack.com/2014/06/10/screenshot-demo-hunt-evil-faster-than-ever-with-carbon-black/ </info>
+	<info type="link">https://www.13cubed.com/downloads/windows_process_genealogy_v2.pdf </info>
+	<info type="link">https://attack.mitre.org/techniques/T1036/ </info>
+	<group>attack.defense_evasion,attack.t1036,MITRE</group>
+</rule>
+
+<rule id="261122" level="6">
+	<if_group>sysmon_event1</if_group>
+Manual check needed! Rule parse failed (Parse Common)
+	<description>ATT&CK T1036: Windows Processes Suspicious Parent Directory</description>
+	<info type="text">Detect suspicious parent processes of well-known Windows processes </info>
+	<info type="text">Falsepositives: Some security products seem to spawn these. </info>
+	<info type="text">Sigma UUID: 96036718-71cc-4027-a538-d1587e0006a7 </info>
+	<info type="link">https://securitybytes.io/blue-team-fundamentals-part-two-windows-processes-759fe15965e2 </info>
+	<info type="link">https://www.carbonblack.com/2014/06/10/screenshot-demo-hunt-evil-faster-than-ever-with-carbon-black/ </info>
+	<info type="link">https://www.13cubed.com/downloads/windows_process_genealogy_v2.pdf </info>
+	<info type="link">https://attack.mitre.org/techniques/T1036/ </info>
+	<group>attack.defense_evasion,attack.t1036,MITRE</group>
+</rule>
+

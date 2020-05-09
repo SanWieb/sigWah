@@ -1,0 +1,13 @@
+<rule id="261300" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\SoundRecorder.exe$</field>
+	<field name="win.eventdata.CommandLine">/FILE</field>
+	<description>ATT&CK T1123: Audio Capture via SoundRecorder</description>
+	<info type="text">Detect attacker collecting audio via SoundRecorder application </info>
+	<info type="text">Falsepositives: Legitimate audio capture by legitimate user. </info>
+	<info type="text">Sigma UUID: 83865853-59aa-449e-9600-74b9d89a6d6e </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1123/T1123.yaml </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/f72a98cb-7b3d-4100-99c3-a138b6e9ff6e.html </info>
+	<group>attack.collection,attack.t1123,MITRE</group>
+</rule>
+

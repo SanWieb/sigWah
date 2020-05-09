@@ -1,0 +1,13 @@
+<rule id="260530" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\hh.exe$</field>
+	<field name="win.eventdata.CommandLine">.chm</field>
+	<description>ATT&CK T1223: HH.exe Execution</description>
+	<info type="text">Identifies usage of hh.exe executing recently modified .chm files. </info>
+	<info type="text">Falsepositives: unlike. </info>
+	<info type="text">Sigma UUID: 68c8acb4-1b60-4890-8e82-3ddf7a6dba84 </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1223/T1223.yaml </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/b25aa548-7937-11e9-8f5c-d46d6d62a49e.html </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1223,MITRE</group>
+</rule>
+

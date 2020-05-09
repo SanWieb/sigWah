@@ -1,0 +1,14 @@
+<rule id="260470" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\takeown.exe$|\\\\cacls.exe$|\\\\icacls.exe$</field>
+	<field name="win.eventdata.CommandLine">/grant</field>
+	<field name="win.eventdata.Image">\\\\attrib.exe$</field>
+	<field name="win.eventdata.CommandLine">-r</field>
+	<description>ATT&CK T1222: File or Folder Permissions Modifications</description>
+	<info type="text">Detects a file or folder permissions modifications </info>
+	<info type="text">Falsepositives: Users interacting with the files on their own (unlikely unless power users). </info>
+	<info type="text">Sigma UUID: 37ae075c-271b-459b-8d7b-55ad5f993dd8 </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1222/T1222.yaml </info>
+	<group>attack.defense_evasion,attack.t1222,MITRE</group>
+</rule>
+

@@ -1,0 +1,40 @@
+Manual check needed! Unknown condition
+<rule id="262170" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\sc.exe$</field>
+	<field name="win.eventdata.IntegrityLevel">Medium</field>
+	<description>ATT&CK T1134: Possible Privilege Escalation via Weak Service Permissions</description>
+	<info type="text">Detection of sc.exe utility spawning by user with Medium integrity level to change service ImagePath or FailureCommand </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: d937b75f-a665-4480-88a5-2f20e9f9b22a </info>
+	<info type="link">https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment </info>
+	<info type="link">https://pentestlab.blog/2017/03/30/weak-service-permissions/ </info>
+	<group>attack.privilege_escalation,attack.t1134,MITRE</group>
+</rule>
+
+<rule id="262171" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">config</field>
+	<field name="win.eventdata.CommandLine">binPath</field>
+	<description>ATT&CK T1134: Possible Privilege Escalation via Weak Service Permissions</description>
+	<info type="text">Detection of sc.exe utility spawning by user with Medium integrity level to change service ImagePath or FailureCommand </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: d937b75f-a665-4480-88a5-2f20e9f9b22a </info>
+	<info type="link">https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment </info>
+	<info type="link">https://pentestlab.blog/2017/03/30/weak-service-permissions/ </info>
+	<group>attack.privilege_escalation,attack.t1134,MITRE</group>
+</rule>
+
+<rule id="262172" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">failure</field>
+	<field name="win.eventdata.CommandLine">command</field>
+	<description>ATT&CK T1134: Possible Privilege Escalation via Weak Service Permissions</description>
+	<info type="text">Detection of sc.exe utility spawning by user with Medium integrity level to change service ImagePath or FailureCommand </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: d937b75f-a665-4480-88a5-2f20e9f9b22a </info>
+	<info type="link">https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment </info>
+	<info type="link">https://pentestlab.blog/2017/03/30/weak-service-permissions/ </info>
+	<group>attack.privilege_escalation,attack.t1134,MITRE</group>
+</rule>
+

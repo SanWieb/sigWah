@@ -1,0 +1,11 @@
+<rule id="261240" level="6">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\sc.exe$|\\\\net.exe$|\\\\net1.exe$</field>
+	<field name="win.eventdata.CommandLine">stop</field>
+	<description>ATT&CK T1489: Stop Windows Service</description>
+	<info type="text">Detects a windows service to be stopped </info>
+	<info type="text">Falsepositives: Administrator shutting down the service due to upgrade or removal purposes. </info>
+	<info type="text">Sigma UUID: eb87818d-db5d-49cc-a987-d5da331fbd90 </info>
+	<group>attack.impact,attack.t1489,MITRE</group>
+</rule>
+

@@ -1,0 +1,12 @@
+<rule id="261160" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\wsmprovhost.exe$</field>
+	<field name="win.eventdata.ParentImage">\\\\wsmprovhost.exe$</field>
+	<description>ATT&CK T1086: Remote PowerShell Session</description>
+	<info type="text">Detects remote PowerShell sections by monitoring for wsmprovhost as a parent or child process (sign of an active ps remote session) </info>
+	<info type="text">Falsepositives: Legitimate usage of remote Powershell, e.g. for monitoring purposes. </info>
+	<info type="text">Sigma UUID: 734f8d9b-42b8-41b2-bcf5-abaf49d5a3c8 </info>
+	<info type="link">https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1086_powershell/powershell_remote_session.md </info>
+	<group>attack.execution,attack.t1086,MITRE</group>
+</rule>
+

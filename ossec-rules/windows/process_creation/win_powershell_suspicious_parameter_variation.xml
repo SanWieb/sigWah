@@ -1,0 +1,12 @@
+<rule id="261070" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\Powershell.exe</field>
+	<field name="win.eventdata.CommandLine"> -windowstyle h | -windowstyl h| -windowsty h| -windowst h| -windows h| -windo h| -wind h| -win h| -wi h| -win h | -win hi | -win hid | -win hidd | -win hidde | -NoPr | -NoPro | -NoProf | -NoProfi | -NoProfil | -nonin | -nonint | -noninte | -noninter | -nonintera | -noninterac | -noninteract | -noninteracti | -noninteractiv | -ec | -encodedComman | -encodedComma | -encodedComm | -encodedCom | -encodedCo | -encodedC | -encoded | -encode | -encod | -enco | -en </field>
+	<description>ATT&CK T1086: Suspicious PowerShell Parameter Substring</description>
+	<info type="text">Detects suspicious PowerShell invocation with a parameter substring </info>
+	<info type="text">Falsepositives: Penetration tests. </info>
+	<info type="text">Sigma UUID: 36210e0d-5b19-485d-a087-c096088885f0 </info>
+	<info type="link">http://www.danielbohannon.com/blog-1/2017/3/12/powershell-execution-argument-obfuscation-how-it-can-make-detection-easier </info>
+	<group>attack.execution,attack.t1086,MITRE</group>
+</rule>
+

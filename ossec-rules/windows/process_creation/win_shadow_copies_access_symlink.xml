@@ -1,0 +1,12 @@
+<rule id="261250" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">mklink</field>
+	<field name="win.eventdata.CommandLine">HarddiskVolumeShadowCopy</field>
+	<description>ATT&CK T1003: Shadow Copies Access via Symlink</description>
+	<info type="text">Shadow Copies storage symbolic link creation using operating systems utilities </info>
+	<info type="text">Falsepositives: Legitimate administrator working with shadow copies, access for backup purposes. </info>
+	<info type="text">Sigma UUID: 40b19fa6-d835-400c-b301-41f3a2baacaf </info>
+	<info type="link">https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment </info>
+	<group>attack.credential_access,attack.t1003,MITRE</group>
+</rule>
+

@@ -1,0 +1,12 @@
+<rule id="261390" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">cmd.exe /c \.http://\.\.\AppData\\.|cmd.exe /c \.https://\.\.\AppData\\.</field>
+	<description>ATT&CK T1059: Command Line Execution with Suspicious URL and AppData Strings</description>
+	<info type="text">Detects a suspicious command line execution that includes an URL and AppData string in the command line parameters as used by several droppers (js/vbs > powershell) </info>
+	<info type="text">Falsepositives: High. </info>
+	<info type="text">Sigma UUID: 1ac8666b-046f-4201-8aba-1951aaec03a3 </info>
+	<info type="link">https://www.hybrid-analysis.com/sample/3a1f01206684410dbe8f1900bbeaaa543adfcd07368ba646b499fa5274b9edf6?environmentId=100 </info>
+	<info type="link">https://www.hybrid-analysis.com/sample/f16c729aad5c74f19784a24257236a8bbe27f7cdc4a89806031ec7f1bebbd475?environmentId=100 </info>
+	<group>attack.execution,attack.t1059,MITRE</group>
+</rule>
+

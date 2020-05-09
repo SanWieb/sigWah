@@ -1,0 +1,13 @@
+<rule id="262280" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\\\\WSreset.exe$</field>
+	<description>ATT&CK T1088: Wsreset UAC Bypass</description>
+	<info type="text">Detects a method that uses Wsreset.exe tool that can be used to reset the Windows Store to bypass UAC </info>
+	<info type="text">Falsepositives: Unknown sub processes of Wsreset.exe. </info>
+	<info type="text">Sigma UUID: bdc8918e-a1d5-49d1-9db7-ea0fd91aa2ae </info>
+	<info type="link">https://lolbas-project.github.io/lolbas/Binaries/Wsreset/ </info>
+	<info type="link">https://www.activecyber.us/activelabs/windows-uac-bypass </info>
+	<info type="link">https://twitter.com/ReaQta/status/1222548288731217921 </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1088,MITRE</group>
+</rule>
+

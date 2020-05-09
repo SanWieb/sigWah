@@ -1,0 +1,11 @@
+<rule id="260370" level="15">
+	<if_group>sysmon_event1</if_group>
+Manual check needed! Modifier parse failed:CommandLine|base64offset|contains
+	<field name="win.eventdata.CommandLine">IEX \\([|iex \\([|iex \\(New|IEX \\(New</field>
+	<description>ATT&CK T1086 T1140: Encoded IEX</description>
+	<info type="text">Detects a base64 encoded IEX command string in a process command line </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: 88f680b8-070e-402c-ae11-d2914f2257f1 </info>
+	<group>attack.t1086,attack.t1140,attack.execution,MITRE</group>
+</rule>
+

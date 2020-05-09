@@ -1,0 +1,51 @@
+Manual check needed! Unknown condition
+<rule id="261550" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\wevtutil.exe$</field>
+	<description>ATT&CK T1070: Suspicious Eventlog Clear or Configuration Using Wevtutil</description>
+	<info type="text">Detects clearing or configuration of eventlogs uwing wevtutil, powershell and wmic. Might be used by ransomwares during the attack (seen by NotPetya and others) </info>
+	<info type="text">Falsepositives: Admin activity. Scripts and administrative tools used in the monitored environment. </info>
+	<info type="text">Sigma UUID: cc36992a-4671-4f21-a91d-6c2b72a2edf5 </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1070/T1070.yaml </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/5b223758-07d6-4100-9e11-238cfdd0fe97.html </info>
+	<group>attack.defense_evasion,attack.t1070,car.2016-04-002,MITRE</group>
+</rule>
+
+<rule id="261551" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">clear-log| cl |set-log| sl </field>
+	<description>ATT&CK T1070: Suspicious Eventlog Clear or Configuration Using Wevtutil</description>
+	<info type="text">Detects clearing or configuration of eventlogs uwing wevtutil, powershell and wmic. Might be used by ransomwares during the attack (seen by NotPetya and others) </info>
+	<info type="text">Falsepositives: Admin activity. Scripts and administrative tools used in the monitored environment. </info>
+	<info type="text">Sigma UUID: cc36992a-4671-4f21-a91d-6c2b72a2edf5 </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1070/T1070.yaml </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/5b223758-07d6-4100-9e11-238cfdd0fe97.html </info>
+	<group>attack.defense_evasion,attack.t1070,car.2016-04-002,MITRE</group>
+</rule>
+
+<rule id="261552" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\powershell.exe$</field>
+	<field name="win.eventdata.CommandLine">Clear-EventLog|Remove-EventLog|Limit-EventLog</field>
+	<description>ATT&CK T1070: Suspicious Eventlog Clear or Configuration Using Wevtutil</description>
+	<info type="text">Detects clearing or configuration of eventlogs uwing wevtutil, powershell and wmic. Might be used by ransomwares during the attack (seen by NotPetya and others) </info>
+	<info type="text">Falsepositives: Admin activity. Scripts and administrative tools used in the monitored environment. </info>
+	<info type="text">Sigma UUID: cc36992a-4671-4f21-a91d-6c2b72a2edf5 </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1070/T1070.yaml </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/5b223758-07d6-4100-9e11-238cfdd0fe97.html </info>
+	<group>attack.defense_evasion,attack.t1070,car.2016-04-002,MITRE</group>
+</rule>
+
+<rule id="261553" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\wmic.exe$</field>
+	<field name="win.eventdata.CommandLine"> ClearEventLog </field>
+	<description>ATT&CK T1070: Suspicious Eventlog Clear or Configuration Using Wevtutil</description>
+	<info type="text">Detects clearing or configuration of eventlogs uwing wevtutil, powershell and wmic. Might be used by ransomwares during the attack (seen by NotPetya and others) </info>
+	<info type="text">Falsepositives: Admin activity. Scripts and administrative tools used in the monitored environment. </info>
+	<info type="text">Sigma UUID: cc36992a-4671-4f21-a91d-6c2b72a2edf5 </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1070/T1070.yaml </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/5b223758-07d6-4100-9e11-238cfdd0fe97.html </info>
+	<group>attack.defense_evasion,attack.t1070,car.2016-04-002,MITRE</group>
+</rule>
+

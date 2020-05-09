@@ -1,0 +1,12 @@
+<rule id="260320" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.\\rundll32.exe \.,InstallArcherSvc</field>
+	<description>ATT&CK T1059 T1085: Fireball Archer Install</description>
+	<info type="text">Detects Archer malware invocation via rundll32 </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 3d4aebe0-6d29-45b2-a8a4-3dfde586a26d </info>
+	<info type="link">https://www.virustotal.com/en/file/9b4971349ae85aa09c0a69852ed3e626c954954a3927b3d1b6646f139b930022/analysis/ </info>
+	<info type="link">https://www.hybrid-analysis.com/sample/9b4971349ae85aa09c0a69852ed3e626c954954a3927b3d1b6646f139b930022?environmentId=100 </info>
+	<group>attack.execution,attack.t1059,attack.defense_evasion,attack.t1085,MITRE</group>
+</rule>
+

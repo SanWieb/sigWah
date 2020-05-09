@@ -1,0 +1,13 @@
+<rule id="261660" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\netsh.exe$</field>
+	<field name="win.eventdata.CommandLine">add</field>
+	<field name="win.eventdata.CommandLine">helper</field>
+	<description>ATT&CK T1128: Suspicious Netsh DLL Persistence</description>
+	<info type="text">Detects persitence via netsh helper </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 56321594-9087-49d9-bf10-524fe8479452 </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1128/T1128.md </info>
+	<group>attack.persistence,attack.t1128,MITRE</group>
+</rule>
+

@@ -1,0 +1,18 @@
+<rule id="262160" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\\\\wsreset.exe$</field>
+	<description>ATT&CK T1088: Bypass UAC via WSReset.exe</description>
+	<info type="text">Identifies use of WSReset.exe to bypass User Account Control. Adversaries use this technique to execute privileged processes. </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: d797268e-28a9-49a7-b9a8-2f5039011c5c </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/532b5ed4-7930-11e9-8f5c-d46d6d62a49e.html </info>
+	<group>attack.privilege_escalation,attack.t1088,MITRE</group>
+</rule>
+
+<rule id="262161" level="0">
+	<if_sid>262160</if_sid>
+	<field name="win.eventdata.Image">\\\\conhost.exe$</field>
+	<description>Whitelist Interaction: Bypass UAC via WSReset.exe</description>
+</rule>
+
+!Selection and not filter

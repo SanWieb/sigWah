@@ -1,0 +1,42 @@
+Manual check needed! Unknown condition
+<rule id="260761" level="%">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.\\AppData\\Roaming\\Oracle\.\\java\..exe \.|\.cscript.exe \.Retrive\..vbs \.</field>
+	<description>ATT&CK T1064: Adwind RAT / JRAT</description>
+	<info type="text">Detects javaw.exe in AppData folder as used by Adwind / JRAT </info>
+	<info type="text">Falsepositives: Diskpart.exe usage to manage partitions on the local hard drive. </info>
+	<info type="text">Sigma UUID: 1fac1481-2dbc-48b2-9096-753c49b4ec71 </info>
+	<info type="link">https://www.hybrid-analysis.com/sample/ba86fa0d4b6af2db0656a88b1dd29f36fe362473ae8ad04255c4e52f214a541c?environmentId=100 </info>
+	<info type="link">https://www.first.org/resources/papers/conf2017/Advanced-Incident-Detection-and-Threat-Hunting-using-Sysmon-and-Splunk.pdf </info>
+	<group>attack.execution,attack.t1064,MITRE</group>
+</rule>
+
+Manual check needed! Unknown condition
+<rule id="260762" level="%">
+	<if_group>sysmon_event1</if_group>
+Manual check needed! Rule failed Field: EventID
+Manual check needed! Rule failed Field: TargetFilename
+	<description>ATT&CK T1064: Adwind RAT / JRAT</description>
+	<info type="text">Detects javaw.exe in AppData folder as used by Adwind / JRAT </info>
+	<info type="text">Falsepositives: Diskpart.exe usage to manage partitions on the local hard drive. </info>
+	<info type="text">Sigma UUID: 1fac1481-2dbc-48b2-9096-753c49b4ec71 </info>
+	<info type="link">https://www.hybrid-analysis.com/sample/ba86fa0d4b6af2db0656a88b1dd29f36fe362473ae8ad04255c4e52f214a541c?environmentId=100 </info>
+	<info type="link">https://www.first.org/resources/papers/conf2017/Advanced-Incident-Detection-and-Threat-Hunting-using-Sysmon-and-Splunk.pdf </info>
+	<group>attack.execution,attack.t1064,MITRE</group>
+</rule>
+
+Manual check needed! Unknown condition
+<rule id="260763" level="%">
+	<if_group>sysmon_event1</if_group>
+Manual check needed! Rule failed Field: EventID
+Manual check needed! Rule failed Field: TargetObject
+Manual check needed! Rule failed Field: Details
+	<description>ATT&CK T1064: Adwind RAT / JRAT</description>
+	<info type="text">Detects javaw.exe in AppData folder as used by Adwind / JRAT </info>
+	<info type="text">Falsepositives: Diskpart.exe usage to manage partitions on the local hard drive. </info>
+	<info type="text">Sigma UUID: 1fac1481-2dbc-48b2-9096-753c49b4ec71 </info>
+	<info type="link">https://www.hybrid-analysis.com/sample/ba86fa0d4b6af2db0656a88b1dd29f36fe362473ae8ad04255c4e52f214a541c?environmentId=100 </info>
+	<info type="link">https://www.first.org/resources/papers/conf2017/Advanced-Incident-Detection-and-Threat-Hunting-using-Sysmon-and-Splunk.pdf </info>
+	<group>attack.execution,attack.t1064,MITRE</group>
+</rule>
+

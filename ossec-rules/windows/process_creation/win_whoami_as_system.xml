@@ -1,0 +1,12 @@
+<rule id="262210" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.User">NT AUTHORITY\\\\SYSTEM</field>
+	<field name="win.eventdata.Image">\\\\whoami.exe$</field>
+	<description>ATT&CK T1033: Run Whoami as SYSTEM</description>
+	<info type="text">Detects a whoami.exe executed by LOCAL SYSTEM. This may be a sign of a successful local privilege escalation. </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 80167ada-7a12-41ed-b8e9-aa47195c66a1 </info>
+	<info type="link">https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment </info>
+	<group>attack.discovery,attack.privilege_escalation,attack.t1033,MITRE</group>
+</rule>
+

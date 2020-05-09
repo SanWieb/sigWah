@@ -1,0 +1,12 @@
+<rule id="261980" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.\\sysprep.exe \.\\AppData\\\.|sysprep.exe \.\\AppData\\\.</field>
+	<description>ATT&CK: Sysprep on AppData Folder</description>
+	<info type="text">Detects suspicious sysprep process start with AppData folder as target (as used by Trojan Syndicasec in Thrip report by Symantec) </info>
+	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. </info>
+	<info type="text">Sigma UUID: d5b9ae7a-e6fc-405e-80ff-2ff9dcc64e7e </info>
+	<info type="link">https://www.symantec.com/blogs/threat-intelligence/thrip-hits-satellite-telecoms-defense-targets </info>
+	<info type="link">https://app.any.run/tasks/61a296bb-81ad-4fee-955f-3b399f4aaf4b </info>
+	<group>attack.execution,MITRE</group>
+</rule>
+

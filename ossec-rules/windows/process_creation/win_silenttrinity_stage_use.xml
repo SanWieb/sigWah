@@ -1,0 +1,29 @@
+<rule id="261290" level="14">
+	<if_group>sysmon_event1</if_group>
+Manual check needed! Rule failed Field: Description|contains
+	<description>ATT&CK: SILENTTRINITY Stager Execution</description>
+	<info type="text">Detects SILENTTRINITY stager use </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: 03552375-cc2c-4883-bbe4-7958d5a980be </info>
+	<info type="link">https://github.com/byt3bl33d3r/SILENTTRINITY </info>
+	<group>attack.execution,MITRE</group>
+</rule>
+
+	<info type="text">Detects SILENTTRINITY stager use </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: 03552375-cc2c-4883-bbe4-7958d5a980be </info>
+	<info type="link">https://github.com/byt3bl33d3r/SILENTTRINITY </info>
+	<group>attack.execution,MITRE</group>
+</rule>
+Manual check needed! Unknown condition
+<rule id="261292" level="%">
+	<if_group>sysmon_event1</if_group>
+Manual check needed! Rule failed Field: EventID
+	<description>ATT&CK: SILENTTRINITY Stager Execution</description>
+	<info type="text">Detects SILENTTRINITY stager use </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: 03552375-cc2c-4883-bbe4-7958d5a980be </info>
+	<info type="link">https://github.com/byt3bl33d3r/SILENTTRINITY </info>
+	<group>attack.execution,MITRE</group>
+</rule>
+

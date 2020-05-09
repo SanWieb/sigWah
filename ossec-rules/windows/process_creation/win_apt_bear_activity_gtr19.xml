@@ -1,0 +1,24 @@
+<rule id="260020" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\xcopy.exe</field>
+	<field name="win.eventdata.CommandLine">\. /S /E /C /Q /H \\\.</field>
+	<description>ATT&CK T1081 T1003: Judgement Panda Credential Access Activity</description>
+	<info type="text">Detects Russian group activity as described in Global Threat Report 2019 by Crowdstrike </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: b83f5166-9237-4b5e-9cd4-7b5d52f4d8ee </info>
+	<info type="link">https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/ </info>
+	<group>attack.credential_access,attack.t1081,attack.t1003,MITRE</group>
+</rule>
+
+<rule id="260021" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\adexplorer.exe</field>
+	<field name="win.eventdata.CommandLine">\. -snapshot "" \.:\\users\\\.</field>
+	<description>ATT&CK T1081 T1003: Judgement Panda Credential Access Activity</description>
+	<info type="text">Detects Russian group activity as described in Global Threat Report 2019 by Crowdstrike </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: b83f5166-9237-4b5e-9cd4-7b5d52f4d8ee </info>
+	<info type="link">https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/ </info>
+	<group>attack.credential_access,attack.t1081,attack.t1003,MITRE</group>
+</rule>
+

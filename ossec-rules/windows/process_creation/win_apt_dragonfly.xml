@@ -1,0 +1,11 @@
+<rule id="260060" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\crackmapexec.exe</field>
+	<description>ATT&CK: CrackMapExecWin</description>
+	<info type="text">Detects CrackMapExecWin Activity as Described by NCSC </info>
+	<info type="text">Falsepositives: None. </info>
+	<info type="text">Sigma UUID: 04d9079e-3905-4b70-ad37-6bdf11304965 </info>
+	<info type="link">https://www.ncsc.gov.uk/alerts/hostile-state-actors-compromising-uk-organisations-focus-engineering-and-industrial-control </info>
+	<group>attack.g0035,MITRE</group>
+</rule>
+

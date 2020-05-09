@@ -1,0 +1,36 @@
+<rule id="260520" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Company">SecurityXploded</field>
+	<description>ATT&CK T1003 S0005: SecurityXploded Tool</description>
+	<info type="text">Detects the execution of SecurityXploded Tools </info>
+	<info type="text">Falsepositives: unlikely. </info>
+	<info type="text">Sigma UUID: 7679d464-4f74-45e2-9e01-ac66c5eb041a </info>
+	<info type="link">https://securityxploded.com/ </info>
+	<info type="link">https://cyberx-labs.com/blog/gangnam-industrial-style-apt-campaign-targets-korean-industrial-companies/ </info>
+	<group>attack.credential_access,attack.t1003,attack.s0005,MITRE</group>
+</rule>
+
+<rule id="260521" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">PasswordDump.exe$</field>
+	<description>ATT&CK T1003 S0005: SecurityXploded Tool</description>
+	<info type="text">Detects the execution of SecurityXploded Tools </info>
+	<info type="text">Falsepositives: unlikely. </info>
+	<info type="text">Sigma UUID: 7679d464-4f74-45e2-9e01-ac66c5eb041a </info>
+	<info type="link">https://securityxploded.com/ </info>
+	<info type="link">https://cyberx-labs.com/blog/gangnam-industrial-style-apt-campaign-targets-korean-industrial-companies/ </info>
+	<group>attack.credential_access,attack.t1003,attack.s0005,MITRE</group>
+</rule>
+
+<rule id="260522" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.OriginalFilename">PasswordDump.exe$</field>
+	<description>ATT&CK T1003 S0005: SecurityXploded Tool</description>
+	<info type="text">Detects the execution of SecurityXploded Tools </info>
+	<info type="text">Falsepositives: unlikely. </info>
+	<info type="text">Sigma UUID: 7679d464-4f74-45e2-9e01-ac66c5eb041a </info>
+	<info type="link">https://securityxploded.com/ </info>
+	<info type="link">https://cyberx-labs.com/blog/gangnam-industrial-style-apt-campaign-targets-korean-industrial-companies/ </info>
+	<group>attack.credential_access,attack.t1003,attack.s0005,MITRE</group>
+</rule>
+

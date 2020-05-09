@@ -1,0 +1,11 @@
+<rule id="261930" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\wscript.exe|\.\\\\cscript.exe</field>
+	<field name="win.eventdata.CommandLine">\..jse|\..vbe|\..js|\..vba</field>
+	<description>ATT&CK T1064: WSF/JSE/JS/VBA/VBE File Execution</description>
+	<info type="text">Detects suspicious file execution by wscript and cscript </info>
+	<info type="text">Falsepositives: Will need to be tuned. I recommend adding the user profile path in CommandLine if it is getting too noisy.. </info>
+	<info type="text">Sigma UUID: 1e33157c-53b1-41ad-bbcc-780b80b58288 </info>
+	<group>attack.execution,attack.t1064,MITRE</group>
+</rule>
+

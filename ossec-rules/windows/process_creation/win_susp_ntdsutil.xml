@@ -1,0 +1,11 @@
+<rule id="261680" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.\\ntdsutil\.</field>
+	<description>ATT&CK T1003: Invocation of Active Directory Diagnostic Tool (ntdsutil.exe)</description>
+	<info type="text">Detects execution of ntdsutil.exe, which can be used for various attacks against the NTDS database (NTDS.DIT) </info>
+	<info type="text">Falsepositives: NTDS maintenance. </info>
+	<info type="text">Sigma UUID: 2afafd61-6aae-4df4-baed-139fa1f4c345 </info>
+	<info type="link">https://jpcertcc.github.io/ToolAnalysisResultSheet/details/ntdsutil.htm </info>
+	<group>attack.credential_access,attack.t1003,MITRE</group>
+</rule>
+

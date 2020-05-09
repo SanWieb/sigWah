@@ -1,0 +1,34 @@
+Manual check needed! Unknown condition
+<rule id="261970" level="15">
+	<if_group>sysmon_event1</if_group>
+Manual check needed! Rule parse failed (Parse Commandline)
+	<description>ATT&CK T1055: Suspect Svchost Activity</description>
+	<info type="text">It is extremely abnormal for svchost.exe to spawn without any CLI arguments and is normally observed when a malicious process spawns the process and injects code into the process memory space. </info>
+	<info type="text">Falsepositives: rpcnet.exe / rpcnetp.exe which is a lojack style software. https://www.blackhat.com/docs/us-14/materials/us-14-Kamlyuk-Kamluk-Computrace-Backdoor-Revisited.pdf. </info>
+	<info type="text">Sigma UUID: 16c37b52-b141-42a5-a3ea-bbe098444397 </info>
+	<info type="link">https://securitybytes.io/blue-team-fundamentals-part-two-windows-processes-759fe15965e2 </info>
+	<group>attack.t1055,MITRE</group>
+</rule>
+
+<rule id="261971" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\svchost.exe</field>
+	<description>ATT&CK T1055: Suspect Svchost Activity</description>
+	<info type="text">It is extremely abnormal for svchost.exe to spawn without any CLI arguments and is normally observed when a malicious process spawns the process and injects code into the process memory space. </info>
+	<info type="text">Falsepositives: rpcnet.exe / rpcnetp.exe which is a lojack style software. https://www.blackhat.com/docs/us-14/materials/us-14-Kamlyuk-Kamluk-Computrace-Backdoor-Revisited.pdf. </info>
+	<info type="text">Sigma UUID: 16c37b52-b141-42a5-a3ea-bbe098444397 </info>
+	<info type="link">https://securitybytes.io/blue-team-fundamentals-part-two-windows-processes-759fe15965e2 </info>
+	<group>attack.t1055,MITRE</group>
+</rule>
+
+<rule id="261972" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\.\\\\rpcnet.exe|\.\\\\rpcnetp.exe</field>
+	<description>ATT&CK T1055: Suspect Svchost Activity</description>
+	<info type="text">It is extremely abnormal for svchost.exe to spawn without any CLI arguments and is normally observed when a malicious process spawns the process and injects code into the process memory space. </info>
+	<info type="text">Falsepositives: rpcnet.exe / rpcnetp.exe which is a lojack style software. https://www.blackhat.com/docs/us-14/materials/us-14-Kamlyuk-Kamluk-Computrace-Backdoor-Revisited.pdf. </info>
+	<info type="text">Sigma UUID: 16c37b52-b141-42a5-a3ea-bbe098444397 </info>
+	<info type="link">https://securitybytes.io/blue-team-fundamentals-part-two-windows-processes-759fe15965e2 </info>
+	<group>attack.t1055,MITRE</group>
+</rule>
+

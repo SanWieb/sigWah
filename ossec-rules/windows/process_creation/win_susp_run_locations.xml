@@ -1,0 +1,11 @@
+<rule id="261910" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.:\\\\RECYCLER\\\\\.|\.:\\\\SystemVolumeInformation\\\\\.|\.:\\\\\\\\Windows\\\\\\\\Tasks\\\\\.|\.:\\\\\\\\Windows\\\\\\\\debug\\\\\.|\.:\\\\\\\\Windows\\\\\\\\fonts\\\\\.|\.:\\\\\\\\Windows\\\\\\\\help\\\\\.|\.:\\\\\\\\Windows\\\\\\\\drivers\\\\\.|\.:\\\\\\\\Windows\\\\\\\\addins\\\\\.|\.:\\\\\\\\Windows\\\\\\\\cursors\\\\\.|\.:\\\\\\\\Windows\\\\\\\\system32\\\\tasks\\\\\.</field>
+	<description>ATT&CK T1036: Suspicious Process Start Locations</description>
+	<info type="text">Detects suspicious process run from unusual locations </info>
+	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. </info>
+	<info type="text">Sigma UUID: 15b75071-74cc-47e0-b4c6-b43744a62a2b </info>
+	<info type="link">https://car.mitre.org/wiki/CAR-2013-05-002 </info>
+	<group>attack.defense_evasion,attack.t1036,car.2013-05-002,MITRE</group>
+</rule>
+

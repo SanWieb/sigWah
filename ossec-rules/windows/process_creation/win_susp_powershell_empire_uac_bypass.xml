@@ -1,0 +1,12 @@
+<rule id="261750" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\. -NoP -NonI -w Hidden -c \$x=\$\\(\\(gp HKCU:Software\\\\Microsoft\\\\Windows Update\\)\).Update\\)\)\.|\. -NoP -NonI -c \$x=\$\\(\\(gp HKCU:Software\\\\Microsoft\\\\Windows Update\\)\).Update\\)\);\.</field>
+	<description>ATT&CK T1088: Empire PowerShell UAC Bypass</description>
+	<info type="text">Detects some Empire PowerShell UAC bypass methods </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: 3268b746-88d8-4cd3-bffc-30077d02c787 </info>
+	<info type="link">https://github.com/EmpireProject/Empire/blob/e37fb2eef8ff8f5a0a689f1589f424906fe13055/data/module_source/privesc/Invoke-EventVwrBypass.ps1#L64 </info>
+	<info type="link">https://github.com/EmpireProject/Empire/blob/e37fb2eef8ff8f5a0a689f1589f424906fe13055/data/module_source/privesc/Invoke-FodHelperBypass.ps1#L64 </info>
+	<group>attack.defense_evasion,attack.privilege_escalation,attack.t1088,car.2019-04-001,MITRE</group>
+</rule>
+

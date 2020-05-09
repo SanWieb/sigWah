@@ -1,0 +1,20 @@
+<rule id="261180" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.OriginalFileName">cmd.exe|powershell.exe|powershell_ise.exe|psexec.exe|psexec.c|cscript.exe|wscript.exe|mshta.exe|regsvr32.exe|wmic.exe|certutil.exe|rundll32.exe|cmstp.exe|msiexec.exe|7z.exe|winrar.exe|wevtutil.exe|net.exe|net1.exe|netsh.exe</field>
+	<description>ATT&CK T1036: Renamed Binary</description>
+	<info type="text">Detects the execution of a renamed binary often used by attackers or malware leveraging new Sysmon OriginalFileName datapoint. </info>
+	<info type="text">Falsepositives: Custom applications use renamed binaries adding slight change to binary name. Typically this is easy to spot and add to whitelist. </info>
+	<info type="text">Sigma UUID: 36480ae1-a1cb-4eaa-a0d6-29801d7e9142 </info>
+	<info type="link">https://attack.mitre.org/techniques/T1036/ </info>
+	<info type="link">https://mgreen27.github.io/posts/2019/05/12/BinaryRename.html </info>
+	<info type="link">https://mgreen27.github.io/posts/2019/05/29/BinaryRename2.html </info>
+	<group>attack.t1036,attack.defense_evasion,MITRE</group>
+</rule>
+
+<rule id="261181" level="0">
+	<if_sid>261180</if_sid>
+	<field name="win.eventdata.Image">\\\\cmd.exe$|\\\\powershell.exe$|\\\\powershell_ise.exe$|\\\\psexec.exe$|\\\\psexec64.exe$|\\\\cscript.exe$|\\\\wscript.exe$|\\\\mshta.exe$|\\\\regsvr32.exe$|\\\\wmic.exe$|\\\\certutil.exe$|\\\\rundll32.exe$|\\\\cmstp.exe$|\\\\msiexec.exe$|\\\\7z.exe$|\\\\winrar.exe$|\\\\wevtutil.exe$|\\\\net.exe$|\\\\net1.exe$|\\\\netsh.exe$</field>
+	<description>Whitelist Interaction: Renamed Binary</description>
+</rule>
+
+!Selection and not filter

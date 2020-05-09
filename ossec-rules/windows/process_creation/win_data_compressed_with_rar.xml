@@ -1,0 +1,13 @@
+<rule id="260330" level="6">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\rar.exe$</field>
+	<field name="win.eventdata.CommandLine"> a </field>
+	<description>ATT&CK T1002: Data Compressed - rar.exe</description>
+	<info type="text">An adversary may compress data (e.g., sensitive documents) that is collected prior to exfiltration in order to make it portable and minimize the amount of data sent over the network </info>
+	<info type="text">Falsepositives: highly likely if rar is default archiver in the monitored environment. </info>
+	<info type="text">Sigma UUID: 6f3e2987-db24-4c78-a860-b4f4095a7095 </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1002/T1002.yaml </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/1ec33c93-3d0b-4a28-8014-dbdaae5c60ae.html </info>
+	<group>attack.exfiltration,attack.t1002,MITRE</group>
+</rule>
+

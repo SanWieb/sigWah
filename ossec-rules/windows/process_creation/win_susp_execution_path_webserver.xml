@@ -1,0 +1,18 @@
+<rule id="261570" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\wwwroot\\\\\.|\.\\\\wmpub\\\\\.|\.\\\\htdocs\\\\\.</field>
+	<description>ATT&CK T1100: Execution in Webserver Root Folder</description>
+	<info type="text">Detects a suspicious program execution in a web service root folder (filter out false positives) </info>
+	<info type="text">Falsepositives: Various applications. Tools that include ping or nslookup command invocations. </info>
+	<info type="text">Sigma UUID: 35efb964-e6a5-47ad-bbcd-19661854018d </info>
+	<group>attack.persistence,attack.t1100,MITRE</group>
+</rule>
+
+<rule id="261571" level="0">
+	<if_sid>261570</if_sid>
+	<field name="win.eventdata.Image">\.bin\\\\\.|\.\\\\Tools\\\\\.|\.\\\\SMSComponent\\\\\.</field>
+	<field name="win.eventdata.ParentImage">\.\\\\services.exe</field>
+	<description>Whitelist Interaction: Execution in Webserver Root Folder</description>
+</rule>
+
+!Selection and not filter

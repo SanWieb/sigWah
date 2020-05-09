@@ -1,0 +1,13 @@
+<rule id="260160" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">rundll32.exe \.\AppData\\.\\\..dat",\.|rundll32.exe \.\AppData\\.\\\..dll",#1</field>
+	<description>ATT&CK T1059 T1085: Sofacy Trojan Loader Activity</description>
+	<info type="text">Detects Trojan loader acitivty as used by APT28 </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: ba778144-5e3d-40cf-8af9-e28fb1df1e20 </info>
+	<info type="link">https://researchcenter.paloaltonetworks.com/2018/02/unit42-sofacy-attacks-multiple-government-entities/ </info>
+	<info type="link">https://www.reverse.it/sample/e3399d4802f9e6d6d539e3ae57e7ea9a54610a7c4155a6541df8e94d67af086e?environmentId=100 </info>
+	<info type="link">https://twitter.com/ClearskySec/status/960924755355369472 </info>
+	<group>attack.g0007,attack.execution,attack.t1059,attack.defense_evasion,attack.t1085,car.2013-10-002,MITRE</group>
+</rule>
+

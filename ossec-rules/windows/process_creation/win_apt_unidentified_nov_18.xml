@@ -1,0 +1,25 @@
+Manual check needed! Unknown condition
+<rule id="260201" level="%">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.cyzfc.dat, PointFunctionCall</field>
+	<description>ATT&CK T1085: Unidentified Attacker November 2018</description>
+	<info type="text">A sigma rule detecting an unidetefied attacker who used phishing emails to target high profile orgs on November 2018. The Actor shares some TTPs with YYTRIUM/APT29 campaign in 2016. </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 7453575c-a747-40b9-839b-125a0aae324b </info>
+	<info type="link">https://twitter.com/DrunkBinary/status/1063075530180886529 </info>
+	<group>attack.execution,attack.t1085,MITRE</group>
+</rule>
+
+Manual check needed! Unknown condition
+<rule id="260202" level="%">
+	<if_group>sysmon_event1</if_group>
+Manual check needed! Rule failed Field: EventID
+Manual check needed! Rule failed Field: TargetFilename
+	<description>ATT&CK T1085: Unidentified Attacker November 2018</description>
+	<info type="text">A sigma rule detecting an unidetefied attacker who used phishing emails to target high profile orgs on November 2018. The Actor shares some TTPs with YYTRIUM/APT29 campaign in 2016. </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 7453575c-a747-40b9-839b-125a0aae324b </info>
+	<info type="link">https://twitter.com/DrunkBinary/status/1063075530180886529 </info>
+	<group>attack.execution,attack.t1085,MITRE</group>
+</rule>
+

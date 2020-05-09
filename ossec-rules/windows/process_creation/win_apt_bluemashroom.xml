@@ -1,0 +1,11 @@
+<rule id="260030" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.\\regsvr32\.\\AppData\\Local\\\.|\.\\AppData\\Local\\\.,DllEntry\.</field>
+	<description>ATT&CK T1117: BlueMashroom DLL Load</description>
+	<info type="text">Detects a suspicious DLL loading from AppData Local path as described in BlueMashroom report </info>
+	<info type="text">Falsepositives: Unlikely. </info>
+	<info type="text">Sigma UUID: bd70d3f8-e60e-4d25-89f0-0b5a9cff20e0 </info>
+	<info type="link">https://www.virusbulletin.com/conference/vb2019/abstracts/apt-cases-exploiting-vulnerabilities-region-specific-software </info>
+	<group>attack.defense_evasion,attack.t1117,MITRE</group>
+</rule>
+

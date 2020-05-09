@@ -1,0 +1,25 @@
+Manual check needed! Unknown condition
+<rule id="261940" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\sc.exe$</field>
+	<field name="win.eventdata.CommandLine">config</field>
+	<field name="win.eventdata.CommandLine">binpath</field>
+	<description>ATT&CK T1031: Suspicious Service Path Modification</description>
+	<info type="text">Detects service path modification to powershell/cmd </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 138d3531-8793-4f50-a2cd-f291b2863d78 </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1031/T1031.yaml </info>
+	<group>attack.persistence,attack.t1031,MITRE</group>
+</rule>
+
+<rule id="261941" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">powershell|cmd</field>
+	<description>ATT&CK T1031: Suspicious Service Path Modification</description>
+	<info type="text">Detects service path modification to powershell/cmd </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 138d3531-8793-4f50-a2cd-f291b2863d78 </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1031/T1031.yaml </info>
+	<group>attack.persistence,attack.t1031,MITRE</group>
+</rule>
+

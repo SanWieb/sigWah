@@ -1,0 +1,11 @@
+<rule id="260590" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.\\CurrentVersion\\Image File Execution Options\\sethc.exe\.|\.\\CurrentVersion\\Image File Execution Options\\utilman.exe\.|\.\\CurrentVersion\\Image File Execution Options\\osk.exe\.|\.\\CurrentVersion\\Image File Execution Options\\magnify.exe\.|\.\\CurrentVersion\\Image File Execution Options\\narrator.exe\.|\.\\CurrentVersion\\Image File Execution Options\\displayswitch.exe\.|\.\\CurrentVersion\\Image File Execution Options\\atbroker.exe\.</field>
+	<description>ATT&CK T1015: Suspicious Debugger Registration Cmdline</description>
+	<info type="text">Detects the registration of a debugger for a program that is available in the logon screen (sticky key backdoor). </info>
+	<info type="text">Falsepositives: Penetration Tests. </info>
+	<info type="text">Sigma UUID: ae215552-081e-44c7-805f-be16f975c8a2 </info>
+	<info type="link">https://blogs.technet.microsoft.com/jonathantrull/2016/10/03/detecting-sticky-key-backdoors/ </info>
+	<group>attack.persistence,attack.privilege_escalation,attack.t1015,MITRE</group>
+</rule>
+

@@ -1,0 +1,14 @@
+<rule id="261540" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\dxcap.exe$</field>
+	<field name="win.eventdata.CommandLine">-c</field>
+	<field name="win.eventdata.CommandLine">.exe</field>
+	<description>ATT&CK T1218: Application Whitelisting Bypass via Dxcap.exe</description>
+	<info type="text">Detects execution of of Dxcap.exe </info>
+	<info type="text">Falsepositives: Legitimate execution of dxcap.exe by legitimate user. </info>
+	<info type="text">Sigma UUID: 60f16a96-db70-42eb-8f76-16763e333590 </info>
+	<info type="link">https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/OtherMSBinaries/Dxcap.yml </info>
+	<info type="link">https://twitter.com/harr0ey/status/992008180904419328 </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1218,MITRE</group>
+</rule>
+

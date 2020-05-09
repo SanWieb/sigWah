@@ -1,0 +1,13 @@
+<rule id="260600" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\at.exe$</field>
+	<field name="win.eventdata.CommandLine">interactive</field>
+	<description>ATT&CK T1053: Interactive AT Job</description>
+	<info type="text">Detect an interactive AT job, which may be used as a form of privilege escalation </info>
+	<info type="text">Falsepositives: Unlikely (at.exe deprecated as of Windows 8). </info>
+	<info type="text">Sigma UUID: 60fc936d-2eb0-4543-8a13-911c750a1dfc </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1053/T1053.yaml </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/d8db43cf-ed52-4f5c-9fb3-c9a4b95a0b56.html </info>
+	<group>attack.privilege_escalation,attack.t1053,MITRE</group>
+</rule>
+

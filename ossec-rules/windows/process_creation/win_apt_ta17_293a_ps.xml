@@ -1,0 +1,11 @@
+<rule id="260170" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">ps.exe -accepteula</field>
+	<description>ATT&CK T1036: Ps.exe Renamed SysInternals Tool</description>
+	<info type="text">Detects renamed SysInternals tool execution with a binary named ps.exe as used by Dragonfly APT group and documented in TA17-293A report </info>
+	<info type="text">Falsepositives: Renamed SysInternals tool. </info>
+	<info type="text">Sigma UUID: 18da1007-3f26-470f-875d-f77faf1cab31 </info>
+	<info type="link">https://www.us-cert.gov/ncas/alerts/TA17-293A </info>
+	<group>attack.defense_evasion,attack.g0035,attack.t1036,car.2013-05-009,MITRE</group>
+</rule>
+

@@ -1,0 +1,43 @@
+Manual check needed! Unknown condition
+<rule id="260650" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">lsass</field>
+	<field name="win.eventdata.CommandLine">.dmp</field>
+	<description>ATT&CK T1003: LSASS Memory Dumping</description>
+	<info type="text">Detect creation of dump files containing the memory space of lsass.exe, which contains sensitive credentials. Identifies usage of Sysinternals procdump.exe to export the memory space of lsass.exe which contains sensitive credentials. </info>
+	<info type="text">Falsepositives: Unlikely. </info>
+	<info type="text">Sigma UUID: ffa6861c-4461-4f59-8a41-578c39f3f23e </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/1e1ef6be-12fc-11e9-8d76-4d6bb837cda4.html </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/210b4ea4-12fc-11e9-8d76-4d6bb837cda4.html </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003/T1003.yaml </info>
+	<group>attack.credential_access,attack.t1003,MITRE</group>
+</rule>
+
+<rule id="260651" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\werfault.exe$</field>
+	<description>ATT&CK T1003: LSASS Memory Dumping</description>
+	<info type="text">Detect creation of dump files containing the memory space of lsass.exe, which contains sensitive credentials. Identifies usage of Sysinternals procdump.exe to export the memory space of lsass.exe which contains sensitive credentials. </info>
+	<info type="text">Falsepositives: Unlikely. </info>
+	<info type="text">Sigma UUID: ffa6861c-4461-4f59-8a41-578c39f3f23e </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/1e1ef6be-12fc-11e9-8d76-4d6bb837cda4.html </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/210b4ea4-12fc-11e9-8d76-4d6bb837cda4.html </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003/T1003.yaml </info>
+	<group>attack.credential_access,attack.t1003,MITRE</group>
+</rule>
+
+<rule id="260652" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\procdump</field>
+	<field name="win.eventdata.Image">.exe$</field>
+	<field name="win.eventdata.CommandLine">lsass</field>
+	<description>ATT&CK T1003: LSASS Memory Dumping</description>
+	<info type="text">Detect creation of dump files containing the memory space of lsass.exe, which contains sensitive credentials. Identifies usage of Sysinternals procdump.exe to export the memory space of lsass.exe which contains sensitive credentials. </info>
+	<info type="text">Falsepositives: Unlikely. </info>
+	<info type="text">Sigma UUID: ffa6861c-4461-4f59-8a41-578c39f3f23e </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/1e1ef6be-12fc-11e9-8d76-4d6bb837cda4.html </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/210b4ea4-12fc-11e9-8d76-4d6bb837cda4.html </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003/T1003.yaml </info>
+	<group>attack.credential_access,attack.t1003,MITRE</group>
+</rule>
+

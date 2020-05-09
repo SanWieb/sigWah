@@ -1,0 +1,12 @@
+<rule id="261230" level="6">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\net.exe$|\\\\net1.exe$</field>
+	<field name="win.eventdata.CommandLine"> start </field>
+	<description>ATT&CK T1035: Service Execution</description>
+	<info type="text">Detects manual service execution (start) via system utilities </info>
+	<info type="text">Falsepositives: Legitimate administrator or user executes a service for legitimate reason. </info>
+	<info type="text">Sigma UUID: 2a072a96-a086-49fa-bcb5-15cc5a619093 </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1035/T1035.yaml </info>
+	<group>attack.execution,attack.t1035,MITRE</group>
+</rule>
+

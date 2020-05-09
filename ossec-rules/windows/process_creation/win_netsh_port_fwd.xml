@@ -1,0 +1,11 @@
+<rule id="260860" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">netsh interface portproxy add v4tov4 \.</field>
+	<description>ATT&CK T1090: Netsh Port Forwarding</description>
+	<info type="text">Detects netsh commands that configure a port forwarding </info>
+	<info type="text">Falsepositives: Legitimate administration. </info>
+	<info type="text">Sigma UUID: 322ed9ec-fcab-4f67-9a34-e7c6aef43614 </info>
+	<info type="link">https://www.fireeye.com/blog/threat-research/2019/01/bypassing-network-restrictions-through-rdp-tunneling.html </info>
+	<group>attack.lateral_movement,attack.command_and_control,attack.t1090,MITRE</group>
+</rule>
+

@@ -1,0 +1,13 @@
+<rule id="261890" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.\\rundll32.exe\. url.dll,\.OpenURL \.|\.\\rundll32.exe\. url.dll,\.OpenURLA \.|\.\\rundll32.exe\. url.dll,\.FileProtocolHandler \.|\.\\rundll32.exe\. zipfldr.dll,\.RouteTheCall \.|\.\\rundll32.exe\. Shell32.dll,\.Control_RunDLL \.|\.\\rundll32.exe javascript:\.|\. url.dll,\.OpenURL \.|\. url.dll,\.OpenURLA \.|\. url.dll,\.FileProtocolHandler \.|\. zipfldr.dll,\.RouteTheCall \.|\. Shell32.dll,\.Control_RunDLL \.|\. javascript:\.|\..RegisterXLL\.</field>
+	<description>ATT&CK T1085: Suspicious Rundll32 Activity</description>
+	<info type="text">Detects suspicious process related to rundll32 based on arguments </info>
+	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. </info>
+	<info type="text">Sigma UUID: e593cf51-88db-4ee1-b920-37e89012a3c9 </info>
+	<info type="link">http://www.hexacorn.com/blog/2017/05/01/running-programs-via-proxy-jumping-on-a-edr-bypass-trampoline/ </info>
+	<info type="link">https://twitter.com/Hexacorn/status/885258886428725250 </info>
+	<info type="link">https://gist.github.com/ryhanson/227229866af52e2d963cf941af135a52 </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1085,MITRE</group>
+</rule>
+

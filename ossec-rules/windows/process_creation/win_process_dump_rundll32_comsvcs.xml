@@ -1,0 +1,11 @@
+<rule id="261110" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">comsvcs.dll,#24|comsvcs.dll,MiniDump</field>
+	<description>ATT&CK T1036 T1003: Process Dump via Rundll32 and Comsvcs.dll</description>
+	<info type="text">Detects a process memory dump performed via ordinal function 24 in comsvcs.dll </info>
+	<info type="text">Falsepositives: Unlikely, because no one should dump the process memory in that way. </info>
+	<info type="text">Sigma UUID: 646ea171-dded-4578-8a4d-65e9822892e3 </info>
+	<info type="link">https://twitter.com/shantanukhande/status/1229348874298388484 </info>
+	<group>attack.defense_evasion,attack.t1036,attack.credential_access,attack.t1003,car.2013-05-009,MITRE</group>
+</rule>
+

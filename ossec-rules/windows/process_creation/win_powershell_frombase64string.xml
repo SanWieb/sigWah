@@ -1,0 +1,11 @@
+<rule id="261060" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">::FromBase64String\\(</field>
+	<description>ATT&CK T1027: FromBase64String Command Line</description>
+	<info type="text">Detects suspicious FromBase64String expressions in command line arguments </info>
+	<info type="text">Falsepositives: Administrative script libraries. </info>
+	<info type="text">Sigma UUID: e32d4572-9826-4738-b651-95fa63747e8a </info>
+	<info type="link">https://gist.github.com/Neo23x0/6af876ee72b51676c82a2db8d2cd3639 </info>
+	<group>attack.t1027,attack.defense_evasion,MITRE</group>
+</rule>
+

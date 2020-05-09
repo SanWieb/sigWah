@@ -1,0 +1,18 @@
+<rule id="261610" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\GUP.exe</field>
+	<description>ATT&CK T1073: Suspicious GUP Usage</description>
+	<info type="text">Detects execution of the Notepad++ updater in a suspicious directory, which is often used in DLL side-loading attacks </info>
+	<info type="text">Falsepositives: Execution of tools named GUP.exe and located in folders different than Notepad++\updater. </info>
+	<info type="text">Sigma UUID: 0a4f6091-223b-41f6-8743-f322ec84930b </info>
+	<info type="link">https://www.fireeye.com/blog/threat-research/2018/09/apt10-targeting-japanese-corporations-using-updated-ttps.html </info>
+	<group>attack.defense_evasion,attack.t1073,MITRE</group>
+</rule>
+
+<rule id="261611" level="0">
+	<if_sid>261610</if_sid>
+	<field name="win.eventdata.Image">\.:\\\\Users\\\\\.\\\\AppData\\\\Local\\\\Notepad++\\\\updater\\\\gup.exe|\.:\\\\Users\\\\\.\\\\AppData\\\\Roaming\\\\Notepad++\\\\updater\\\\gup.exe|\.:\\\\Program Files\\\\Notepad++\\\\updater\\\\gup.exe|\.:\\\\Program Files \\(x86\\)\)\\\\Notepad++\\\\updater\\\\gup.exe</field>
+	<description>Whitelist Interaction: Suspicious GUP Usage</description>
+</rule>
+
+!Selection and not filter

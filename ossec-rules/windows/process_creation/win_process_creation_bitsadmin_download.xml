@@ -1,0 +1,25 @@
+<rule id="261100" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\bitsadmin.exe</field>
+	<field name="win.eventdata.CommandLine">\. /transfer \.</field>
+	<description>ATT&CK T1197 S0190: Bitsadmin Download</description>
+	<info type="text">Detects usage of bitsadmin downloading a file </info>
+	<info type="text">Falsepositives: Some legitimate apps use this, but limited.. </info>
+	<info type="text">Sigma UUID: d059842b-6b9d-4ed1-b5c3-5b89143c6ede </info>
+	<info type="link">https://blog.netspi.com/15-ways-to-download-a-file/#bitsadmin </info>
+	<info type="link">https://isc.sans.edu/diary/22264 </info>
+	<group>attack.defense_evasion,attack.persistence,attack.t1197,attack.s0190,MITRE</group>
+</rule>
+
+<rule id="261101" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.copy bitsadmin.exe\.</field>
+	<description>ATT&CK T1197 S0190: Bitsadmin Download</description>
+	<info type="text">Detects usage of bitsadmin downloading a file </info>
+	<info type="text">Falsepositives: Some legitimate apps use this, but limited.. </info>
+	<info type="text">Sigma UUID: d059842b-6b9d-4ed1-b5c3-5b89143c6ede </info>
+	<info type="link">https://blog.netspi.com/15-ways-to-download-a-file/#bitsadmin </info>
+	<info type="link">https://isc.sans.edu/diary/22264 </info>
+	<group>attack.defense_evasion,attack.persistence,attack.t1197,attack.s0190,MITRE</group>
+</rule>
+

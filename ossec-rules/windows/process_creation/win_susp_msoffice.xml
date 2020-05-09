@@ -1,0 +1,14 @@
+<rule id="261650" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\powerpnt.exe$|\\\\winword.exe$|\\\\excel.exe$</field>
+	<field name="win.eventdata.CommandLine">http</field>
+	<description>ATT&CK T1105: Malicious Payload Download via Office Binaries</description>
+	<info type="text">Downloads payload from remote server </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 0c79148b-118e-472b-bdb7-9b57b444cc19 </info>
+	<info type="link">https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/OtherMSBinaries/Powerpnt.yml </info>
+	<info type="link">https://medium.com/@reegun/unsanitized-file-validation-leads-to-malicious-payload-download-via-office-binaries-202d02db7191 </info>
+	<info type="link">Reegun J (OCBC Bank) </info>
+	<group>attack.command_and_control,attack.t1105,MITRE</group>
+</rule>
+

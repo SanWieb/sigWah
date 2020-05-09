@@ -1,0 +1,15 @@
+<rule id="261380" level="6">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.h^t^t^p\.|\.h"t"t"p\.</field>
+	<description>ATT&CK T1140: Suspicious Commandline Escape</description>
+	<info type="text">Detects suspicious process that use escape characters </info>
+	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. </info>
+	<info type="text">Sigma UUID: f0cdd048-82dc-4f7a-8a7a-b87a52b6d0fd </info>
+	<info type="link">https://twitter.com/vysecurity/status/885545634958385153 </info>
+	<info type="link">https://twitter.com/Hexacorn/status/885553465417756673 </info>
+	<info type="link">https://twitter.com/Hexacorn/status/885570278637678592 </info>
+	<info type="link">https://www.fireeye.com/blog/threat-research/2017/06/obfuscation-in-the-wild.html </info>
+	<info type="link">http://www.windowsinspired.com/understanding-the-command-line-string-and-arguments-received-by-a-windows-program/ </info>
+	<group>attack.defense_evasion,attack.t1140,MITRE</group>
+</rule>
+

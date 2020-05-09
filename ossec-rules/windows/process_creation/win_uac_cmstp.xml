@@ -1,0 +1,13 @@
+<rule id="262140" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\cmstp.exe$</field>
+	<field name="win.eventdata.CommandLine">/s|/au</field>
+	<description>ATT&CK T1191 T1088: Bypass UAC via CMSTP</description>
+	<info type="text">Detect child processes of automatically elevated instances of Microsoft Connection Manager Profile Installer (cmstp.exe). </info>
+	<info type="text">Falsepositives: Legitimate use of cmstp.exe utility by legitimate user. </info>
+	<info type="text">Sigma UUID: e66779cc-383e-4224-a3a4-267eeb585c40 </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/e584f1a1-c303-4885-8a66-21360c90995b.html </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1191/T1191.md </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1191,attack.t1088,MITRE</group>
+</rule>
+

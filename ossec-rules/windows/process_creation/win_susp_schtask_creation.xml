@@ -1,0 +1,18 @@
+<rule id="261920" level="6">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\schtasks.exe</field>
+	<field name="win.eventdata.CommandLine">\. /create \.</field>
+	<description>ATT&CK T1053 S0111: Scheduled Task Creation</description>
+	<info type="text">Detects the creation of scheduled tasks in user session </info>
+	<info type="text">Falsepositives: Administrative activity. Software installation. </info>
+	<info type="text">Sigma UUID: 92626ddd-662c-49e3-ac59-f6535f12d189 </info>
+	<group>attack.execution,attack.persistence,attack.privilege_escalation,attack.t1053,attack.s0111,car.2013-08-001,MITRE</group>
+</rule>
+
+<rule id="261921" level="0">
+	<if_sid>261920</if_sid>
+	<field name="win.eventdata.User">NT AUTHORITY\\\\SYSTEM</field>
+	<description>Whitelist Interaction: Scheduled Task Creation</description>
+</rule>
+
+!Selection and not filter

@@ -1,0 +1,13 @@
+<rule id="261150" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">noconsentprompt</field>
+	<field name="win.eventdata.CommandLine">shadow:</field>
+	<description>ATT&CK: MSTSC Shadowing</description>
+	<info type="text">Detects RDP session hijacking by using MSTSC shadowing </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 6ba5a05f-b095-4f0a-8654-b825f4f16334 </info>
+	<info type="link">https://twitter.com/kmkz_security/status/1220694202301976576 </info>
+	<info type="link">https://github.com/kmkz/Pentesting/blob/master/Post-Exploitation-Cheat-Sheet </info>
+	<group>MITRE</group>
+</rule>
+

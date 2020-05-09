@@ -1,0 +1,13 @@
+<rule id="260810" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\mshta.exe$</field>
+	<field name="win.eventdata.CommandLine">javascript</field>
+	<description>ATT&CK T1170: Mshta JavaScript Execution</description>
+	<info type="text">Identifies suspicious mshta.exe commands </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: 67f113fa-e23d-4271-befa-30113b3e08b1 </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/6bc283c4-21f2-4aed-a05c-a9a3ffa95dd4.html </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1170/T1170.yaml </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1170,MITRE</group>
+</rule>
+

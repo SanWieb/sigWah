@@ -1,0 +1,12 @@
+<rule id="261590" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">netsh firewall set opmode mode=disable|netsh advfirewall set \. state off</field>
+	<description>ATT&CK: Firewall Disabled via Netsh</description>
+	<info type="text">Detects netsh commands that turns off the Windows firewall </info>
+	<info type="text">Falsepositives: Legitimate administration. </info>
+	<info type="text">Sigma UUID: 57c4bf16-227f-4394-8ec7-1b745ee061c3 </info>
+	<info type="link">https://www.winhelponline.com/blog/enable-and-disable-windows-firewall-quickly-using-command-line/ </info>
+	<info type="link">https://app.any.run/tasks/210244b9-0b6b-4a2c-83a3-04bd3175d017/ </info>
+	<group>attack.defense_evasion,MITRE</group>
+</rule>
+

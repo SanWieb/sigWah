@@ -1,0 +1,17 @@
+<rule id="261360" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\. -decode \.|\. /decode \.|\. -decodehex \.|\. /decodehex \.|\. -urlcache \.|\. /urlcache \.|\. -verifyctl \.|\. /verifyctl \.|\. -encode \.|\. /encode \.|\.certutil\. -URL\.|\.certutil\. /URL\.|\.certutil\. -ping\.|\.certutil\. /ping\.</field>
+	<description>ATT&CK T1140 T1105 S0189: Suspicious Certutil Command</description>
+	<info type="text">Detects a suspicious Microsoft certutil execution with sub commands like 'decode' sub command, which is sometimes used to decode malicious code with the built-in certutil utility </info>
+	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. </info>
+	<info type="text">Sigma UUID: e011a729-98a6-4139-b5c4-bf6f6dd8239a </info>
+	<info type="link">https://twitter.com/JohnLaTwC/status/835149808817991680 </info>
+	<info type="link">https://twitter.com/subTee/status/888102593838362624 </info>
+	<info type="link">https://twitter.com/subTee/status/888071631528235010 </info>
+	<info type="link">https://blogs.technet.microsoft.com/pki/2006/11/30/basic-crl-checking-with-certutil/ </info>
+	<info type="link">https://www.trustedsec.com/2017/07/new-tool-release-nps_payload/ </info>
+	<info type="link">https://twitter.com/egre55/status/1087685529016193025 </info>
+	<info type="link">https://lolbas-project.github.io/lolbas/Binaries/Certutil/ </info>
+	<group>attack.defense_evasion,attack.t1140,attack.t1105,attack.s0189,attack.g0007,MITRE</group>
+</rule>
+

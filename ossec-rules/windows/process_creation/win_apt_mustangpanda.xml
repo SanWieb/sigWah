@@ -1,0 +1,26 @@
+<rule id="260140" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.Temp\\wtask.exe /create\.|\.%windir:~-3,1%%PUBLIC:~-9,1%\.|\./E:vbscript \. \.:\\Users*.txt" /F|\./tn "Security Script \.|\.%windir:~-1,1%\.</field>
+	<description>ATT&CK: Mustang Panda Dropper</description>
+	<info type="text">Detects specific process parameters as used by Mustang Panda droppers </info>
+	<info type="text">Falsepositives: Unlikely. </info>
+	<info type="text">Sigma UUID: 2d87d610-d760-45ee-a7e6-7a6f2a65de00 </info>
+	<info type="link">https://app.any.run/tasks/7ca5661d-a67b-43ec-98c1-dd7a8103c256/ </info>
+	<info type="link">https://app.any.run/tasks/b12cccf3-1c22-4e28-9d3e-c7a6062f3914/ </info>
+	<info type="link">https://www.anomali.com/blog/china-based-apt-mustang-panda-targets-minority-groups-public-and-private-sector-organizations </info>
+	<group>MITRE</group>
+</rule>
+
+<rule id="260141" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.Temp\\\\winwsh.exe</field>
+	<description>ATT&CK: Mustang Panda Dropper</description>
+	<info type="text">Detects specific process parameters as used by Mustang Panda droppers </info>
+	<info type="text">Falsepositives: Unlikely. </info>
+	<info type="text">Sigma UUID: 2d87d610-d760-45ee-a7e6-7a6f2a65de00 </info>
+	<info type="link">https://app.any.run/tasks/7ca5661d-a67b-43ec-98c1-dd7a8103c256/ </info>
+	<info type="link">https://app.any.run/tasks/b12cccf3-1c22-4e28-9d3e-c7a6062f3914/ </info>
+	<info type="link">https://www.anomali.com/blog/china-based-apt-mustang-panda-targets-minority-groups-public-and-private-sector-organizations </info>
+	<group>MITRE</group>
+</rule>
+

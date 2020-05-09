@@ -1,0 +1,13 @@
+<rule id="262050" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\csi.exe$</field>
+	<field name="win.eventdata.ParentImage">\\\\powershell.exe$</field>
+	<field name="win.eventdata.OriginalFileName">csi.exe</field>
+	<description>ATT&CK T1127: Suspicious Use of CSharp Interactive Console</description>
+	<info type="text">Detects the execution of CSharp interactive console by PowerShell </info>
+	<info type="text">Falsepositives: Possible depending on environment. Pair with other factors such as net connections, command-line args, etc.. </info>
+	<info type="text">Sigma UUID: a9e416a8-e613-4f8b-88b8-a7d1d1af2f61 </info>
+	<info type="link">https://redcanary.com/blog/detecting-attacks-leveraging-the-net-framework/ </info>
+	<group>attack.execution,attack.t1127,MITRE</group>
+</rule>
+

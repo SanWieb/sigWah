@@ -1,0 +1,11 @@
+<rule id="262190" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\.\\\\apache\.|\.\\\\tomcat\.|\.\\\\w3wp.exe|\.\\\\php-cgi.exe|\.\\\\nginx.exe|\.\\\\httpd.exe</field>
+	<field name="win.eventdata.CommandLine">\.whoami\.|\.net user \.|\.ping -n \.|\.systeminfo|\.&cd&echo\.|\.cd /d\.</field>
+	<description>ATT&CK T1100: Webshell Detection With Command Line Keywords</description>
+	<info type="text">Detects certain command line parameters often used during reconnaissance activity via web shells </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: bed2a484-9348-4143-8a8a-b801c979301c </info>
+	<group>attack.privilege_escalation,attack.persistence,attack.t1100,MITRE</group>
+</rule>
+

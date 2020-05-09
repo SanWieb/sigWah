@@ -1,0 +1,13 @@
+<rule id="261820" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\Psr.exe$</field>
+	<field name="win.eventdata.CommandLine">/start</field>
+	<description>ATT&CK T1218: Psr.exe Capture Screenshots</description>
+	<info type="text">The psr.exe captures desktop screenshots and saves them on the local machine </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 2158f96f-43c2-43cb-952a-ab4580f32382 </info>
+	<info type="link">https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/LOLUtilz/OSBinaries/Psr.yml </info>
+	<info type="link">https://www.sans.org/summit-archives/file/summit-archive-1493861893.pdf </info>
+	<group>attack.persistence,attack.t1218,MITRE</group>
+</rule>
+

@@ -1,0 +1,11 @@
+<rule id="260120" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\. localgroup administrators admin /add|\.\\Win64.exe\.</field>
+	<description>ATT&CK T1068: Hurricane Panda Activity</description>
+	<info type="text">Detects Hurricane Panda Activity </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 0eb2107b-a596-422e-b123-b389d5594ed7 </info>
+	<info type="link">https://www.crowdstrike.com/blog/crowdstrike-discovers-use-64-bit-zero-day-privilege-escalation-exploit-cve-2014-4113-hurricane-panda/ </info>
+	<group>attack.privilege_escalation,attack.g0009,attack.t1068,MITRE</group>
+</rule>
+

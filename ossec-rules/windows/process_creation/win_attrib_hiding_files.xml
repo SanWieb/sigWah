@@ -1,0 +1,34 @@
+Manual check needed! Unknown condition
+<rule id="260240" level="6">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\attrib.exe</field>
+	<field name="win.eventdata.CommandLine">\. +h \.</field>
+	<description>ATT&CK T1158: Hiding Files with Attrib.exe</description>
+	<info type="text">Detects usage of attrib.exe to hide files from users. </info>
+	<info type="text">Falsepositives: igfxCUIService.exe hiding *.cui files via .bat script (attrib.exe a child of cmd.exe and igfxCUIService.exe is the parent of the cmd.exe). msiexec.exe hiding desktop.ini. </info>
+	<info type="text">Sigma UUID: 4281cb20-2994-4580-aa63-c8b86d019934 </info>
+	<group>attack.defense_evasion,attack.persistence,attack.t1158,MITRE</group>
+</rule>
+
+<rule id="260241" level="6">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.\\desktop.ini \.</field>
+	<description>ATT&CK T1158: Hiding Files with Attrib.exe</description>
+	<info type="text">Detects usage of attrib.exe to hide files from users. </info>
+	<info type="text">Falsepositives: igfxCUIService.exe hiding *.cui files via .bat script (attrib.exe a child of cmd.exe and igfxCUIService.exe is the parent of the cmd.exe). msiexec.exe hiding desktop.ini. </info>
+	<info type="text">Sigma UUID: 4281cb20-2994-4580-aa63-c8b86d019934 </info>
+	<group>attack.defense_evasion,attack.persistence,attack.t1158,MITRE</group>
+</rule>
+
+<rule id="260242" level="6">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\.\\\\cmd.exe</field>
+	<field name="win.eventdata.CommandLine">+R +H +S +A \\\..cui</field>
+	<field name="win.eventdata.ParentCommandLine">\.:\\\\WINDOWS\\\\system32\\\\\..bat</field>
+	<description>ATT&CK T1158: Hiding Files with Attrib.exe</description>
+	<info type="text">Detects usage of attrib.exe to hide files from users. </info>
+	<info type="text">Falsepositives: igfxCUIService.exe hiding *.cui files via .bat script (attrib.exe a child of cmd.exe and igfxCUIService.exe is the parent of the cmd.exe). msiexec.exe hiding desktop.ini. </info>
+	<info type="text">Sigma UUID: 4281cb20-2994-4580-aa63-c8b86d019934 </info>
+	<group>attack.defense_evasion,attack.persistence,attack.t1158,MITRE</group>
+</rule>
+

@@ -1,0 +1,13 @@
+<rule id="262080" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\fltmc.exe$</field>
+	<field name="win.eventdata.CommandLine">unload</field>
+	<field name="win.eventdata.CommandLine">sys</field>
+	<description>ATT&CK: Sysmon Driver Unload</description>
+	<info type="text">Detect possible Sysmon driver unload </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 4d7cda18-1b12-4e52-b45c-d28653210df8 </info>
+	<info type="link">https://www.darkoperator.com/blog/2018/10/5/operating-offensively-against-sysmon </info>
+	<group>MITRE</group>
+</rule>
+

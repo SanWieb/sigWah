@@ -1,0 +1,12 @@
+<rule id="260630" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\.\\\\svchost.exe</field>
+	<field name="win.eventdata.Image">\.\\\\mshta.exe</field>
+	<description>ATT&CK T1170: MSHTA Spwaned by SVCHOST</description>
+	<info type="text">Detects MSHTA.EXE spwaned by SVCHOST as seen in LethalHTA and described in report </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: ed5d72a6-f8f4-479d-ba79-02f6a80d7471 </info>
+	<info type="link">https://codewhitesec.blogspot.com/2018/07/lethalhta.html </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1170,MITRE</group>
+</rule>
+

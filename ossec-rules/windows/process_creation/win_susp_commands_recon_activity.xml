@@ -1,0 +1,29 @@
+Manual check needed! Unknown condition
+<rule id="261410" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">tasklist|net time|systeminfo|whoami|nbtstat|net start|\.\\net1 start|qprocess|nslookup|hostname.exe|\.\\net1 user /domain|\.\\net1 group /domain|\.\\net1 group "domain admins" /domain|\.\\net1 group "Exchange Trusted Subsystem" /domain|\.\\net1 accounts /domain|\.\\net1 user net localgroup administrators|netstat -an</field>
+	<description>ATT&CK T1087 T1082: Reconnaissance Activity with Net Command</description>
+	<info type="text">Detects a set of commands often used in recon stages by different attack groups </info>
+	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. </info>
+	<info type="text">Sigma UUID: 2887e914-ce96-435f-8105-593937e90757 </info>
+	<info type="link">https://twitter.com/haroonmeer/status/939099379834658817 </info>
+	<info type="link">https://twitter.com/c_APT_ure/status/939475433711722497 </info>
+	<info type="link">https://www.fireeye.com/blog/threat-research/2016/05/targeted_attacksaga.html </info>
+	<group>attack.discovery,attack.t1087,attack.t1082,car.2016-03-001,MITRE</group>
+</rule>
+
+<rule id="261411" level="12">
+	<if_group>sysmon_event1</if_group>
+Manual check needed! Rule failed Field: 1
+Manual check needed! Rule failed Field: 5
+Manual check needed! Rule failed Field: s
+	<description>ATT&CK T1087 T1082: Reconnaissance Activity with Net Command</description>
+	<info type="text">Detects a set of commands often used in recon stages by different attack groups </info>
+	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. </info>
+	<info type="text">Sigma UUID: 2887e914-ce96-435f-8105-593937e90757 </info>
+	<info type="link">https://twitter.com/haroonmeer/status/939099379834658817 </info>
+	<info type="link">https://twitter.com/c_APT_ure/status/939475433711722497 </info>
+	<info type="link">https://www.fireeye.com/blog/threat-research/2016/05/targeted_attacksaga.html </info>
+	<group>attack.discovery,attack.t1087,attack.t1082,car.2016-03-001,MITRE</group>
+</rule>
+

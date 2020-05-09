@@ -1,0 +1,17 @@
+<rule id="260300" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\..cpl</field>
+	<description>ATT&CK T1196: Control Panel Items</description>
+	<info type="text">Detects the use of a control panel item (.cpl) outside of the System32 folder </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 0ba863e6-def5-4e50-9cea-4dd8c7dc46a4 </info>
+	<group>attack.execution,attack.t1196,attack.defense_evasion,MITRE</group>
+</rule>
+
+<rule id="260301" level="0">
+	<if_sid>260300</if_sid>
+	<field name="win.eventdata.CommandLine">\.\\System32\\\.|\.%System%\.</field>
+	<description>Whitelist Interaction: Control Panel Items</description>
+</rule>
+
+!Selection and not filter

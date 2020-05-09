@@ -1,0 +1,20 @@
+<rule id="261490" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\dctask64.exe$</field>
+	<description>ATT&CK T1055: ZOHO Dctask64 Process Injection</description>
+	<info type="text">Detects suspicious process injection using ZOHO's dctask64.exe </info>
+	<info type="text">Falsepositives: Unknown yet. </info>
+	<info type="text">Sigma UUID: 6345b048-8441-43a7-9bed-541133633d7a </info>
+	<info type="link">https://twitter.com/gN3mes1s/status/1222088214581825540 </info>
+	<info type="link">https://twitter.com/gN3mes1s/status/1222095963789111296 </info>
+	<info type="link">https://twitter.com/gN3mes1s/status/1222095371175911424 </info>
+	<group>attack.defense_evasion,attack.t1055,MITRE</group>
+</rule>
+
+<rule id="261491" level="0">
+	<if_sid>261490</if_sid>
+	<field name="win.eventdata.CommandLine">DesktopCentral_Agent\\agent</field>
+	<description>Whitelist Interaction: ZOHO Dctask64 Process Injection</description>
+</rule>
+
+!Selection and not filter

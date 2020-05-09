@@ -1,0 +1,50 @@
+<rule id="260490" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\Bloodhound.exe|\\\\SharpHound.exe</field>
+	<description>ATT&CK T1087: Bloodhound and Sharphound Hack Tool</description>
+	<info type="text">Detects command line parameters used by Bloodhound and Sharphound hack tools </info>
+	<info type="text">Falsepositives: Other programs that use these command line option and accepts an 'All' parameter. </info>
+	<info type="text">Sigma UUID: f376c8a7-a2d0-4ddc-aa0c-16c17236d962 </info>
+	<info type="link">https://github.com/BloodHoundAD/BloodHound </info>
+	<info type="link">https://github.com/BloodHoundAD/SharpHound </info>
+	<group>attack.discovery,attack.t1087,MITRE</group>
+</rule>
+
+<rule id="260491" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> -CollectionMethod All |.exe -c All -d |Invoke-Bloodhound|Get-BloodHoundData</field>
+	<description>ATT&CK T1087: Bloodhound and Sharphound Hack Tool</description>
+	<info type="text">Detects command line parameters used by Bloodhound and Sharphound hack tools </info>
+	<info type="text">Falsepositives: Other programs that use these command line option and accepts an 'All' parameter. </info>
+	<info type="text">Sigma UUID: f376c8a7-a2d0-4ddc-aa0c-16c17236d962 </info>
+	<info type="link">https://github.com/BloodHoundAD/BloodHound </info>
+	<info type="link">https://github.com/BloodHoundAD/SharpHound </info>
+	<group>attack.discovery,attack.t1087,MITRE</group>
+</rule>
+
+<rule id="260492" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> -JsonFolder </field>
+	<field name="win.eventdata.CommandLine"> -ZipFileName </field>
+	<description>ATT&CK T1087: Bloodhound and Sharphound Hack Tool</description>
+	<info type="text">Detects command line parameters used by Bloodhound and Sharphound hack tools </info>
+	<info type="text">Falsepositives: Other programs that use these command line option and accepts an 'All' parameter. </info>
+	<info type="text">Sigma UUID: f376c8a7-a2d0-4ddc-aa0c-16c17236d962 </info>
+	<info type="link">https://github.com/BloodHoundAD/BloodHound </info>
+	<info type="link">https://github.com/BloodHoundAD/SharpHound </info>
+	<group>attack.discovery,attack.t1087,MITRE</group>
+</rule>
+
+<rule id="260493" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> DCOnly </field>
+	<field name="win.eventdata.CommandLine"> --NoSaveCache </field>
+	<description>ATT&CK T1087: Bloodhound and Sharphound Hack Tool</description>
+	<info type="text">Detects command line parameters used by Bloodhound and Sharphound hack tools </info>
+	<info type="text">Falsepositives: Other programs that use these command line option and accepts an 'All' parameter. </info>
+	<info type="text">Sigma UUID: f376c8a7-a2d0-4ddc-aa0c-16c17236d962 </info>
+	<info type="link">https://github.com/BloodHoundAD/BloodHound </info>
+	<info type="link">https://github.com/BloodHoundAD/SharpHound </info>
+	<group>attack.discovery,attack.t1087,MITRE</group>
+</rule>
+

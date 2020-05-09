@@ -1,0 +1,14 @@
+<rule id="261330" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\bginfo.exe$</field>
+	<field name="win.eventdata.CommandLine">/popup</field>
+	<field name="win.eventdata.CommandLine">/nolicprompt</field>
+	<description>ATT&CK T1218: Application Whitelisting Bypass via Bginfo</description>
+	<info type="text">Execute VBscript code that is referenced within the *.bgi file. </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: aaf46cdc-934e-4284-b329-34aa701e3771 </info>
+	<info type="link">https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/OtherMSBinaries/Bginfo.yml </info>
+	<info type="link">https://oddvar.moe/2017/05/18/bypassing-application-whitelisting-with-bginfo/ </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1218,MITRE</group>
+</rule>
+

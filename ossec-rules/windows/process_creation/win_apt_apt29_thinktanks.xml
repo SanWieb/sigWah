@@ -1,0 +1,11 @@
+<rule id="260000" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.-noni -ep bypass \$\.</field>
+	<description>ATT&CK T1086: APT29</description>
+	<info type="text">This method detects a suspicious powershell command line combination as used by APT29 in a campaign against US think tanks </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: 033fe7d6-66d1-4240-ac6b-28908009c71f </info>
+	<info type="link">https://cloudblogs.microsoft.com/microsoftsecure/2018/12/03/analysis-of-cyberattack-on-u-s-think-tanks-non-profits-public-sector-by-unidentified-attackers/ </info>
+	<group>attack.execution,attack.g0016,attack.t1086,MITRE</group>
+</rule>
+

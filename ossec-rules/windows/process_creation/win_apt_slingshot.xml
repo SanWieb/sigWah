@@ -1,0 +1,25 @@
+Manual check needed! Unknown condition
+<rule id="260151" level="%">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.schtasks\. /delete \.Defrag\\ScheduledDefrag\.</field>
+	<description>ATT&CK T1053 S0111: Defrag Deactivation</description>
+	<info type="text">Detects the deactivation of the Scheduled defragmentation task as seen by Slingshot APT group </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 958d81aa-8566-4cea-a565-59ccd4df27b0 </info>
+	<info type="link">https://securelist.com/apt-slingshot/84312/ </info>
+	<group>attack.persistence,attack.t1053,attack.s0111,MITRE</group>
+</rule>
+
+Manual check needed! Unknown condition
+<rule id="260152" level="%">
+	<if_group>sysmon_event1</if_group>
+Manual check needed! Rule failed Field: EventID
+Manual check needed! Rule failed Field: TaskName
+	<description>ATT&CK T1053 S0111: Defrag Deactivation</description>
+	<info type="text">Detects the deactivation of the Scheduled defragmentation task as seen by Slingshot APT group </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 958d81aa-8566-4cea-a565-59ccd4df27b0 </info>
+	<info type="link">https://securelist.com/apt-slingshot/84312/ </info>
+	<group>attack.persistence,attack.t1053,attack.s0111,MITRE</group>
+</rule>
+

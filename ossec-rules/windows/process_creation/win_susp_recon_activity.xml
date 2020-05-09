@@ -1,0 +1,10 @@
+<rule id="261860" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">net group "domain admins" /domain|net localgroup administrators</field>
+	<description>ATT&CK T1087: Suspicious Reconnaissance Activity</description>
+	<info type="text">Detects suspicious command line activity on Windows systems </info>
+	<info type="text">Falsepositives: Inventory tool runs. Penetration tests. Administrative activity. </info>
+	<info type="text">Sigma UUID: d95de845-b83c-4a9a-8a6a-4fc802ebf6c0 </info>
+	<group>attack.discovery,attack.t1087,MITRE</group>
+</rule>
+

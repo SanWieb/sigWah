@@ -1,0 +1,13 @@
+<rule id="261020" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\powershell.exe$</field>
+	<field name="win.eventdata.CommandLine">Start-BitsTransfer</field>
+	<description>ATT&CK T1197: Suspicious Bitsadmin Job via PowerShell</description>
+	<info type="text">Detect download by BITS jobs via PowerShell </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: f67dbfce-93bc-440d-86ad-a95ae8858c90 </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/ec5180c9-721a-460f-bddc-27539a284273.html </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1197/T1197.md </info>
+	<group>attack.defense_evasion,attack.persistence,attack.t1197,MITRE</group>
+</rule>
+

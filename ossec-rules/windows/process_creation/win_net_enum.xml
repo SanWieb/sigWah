@@ -1,0 +1,20 @@
+<rule id="260900" level="6">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\net.exe$|\\\\net1.exe$</field>
+	<field name="win.eventdata.CommandLine">view</field>
+	<description>ATT&CK T1018: Windows Network Enumeration</description>
+	<info type="text">Identifies attempts to enumerate hosts in a network using the built-in Windows net.exe tool. </info>
+	<info type="text">Falsepositives: Legitimate use of net.exe utility by legitimate user. </info>
+	<info type="text">Sigma UUID: 62510e69-616b-4078-b371-847da438cc03 </info>
+	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/b8a94d2f-dc75-4630-9d73-1edc6bd26fff.html </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1018/T1018.yaml </info>
+	<group>attack.discovery,attack.t1018,MITRE</group>
+</rule>
+
+<rule id="260901" level="0">
+	<if_sid>260900</if_sid>
+	<field name="win.eventdata.CommandLine">\\\\</field>
+	<description>Whitelist Interaction: Windows Network Enumeration</description>
+</rule>
+
+!Selection and not filter

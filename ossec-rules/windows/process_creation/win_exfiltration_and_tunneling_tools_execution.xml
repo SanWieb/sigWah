@@ -1,0 +1,10 @@
+<rule id="260390" level="12">
+	<if_group>sysmon_event1</if_group>
+Manual check needed! Rule failed Field: NewProcessName|endswith
+	<description>ATT&CK T1020: Exfiltration and Tunneling Tools Execution</description>
+	<info type="text">Execution of well known tools for data exfiltration and tunneling </info>
+	<info type="text">Falsepositives: Legitimate Administrator using tools. </info>
+	<info type="text">Sigma UUID: c75309a3-59f8-4a8d-9c2c-4c927ad50555 </info>
+	<group>attack.exfiltration,attack.t1020,MITRE</group>
+</rule>
+

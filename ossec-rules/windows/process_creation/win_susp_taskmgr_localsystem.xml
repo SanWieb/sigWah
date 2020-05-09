@@ -1,0 +1,11 @@
+<rule id="262000" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.User">NT AUTHORITY\\\\SYSTEM</field>
+	<field name="win.eventdata.Image">\.\\\\taskmgr.exe</field>
+	<description>ATT&CK T1036: Taskmgr as LOCAL_SYSTEM</description>
+	<info type="text">Detects the creation of taskmgr.exe process in context of LOCAL_SYSTEM </info>
+	<info type="text">Falsepositives: Unkown. </info>
+	<info type="text">Sigma UUID: 9fff585c-c33e-4a86-b3cd-39312079a65f </info>
+	<group>attack.defense_evasion,attack.t1036,MITRE</group>
+</rule>
+

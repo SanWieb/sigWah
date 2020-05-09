@@ -1,0 +1,13 @@
+<rule id="261350" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\cdb.exe$</field>
+	<field name="win.eventdata.CommandLine">-cf</field>
+	<description>ATT&CK T1218: Possible App Whitelisting Bypass via WinDbg/CDB as a Shellcode Runner</description>
+	<info type="text">Launch 64-bit shellcode from the x64_calc.wds file using cdb.exe. </info>
+	<info type="text">Falsepositives: Legitimate use of debugging tools. </info>
+	<info type="text">Sigma UUID: b5c7395f-e501-4a08-94d4-57fe7a9da9d2 </info>
+	<info type="link">https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/OtherMSBinaries/Cdb.yml </info>
+	<info type="link">http://www.exploit-monday.com/2016/08/windbg-cdb-shellcode-runner.html </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1218,MITRE</group>
+</rule>
+

@@ -1,0 +1,72 @@
+<rule id="261870" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\regsvr32.exe</field>
+	<field name="win.eventdata.CommandLine">\.\\Temp\\\.</field>
+	<description>ATT&CK T1117: Regsvr32 Anomaly</description>
+	<info type="text">Detects various anomalies in relation to regsvr32.exe </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 8e2b24c9-4add-46a0-b4bb-0057b4e6187d </info>
+	<info type="link">https://subt0x10.blogspot.de/2017/04/bypass-application-whitelisting-script.html </info>
+	<group>attack.t1117,attack.defense_evasion,attack.execution,car.2019-04-002,car.2019-04-003,MITRE</group>
+</rule>
+
+<rule id="261871" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\regsvr32.exe</field>
+	<field name="win.eventdata.ParentImage">\.\\\\powershell.exe</field>
+	<description>ATT&CK T1117: Regsvr32 Anomaly</description>
+	<info type="text">Detects various anomalies in relation to regsvr32.exe </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 8e2b24c9-4add-46a0-b4bb-0057b4e6187d </info>
+	<info type="link">https://subt0x10.blogspot.de/2017/04/bypass-application-whitelisting-script.html </info>
+	<group>attack.t1117,attack.defense_evasion,attack.execution,car.2019-04-002,car.2019-04-003,MITRE</group>
+</rule>
+
+<rule id="261872" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\regsvr32.exe</field>
+	<field name="win.eventdata.ParentImage">\.\\\\cmd.exe</field>
+	<description>ATT&CK T1117: Regsvr32 Anomaly</description>
+	<info type="text">Detects various anomalies in relation to regsvr32.exe </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 8e2b24c9-4add-46a0-b4bb-0057b4e6187d </info>
+	<info type="link">https://subt0x10.blogspot.de/2017/04/bypass-application-whitelisting-script.html </info>
+	<group>attack.t1117,attack.defense_evasion,attack.execution,car.2019-04-002,car.2019-04-003,MITRE</group>
+</rule>
+
+<rule id="261873" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\regsvr32.exe</field>
+	<field name="win.eventdata.CommandLine">\./i:http\. scrobj.dll|\./i:ftp\. scrobj.dll</field>
+	<description>ATT&CK T1117: Regsvr32 Anomaly</description>
+	<info type="text">Detects various anomalies in relation to regsvr32.exe </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 8e2b24c9-4add-46a0-b4bb-0057b4e6187d </info>
+	<info type="link">https://subt0x10.blogspot.de/2017/04/bypass-application-whitelisting-script.html </info>
+	<group>attack.t1117,attack.defense_evasion,attack.execution,car.2019-04-002,car.2019-04-003,MITRE</group>
+</rule>
+
+<rule id="261874" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\wscript.exe</field>
+	<field name="win.eventdata.ParentImage">\.\\\\regsvr32.exe</field>
+	<description>ATT&CK T1117: Regsvr32 Anomaly</description>
+	<info type="text">Detects various anomalies in relation to regsvr32.exe </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 8e2b24c9-4add-46a0-b4bb-0057b4e6187d </info>
+	<info type="link">https://subt0x10.blogspot.de/2017/04/bypass-application-whitelisting-script.html </info>
+	<group>attack.t1117,attack.defense_evasion,attack.execution,car.2019-04-002,car.2019-04-003,MITRE</group>
+</rule>
+
+<rule id="261875" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.\\\\EXCEL.EXE</field>
+	<field name="win.eventdata.CommandLine">\...\\..\\..\\Windows\\System32\\regsvr32.exe \.</field>
+	<description>ATT&CK T1117: Regsvr32 Anomaly</description>
+	<info type="text">Detects various anomalies in relation to regsvr32.exe </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 8e2b24c9-4add-46a0-b4bb-0057b4e6187d </info>
+	<info type="link">https://subt0x10.blogspot.de/2017/04/bypass-application-whitelisting-script.html </info>
+	<group>attack.t1117,attack.defense_evasion,attack.execution,car.2019-04-002,car.2019-04-003,MITRE</group>
+</rule>
+

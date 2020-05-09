@@ -1,0 +1,23 @@
+<rule id="260070" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.:\\\\Windows\\\\SysWOW64\\\\cmd.exe</field>
+	<field name="win.eventdata.CommandLine">\.\\Windows\\Caches\\NavShExt.dll \.</field>
+	<description>ATT&CK S0081: Elise Backdoor</description>
+	<info type="text">Detects Elise backdoor acitivty as used by APT32 </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: e507feb7-5f73-4ef6-a970-91bb6f6d744f </info>
+	<info type="link">https://community.rsa.com/community/products/netwitness/blog/2018/02/13/lotus-blossom-continues-asean-targeting </info>
+	<group>attack.g0030,attack.g0050,attack.s0081,MITRE</group>
+</rule>
+
+<rule id="260071" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.\\AppData\\Roaming\\MICROS~1\\Windows\\Caches\\NavShExt.dll,Setting</field>
+	<description>ATT&CK S0081: Elise Backdoor</description>
+	<info type="text">Detects Elise backdoor acitivty as used by APT32 </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: e507feb7-5f73-4ef6-a970-91bb6f6d744f </info>
+	<info type="link">https://community.rsa.com/community/products/netwitness/blog/2018/02/13/lotus-blossom-continues-asean-targeting </info>
+	<group>attack.g0030,attack.g0050,attack.s0081,MITRE</group>
+</rule>
+

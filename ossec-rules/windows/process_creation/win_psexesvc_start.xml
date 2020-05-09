@@ -1,0 +1,10 @@
+<rule id="261130" level="6">
+	<if_group>sysmon_event1</if_group>
+Manual check needed! Rule failed Field: ProcessCommandLine
+	<description>ATT&CK T1035 S0029: PsExec Service Start</description>
+	<info type="text">Detects a PsExec service start </info>
+	<info type="text">Falsepositives: Administrative activity. </info>
+	<info type="text">Sigma UUID: 3ede524d-21cc-472d-a3ce-d21b568d8db7 </info>
+	<group>attack.execution,attack.t1035,attack.s0029,MITRE</group>
+</rule>
+

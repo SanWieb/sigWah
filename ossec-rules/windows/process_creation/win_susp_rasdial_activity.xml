@@ -1,0 +1,11 @@
+<rule id="261850" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">rasdial</field>
+	<description>ATT&CK T1064: Suspicious RASdial Activity</description>
+	<info type="text">Detects suspicious process related to rasdial.exe </info>
+	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. </info>
+	<info type="text">Sigma UUID: 6bba49bf-7f8c-47d6-a1bb-6b4dece4640e </info>
+	<info type="link">https://twitter.com/subTee/status/891298217907830785 </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1064,MITRE</group>
+</rule>
+

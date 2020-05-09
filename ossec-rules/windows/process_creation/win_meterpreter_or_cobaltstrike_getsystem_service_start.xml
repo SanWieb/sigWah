@@ -1,0 +1,48 @@
+Manual check needed! Unknown condition
+<rule id="260780" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\\\\services.exe$</field>
+	<description>ATT&CK T1134: Meterpreter or Cobalt Strike Getsystem Service Start</description>
+	<info type="text">Detects the use of getsystem Meterpreter/Cobalt Strike command by detecting a specific service starting </info>
+	<info type="text">Falsepositives: Commandlines containing components like cmd accidentally. Jobs and services started with cmd. </info>
+	<info type="text">Sigma UUID: 15619216-e993-4721-b590-4c520615a67d </info>
+	<info type="link">https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment </info>
+	<info type="link">https://blog.cobaltstrike.com/2014/04/02/what-happens-when-i-type-getsystem/ </info>
+	<group>attack.privilege_escalation,attack.t1134,MITRE</group>
+</rule>
+
+<rule id="260781" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">cmd|comspec</field>
+	<field name="win.eventdata.CommandLine">cmd</field>
+	<field name="win.eventdata.CommandLine">/c</field>
+	<field name="win.eventdata.CommandLine">echo</field>
+	<field name="win.eventdata.CommandLine">\\pipe\\</field>
+	<field name="win.eventdata.CommandLine">%COMSPEC%</field>
+	<field name="win.eventdata.CommandLine">/c</field>
+	<field name="win.eventdata.CommandLine">echo</field>
+	<field name="win.eventdata.CommandLine">\\pipe\\</field>
+	<field name="win.eventdata.CommandLine">rundll32</field>
+	<field name="win.eventdata.CommandLine">.dll,a</field>
+	<field name="win.eventdata.CommandLine">/p:</field>
+	<description>ATT&CK T1134: Meterpreter or Cobalt Strike Getsystem Service Start</description>
+	<info type="text">Detects the use of getsystem Meterpreter/Cobalt Strike command by detecting a specific service starting </info>
+	<info type="text">Falsepositives: Commandlines containing components like cmd accidentally. Jobs and services started with cmd. </info>
+	<info type="text">Sigma UUID: 15619216-e993-4721-b590-4c520615a67d </info>
+	<info type="link">https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment </info>
+	<info type="link">https://blog.cobaltstrike.com/2014/04/02/what-happens-when-i-type-getsystem/ </info>
+	<group>attack.privilege_escalation,attack.t1134,MITRE</group>
+</rule>
+
+<rule id="260782" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">MpCmdRun</field>
+	<description>ATT&CK T1134: Meterpreter or Cobalt Strike Getsystem Service Start</description>
+	<info type="text">Detects the use of getsystem Meterpreter/Cobalt Strike command by detecting a specific service starting </info>
+	<info type="text">Falsepositives: Commandlines containing components like cmd accidentally. Jobs and services started with cmd. </info>
+	<info type="text">Sigma UUID: 15619216-e993-4721-b590-4c520615a67d </info>
+	<info type="link">https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment </info>
+	<info type="link">https://blog.cobaltstrike.com/2014/04/02/what-happens-when-i-type-getsystem/ </info>
+	<group>attack.privilege_escalation,attack.t1134,MITRE</group>
+</rule>
+

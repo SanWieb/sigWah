@@ -1,0 +1,12 @@
+<rule id="261830" level="12">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\. /c powershell\.\\AppData\\Local\\\.|\. /c powershell\.\\AppData\\Roaming\\\.</field>
+	<description>ATT&CK T1086: PowerShell Script Run in AppData</description>
+	<info type="text">Detects a suspicious command line execution that invokes PowerShell with reference to an AppData folder </info>
+	<info type="text">Falsepositives: Administrative scripts. </info>
+	<info type="text">Sigma UUID: ac175779-025a-4f12-98b0-acdaeb77ea85 </info>
+	<info type="link">https://twitter.com/JohnLaTwC/status/1082851155481288706 </info>
+	<info type="link">https://app.any.run/tasks/f87f1c4e-47e2-4c46-9cf4-31454c06ce03 </info>
+	<group>attack.execution,attack.t1086,MITRE</group>
+</rule>
+
