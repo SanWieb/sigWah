@@ -1,3 +1,7 @@
+Manual check needed! No detection key
+<rule id="260220" level="14">
+	<if_group>sysmon_event1</if_group>
+	<description>ATT&CK: Operation Wocao Activity</description>
 	<info type="text">Detects activity mentioned in Operation Wocao report </info>
 	<info type="text">Falsepositives: Administrators that use checkadmin.exe tool to enumerate local administrators. </info>
 	<info type="text">Sigma UUID: 74ad4314-482e-4c3e-b237-3f7ed3b9ca8d </info>
@@ -5,6 +9,7 @@
 	<info type="link">https://twitter.com/SBousseaden/status/1207671369963646976 </info>
 	<group>MITRE</group>
 </rule>
+
 <rule id="260220" level="%">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.EventID">4799</field>
