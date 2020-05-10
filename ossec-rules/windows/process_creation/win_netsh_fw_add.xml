@@ -1,6 +1,6 @@
 <rule id="260840" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.netsh firewall add\.</field>
+	<field name="win.eventdata.CommandLine">\.netsh\s+firewall\s+add\.</field>
 	<description>ATT&CK T1090: Netsh</description>
 	<info type="text">Allow Incoming Connections by Port or Application on Windows Firewall </info>
 	<info type="text">Falsepositives: Legitimate administration. </info>

@@ -1,6 +1,6 @@
 <rule id="261040" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine"> -version 2 | -versio 2 | -versi 2 | -vers 2 | -ver 2 | -ve 2 </field>
+	<field name="win.eventdata.CommandLine"> -version\s+2 | -versio\s+2 | -versi\s+2 | -vers\s+2 | -ver\s+2 | -ve\s+2 </field>
 	<field name="win.eventdata.Image">\\\\powershell.exe$</field>
 	<description>ATT&CK T1086: PowerShell Downgrade Attack</description>
 	<info type="text">Detects PowerShell downgrade attack by comparing the host versions with the actually used engine version 2.0 </info>

@@ -1,6 +1,6 @@
 <rule id="261860" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">net group "domain admins" /domain|net localgroup administrators</field>
+	<field name="win.eventdata.CommandLine">net\s+group\s+"domain\s+admins"\s+/domain|net\s+localgroup\s+administrators</field>
 	<description>ATT&CK T1087: Suspicious Reconnaissance Activity</description>
 	<info type="text">Detects suspicious command line activity on Windows systems </info>
 	<info type="text">Falsepositives: Inventory tool runs. Penetration tests. Administrative activity. </info>

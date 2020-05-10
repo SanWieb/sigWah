@@ -1,6 +1,6 @@
 <rule id="261370" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">certutil -f -encode \.|certutil.exe -f -encode \.|certutil -encode -f \.|certutil.exe -encode -f \.</field>
+	<field name="win.eventdata.CommandLine">certutil\s+-f\s+-encode \.|certutil.exe\s+-f\s+-encode \.|certutil\s+-encode\s+-f \.|certutil.exe\s+-encode\s+-f \.</field>
 	<description>ATT&CK: Certutil Encode</description>
 	<info type="text">Detects suspicious a certutil command that used to encode files, which is sometimes used for data exfiltration </info>
 	<info type="text">Falsepositives: unknown. </info>

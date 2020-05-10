@@ -1,7 +1,7 @@
 <rule id="262070" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\.\\\\wmic.exe</field>
-	<field name="win.eventdata.CommandLine">\./NODE:\.process call create \.|\. path AntiVirusProduct get \.|\. path FirewallProduct get \.|\. shadowcopy delete \.</field>
+	<field name="win.eventdata.CommandLine">\./NODE:\.process\s+call\s+create \.|\. path\s+AntiVirusProduct\s+get \.|\. path\s+FirewallProduct\s+get \.|\. shadowcopy\s+delete \.</field>
 	<description>ATT&CK T1047: Suspicious WMI Execution</description>
 	<info type="text">Detects WMI executing suspicious commands </info>
 	<info type="text">Falsepositives: Will need to be tuned. If using Splunk, I recommend | stats count by Computer,CommandLine following for easy hunting by Computer/CommandLine.. </info>

@@ -23,7 +23,7 @@ Manual check needed! Unknown condition
 
 <rule id="261792" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\. -ma ls\.</field>
+	<field name="win.eventdata.CommandLine">\. -ma\s+ls\.</field>
 	<description>ATT&CK T1036 T1003: Suspicious Use of Procdump</description>
 	<info type="text">Detects suspicious uses of the SysInternals Procdump utility by using a special command line parameter in combination with the lsass.exe process. This way we're also able to catch cases in which the attacker has renamed the procdump executable. </info>
 	<info type="text">Falsepositives: Unlikely, because no one should dump an lsass process memory. Another tool that uses the command line switches of Procdump. </info>

@@ -1,6 +1,6 @@
 <rule id="261740" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\. -NoP -sta -NonI -W Hidden -Enc \.|\. -noP -sta -w 1 -enc \.|\. -NoP -NonI -W Hidden -enc \.</field>
+	<field name="win.eventdata.CommandLine">\. -NoP\s+-sta\s+-NonI\s+-W\s+Hidden\s+-Enc \.|\. -noP\s+-sta\s+-w\s+1\s+-enc \.|\. -NoP\s+-NonI\s+-W\s+Hidden\s+-enc \.</field>
 	<description>ATT&CK T1086: Empire PowerShell Launch Parameters</description>
 	<info type="text">Detects suspicious powershell command line parameters used in Empire </info>
 	<info type="text">Falsepositives: Unlikely, because no sane admin pings IP addresses in a hexadecimal form. </info>

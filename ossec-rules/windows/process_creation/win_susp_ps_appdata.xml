@@ -1,6 +1,6 @@
 <rule id="261830" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\. /c powershell\.\\AppData\\Local\\\.|\. /c powershell\.\\AppData\\Roaming\\\.</field>
+	<field name="win.eventdata.CommandLine">\. /c\s+powershell\.\\AppData\\Local\\\.|\. /c\s+powershell\.\\AppData\\Roaming\\\.</field>
 	<description>ATT&CK T1086: PowerShell Script Run in AppData</description>
 	<info type="text">Detects a suspicious command line execution that invokes PowerShell with reference to an AppData folder </info>
 	<info type="text">Falsepositives: Administrative scripts. </info>
