@@ -13,7 +13,7 @@
 
 <rule id="260222" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">checkadmin.exe 127.0.0.1 -all|netsh advfirewall firewall add rule name=powershell dir=in|cmd /c powershell.exe -ep bypass -file \.:\\s.ps1|/tn win32times /f|create win32times binPath=|\\c\$\\windows\\system32\\devmgr.dll| -exec bypass -enc JgAg|type \.keepass\\KeePass.config.xml|iie.exe iie.txt|reg query HKEY_CURRENT_USER\\Software\.\\PuTTY\\Sessions\\</field>
+	<field name="win.eventdata.CommandLine">checkadmin.exe\s+127.0.0.1\s+-all|netsh\s+advfirewall\s+firewall\s+add\s+rule\s+name=powershell\s+dir=in|cmd\s+/c\s+powershell.exe\s+-ep\s+bypass\s+-file \.:\\s.ps1|/tn\s+win32times\s+/f|create\s+win32times\s+binPath=|\\c\$\\windows\\system32\\devmgr.dll| -exec\s+bypass\s+-enc\s+JgAg|type \.keepass\\KeePass.config.xml|iie.exe\s+iie.txt|reg\s+query\s+HKEY_CURRENT_USER\\Software\.\\PuTTY\\Sessions\\</field>
 	<description>ATT&CK: Operation Wocao Activity</description>
 	<info type="text">Detects activity mentioned in Operation Wocao report </info>
 	<info type="text">Falsepositives: Administrators that use checkadmin.exe tool to enumerate local administrators. </info>

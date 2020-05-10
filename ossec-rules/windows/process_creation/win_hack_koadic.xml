@@ -1,6 +1,6 @@
 <rule id="260500" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.cmd.exe\. /q /c chcp \.</field>
+	<field name="win.eventdata.CommandLine">\.cmd.exe\. /q\s+/c\s+chcp \.</field>
 	<description>ATT&CK T1170: Koadic Execution</description>
 	<info type="text">Detects command line parameters used by Koadic hack tool </info>
 	<info type="text">Falsepositives: Pentest. </info>

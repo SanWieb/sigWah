@@ -1,6 +1,6 @@
 <rule id="260370" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">IEX \([|iex \([|iex \(New|IEX \(New</field>
+	<field name="win.eventdata.CommandLine">IEX\s+\([|iex\s+\([|iex\s+\(New|IEX\s+\(New</field>
 	<description>ATT&CK T1086 T1140: Encoded IEX</description>
 	<info type="text">Detects a base64 encoded IEX command string in a process command line </info>
 	<info type="text">Falsepositives: unknown. </info>

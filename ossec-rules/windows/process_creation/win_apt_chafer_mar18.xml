@@ -47,7 +47,7 @@
 
 <rule id="260045" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.\\Service.exe i|\.\\Service.exe u|\.\\microsoft\\Taskbar\\autoit3.exe|\.:\\wsc.exe\.</field>
+	<field name="win.eventdata.CommandLine">\.\\Service.exe\s+i|\.\\Service.exe\s+u|\.\\microsoft\\Taskbar\\autoit3.exe|\.:\\wsc.exe\.</field>
 	<description>ATT&CK T1053 S0111 T1112: Chafer Activity</description>
 	<info type="text">Detects Chafer activity attributed to OilRig as reported in Nyotron report in March 2018 </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -69,7 +69,7 @@
 
 <rule id="260047" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.\\nslookup.exe -q=TXT\.</field>
+	<field name="win.eventdata.CommandLine">\.\\nslookup.exe\s+-q=TXT\.</field>
 	<field name="win.eventdata.ParentImage">\.\\\\Autoit\.</field>
 	<description>ATT&CK T1053 S0111 T1112: Chafer Activity</description>
 	<info type="text">Detects Chafer activity attributed to OilRig as reported in Nyotron report in March 2018 </info>

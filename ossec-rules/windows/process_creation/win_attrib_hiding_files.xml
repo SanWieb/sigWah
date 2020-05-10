@@ -22,7 +22,7 @@
 <rule id="260242" level="0">
 	<if_sid>260240</if_sid>
 	<field name="win.eventdata.ParentImage">\.\\\\cmd.exe</field>
-	<field name="win.eventdata.CommandLine">+R +H +S +A \\\..cui</field>
+	<field name="win.eventdata.CommandLine">+R\s++H\s++S\s++A\s+\\\..cui</field>
 	<field name="win.eventdata.ParentCommandLine">\.:\\\\WINDOWS\\\\system32\\\\\..bat</field>
 	<description>ATT&CK T1158: Hiding Files with Attrib.exe</description>
 	<info type="text">Detects usage of attrib.exe to hide files from users. </info>
