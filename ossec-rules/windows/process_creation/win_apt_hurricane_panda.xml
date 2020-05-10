@@ -1,6 +1,6 @@
 <rule id="260120" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\. localgroup administrators admin /add|\.\\Win64.exe\.</field>
+	<field name="win.eventdata.CommandLine">\. localgroup\s+administrators\s+admin\s+/add|\.\\Win64.exe\.</field>
 	<description>ATT&CK T1068: Hurricane Panda Activity</description>
 	<info type="text">Detects Hurricane Panda Activity </info>
 	<info type="text">Falsepositives: Unknown. </info>

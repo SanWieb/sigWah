@@ -12,7 +12,7 @@
 
 <rule id="260491" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine"> -CollectionMethod All |.exe -c All -d |Invoke-Bloodhound|Get-BloodHoundData</field>
+	<field name="win.eventdata.CommandLine"> -CollectionMethod\s+All |.exe\s+-c\s+All\s+-d |Invoke-Bloodhound|Get-BloodHoundData</field>
 	<description>ATT&CK T1087: Bloodhound and Sharphound Hack Tool</description>
 	<info type="text">Detects command line parameters used by Bloodhound and Sharphound hack tools </info>
 	<info type="text">Falsepositives: Other programs that use these command line option and accepts an 'All' parameter. </info>

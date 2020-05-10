@@ -1,6 +1,6 @@
 <rule id="260170" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">ps.exe -accepteula</field>
+	<field name="win.eventdata.CommandLine">ps.exe\s+-accepteula</field>
 	<description>ATT&CK T1036: Ps.exe Renamed SysInternals Tool</description>
 	<info type="text">Detects renamed SysInternals tool execution with a binary named ps.exe as used by Dragonfly APT group and documented in TA17-293A report </info>
 	<info type="text">Falsepositives: Renamed SysInternals tool. </info>

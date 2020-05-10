@@ -14,7 +14,7 @@
 
 <rule id="260101" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\. -export dll_u \.</field>
+	<field name="win.eventdata.CommandLine">\. -export\s+dll_u \.</field>
 	<description>ATT&CK T1059 T1085: Equation Group DLL_U Load</description>
 	<info type="text">Detects a specific tool and export used by EquationGroup </info>
 	<info type="text">Falsepositives: Unknown. </info>

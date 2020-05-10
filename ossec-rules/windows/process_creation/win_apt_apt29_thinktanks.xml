@@ -1,6 +1,6 @@
 <rule id="260000" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.-noni -ep bypass \$\.</field>
+	<field name="win.eventdata.CommandLine">\.-noni\s+-ep\s+bypass\s+\$\.</field>
 	<description>ATT&CK T1086: APT29</description>
 	<info type="text">This method detects a suspicious powershell command line combination as used by APT29 in a campaign against US think tanks </info>
 	<info type="text">Falsepositives: unknown. </info>

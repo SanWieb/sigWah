@@ -1,6 +1,6 @@
 <rule id="260130" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.\\ldifde.exe -f -n \.|\.\\7za.exe a 1.7z \.|\. eprod.ldf|\.\\aaaa\\procdump64.exe\.|\.\\aaaa\\netsess.exe\.|\.\\aaaa\\7za.exe\.|\.copy .\\1.7z \\\.|\.copy \\\\client\\c\$\\aaaa\\\.</field>
+	<field name="win.eventdata.CommandLine">\.\\ldifde.exe\s+-f\s+-n \.|\.\\7za.exe\s+a\s+1.7z \.|\. eprod.ldf|\.\\aaaa\\procdump64.exe\.|\.\\aaaa\\netsess.exe\.|\.\\aaaa\\7za.exe\.|\.copy\s+.\\1.7z\s+\\\.|\.copy\s+\\\\client\\c\$\\aaaa\\\.</field>
 	<description>ATT&CK T1098 T1002: Judgement Panda Exfil Activity</description>
 	<info type="text">Detects Judgement Panda activity as described in Global Threat Report 2019 by Crowdstrike </info>
 	<info type="text">Falsepositives: unknown. </info>

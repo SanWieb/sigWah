@@ -1,6 +1,6 @@
 <rule id="260590" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.\\CurrentVersion\\Image File Execution Options\\sethc.exe\.|\.\\CurrentVersion\\Image File Execution Options\\utilman.exe\.|\.\\CurrentVersion\\Image File Execution Options\\osk.exe\.|\.\\CurrentVersion\\Image File Execution Options\\magnify.exe\.|\.\\CurrentVersion\\Image File Execution Options\\narrator.exe\.|\.\\CurrentVersion\\Image File Execution Options\\displayswitch.exe\.|\.\\CurrentVersion\\Image File Execution Options\\atbroker.exe\.</field>
+	<field name="win.eventdata.CommandLine">\.\\CurrentVersion\\Image\s+File\s+Execution\s+Options\\sethc.exe\.|\.\\CurrentVersion\\Image\s+File\s+Execution\s+Options\\utilman.exe\.|\.\\CurrentVersion\\Image\s+File\s+Execution\s+Options\\osk.exe\.|\.\\CurrentVersion\\Image\s+File\s+Execution\s+Options\\magnify.exe\.|\.\\CurrentVersion\\Image\s+File\s+Execution\s+Options\\narrator.exe\.|\.\\CurrentVersion\\Image\s+File\s+Execution\s+Options\\displayswitch.exe\.|\.\\CurrentVersion\\Image\s+File\s+Execution\s+Options\\atbroker.exe\.</field>
 	<description>ATT&CK T1015: Suspicious Debugger Registration Cmdline</description>
 	<info type="text">Detects the registration of a debugger for a program that is available in the logon screen (sticky key backdoor). </info>
 	<info type="text">Falsepositives: Penetration Tests. </info>

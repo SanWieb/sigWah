@@ -1,7 +1,7 @@
 <rule id="260050" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\.\\\\cscript.exe</field>
-	<field name="win.eventdata.CommandLine">\..vbs /shell \.</field>
+	<field name="win.eventdata.CommandLine">\..vbs\s+/shell \.</field>
 	<description>ATT&CK T1064: WMIExec VBS Script</description>
 	<info type="text">Detects suspicious file execution by wscript and cscript </info>
 	<info type="text">Falsepositives: Unlikely. </info>
