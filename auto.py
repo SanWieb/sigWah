@@ -10,8 +10,11 @@ class SigmaOssec(object):
     rulenumber = 0
     data = {}
     common_fields = ['utctime', 'processguid', 'processid', 'image', 'currentdirectory', 'user', 'logonguid',
-                     'logonid', 'terminalsessionid', 'integritylevel', 'parentprocessguid', 'parentprocessid',
-                     'parentimage', 'parentcommandline', 'originalfilename', 'company', 'username']
+                     'logonid', 'terminalsessionid', 'integritylevel', 'parentintegritylevel', 'parentprocessguid',
+                     'parentprocessid', 'parentimage', 'parentcommandline', 'originalfilename', 'company', 'eventid',
+                     'description', 'product', 'servicename', 'taskname', 'targetobject', 'eventtype', 'details',
+                     'username', 'targetfilename', 'parentuser', 'groupname', 'processname', 'newprocessname',
+                     'processcommandline', 'qname']
 
     def __init__(self, documentData, rulenumber):
         # static rule entries #
@@ -42,15 +45,21 @@ class SigmaOssec(object):
                 output['opentag'] = self.getOpenTag(data)
                 output['if_group'] = '\t<if_group>sysmon_event1</if_group>'
                 output['title'] = self.static_title
-                output = self.static_lastpart
+                lastpart = self.static_lastpart
+                # merge lastpart in output
+                for part in lastpart:
+                    output['{}'.format(part)] = lastpart[part]
+                output['empty_line'] = ''
             elif 'condition' not in data['detection'].keys():
                 output['validation_failed_detection'] = 'Manual check needed! Unknown condition'
                 # manual check needed, for now it will be processed as OR statement
                 output = self.handle_standard_or(data, output)
             elif data['detection']['condition'] in ['selection', '1 of them', 'selection1 or selection2',
-                                                    'selection1 or selection2 or selection3']:
+                                                    'selection1 or selection2 or selection3',
+                                                    'selection_1 or selection_2', 'selection or selection2']:
                 output = self.handle_standard_or(data, output)
             elif data['detection']['condition'] in ['selection and not filter']:
+                # selection and not falsepositive | selection1 and not falsepositive1 | selection and not exclusion
                 output = self.handle_and_not_filter(data, output)
                 output['validation_failed_detection'] = '!Selection and not filter'
             else:
@@ -180,6 +189,7 @@ class SigmaOssec(object):
         elif fieldname_stripped in self.common_fields:
             rule = self.parse_common(selection, fieldname, start_string, end_string)
         else:
+            print(fieldname)
             rule = 'Manual check needed! Rule failed Field: {}'.format(fieldname)
         return rule
 
@@ -196,6 +206,7 @@ class SigmaOssec(object):
                 # replace with single backslash
                 item = self.replace_backslash_wildcard(item, '\\\\')
                 item = self.replace_variables(item)
+                item = self.replace_space(item)
                 query += start_string + item + end_string
             return '\t<field name="win.eventdata.CommandLine">{}</field>'.format(query)
         elif type(selection[fieldname]) == str:
@@ -203,6 +214,7 @@ class SigmaOssec(object):
             # replace with single backslash
             item = self.replace_backslash_wildcard(item, '\\\\')
             item = self.replace_variables(item)
+            item = self.replace_space(item)
             query += start_string + item + end_string
             return '\t<field name="win.eventdata.CommandLine">{}</field>'.format(query)
         else:
@@ -239,7 +251,10 @@ class SigmaOssec(object):
         fieldname_stripped = fieldname.split('|')[0]
         # replace username with user
         fieldname_stripped = re.sub(r'username', 'User', fieldname_stripped, flags=re.I)
-        #fieldname_stripped = fieldname_stripped.replace('Username', 'User').replace('username', 'User').replace('USERNAME', 'User')
+        # replace NewProcessName with image
+        fieldname_stripped = re.sub(r'newprocessname', 'Image', fieldname_stripped, flags=re.I)
+        # replace ProcessCommandLine with CommandLine
+        fieldname_stripped = re.sub(r'processcommandline', 'CommandLine', fieldname_stripped, flags=re.I)
         query = ''
         if type(selection[fieldname]) == list:
             first_key = True
@@ -258,20 +273,24 @@ class SigmaOssec(object):
             item = self.replace_variables(item)
             query += start_string + item + end_string
             return '\t<field name="win.eventdata.{}">{}</field>'.format(fieldname_stripped, query)
+        # event ids
+        elif type(selection[fieldname]) == int:
+            item = selection[fieldname]
+            query = item
+            return '\t<field name="win.eventdata.{}">{}</field>'.format(fieldname_stripped, query)
         else:
             return 'Manual check needed! Rule parse failed (Parse Common)'
 
     def replace_variables(self, item):
+        # ! backslashes
         # replace ( with \(  (must be escaped)
-        item = item.replace('(', '\\(').replace(')', '\\))')
+        item = item.replace('(', '\\(').replace(')', '\\)')
         # replace $ with \$  (must be escaped)
         item = item.replace('$', '\\$')
         # replace | with \|  (must be escaped)
         item = item.replace('|', '\\|')
         # replace < with \<  (must be escaped)
         item = item.replace('<', '\\<')
-        # replace ( with \(  (must be escaped)
-        item = item.replace('(', '\\(').replace(')', '\\)')
         # replace C driveletter with \.
         item = item.replace('c:\\', '\\.:\\').replace('C:\\', '\\.:\\')
         # replace %APPDATA% with \.\AppData\\.
@@ -280,9 +299,15 @@ class SigmaOssec(object):
         item = item.replace('%AppData%', '\\.\\AppData\\\\.').replace('%APPDATA%', '\\.\\AppData\\\\.')
         # replace %WINDIR% with \.\Windows\\.
         item = item.replace('%WinDir%', '\\.\\Windows\\\\.').replace('%WINDIR%', '\\.\\Windows\\\\.')
+        # remove wildcard start and end of string
+        item = re.sub(r'\\.$', '', item)
+        item = re.sub(r'^\\.', '', item)
         return item
 
     def replace_backslash_wildcard(self, item, backshlash='\\\\\\\\'):
+        # remove wildcard start and end of string
+        item = re.sub(r'\*$', '', item)
+        item = re.sub(r'^\*', '', item)
         # Write \\\\ if you want two backslahes
         # Write \* if you want a plain wildcard * as resulting value.
         # Write \\* if you want a plain backslash followed by a wildcard * as resulting value.
@@ -312,6 +337,23 @@ class SigmaOssec(object):
         # item = item.replace('\\', backshlash)
         # # replace PLACEHOLDER with \.
         # item = item.replace('!@#$%^&()PLACEHOLDER', '\\.')
+        return item
+
+    def replace_space(self, item):
+        # Eventlog places sometimes 2 spaces instead of 1 between 2 arguments
+        # Replace a space with \s+ parameter
+        # If wildcard (\.) is before or after space is it not needed
+        item = re.sub(r'\s$', '%|SpaceEnd|%', item)
+        item = re.sub(r'^\s', '%|SpaceStart|%', item)
+        item = item.replace(' \\. ', '%|SpaceWildcardSpace|%')
+        item = item.replace(' \\.', '%|SpaceWildcard|%')
+        item = item.replace('\\. ', '%|WildcardSpace|%')
+        item = item.replace(' ', '\\s+')
+        item = item.replace('%|SpaceEnd|%', ' ')
+        item = item.replace('%|SpaceStart|%', ' ')
+        item = item.replace('%|SpaceWildcardSpace|%', ' \\. ')
+        item = item.replace('%|SpaceWildcard|%', ' \\.', )
+        item = item.replace('%|WildcardSpace|%', '\\. ')
         return item
 
     def validate_syntax(self, data, output):
@@ -371,8 +413,8 @@ class SigmaOssec(object):
         return {
             'critical': 15,
             'high': 14,
-            'medium': 12,
-            'low': 6
+            'medium': 10,
+            'low': 8
         }.get(level, '%')
 
 
@@ -399,7 +441,6 @@ def main():
     rule_number = 260000
     for filename in os.listdir(directory):
         if filename.endswith(".yml"):
-            print(filename)
             documentData = readFile(os.path.join(directory, filename))
             sigmaconvert = SigmaOssec(documentData, rule_number)
             output = sigmaconvert.getOutput()
