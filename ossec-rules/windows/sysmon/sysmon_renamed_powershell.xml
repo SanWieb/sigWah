@@ -10,7 +10,7 @@
 	<group>car.2013-05-009,MITRE</group>
 </rule>
 
-<rule id="250521" level="12">
+<rule id="250521" level="0">
 	<if_sid>250520</if_sid>
 	<field name="win.eventdata.image">\\powershell.exe|\\powershell_ise.exe</field>
 	<description>Whitelist Interaction: Renamed PowerShell</description>
