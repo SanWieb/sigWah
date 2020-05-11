@@ -11,7 +11,7 @@
 </rule>
 
 <rule id="260762" level="14">
-	<field name="win.eventdata.EventID">11</field>
+	<field name="win.system.eventID">11</field>
 	<field name="win.eventdata.TargetFilename">\.\\\\AppData\\\\Roaming\\\\Oracle\\\\bin\\\\java\..exe|\.\\\\Retrive\..vbs</field>
 	<description>ATT&CK T1064: Adwind RAT / JRAT</description>
 	<info type="text">Detects javaw.exe in AppData folder as used by Adwind / JRAT </info>
@@ -23,7 +23,7 @@
 </rule>
 
 <rule id="260763" level="14">
-	<field name="win.eventdata.EventID">13</field>
+	<field name="win.system.eventID">13</field>
 	<field name="win.eventdata.TargetObject">HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\.</field>
 	<field name="win.eventdata.Details">\.\AppData\\.\\\\Roaming\\\\Oracle\\\\bin\\\\\.</field>
 	<description>ATT&CK T1064: Adwind RAT / JRAT</description>

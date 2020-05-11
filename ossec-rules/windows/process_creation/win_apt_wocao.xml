@@ -1,5 +1,5 @@
 <rule id="260220" level="14">
-	<field name="win.eventdata.EventID">4799</field>
+	<field name="win.system.eventID">4799</field>
 	<field name="win.eventdata.GroupName">Administrators</field>
 	<field name="win.eventdata.ProcessName">\.\\\\checkadmin.exe</field>
 	<description>ATT&CK: Operation Wocao Activity</description>

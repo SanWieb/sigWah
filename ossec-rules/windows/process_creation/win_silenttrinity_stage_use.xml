@@ -23,7 +23,7 @@ Manual check needed! No detection key
 Manual check needed! Unknown condition
 <rule id="261292" level="%">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.EventID">7</field>
+	<field name="win.system.eventID">7</field>
 	<description>ATT&CK: SILENTTRINITY Stager Execution</description>
 	<info type="text">Detects SILENTTRINITY stager use </info>
 	<info type="text">Falsepositives: unknown. </info>
