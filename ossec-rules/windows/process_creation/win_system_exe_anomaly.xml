@@ -14,5 +14,3 @@
 	<field name="win.eventdata.Image">:\\\\Windows\\\\System32\\\\|:\\\\Windows\\\\system32\\\\|:\\\\Windows\\\\SysWow64\\\\|:\\\\Windows\\\\SysWOW64\\\\|:\\\\Windows\\\\explorer.exe|:\\\\Windows\\\\winsxs\\\\|:\\\\Windows\\\\WinSxS\\\\|\\\\SystemRoot\\\\System32\\\\</field>
 	<description>Whitelist Interaction: System File Execution Location Anomaly</description>
 </rule>
-
-!Selection and not filter

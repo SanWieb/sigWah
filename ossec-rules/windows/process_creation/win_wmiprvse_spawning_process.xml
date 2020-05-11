@@ -12,8 +12,11 @@
 <rule id="262231" level="0">
 	<if_sid>262230</if_sid>
 	<field name="win.eventdata.LogonId">0x3e7</field>
-	<field name="win.eventdata.User">NT AUTHORITY\\\\SYSTEM</field>
 	<description>Whitelist Interaction: Wmiprvse Spawning Process</description>
 </rule>
 
-!Selection and not filter
+<rule id="262232" level="0">
+	<if_sid>262230</if_sid>
+	<field name="win.eventdata.User">NT AUTHORITY\\\\SYSTEM</field>
+	<description>Whitelist Interaction: Wmiprvse Spawning Process</description>
+</rule>

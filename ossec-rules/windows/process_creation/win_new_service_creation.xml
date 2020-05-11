@@ -3,6 +3,16 @@
 	<field name="win.eventdata.Image">\\\\sc.exe$</field>
 	<field name="win.eventdata.CommandLine">create</field>
 	<field name="win.eventdata.CommandLine">binpath</field>
+	<description>ATT&CK T1050: New Service Creation</description>
+	<info type="text">Detects creation if a new service </info>
+	<info type="text">Falsepositives: Legitimate administrator or user creates a service for legitimate reason. </info>
+	<info type="text">Sigma UUID: 7fe71fc9-de3b-432a-8d57-8c809efc10ab </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1050/T1050.yaml </info>
+	<group>attack.persistence,attack.privilege_escalation,attack.t1050,MITRE</group>
+</rule>
+
+<rule id="260921" level="8">
+	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\powershell.exe$</field>
 	<field name="win.eventdata.CommandLine">new-service</field>
 	<description>ATT&CK T1050: New Service Creation</description>
@@ -12,4 +22,3 @@
 	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1050/T1050.yaml </info>
 	<group>attack.persistence,attack.privilege_escalation,attack.t1050,MITRE</group>
 </rule>
-

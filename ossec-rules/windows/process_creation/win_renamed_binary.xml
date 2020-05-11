@@ -16,5 +16,3 @@
 	<field name="win.eventdata.Image">\\\\cmd.exe$|\\\\powershell.exe$|\\\\powershell_ise.exe$|\\\\psexec.exe$|\\\\psexec64.exe$|\\\\cscript.exe$|\\\\wscript.exe$|\\\\mshta.exe$|\\\\regsvr32.exe$|\\\\wmic.exe$|\\\\certutil.exe$|\\\\rundll32.exe$|\\\\cmstp.exe$|\\\\msiexec.exe$|\\\\7z.exe$|\\\\winrar.exe$|\\\\wevtutil.exe$|\\\\net.exe$|\\\\net1.exe$|\\\\netsh.exe$</field>
 	<description>Whitelist Interaction: Renamed Binary</description>
 </rule>
-
-!Selection and not filter

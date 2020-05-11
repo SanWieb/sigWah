@@ -1,4 +1,3 @@
-Manual check needed! Unknown condition
 <rule id="261780" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentImage">\\\\wscript.exe|\\\\cscript.exe</field>
@@ -11,14 +10,9 @@ Manual check needed! Unknown condition
 	<group>attack.execution,attack.t1086,MITRE</group>
 </rule>
 
-<rule id="261781" level="10">
-	<if_group>sysmon_event1</if_group>
+<rule id="261781" level="0">
+	<if_sid>261780</if_sid>
 	<field name="win.eventdata.CurrentDirectory">\\\\Health Service State\\\\</field>
-	<description>ATT&CK T1086: Suspicious PowerShell Invocation Based on Parent Process</description>
-	<info type="text">Detects suspicious powershell invocations from interpreters or unusual programs </info>
-	<info type="text">Falsepositives: Microsoft Operations Manager (MOM). Other scripts. </info>
-	<info type="text">Sigma UUID: 95eadcb2-92e4-4ed1-9031-92547773a6db </info>
-	<info type="link">https://www.carbonblack.com/2017/03/15/attackers-leverage-excel-powershell-dns-latest-non-malware-attack/ </info>
+	<description>Whitelist Interaction: Suspicious PowerShell Invocation Based on Parent Process</description>
 	<group>attack.execution,attack.t1086,MITRE</group>
 </rule>
-

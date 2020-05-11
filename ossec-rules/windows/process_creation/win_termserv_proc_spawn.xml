@@ -14,5 +14,3 @@
 	<field name="win.eventdata.Image">\\\\rdpclip.exe</field>
 	<description>Whitelist Interaction: Terminal Service Process Spawn</description>
 </rule>
-
-!Selection and not filter

@@ -1,4 +1,3 @@
-Manual check needed! Unknown condition
 <rule id="261960" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\svchost.exe</field>
@@ -9,23 +8,12 @@ Manual check needed! Unknown condition
 	<group>attack.defense_evasion,attack.t1036,MITRE</group>
 </rule>
 
-<rule id="261961" level="14">
-	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentImage">\\\\services.exe|\\\\MsMpEng.exe|\\\\Mrt.exe|\\\\rpcnet.exe|\\\\svchost.exe</field>
+<rule id="261961" level="0">
+	<if_sid>261960</if_sid>
+	<field name="win.eventdata.ParentImage">\\\\services.exe|\\\\MsMpEng.exe|\\\\Mrt.exe|\\\\rpcnet.exe|\\\\svchost.exe|null|^$|^ $</field>
 	<description>ATT&CK T1036: Suspicious Svchost Process</description>
 	<info type="text">Detects a suspicious svchost process start </info>
 	<info type="text">Falsepositives: Unknown. </info>
 	<info type="text">Sigma UUID: 01d2e2a1-5f09-44f7-9fc1-24faa7479b6d </info>
 	<group>attack.defense_evasion,attack.t1036,MITRE</group>
 </rule>
-
-<rule id="261962" level="14">
-	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule parse failed (Parse Common)
-	<description>ATT&CK T1036: Suspicious Svchost Process</description>
-	<info type="text">Detects a suspicious svchost process start </info>
-	<info type="text">Falsepositives: Unknown. </info>
-	<info type="text">Sigma UUID: 01d2e2a1-5f09-44f7-9fc1-24faa7479b6d </info>
-	<group>attack.defense_evasion,attack.t1036,MITRE</group>
-</rule>
-

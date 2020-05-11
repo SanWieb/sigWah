@@ -1,4 +1,3 @@
-Manual check needed! Unknown condition
 <rule id="260980" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentUser">NT AUTHORITY\\\\NETWORK SERVICE|NT AUTHORITY\\\\LOCAL SERVICE</field>
@@ -12,16 +11,10 @@ Manual check needed! Unknown condition
 	<group>attack.privilege_escalation,attack.t1134,MITRE</group>
 </rule>
 
-<rule id="260981" level="14">
-	<if_group>sysmon_event1</if_group>
+<rule id="260981" level="0">
+	<if_sid>260980</if_sid>
 	<field name="win.eventdata.Image">\\\\rundll32.exe$</field>
 	<field name="win.eventdata.CommandLine">DavSetCookie</field>
-	<description>ATT&CK T1134: Detection of Possible Rotten Potato</description>
-	<info type="text">Detection of child processes spawned with SYSTEM privileges by parents with LOCAL SERVICE or NETWORK SERVICE privileges </info>
-	<info type="text">Falsepositives: Unknown. </info>
-	<info type="text">Sigma UUID: 6c5808ee-85a2-4e56-8137-72e5876a5096 </info>
-	<info type="link">https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment </info>
-	<info type="link">https://foxglovesecurity.com/2016/09/26/rotten-potato-privilege-escalation-from-service-accounts-to-system/ </info>
+	<description>Whitelist Interaction: Detection of Possible Rotten Potato</description>
 	<group>attack.privilege_escalation,attack.t1134,MITRE</group>
 </rule>
-

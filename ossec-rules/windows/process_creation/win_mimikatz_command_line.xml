@@ -1,4 +1,3 @@
-Manual check needed! Unknown condition
 <rule id="260790" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">DumpCreds|invoke-mimikatz</field>
@@ -13,16 +12,6 @@ Manual check needed! Unknown condition
 <rule id="260791" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">rpc|token|crypto|dpapi|sekurlsa|kerberos|lsadump|privilege|process</field>
-	<description>ATT&CK T1003: Mimikatz Command Line</description>
-	<info type="text">Detection well-known mimikatz command line arguments </info>
-	<info type="text">Falsepositives: Legitimate Administrator using tool for password recovery. </info>
-	<info type="text">Sigma UUID: a642964e-bead-4bed-8910-1bb4d63e3b4d </info>
-	<info type="link">https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment </info>
-	<group>attack.credential_access,attack.t1003,MITRE</group>
-</rule>
-
-<rule id="260792" level="10">
-	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">::</field>
 	<description>ATT&CK T1003: Mimikatz Command Line</description>
 	<info type="text">Detection well-known mimikatz command line arguments </info>
@@ -31,4 +20,3 @@ Manual check needed! Unknown condition
 	<info type="link">https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment </info>
 	<group>attack.credential_access,attack.t1003,MITRE</group>
 </rule>
-

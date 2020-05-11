@@ -1,5 +1,4 @@
-Manual check needed! Unknown condition
-<rule id="261410" level="10">
+<rule id="261410" level="0">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">tasklist|net\s+time|systeminfo|whoami|nbtstat|net\s+start|\\net1\s+start|qprocess|nslookup|hostname.exe|\\net1\s+user\s+/domain|\\net1\s+group\s+/domain|\\net1\s+group\s+"domain\s+admins"\s+/domain|\\net1\s+group\s+"Exchange\s+Trusted\s+Subsystem"\s+/domain|\\net1\s+accounts\s+/domain|\\net1\s+user\s+net\s+localgroup\s+administrators|netstat\s+-an</field>
 	<description>ATT&CK T1087 T1082: Reconnaissance Activity with Net Command</description>
@@ -12,11 +11,9 @@ Manual check needed! Unknown condition
 	<group>attack.discovery,attack.t1087,attack.t1082,car.2016-03-001,MITRE</group>
 </rule>
 
-<rule id="261411" level="10">
-	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule failed Field: 1
-Manual check needed! Rule failed Field: 5
-Manual check needed! Rule failed Field: s
+<rule id="261411" level="10" frequency="5" timeframe="15">
+	<if_sid>261410</if_sid>
+	<not_same_field>win.eventdata.CommandLine</not_same_field>
 	<description>ATT&CK T1087 T1082: Reconnaissance Activity with Net Command</description>
 	<info type="text">Detects a set of commands often used in recon stages by different attack groups </info>
 	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. </info>
@@ -26,4 +23,3 @@ Manual check needed! Rule failed Field: s
 	<info type="link">https://www.fireeye.com/blog/threat-research/2016/05/targeted_attacksaga.html </info>
 	<group>attack.discovery,attack.t1087,attack.t1082,car.2016-03-001,MITRE</group>
 </rule>
-

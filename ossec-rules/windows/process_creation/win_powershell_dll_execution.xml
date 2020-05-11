@@ -1,7 +1,7 @@
-Manual check needed! Unknown condition
 <rule id="261030" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\rundll32.exe</field>
+	<field name="win.eventdata.CommandLine">Default.GetString|FromBase64String</field>
 	<description>ATT&CK T1086: Detection of PowerShell Execution via DLL</description>
 	<info type="text">Detects PowerShell Strings applied to rundllas seen in PowerShdll.dll </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -13,16 +13,6 @@ Manual check needed! Unknown condition
 <rule id="261031" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Description">Windows-Hostprozess \(Rundll32\)</field>
-	<description>ATT&CK T1086: Detection of PowerShell Execution via DLL</description>
-	<info type="text">Detects PowerShell Strings applied to rundllas seen in PowerShdll.dll </info>
-	<info type="text">Falsepositives: Unknown. </info>
-	<info type="text">Sigma UUID: 6812a10b-60ea-420c-832f-dfcc33b646ba </info>
-	<info type="link">https://github.com/p3nt4/PowerShdll/blob/master/README.md </info>
-	<group>attack.execution,attack.t1086,car.2014-04-003,MITRE</group>
-</rule>
-
-<rule id="261032" level="14">
-	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">Default.GetString|FromBase64String</field>
 	<description>ATT&CK T1086: Detection of PowerShell Execution via DLL</description>
 	<info type="text">Detects PowerShell Strings applied to rundllas seen in PowerShdll.dll </info>
@@ -31,4 +21,3 @@ Manual check needed! Unknown condition
 	<info type="link">https://github.com/p3nt4/PowerShdll/blob/master/README.md </info>
 	<group>attack.execution,attack.t1086,car.2014-04-003,MITRE</group>
 </rule>
-

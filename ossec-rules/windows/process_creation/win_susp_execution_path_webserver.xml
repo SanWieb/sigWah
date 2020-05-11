@@ -14,5 +14,3 @@
 	<field name="win.eventdata.ParentImage">\\\\services.exe</field>
 	<description>Whitelist Interaction: Execution in Webserver Root Folder</description>
 </rule>
-
-!Selection and not filter

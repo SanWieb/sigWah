@@ -1,4 +1,3 @@
-Manual check needed! Unknown condition
 <rule id="262060" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\whoami.exe</field>
@@ -22,4 +21,3 @@ Manual check needed! Unknown condition
 	<info type="link">https://app.any.run/tasks/7eaba74e-c1ea-400f-9c17-5e30eee89906/ </info>
 	<group>attack.discovery,attack.t1033,car.2016-03-001,MITRE</group>
 </rule>
-

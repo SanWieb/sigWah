@@ -18,5 +18,3 @@
 	<field name="win.eventdata.ParentImage">:\\\\Program Files|\\\\sdiagnhost.exe|\\\\w3wp.exe</field>
 	<description>Whitelist Interaction: Suspicious Csc.exe Source File Folder</description>
 </rule>
-
-!Selection and not filter

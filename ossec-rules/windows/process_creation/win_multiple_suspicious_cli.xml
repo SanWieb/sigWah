@@ -1,5 +1,4 @@
-Manual check needed! Unknown condition
-<rule id="260830" level="8">
+<rule id="260830" level="0">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">arp.exe|at.exe|attrib.exe|cscript.exe|dsquery.exe|hostname.exe|ipconfig.exe|mimikatz.exe|nbtstat.exe|net.exe|netsh.exe|nslookup.exe|ping.exe|quser.exe|qwinsta.exe|reg.exe|runas.exe|sc.exe|schtasks.exe|ssh.exe|systeminfo.exe|taskkill.exe|telnet.exe|tracert.exe|wscript.exe|xcopy.exe|pscp.exe|copy.exe|robocopy.exe|certutil.exe|vssadmin.exe|powershell.exe|wevtutil.exe|psexec.exe|bcedit.exe|wbadmin.exe|icacls.exe|diskpart.exe</field>
 	<description>ATT&CK: Quick Execution of a Series of Suspicious Commands</description>
@@ -10,10 +9,9 @@ Manual check needed! Unknown condition
 	<group>car.2013-04-002,MITRE</group>
 </rule>
 
-<rule id="260831" level="8">
-	<if_group>sysmon_event1</if_group>
-Manual check needed! Rule failed Field: 5
-Manual check needed! Rule failed Field: m
+<rule id="260831" level="8" frequency="5" timeframe="120">
+	<if_sid>260830</if_sid>
+	<not_same_field>win.eventdata.CommandLine</not_same_field>
 	<description>ATT&CK: Quick Execution of a Series of Suspicious Commands</description>
 	<info type="text">Detects multiple suspicious process in a limited timeframe </info>
 	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. </info>
@@ -21,4 +19,3 @@ Manual check needed! Rule failed Field: m
 	<info type="link">https://car.mitre.org/wiki/CAR-2013-04-002 </info>
 	<group>car.2013-04-002,MITRE</group>
 </rule>
-

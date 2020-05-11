@@ -1,18 +1,7 @@
-Manual check needed! Unknown condition
 <rule id="261140" level="8">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\reg.exe$</field>
 	<field name="win.eventdata.CommandLine">query|save|export</field>
-	<description>ATT&CK T1012 T1007: Query Registry</description>
-	<info type="text">Adversaries may interact with the Windows Registry to gather information about the system, configuration, and installed software. </info>
-	<info type="text">Falsepositives: Administrative activity. </info>
-	<info type="text">Sigma UUID: 970007b7-ce32-49d0-a4a4-fbef016950bd </info>
-	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1012/T1012.yaml </info>
-	<group>attack.discovery,attack.t1012,attack.t1007,MITRE</group>
-</rule>
-
-<rule id="261141" level="8">
-	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">currentVersion\\windows|currentVersion\\runServicesOnce|currentVersion\\runServices|winlogon\\|currentVersion\\shellServiceObjectDelayLoad|currentVersion\\runOnce|currentVersion\\runOnceEx|currentVersion\\run|currentVersion\\policies\\explorer\\run|currentcontrolset\\services</field>
 	<description>ATT&CK T1012 T1007: Query Registry</description>
 	<info type="text">Adversaries may interact with the Windows Registry to gather information about the system, configuration, and installed software. </info>
@@ -21,4 +10,3 @@ Manual check needed! Unknown condition
 	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1012/T1012.yaml </info>
 	<group>attack.discovery,attack.t1012,attack.t1007,MITRE</group>
 </rule>
-

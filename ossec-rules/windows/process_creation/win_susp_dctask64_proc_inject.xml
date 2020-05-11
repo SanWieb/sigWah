@@ -16,5 +16,3 @@
 	<field name="win.eventdata.CommandLine">DesktopCentral_Agent\\agent</field>
 	<description>Whitelist Interaction: ZOHO Dctask64 Process Injection</description>
 </rule>
-
-!Selection and not filter

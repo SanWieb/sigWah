@@ -13,5 +13,3 @@
 	<field name="win.eventdata.Image">\\\\resmon.exe|\\\\mmc.exe|\\\\taskmgr.exe</field>
 	<description>Whitelist Interaction: Taskmgr as Parent</description>
 </rule>
-
-!Selection and not filter

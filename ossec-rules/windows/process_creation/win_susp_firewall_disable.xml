@@ -1,4 +1,4 @@
-<rule id="261590" level="10">
+<rule id="261590" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">netsh\s+firewall\s+set\s+opmode\s+mode=disable|netsh\s+advfirewall\s+set \. state\s+off</field>
 	<description>ATT&CK: Firewall Disabled via Netsh</description>
@@ -9,4 +9,3 @@
 	<info type="link">https://app.any.run/tasks/210244b9-0b6b-4a2c-83a3-04bd3175d017/ </info>
 	<group>attack.defense_evasion,MITRE</group>
 </rule>
-

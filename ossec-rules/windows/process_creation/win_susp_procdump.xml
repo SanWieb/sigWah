@@ -1,17 +1,6 @@
-Manual check needed! Unknown condition
 <rule id="261790" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine"> -ma </field>
-	<description>ATT&CK T1036 T1003: Suspicious Use of Procdump</description>
-	<info type="text">Detects suspicious uses of the SysInternals Procdump utility by using a special command line parameter in combination with the lsass.exe process. This way we're also able to catch cases in which the attacker has renamed the procdump executable. </info>
-	<info type="text">Falsepositives: Unlikely, because no one should dump an lsass process memory. Another tool that uses the command line switches of Procdump. </info>
-	<info type="text">Sigma UUID: 5afee48e-67dd-4e03-a783-f74259dcf998 </info>
-	<info type="link">Internal Research </info>
-	<group>attack.defense_evasion,attack.t1036,attack.credential_access,attack.t1003,car.2013-05-009,MITRE</group>
-</rule>
-
-<rule id="261791" level="14">
-	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine"> lsass</field>
 	<description>ATT&CK T1036 T1003: Suspicious Use of Procdump</description>
 	<info type="text">Detects suspicious uses of the SysInternals Procdump utility by using a special command line parameter in combination with the lsass.exe process. This way we're also able to catch cases in which the attacker has renamed the procdump executable. </info>
@@ -31,4 +20,3 @@ Manual check needed! Unknown condition
 	<info type="link">Internal Research </info>
 	<group>attack.defense_evasion,attack.t1036,attack.credential_access,attack.t1003,car.2013-05-009,MITRE</group>
 </rule>
-

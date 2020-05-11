@@ -1,4 +1,4 @@
-<rule id="262210" level="14">
+<rule id="262210" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.User">NT AUTHORITY\\\\SYSTEM</field>
 	<field name="win.eventdata.Image">\\\\whoami.exe$</field>
@@ -9,4 +9,3 @@
 	<info type="link">https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment </info>
 	<group>attack.discovery,attack.privilege_escalation,attack.t1033,MITRE</group>
 </rule>
-

@@ -14,5 +14,3 @@
 	<field name="win.eventdata.Image">:\\\\Users\\\\\.\\\\AppData\\\\Local\\\\Notepad++\\\\updater\\\\gup.exe|:\\\\Users\\\\\.\\\\AppData\\\\Roaming\\\\Notepad++\\\\updater\\\\gup.exe|:\\\\Program Files\\\\Notepad++\\\\updater\\\\gup.exe|:\\\\Program Files \(x86\)\\\\Notepad++\\\\updater\\\\gup.exe</field>
 	<description>Whitelist Interaction: Suspicious GUP Usage</description>
 </rule>
-
-!Selection and not filter

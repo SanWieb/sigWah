@@ -1,4 +1,3 @@
-Manual check needed! Unknown condition
 <rule id="262040" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentImage">\\\\userinit.exe</field>
@@ -10,25 +9,16 @@ Manual check needed! Unknown condition
 	<group>MITRE</group>
 </rule>
 
-<rule id="262041" level="10">
-	<if_group>sysmon_event1</if_group>
+<rule id="262041" level="0">
+	<if_sid>262040</if_sid>
 	<field name="win.eventdata.CommandLine">\\\\netlogon\\</field>
-	<description>ATT&CK: Suspicious Userinit Child Process</description>
-	<info type="text">Detects a suspicious child process of userinit </info>
-	<info type="text">Falsepositives: Administrative scripts. </info>
-	<info type="text">Sigma UUID: b655a06a-31c0-477a-95c2-3726b83d649d </info>
-	<info type="link">https://twitter.com/SBousseaden/status/1139811587760562176 </info>
+	<description>Whitelist Interaction: Suspicious Userinit Child Process</description>
 	<group>MITRE</group>
 </rule>
 
-<rule id="262042" level="10">
-	<if_group>sysmon_event1</if_group>
+<rule id="262042" level="0">
+	<if_sid>262040</if_sid>
 	<field name="win.eventdata.Image">\\\\explorer.exe</field>
-	<description>ATT&CK: Suspicious Userinit Child Process</description>
-	<info type="text">Detects a suspicious child process of userinit </info>
-	<info type="text">Falsepositives: Administrative scripts. </info>
-	<info type="text">Sigma UUID: b655a06a-31c0-477a-95c2-3726b83d649d </info>
-	<info type="link">https://twitter.com/SBousseaden/status/1139811587760562176 </info>
+	<description>Whitelist Interaction: Suspicious Userinit Child Process</description>
 	<group>MITRE</group>
 </rule>
-

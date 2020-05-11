@@ -1,4 +1,3 @@
-Manual check needed! Unknown condition
 <rule id="261710" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">EnableUnsafeClientMailRules</field>
@@ -23,4 +22,3 @@ Manual check needed! Unknown condition
 	<info type="link">https://www.fireeye.com/blog/threat-research/2018/12/overruled-containing-a-potentially-destructive-adversary.html </info>
 	<group>attack.execution,attack.t1059,attack.t1202,MITRE</group>
 </rule>
-

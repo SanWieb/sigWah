@@ -14,5 +14,3 @@
 	<field name="win.eventdata.ParentImage">\\\\explorer.exe$</field>
 	<description>Whitelist Interaction: Non Interactive PowerShell</description>
 </rule>
-
-!Selection and not filter

@@ -16,5 +16,3 @@
 	<field name="win.eventdata.Image">\\\\powershell.exe|\\\\powershell_ise.exe|\\\\psexec.exe|\\\\psexec64.exe|\\\\cscript.exe|\\\\wscript.exe|\\\\mshta.exe|\\\\regsvr32.exe|\\\\wmic.exe|\\\\certutil.exe|\\\\rundll32.exe|\\\\cmstp.exe|\\\\msiexec.exe</field>
 	<description>Whitelist Interaction: Highly Relevant Renamed Binary</description>
 </rule>
-
-!Selection and not filter

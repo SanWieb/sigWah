@@ -15,5 +15,3 @@
 	<field name="win.eventdata.CommandLine">Shell32.dll</field>
 	<description>Whitelist Interaction: Suspicious Control Panel DLL Load</description>
 </rule>
-
-!Selection and not filter

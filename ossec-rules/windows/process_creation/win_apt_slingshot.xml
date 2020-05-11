@@ -1,4 +1,3 @@
-Manual check needed! Unknown condition
 <rule id="260151" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">schtasks\. /delete \.Defrag\\ScheduledDefrag</field>

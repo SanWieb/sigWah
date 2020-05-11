@@ -1,18 +1,6 @@
-Manual check needed! Unknown condition
 <rule id="262110" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">echo |copy |type |file\s+createnew</field>
-	<description>ATT&CK T1064 T1211 T1059: Tasks Folder Evasion</description>
-	<info type="text">The Tasks folder in system32 and syswow64 are globally writable paths. Adversaries can take advantage of this and load or influence any script hosts or ANY .NET Application in Tasks to load and execute a custom assembly into cscript, wscript, regsvr32, mshta, eventvwr </info>
-	<info type="text">Falsepositives: Unknown. </info>
-	<info type="text">Sigma UUID: cc4e02ba-9c06-48e2-b09e-2500cace9ae0 </info>
-	<info type="link">https://twitter.com/subTee/status/1216465628946563073 </info>
-	<info type="link">https://gist.github.com/am0nsec/8378da08f848424e4ab0cc5b317fdd26 </info>
-	<group>attack.t1064,attack.t1211,attack.t1059,attack.defense_evasion,attack.persistence,MITRE</group>
-</rule>
-
-<rule id="262111" level="14">
-	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine"> \.:\\Windows\\System32\\Tasks\\| \.:\\Windows\\SysWow64\\Tasks\\</field>
 	<description>ATT&CK T1064 T1211 T1059: Tasks Folder Evasion</description>
 	<info type="text">The Tasks folder in system32 and syswow64 are globally writable paths. Adversaries can take advantage of this and load or influence any script hosts or ANY .NET Application in Tasks to load and execute a custom assembly into cscript, wscript, regsvr32, mshta, eventvwr </info>
@@ -22,4 +10,3 @@ Manual check needed! Unknown condition
 	<info type="link">https://gist.github.com/am0nsec/8378da08f848424e4ab0cc5b317fdd26 </info>
 	<group>attack.t1064,attack.t1211,attack.t1059,attack.defense_evasion,attack.persistence,MITRE</group>
 </rule>
-
