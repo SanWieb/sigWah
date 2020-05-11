@@ -1,7 +1,7 @@
 Manual check needed! Unknown condition
 <rule id="260960" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\CamMute.exe</field>
+	<field name="win.eventdata.Image">\\\\CamMute.exe</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -13,7 +13,7 @@ Manual check needed! Unknown condition
 
 <rule id="260961" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\Lenovo\\\\Communication Utility\\\\\.</field>
+	<field name="win.eventdata.Image">\\\\Lenovo\\\\Communication Utility\\\\</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -25,7 +25,7 @@ Manual check needed! Unknown condition
 
 <rule id="260962" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\chrome_frame_helper.exe</field>
+	<field name="win.eventdata.Image">\\\\chrome_frame_helper.exe</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -37,7 +37,7 @@ Manual check needed! Unknown condition
 
 <rule id="260963" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\Google\\\\Chrome\\\\application\\\\\.</field>
+	<field name="win.eventdata.Image">\\\\Google\\\\Chrome\\\\application\\\\</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -49,7 +49,7 @@ Manual check needed! Unknown condition
 
 <rule id="260964" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\dvcemumanager.exe</field>
+	<field name="win.eventdata.Image">\\\\dvcemumanager.exe</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -61,7 +61,7 @@ Manual check needed! Unknown condition
 
 <rule id="260965" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\Microsoft Device Emulator\\\\\.</field>
+	<field name="win.eventdata.Image">\\\\Microsoft Device Emulator\\\\</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -73,7 +73,7 @@ Manual check needed! Unknown condition
 
 <rule id="260966" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\Gadget.exe</field>
+	<field name="win.eventdata.Image">\\\\Gadget.exe</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -85,7 +85,7 @@ Manual check needed! Unknown condition
 
 <rule id="260967" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\Windows Media Player\\\\\.</field>
+	<field name="win.eventdata.Image">\\\\Windows Media Player\\\\</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -97,7 +97,7 @@ Manual check needed! Unknown condition
 
 <rule id="260968" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\hcc.exe</field>
+	<field name="win.eventdata.Image">\\\\hcc.exe</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -109,7 +109,7 @@ Manual check needed! Unknown condition
 
 <rule id="260969" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\HTML Help Workshop\\\\\.</field>
+	<field name="win.eventdata.Image">\\\\HTML Help Workshop\\\\</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -121,7 +121,7 @@ Manual check needed! Unknown condition
 
 <rule id="260970" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\hkcmd.exe</field>
+	<field name="win.eventdata.Image">\\\\hkcmd.exe</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -133,7 +133,7 @@ Manual check needed! Unknown condition
 
 <rule id="260971" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\System32\\\\\.|\.\\\\SysNative\\\\\.|\.\\\\SysWowo64\\\\\.</field>
+	<field name="win.eventdata.Image">\\\\System32\\\\|\\\\SysNative\\\\|\\\\SysWowo64\\\\</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -145,7 +145,7 @@ Manual check needed! Unknown condition
 
 <rule id="260972" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\Mc.exe</field>
+	<field name="win.eventdata.Image">\\\\Mc.exe</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -157,7 +157,7 @@ Manual check needed! Unknown condition
 
 <rule id="260973" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\Microsoft Visual Studio\.|\.\\\\Microsoft SDK\.|\.\\\\Windows Kit\.</field>
+	<field name="win.eventdata.Image">\\\\Microsoft Visual Studio|\\\\Microsoft SDK|\\\\Windows Kit</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -169,7 +169,7 @@ Manual check needed! Unknown condition
 
 <rule id="260974" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\MsMpEng.exe</field>
+	<field name="win.eventdata.Image">\\\\MsMpEng.exe</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -181,7 +181,7 @@ Manual check needed! Unknown condition
 
 <rule id="260975" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\Microsoft Security Client\\\\\.|\.\\\\Windows Defender\\\\\.|\.\\\\AntiMalware\\\\\.</field>
+	<field name="win.eventdata.Image">\\\\Microsoft Security Client\\\\|\\\\Windows Defender\\\\|\\\\AntiMalware\\\\</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -193,7 +193,7 @@ Manual check needed! Unknown condition
 
 <rule id="260976" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\msseces.exe</field>
+	<field name="win.eventdata.Image">\\\\msseces.exe</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -205,7 +205,7 @@ Manual check needed! Unknown condition
 
 <rule id="260977" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\Microsoft Security Center\\\\\.|\.\\\\Microsoft Security Client\\\\\.|\.\\\\Microsoft Security Essentials\\\\\.</field>
+	<field name="win.eventdata.Image">\\\\Microsoft Security Center\\\\|\\\\Microsoft Security Client\\\\|\\\\Microsoft Security Essentials\\\\</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -217,7 +217,7 @@ Manual check needed! Unknown condition
 
 <rule id="260978" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\OInfoP11.exe</field>
+	<field name="win.eventdata.Image">\\\\OInfoP11.exe</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -229,7 +229,7 @@ Manual check needed! Unknown condition
 
 <rule id="260979" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\Common Files\\\\Microsoft Shared\\\\\.</field>
+	<field name="win.eventdata.Image">\\\\Common Files\\\\Microsoft Shared\\\\</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -241,7 +241,7 @@ Manual check needed! Unknown condition
 
 <rule id="260980" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\OleView.exe</field>
+	<field name="win.eventdata.Image">\\\\OleView.exe</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -253,7 +253,7 @@ Manual check needed! Unknown condition
 
 <rule id="260981" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\Microsoft Visual Studio\.|\.\\\\Microsoft SDK\.|\.\\\\Windows Kit\.|\.\\\\Windows Resource Kit\\\\\.</field>
+	<field name="win.eventdata.Image">\\\\Microsoft Visual Studio|\\\\Microsoft SDK|\\\\Windows Kit|\\\\Windows Resource Kit\\\\</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -265,7 +265,7 @@ Manual check needed! Unknown condition
 
 <rule id="260982" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\rc.exe</field>
+	<field name="win.eventdata.Image">\\\\rc.exe</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -277,7 +277,7 @@ Manual check needed! Unknown condition
 
 <rule id="260983" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\Microsoft Visual Studio\.|\.\\\\Microsoft SDK\.|\.\\\\Windows Kit\.|\.\\\\Windows Resource Kit\\\\\.|\.\\\\Microsoft.NET\\\\\.</field>
+	<field name="win.eventdata.Image">\\\\Microsoft Visual Studio|\\\\Microsoft SDK|\\\\Windows Kit|\\\\Windows Resource Kit\\\\|\\\\Microsoft.NET\\\\</field>
 	<description>ATT&CK S0013 T1073: Executable Used by PlugX in Uncommon Location</description>
 	<info type="text">Detects the execution of an executable that is typically used by PlugX for DLL side loading started from an uncommon location </info>
 	<info type="text">Falsepositives: Unknown. </info>

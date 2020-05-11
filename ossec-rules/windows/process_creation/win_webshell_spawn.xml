@@ -1,7 +1,7 @@
 <rule id="262200" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentImage">\.\\\\w3wp.exe|\.\\\\httpd.exe|\.\\\\nginx.exe|\.\\\\php-cgi.exe|\.\\\\tomcat.exe</field>
-	<field name="win.eventdata.Image">\.\\\\cmd.exe|\.\\\\sh.exe|\.\\\\bash.exe|\.\\\\powershell.exe|\.\\\\bitsadmin.exe</field>
+	<field name="win.eventdata.ParentImage">\\\\w3wp.exe|\\\\httpd.exe|\\\\nginx.exe|\\\\php-cgi.exe|\\\\tomcat.exe</field>
+	<field name="win.eventdata.Image">\\\\cmd.exe|\\\\sh.exe|\\\\bash.exe|\\\\powershell.exe|\\\\bitsadmin.exe</field>
 	<description>ATT&CK T1100: Shells Spawned by Web Servers</description>
 	<info type="text">Web servers that spawn shell processes could be the result of a successfully placed web shell or an other attack </info>
 	<info type="text">Falsepositives: Particular web applications may spawn a shell process legitimately. </info>

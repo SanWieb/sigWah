@@ -1,6 +1,6 @@
 <rule id="260510" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\. asreproast \.|\. dump\s+/service:krbtgt \.|\. kerberoast \.|\. createnetonly\s+/program:\.|\. ptt\s+/ticket:\.|\. /impersonateuser:\.|\. renew\s+/ticket:\.|\. asktgt\s+/user:\.|\. harvest\s+/interval:\.</field>
+	<field name="win.eventdata.CommandLine"> asreproast | dump\s+/service:krbtgt | kerberoast | createnetonly\s+/program:| ptt\s+/ticket:| /impersonateuser:| renew\s+/ticket:| asktgt\s+/user:| harvest\s+/interval:</field>
 	<description>ATT&CK T1003 S0005: Rubeus Hack Tool</description>
 	<info type="text">Detects command line parameters used by Rubeus hack tool </info>
 	<info type="text">Falsepositives: unlikely. </info>

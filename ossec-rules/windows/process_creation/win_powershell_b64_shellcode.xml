@@ -1,7 +1,7 @@
 Manual check needed! Unknown condition
 <rule id="261010" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.AAAAYInlM\.</field>
+	<field name="win.eventdata.CommandLine">AAAAYInlM</field>
 	<description>ATT&CK T1036: PowerShell Base64 Encoded Shellcode</description>
 	<info type="text">Detects Base64 encoded Shellcode </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -12,7 +12,7 @@ Manual check needed! Unknown condition
 
 <rule id="261011" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.OiCAAAAYInlM\.|\.OiJAAAAYInlM\.</field>
+	<field name="win.eventdata.CommandLine">OiCAAAAYInlM|OiJAAAAYInlM</field>
 	<description>ATT&CK T1036: PowerShell Base64 Encoded Shellcode</description>
 	<info type="text">Detects Base64 encoded Shellcode </info>
 	<info type="text">Falsepositives: Unknown. </info>

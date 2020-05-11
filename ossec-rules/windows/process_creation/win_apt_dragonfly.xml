@@ -1,6 +1,6 @@
 <rule id="260060" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\crackmapexec.exe</field>
+	<field name="win.eventdata.Image">\\\\crackmapexec.exe</field>
 	<description>ATT&CK: CrackMapExecWin</description>
 	<info type="text">Detects CrackMapExecWin Activity as Described by NCSC </info>
 	<info type="text">Falsepositives: None. </info>

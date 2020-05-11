@@ -1,7 +1,7 @@
 <rule id="262260" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentImage">\.\\\\wmiprvse.exe</field>
-	<field name="win.eventdata.Image">\.\\\\powershell.exe</field>
+	<field name="win.eventdata.ParentImage">\\\\wmiprvse.exe</field>
+	<field name="win.eventdata.Image">\\\\powershell.exe</field>
 	<description>ATT&CK T1064: WMI Spawning Windows PowerShell</description>
 	<info type="text">Detects WMI spawning PowerShell </info>
 	<info type="text">Falsepositives: AppvClient. CCM. </info>

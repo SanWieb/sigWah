@@ -1,6 +1,6 @@
 <rule id="260340" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\iodine.exe$</field>
+	<field name="win.eventdata.Image">\\\\iodine.exe$</field>
 	<field name="win.eventdata.Image">\\\\dnscat2</field>
 	<description>ATT&CK T1048: DNS Exfiltration Tools Execution</description>
 	<info type="text">Well-known DNS Exfiltration tools execution </info>

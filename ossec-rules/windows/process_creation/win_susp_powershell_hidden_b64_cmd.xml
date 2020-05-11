@@ -1,8 +1,8 @@
 Manual check needed! Unknown condition
 <rule id="261770" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\powershell.exe</field>
-	<field name="win.eventdata.CommandLine">\. hidden \.</field>
+	<field name="win.eventdata.Image">\\\\powershell.exe</field>
+	<field name="win.eventdata.CommandLine"> hidden </field>
 	<description>ATT&CK T1086: Malicious Base64 Encoded PowerShell Keywords in Command Lines</description>
 	<info type="text">Detects base64 encoded strings used in hidden malicious PowerShell command lines </info>
 	<info type="text">Falsepositives: Penetration tests. </info>
@@ -13,7 +13,7 @@ Manual check needed! Unknown condition
 
 <rule id="261771" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.AGkAdABzAGEAZABtAGkAbgAgAC8AdAByAGEAbgBzAGYAZQByA\.|\.aXRzYWRtaW4gL3RyYW5zZmVy\.|\.IAaQB0AHMAYQBkAG0AaQBuACAALwB0AHIAYQBuAHMAZgBlAHIA\.|\.JpdHNhZG1pbiAvdHJhbnNmZX\.|\.YgBpAHQAcwBhAGQAbQBpAG4AIAAvAHQAcgBhAG4AcwBmAGUAcg\.|\.Yml0c2FkbWluIC90cmFuc2Zlc\.|\.AGMAaAB1AG4AawBfAHMAaQB6AGUA\.|\.JABjAGgAdQBuAGsAXwBzAGkAegBlA\.|\.JGNodW5rX3Npem\.|\.QAYwBoAHUAbgBrAF8AcwBpAHoAZQ\.|\.RjaHVua19zaXpl\.|\.Y2h1bmtfc2l6Z\.|\.AE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4A\.|\.kATwAuAEMAbwBtAHAAcgBlAHMAcwBpAG8Abg\.|\.lPLkNvbXByZXNzaW9u\.|\.SQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuA\.|\.SU8uQ29tcHJlc3Npb2\.|\.Ty5Db21wcmVzc2lvb\.|\.AE8ALgBNAGUAbQBvAHIAeQBTAHQAcgBlAGEAbQ\.|\.kATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtA\.|\.lPLk1lbW9yeVN0cmVhb\.|\.SQBPAC4ATQBlAG0AbwByAHkAUwB0AHIAZQBhAG0A\.|\.SU8uTWVtb3J5U3RyZWFt\.|\.Ty5NZW1vcnlTdHJlYW\.|\.4ARwBlAHQAQwBoAHUAbgBrA\.|\.5HZXRDaHVua\.|\.AEcAZQB0AEMAaAB1AG4Aaw\.|\.LgBHAGUAdABDAGgAdQBuAGsA\.|\.LkdldENodW5r\.|\.R2V0Q2h1bm\.|\.AEgAUgBFAEEARABfAEkATgBGAE8ANgA0A\.|\.QASABSAEUAQQBEAF8ASQBOAEYATwA2ADQA\.|\.RIUkVBRF9JTkZPNj\.|\.SFJFQURfSU5GTzY0\.|\.VABIAFIARQBBAEQAXwBJAE4ARgBPADYANA\.|\.VEhSRUFEX0lORk82N\.|\.AHIAZQBhAHQAZQBSAGUAbQBvAHQAZQBUAGgAcgBlAGEAZA\.|\.cmVhdGVSZW1vdGVUaHJlYW\.|\.MAcgBlAGEAdABlAFIAZQBtAG8AdABlAFQAaAByAGUAYQBkA\.|\.NyZWF0ZVJlbW90ZVRocmVhZ\.|\.Q3JlYXRlUmVtb3RlVGhyZWFk\.|\.QwByAGUAYQB0AGUAUgBlAG0AbwB0AGUAVABoAHIAZQBhAGQA\.|\.0AZQBtAG0AbwB2AGUA\.|\.1lbW1vdm\.|\.AGUAbQBtAG8AdgBlA\.|\.bQBlAG0AbQBvAHYAZQ\.|\.bWVtbW92Z\.|\.ZW1tb3Zl\.</field>
+	<field name="win.eventdata.CommandLine">AGkAdABzAGEAZABtAGkAbgAgAC8AdAByAGEAbgBzAGYAZQByA|aXRzYWRtaW4gL3RyYW5zZmVy|IAaQB0AHMAYQBkAG0AaQBuACAALwB0AHIAYQBuAHMAZgBlAHIA|JpdHNhZG1pbiAvdHJhbnNmZX|YgBpAHQAcwBhAGQAbQBpAG4AIAAvAHQAcgBhAG4AcwBmAGUAcg|Yml0c2FkbWluIC90cmFuc2Zlc|AGMAaAB1AG4AawBfAHMAaQB6AGUA|JABjAGgAdQBuAGsAXwBzAGkAegBlA|JGNodW5rX3Npem|QAYwBoAHUAbgBrAF8AcwBpAHoAZQ|RjaHVua19zaXpl|Y2h1bmtfc2l6Z|AE8ALgBDAG8AbQBwAHIAZQBzAHMAaQBvAG4A|kATwAuAEMAbwBtAHAAcgBlAHMAcwBpAG8Abg|lPLkNvbXByZXNzaW9u|SQBPAC4AQwBvAG0AcAByAGUAcwBzAGkAbwBuA|SU8uQ29tcHJlc3Npb2|Ty5Db21wcmVzc2lvb|AE8ALgBNAGUAbQBvAHIAeQBTAHQAcgBlAGEAbQ|kATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtA|lPLk1lbW9yeVN0cmVhb|SQBPAC4ATQBlAG0AbwByAHkAUwB0AHIAZQBhAG0A|SU8uTWVtb3J5U3RyZWFt|Ty5NZW1vcnlTdHJlYW|4ARwBlAHQAQwBoAHUAbgBrA|5HZXRDaHVua|AEcAZQB0AEMAaAB1AG4Aaw|LgBHAGUAdABDAGgAdQBuAGsA|LkdldENodW5r|R2V0Q2h1bm|AEgAUgBFAEEARABfAEkATgBGAE8ANgA0A|QASABSAEUAQQBEAF8ASQBOAEYATwA2ADQA|RIUkVBRF9JTkZPNj|SFJFQURfSU5GTzY0|VABIAFIARQBBAEQAXwBJAE4ARgBPADYANA|VEhSRUFEX0lORk82N|AHIAZQBhAHQAZQBSAGUAbQBvAHQAZQBUAGgAcgBlAGEAZA|cmVhdGVSZW1vdGVUaHJlYW|MAcgBlAGEAdABlAFIAZQBtAG8AdABlAFQAaAByAGUAYQBkA|NyZWF0ZVJlbW90ZVRocmVhZ|Q3JlYXRlUmVtb3RlVGhyZWFk|QwByAGUAYQB0AGUAUgBlAG0AbwB0AGUAVABoAHIAZQBhAGQA|0AZQBtAG0AbwB2AGUA|1lbW1vdm|AGUAbQBtAG8AdgBlA|bQBlAG0AbQBvAHYAZQ|bWVtbW92Z|ZW1tb3Zl</field>
 	<description>ATT&CK T1086: Malicious Base64 Encoded PowerShell Keywords in Command Lines</description>
 	<info type="text">Detects base64 encoded strings used in hidden malicious PowerShell command lines </info>
 	<info type="text">Falsepositives: Penetration tests. </info>

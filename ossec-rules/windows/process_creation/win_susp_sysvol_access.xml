@@ -1,6 +1,6 @@
 <rule id="261990" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.\\SYSVOL\\\.\\policies\\\.</field>
+	<field name="win.eventdata.CommandLine">\\SYSVOL\\\.\\policies\\</field>
 	<description>ATT&CK T1003: Suspicious SYSVOL Domain Group Policy Access</description>
 	<info type="text">Detects Access to Domain Group Policies stored in SYSVOL </info>
 	<info type="text">Falsepositives: administrative activity. </info>

@@ -1,7 +1,7 @@
 <rule id="261090" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentImage">\.\\\\powershell.exe</field>
-	<field name="win.eventdata.CommandLine">\.schtasks\./Create\./SC \.ONLOGON\./TN \.Updater\./TR \.powershell\.|\.schtasks\./Create\./SC \.DAILY\./TN \.Updater\./TR \.powershell\.|\.schtasks\./Create\./SC \.ONIDLE\./TN \.Updater\./TR \.powershell\.|\.schtasks\./Create\./SC \.Updater\./TN \.Updater\./TR \.powershell\.</field>
+	<field name="win.eventdata.ParentImage">\\\\powershell.exe</field>
+	<field name="win.eventdata.CommandLine">schtasks\./Create\./SC \.ONLOGON\./TN \.Updater\./TR \.powershell|schtasks\./Create\./SC \.DAILY\./TN \.Updater\./TR \.powershell|schtasks\./Create\./SC \.ONIDLE\./TN \.Updater\./TR \.powershell|schtasks\./Create\./SC \.Updater\./TN \.Updater\./TR \.powershell</field>
 	<description>ATT&CK T1053 T1086 S0111: Default PowerSploit and Empire Schtasks Persistence</description>
 	<info type="text">Detects the creation of a schtask via PowerSploit or Empire Default Configuration. </info>
 	<info type="text">Falsepositives: False positives are possible, depends on organisation and processes. </info>

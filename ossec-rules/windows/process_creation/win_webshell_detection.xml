@@ -1,7 +1,7 @@
 <rule id="262190" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentImage">\.\\\\apache\.|\.\\\\tomcat\.|\.\\\\w3wp.exe|\.\\\\php-cgi.exe|\.\\\\nginx.exe|\.\\\\httpd.exe</field>
-	<field name="win.eventdata.CommandLine">\.whoami\.|\.net\s+user \.|\.ping\s+-n \.|\.systeminfo|\.&cd&echo\.|\.cd\s+/d\.</field>
+	<field name="win.eventdata.ParentImage">\\\\apache|\\\\tomcat|\\\\w3wp.exe|\\\\php-cgi.exe|\\\\nginx.exe|\\\\httpd.exe</field>
+	<field name="win.eventdata.CommandLine">whoami|net\s+user |ping\s+-n |systeminfo|&cd&echo|cd\s+/d</field>
 	<description>ATT&CK T1100: Webshell Detection With Command Line Keywords</description>
 	<info type="text">Detects certain command line parameters often used during reconnaissance activity via web shells </info>
 	<info type="text">Falsepositives: unknown. </info>

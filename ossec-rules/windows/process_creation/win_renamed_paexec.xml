@@ -1,7 +1,7 @@
 Manual check needed! Unknown condition
 <rule id="261200" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Product">\.PAExec\.</field>
+	<field name="win.eventdata.Product">PAExec</field>
 	<description>ATT&CK T1036: Execution of Renamed PaExec</description>
 	<info type="text">Detects execution of renamed paexec via imphash and executable product string </info>
 	<info type="text">Falsepositives: Unknown imphashes. </info>
@@ -25,7 +25,7 @@ Manual check needed! Unknown condition
 
 <rule id="261202" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.paexec\.</field>
+	<field name="win.eventdata.Image">paexec</field>
 	<description>ATT&CK T1036: Execution of Renamed PaExec</description>
 	<info type="text">Detects execution of renamed paexec via imphash and executable product string </info>
 	<info type="text">Falsepositives: Unknown imphashes. </info>

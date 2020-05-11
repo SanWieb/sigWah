@@ -1,6 +1,6 @@
 <rule id="261640" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\. msiexec\.://\.</field>
+	<field name="win.eventdata.CommandLine"> msiexec\.://</field>
 	<description>ATT&CK: MsiExec Web Install</description>
 	<info type="text">Detects suspicious msiexec process starts with web addreses as parameter </info>
 	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. </info>

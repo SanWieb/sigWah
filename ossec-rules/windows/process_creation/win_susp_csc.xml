@@ -1,7 +1,7 @@
 <rule id="261460" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\csc.exe\.</field>
-	<field name="win.eventdata.ParentImage">\.\\\\wscript.exe|\.\\\\cscript.exe|\.\\\\mshta.exe</field>
+	<field name="win.eventdata.Image">\\\\csc.exe</field>
+	<field name="win.eventdata.ParentImage">\\\\wscript.exe|\\\\cscript.exe|\\\\mshta.exe</field>
 	<description>ATT&CK T1036: Suspicious Parent of Csc.exe</description>
 	<info type="text">Detects a suspicious parent of csc.exe, which could by a sign of payload delivery </info>
 	<info type="text">Falsepositives: Unkown. </info>

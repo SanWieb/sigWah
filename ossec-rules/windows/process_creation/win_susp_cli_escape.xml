@@ -1,6 +1,6 @@
 <rule id="261380" level="8">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.h^t^t^p\.|\.h"t"t"p\.</field>
+	<field name="win.eventdata.CommandLine">h^t^t^p|h"t"t"p</field>
 	<description>ATT&CK T1140: Suspicious Commandline Escape</description>
 	<info type="text">Detects suspicious process that use escape characters </info>
 	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. </info>

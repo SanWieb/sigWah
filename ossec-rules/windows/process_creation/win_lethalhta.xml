@@ -1,7 +1,7 @@
 <rule id="260630" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentImage">\.\\\\svchost.exe</field>
-	<field name="win.eventdata.Image">\.\\\\mshta.exe</field>
+	<field name="win.eventdata.ParentImage">\\\\svchost.exe</field>
+	<field name="win.eventdata.Image">\\\\mshta.exe</field>
 	<description>ATT&CK T1170: MSHTA Spwaned by SVCHOST</description>
 	<info type="text">Detects MSHTA.EXE spwaned by SVCHOST as seen in LethalHTA and described in report </info>
 	<info type="text">Falsepositives: Unknown. </info>

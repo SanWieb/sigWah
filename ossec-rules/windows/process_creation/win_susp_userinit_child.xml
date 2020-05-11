@@ -1,7 +1,7 @@
 Manual check needed! Unknown condition
 <rule id="262040" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentImage">\.\\\\userinit.exe</field>
+	<field name="win.eventdata.ParentImage">\\\\userinit.exe</field>
 	<description>ATT&CK: Suspicious Userinit Child Process</description>
 	<info type="text">Detects a suspicious child process of userinit </info>
 	<info type="text">Falsepositives: Administrative scripts. </info>
@@ -12,7 +12,7 @@ Manual check needed! Unknown condition
 
 <rule id="262041" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.\\\\netlogon\\\.</field>
+	<field name="win.eventdata.CommandLine">\\\\netlogon\\</field>
 	<description>ATT&CK: Suspicious Userinit Child Process</description>
 	<info type="text">Detects a suspicious child process of userinit </info>
 	<info type="text">Falsepositives: Administrative scripts. </info>
@@ -23,7 +23,7 @@ Manual check needed! Unknown condition
 
 <rule id="262042" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\explorer.exe</field>
+	<field name="win.eventdata.Image">\\\\explorer.exe</field>
 	<description>ATT&CK: Suspicious Userinit Child Process</description>
 	<info type="text">Detects a suspicious child process of userinit </info>
 	<info type="text">Falsepositives: Administrative scripts. </info>

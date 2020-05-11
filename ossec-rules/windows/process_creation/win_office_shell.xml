@@ -1,7 +1,7 @@
 <rule id="260940" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentImage">\.\\\\WINWORD.EXE|\.\\\\EXCEL.EXE|\.\\\\POWERPNT.exe|\.\\\\MSPUB.exe|\.\\\\VISIO.exe|\.\\\\OUTLOOK.EXE</field>
-	<field name="win.eventdata.Image">\.\\\\cmd.exe|\.\\\\powershell.exe|\.\\\\wscript.exe|\.\\\\cscript.exe|\.\\\\sh.exe|\.\\\\bash.exe|\.\\\\scrcons.exe|\.\\\\schtasks.exe|\.\\\\regsvr32.exe|\.\\\\hh.exe|\.\\\\wmic.exe|\.\\\\mshta.exe|\.\\\\rundll32.exe|\.\\\\msiexec.exe|\.\\\\forfiles.exe|\.\\\\scriptrunner.exe|\.\\\\mftrace.exe|\.\\\\AppVLP.exe|\.\\\\svchost.exe</field>
+	<field name="win.eventdata.ParentImage">\\\\WINWORD.EXE|\\\\EXCEL.EXE|\\\\POWERPNT.exe|\\\\MSPUB.exe|\\\\VISIO.exe|\\\\OUTLOOK.EXE</field>
+	<field name="win.eventdata.Image">\\\\cmd.exe|\\\\powershell.exe|\\\\wscript.exe|\\\\cscript.exe|\\\\sh.exe|\\\\bash.exe|\\\\scrcons.exe|\\\\schtasks.exe|\\\\regsvr32.exe|\\\\hh.exe|\\\\wmic.exe|\\\\mshta.exe|\\\\rundll32.exe|\\\\msiexec.exe|\\\\forfiles.exe|\\\\scriptrunner.exe|\\\\mftrace.exe|\\\\AppVLP.exe|\\\\svchost.exe</field>
 	<description>ATT&CK T1059 T1202: Microsoft Office Product Spawning Windows Shell</description>
 	<info type="text">Detects a Windows command line executable started from Microsoft Word, Excel, Powerpoint, Publisher and Visio. </info>
 	<info type="text">Falsepositives: unknown. </info>

@@ -1,8 +1,8 @@
 Manual check needed! Unknown condition
 <rule id="261780" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentImage">\.\\\\wscript.exe|\.\\\\cscript.exe</field>
-	<field name="win.eventdata.Image">\.\\\\powershell.exe</field>
+	<field name="win.eventdata.ParentImage">\\\\wscript.exe|\\\\cscript.exe</field>
+	<field name="win.eventdata.Image">\\\\powershell.exe</field>
 	<description>ATT&CK T1086: Suspicious PowerShell Invocation Based on Parent Process</description>
 	<info type="text">Detects suspicious powershell invocations from interpreters or unusual programs </info>
 	<info type="text">Falsepositives: Microsoft Operations Manager (MOM). Other scripts. </info>
@@ -13,7 +13,7 @@ Manual check needed! Unknown condition
 
 <rule id="261781" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CurrentDirectory">\.\\\\Health Service State\\\\\.</field>
+	<field name="win.eventdata.CurrentDirectory">\\\\Health Service State\\\\</field>
 	<description>ATT&CK T1086: Suspicious PowerShell Invocation Based on Parent Process</description>
 	<info type="text">Detects suspicious powershell invocations from interpreters or unusual programs </info>
 	<info type="text">Falsepositives: Microsoft Operations Manager (MOM). Other scripts. </info>

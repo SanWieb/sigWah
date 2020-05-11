@@ -1,6 +1,6 @@
 <rule id="262240" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentImage">\.\\\\EdgeTransport.exe</field>
+	<field name="win.eventdata.ParentImage">\\\\EdgeTransport.exe</field>
 	<description>ATT&CK T1084: WMI Backdoor Exchange Transport Agent</description>
 	<info type="text">Detects a WMi backdoor in Exchange Transport Agents via WMi event filters </info>
 	<info type="text">Falsepositives: Unknown. </info>

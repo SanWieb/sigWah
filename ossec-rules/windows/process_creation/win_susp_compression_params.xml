@@ -1,8 +1,8 @@
 Manual check needed! Unknown condition
 <rule id="261420" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.OriginalFileName">7z\..exe|\.rar.exe|\.Command\.Line\.RAR\.</field>
-	<field name="win.eventdata.CommandLine">\. -p\.|\. -ta\.|\. -tb\.|\. -sdel\.|\. -dw\.|\. -hp\.</field>
+	<field name="win.eventdata.OriginalFileName">7z\..exe|rar.exe|Command\.Line\.RAR</field>
+	<field name="win.eventdata.CommandLine"> -p| -ta| -tb| -sdel| -dw| -hp</field>
 	<description>ATT&CK T1020 T1002: Suspicious Compression Tool Parameters</description>
 	<info type="text">Detects suspicious command line arguments of common data compression tools </info>
 	<info type="text">Falsepositives: unknown. </info>
@@ -13,7 +13,7 @@ Manual check needed! Unknown condition
 
 <rule id="261421" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentImage">\.:\\\\Program\.</field>
+	<field name="win.eventdata.ParentImage">:\\\\Program</field>
 	<description>ATT&CK T1020 T1002: Suspicious Compression Tool Parameters</description>
 	<info type="text">Detects suspicious command line arguments of common data compression tools </info>
 	<info type="text">Falsepositives: unknown. </info>

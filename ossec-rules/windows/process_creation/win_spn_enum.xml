@@ -1,7 +1,7 @@
 Manual check needed! Unknown condition
 <rule id="261310" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\setspn.exe</field>
+	<field name="win.eventdata.Image">\\\\setspn.exe</field>
 	<description>ATT&CK T1208: Possible SPN Enumeration</description>
 	<info type="text">Detects Service Principal Name Enumeration used for Kerberoasting </info>
 	<info type="text">Falsepositives: Administrator Activity. </info>
@@ -12,7 +12,7 @@ Manual check needed! Unknown condition
 
 <rule id="261311" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Description">\.Query or reset the computer\. SPN attribute\.</field>
+	<field name="win.eventdata.Description">Query or reset the computer\. SPN attribute</field>
 	<description>ATT&CK T1208: Possible SPN Enumeration</description>
 	<info type="text">Detects Service Principal Name Enumeration used for Kerberoasting </info>
 	<info type="text">Falsepositives: Administrator Activity. </info>
@@ -23,7 +23,7 @@ Manual check needed! Unknown condition
 
 <rule id="261312" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.-q\.</field>
+	<field name="win.eventdata.CommandLine">-q</field>
 	<description>ATT&CK T1208: Possible SPN Enumeration</description>
 	<info type="text">Detects Service Principal Name Enumeration used for Kerberoasting </info>
 	<info type="text">Falsepositives: Administrator Activity. </info>

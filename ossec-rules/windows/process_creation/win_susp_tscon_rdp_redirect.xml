@@ -1,6 +1,6 @@
 <rule id="262030" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\. /dest:rdp-tcp:\.</field>
+	<field name="win.eventdata.CommandLine"> /dest:rdp-tcp:</field>
 	<description>ATT&CK T1076: Suspicious RDP Redirect Using TSCON</description>
 	<info type="text">Detects a suspicious RDP session redirect using tscon.exe </info>
 	<info type="text">Falsepositives: Unknown. </info>

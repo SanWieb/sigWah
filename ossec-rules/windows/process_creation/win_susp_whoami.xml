@@ -1,7 +1,7 @@
 Manual check needed! Unknown condition
 <rule id="262060" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\whoami.exe</field>
+	<field name="win.eventdata.Image">\\\\whoami.exe</field>
 	<description>ATT&CK T1033: Whoami Execution</description>
 	<info type="text">Detects the execution of whoami, which is often used by attackers after exloitation / privilege escalation but rarely used by administrators </info>
 	<info type="text">Falsepositives: Admin activity. Scripts and administrative tools used in the monitored environment. </info>

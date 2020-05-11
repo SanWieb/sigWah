@@ -1,6 +1,6 @@
 <rule id="262270" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\Microsoft.Workflow.Compiler.exe</field>
+	<field name="win.eventdata.Image">\\\\Microsoft.Workflow.Compiler.exe</field>
 	<description>ATT&CK T1127: Microsoft Workflow Compiler</description>
 	<info type="text">Detects invocation of Microsoft Workflow Compiler, which may permit the execution of arbitrary unsigned code. </info>
 	<info type="text">Falsepositives: Legitimate MWC use (unlikely in modern enterprise environments). </info>

@@ -1,7 +1,7 @@
 <rule id="262220" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">schtasks.exe</field>
-	<field name="win.eventdata.CommandLine">\./change\./TN\./RU\./RP\.</field>
+	<field name="win.eventdata.CommandLine">/change\./TN\./RU\./RP</field>
 	<description>ATT&CK T1053: Windows 10 Scheduled Task SandboxEscaper 0-day</description>
 	<info type="text">Detects Task Scheduler .job import arbitrary DACL write\par </info>
 	<info type="text">Falsepositives: Unknown. </info>

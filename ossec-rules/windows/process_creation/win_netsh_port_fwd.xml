@@ -1,6 +1,6 @@
 <rule id="260860" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">netsh\s+interface\s+portproxy\s+add\s+v4tov4 \.</field>
+	<field name="win.eventdata.CommandLine">netsh\s+interface\s+portproxy\s+add\s+v4tov4 </field>
 	<description>ATT&CK T1090: Netsh Port Forwarding</description>
 	<info type="text">Detects netsh commands that configure a port forwarding </info>
 	<info type="text">Falsepositives: Legitimate administration. </info>

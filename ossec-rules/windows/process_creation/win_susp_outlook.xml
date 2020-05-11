@@ -1,7 +1,7 @@
 Manual check needed! Unknown condition
 <rule id="261710" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.EnableUnsafeClientMailRules\.</field>
+	<field name="win.eventdata.CommandLine">EnableUnsafeClientMailRules</field>
 	<description>ATT&CK T1059 T1202: Suspicious Execution from Outlook</description>
 	<info type="text">Detects EnableUnsafeClientMailRules used for Script Execution from Outlook </info>
 	<info type="text">Falsepositives: unknown. </info>
@@ -13,7 +13,7 @@ Manual check needed! Unknown condition
 
 <rule id="261711" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentImage">\.\\\\outlook.exe</field>
+	<field name="win.eventdata.ParentImage">\\\\outlook.exe</field>
 	<field name="win.eventdata.CommandLine">\\\\\.\\\..exe</field>
 	<description>ATT&CK T1059 T1202: Suspicious Execution from Outlook</description>
 	<info type="text">Detects EnableUnsafeClientMailRules used for Script Execution from Outlook </info>

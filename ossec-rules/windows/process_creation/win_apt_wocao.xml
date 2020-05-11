@@ -1,7 +1,7 @@
 <rule id="260220" level="14">
 	<field name="win.system.eventID">4799</field>
 	<field name="win.eventdata.GroupName">Administrators</field>
-	<field name="win.eventdata.ProcessName">\.\\\\checkadmin.exe</field>
+	<field name="win.eventdata.ProcessName">\\\\checkadmin.exe</field>
 	<description>ATT&CK: Operation Wocao Activity</description>
 	<info type="text">Detects activity mentioned in Operation Wocao report </info>
 	<info type="text">Falsepositives: Administrators that use checkadmin.exe tool to enumerate local administrators. </info>

@@ -1,7 +1,7 @@
 <rule id="260080" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentImage">\.\\\\sllauncher.exe</field>
-	<field name="win.eventdata.Image">\.\\\\svchost.exe</field>
+	<field name="win.eventdata.ParentImage">\\\\sllauncher.exe</field>
+	<field name="win.eventdata.Image">\\\\svchost.exe</field>
 	<description>ATT&CK: Emissary Panda Malware SLLauncher</description>
 	<info type="text">Detects the execution of DLL side-loading malware used by threat group Emissary Panda aka APT27 </info>
 	<info type="text">Falsepositives: Unknown. </info>

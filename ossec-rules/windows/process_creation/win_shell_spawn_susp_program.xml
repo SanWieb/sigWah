@@ -1,8 +1,8 @@
 Manual check needed! Unknown condition
 <rule id="261280" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentImage">\.\\\\mshta.exe|\.\\\\powershell.exe|\.\\\\rundll32.exe|\.\\\\cscript.exe|\.\\\\wscript.exe|\.\\\\wmiprvse.exe</field>
-	<field name="win.eventdata.Image">\.\\\\schtasks.exe|\.\\\\nslookup.exe|\.\\\\certutil.exe|\.\\\\bitsadmin.exe|\.\\\\mshta.exe</field>
+	<field name="win.eventdata.ParentImage">\\\\mshta.exe|\\\\powershell.exe|\\\\rundll32.exe|\\\\cscript.exe|\\\\wscript.exe|\\\\wmiprvse.exe</field>
+	<field name="win.eventdata.Image">\\\\schtasks.exe|\\\\nslookup.exe|\\\\certutil.exe|\\\\bitsadmin.exe|\\\\mshta.exe</field>
 	<description>ATT&CK T1064: Windows Shell Spawning Suspicious Program</description>
 	<info type="text">Detects a suspicious child process of a Windows shell </info>
 	<info type="text">Falsepositives: Administrative scripts. Microsoft SCCM. </info>
@@ -13,7 +13,7 @@ Manual check needed! Unknown condition
 
 <rule id="261281" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CurrentDirectory">\.\\\\ccmcache\\\\\.</field>
+	<field name="win.eventdata.CurrentDirectory">\\\\ccmcache\\\\</field>
 	<description>ATT&CK T1064: Windows Shell Spawning Suspicious Program</description>
 	<info type="text">Detects a suspicious child process of a Windows shell </info>
 	<info type="text">Falsepositives: Administrative scripts. Microsoft SCCM. </info>

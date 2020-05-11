@@ -1,7 +1,7 @@
 Manual check needed! Unknown condition
 <rule id="261340" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.\\calc.exe \.</field>
+	<field name="win.eventdata.CommandLine">\\calc.exe </field>
 	<description>ATT&CK T1036: Suspicious Calculator Usage</description>
 	<info type="text">Detects suspicious use of calc.exe with command line parameters or in a suspicious directory, which is likely caused by some PoC or detection evasion </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -12,7 +12,7 @@ Manual check needed! Unknown condition
 
 <rule id="261341" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\calc.exe</field>
+	<field name="win.eventdata.Image">\\\\calc.exe</field>
 	<description>ATT&CK T1036: Suspicious Calculator Usage</description>
 	<info type="text">Detects suspicious use of calc.exe with command line parameters or in a suspicious directory, which is likely caused by some PoC or detection evasion </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -23,7 +23,7 @@ Manual check needed! Unknown condition
 
 <rule id="261342" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\Windows\\\\Sys\.</field>
+	<field name="win.eventdata.Image">\\\\Windows\\\\Sys</field>
 	<description>ATT&CK T1036: Suspicious Calculator Usage</description>
 	<info type="text">Detects suspicious use of calc.exe with command line parameters or in a suspicious directory, which is likely caused by some PoC or detection evasion </info>
 	<info type="text">Falsepositives: Unknown. </info>

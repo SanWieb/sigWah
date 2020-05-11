@@ -12,7 +12,7 @@ Manual check needed! Rule parse failed (Parse Commandline)
 
 <rule id="261971" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\svchost.exe</field>
+	<field name="win.eventdata.Image">\\\\svchost.exe</field>
 	<description>ATT&CK T1055: Suspect Svchost Activity</description>
 	<info type="text">It is extremely abnormal for svchost.exe to spawn without any CLI arguments and is normally observed when a malicious process spawns the process and injects code into the process memory space. </info>
 	<info type="text">Falsepositives: rpcnet.exe / rpcnetp.exe which is a lojack style software. https://www.blackhat.com/docs/us-14/materials/us-14-Kamlyuk-Kamluk-Computrace-Backdoor-Revisited.pdf. </info>
@@ -23,7 +23,7 @@ Manual check needed! Rule parse failed (Parse Commandline)
 
 <rule id="261972" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentImage">\.\\\\rpcnet.exe|\.\\\\rpcnetp.exe</field>
+	<field name="win.eventdata.ParentImage">\\\\rpcnet.exe|\\\\rpcnetp.exe</field>
 	<description>ATT&CK T1055: Suspect Svchost Activity</description>
 	<info type="text">It is extremely abnormal for svchost.exe to spawn without any CLI arguments and is normally observed when a malicious process spawns the process and injects code into the process memory space. </info>
 	<info type="text">Falsepositives: rpcnet.exe / rpcnetp.exe which is a lojack style software. https://www.blackhat.com/docs/us-14/materials/us-14-Kamlyuk-Kamluk-Computrace-Backdoor-Revisited.pdf. </info>

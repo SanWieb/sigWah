@@ -1,6 +1,6 @@
 <rule id="261730" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.\\ping.exe\s+0x\.|\.\\ping\s+0x\.</field>
+	<field name="win.eventdata.CommandLine">\\ping.exe\s+0x|\\ping\s+0x</field>
 	<description>ATT&CK T1140 T1027: Ping Hex IP</description>
 	<info type="text">Detects a ping command that uses a hex encoded IP address </info>
 	<info type="text">Falsepositives: Unlikely, because no sane admin pings IP addresses in a hexadecimal form. </info>

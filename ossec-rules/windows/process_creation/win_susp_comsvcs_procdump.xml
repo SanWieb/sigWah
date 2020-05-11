@@ -1,7 +1,7 @@
 Manual check needed! Unknown condition
 <rule id="261430" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\rundll32.exe</field>
+	<field name="win.eventdata.Image">\\\\rundll32.exe</field>
 	<description>ATT&CK T1003: Process Dump via Comsvcs DLL</description>
 	<info type="text">Detects process memory dump via comsvcs.dll and rundll32 </info>
 	<info type="text">Falsepositives: unknown. </info>
@@ -25,7 +25,7 @@ Manual check needed! Unknown condition
 
 <rule id="261432" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.comsvcs\.MiniDump\.full\.|\.comsvcs\.MiniDumpW\.full\.</field>
+	<field name="win.eventdata.CommandLine">comsvcs\.MiniDump\.full|comsvcs\.MiniDumpW\.full</field>
 	<description>ATT&CK T1003: Process Dump via Comsvcs DLL</description>
 	<info type="text">Detects process memory dump via comsvcs.dll and rundll32 </info>
 	<info type="text">Falsepositives: unknown. </info>

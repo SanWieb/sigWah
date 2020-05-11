@@ -1,7 +1,7 @@
 <rule id="261220" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\sdbinst.exe</field>
-	<field name="win.eventdata.CommandLine">\..sdb\.</field>
+	<field name="win.eventdata.Image">\\\\sdbinst.exe</field>
+	<field name="win.eventdata.CommandLine">.sdb</field>
 	<description>ATT&CK T1138: Possible Shim Database Persistence via sdbinst.exe</description>
 	<info type="text">Detects installation of a new shim using sdbinst.exe. A shim can be used to load malicious DLLs into applications. </info>
 	<info type="text">Falsepositives: Unknown. </info>

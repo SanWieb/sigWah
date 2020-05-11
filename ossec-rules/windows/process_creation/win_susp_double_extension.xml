@@ -1,6 +1,6 @@
 <rule id="261530" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\..doc.exe|\..docx.exe|\..xls.exe|\..xlsx.exe|\..ppt.exe|\..pptx.exe|\..rtf.exe|\..pdf.exe|\..txt.exe|\.      .exe|\.______.exe</field>
+	<field name="win.eventdata.Image">.doc.exe|.docx.exe|.xls.exe|.xlsx.exe|.ppt.exe|.pptx.exe|.rtf.exe|.pdf.exe|.txt.exe|      .exe|______.exe</field>
 	<description>ATT&CK T1193: Suspicious Double Extension</description>
 	<info type="text">Detects suspicious use of an .exe extension after a non-executable file extension like .pdf.exe, a set of spaces or underlines to cloak the executable file in spear phishing campaigns </info>
 	<info type="text">Falsepositives: Unknown. </info>

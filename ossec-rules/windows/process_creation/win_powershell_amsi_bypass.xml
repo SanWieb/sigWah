@@ -1,7 +1,7 @@
 Manual check needed! Unknown condition
 <rule id="260990" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.System.Management.Automation.AmsiUtils\.</field>
+	<field name="win.eventdata.CommandLine">System.Management.Automation.AmsiUtils</field>
 	<description>ATT&CK T1086: Powershell AMSI Bypass via .NET Reflection</description>
 	<info type="text">Detects Request to amsiInitFailed that can be used to disable AMSI Scanning </info>
 	<info type="text">Falsepositives: Potential Admin Activity. </info>
@@ -13,7 +13,7 @@ Manual check needed! Unknown condition
 
 <rule id="260991" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.amsiInitFailed\.</field>
+	<field name="win.eventdata.CommandLine">amsiInitFailed</field>
 	<description>ATT&CK T1086: Powershell AMSI Bypass via .NET Reflection</description>
 	<info type="text">Detects Request to amsiInitFailed that can be used to disable AMSI Scanning </info>
 	<info type="text">Falsepositives: Potential Admin Activity. </info>

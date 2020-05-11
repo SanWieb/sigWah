@@ -1,7 +1,7 @@
 <rule id="261100" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\bitsadmin.exe</field>
-	<field name="win.eventdata.CommandLine">\. /transfer \.</field>
+	<field name="win.eventdata.Image">\\\\bitsadmin.exe</field>
+	<field name="win.eventdata.CommandLine"> /transfer </field>
 	<description>ATT&CK T1197 S0190: Bitsadmin Download</description>
 	<info type="text">Detects usage of bitsadmin downloading a file </info>
 	<info type="text">Falsepositives: Some legitimate apps use this, but limited.. </info>
@@ -13,7 +13,7 @@
 
 <rule id="261101" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.copy\s+bitsadmin.exe\.</field>
+	<field name="win.eventdata.CommandLine">copy\s+bitsadmin.exe</field>
 	<description>ATT&CK T1197 S0190: Bitsadmin Download</description>
 	<info type="text">Detects usage of bitsadmin downloading a file </info>
 	<info type="text">Falsepositives: Some legitimate apps use this, but limited.. </info>

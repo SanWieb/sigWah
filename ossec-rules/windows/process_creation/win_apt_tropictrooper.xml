@@ -1,6 +1,6 @@
 <rule id="260180" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.abCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCc\.</field>
+	<field name="win.eventdata.CommandLine">abCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCc</field>
 	<description>ATT&CK T1085: TropicTrooper Campaign November 2018</description>
 	<info type="text">Detects TropicTrooper activity, an actor who targeted high-profile organizations in the energy and food and beverage sectors in Asia </info>
 	<info type="text">Falsepositives: Renamed SysInternals tool. </info>

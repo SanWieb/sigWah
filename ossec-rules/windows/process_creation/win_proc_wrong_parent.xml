@@ -1,7 +1,7 @@
 Manual check needed! Unknown condition
 <rule id="261120" level="8">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\svchost.exe|\.\\\\taskhost.exe|\.\\\\lsm.exe|\.\\\\lsass.exe|\.\\\\services.exe|\.\\\\lsaiso.exe|\.\\\\csrss.exe|\.\\\\wininit.exe|\.\\\\winlogon.exe</field>
+	<field name="win.eventdata.Image">\\\\svchost.exe|\\\\taskhost.exe|\\\\lsm.exe|\\\\lsass.exe|\\\\services.exe|\\\\lsaiso.exe|\\\\csrss.exe|\\\\wininit.exe|\\\\winlogon.exe</field>
 	<description>ATT&CK T1036: Windows Processes Suspicious Parent Directory</description>
 	<info type="text">Detect suspicious parent processes of well-known Windows processes </info>
 	<info type="text">Falsepositives: Some security products seem to spawn these. </info>
@@ -15,7 +15,7 @@ Manual check needed! Unknown condition
 
 <rule id="261121" level="8">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentImage">\.\\\\System32\\\\\.|\.\\\\SysWOW64\\\\\.|\.\\\\SavService.exe|\.\\\\Windows Defender\\\\\.\\\\MsMpEng.exe</field>
+	<field name="win.eventdata.ParentImage">\\\\System32\\\\|\\\\SysWOW64\\\\|\\\\SavService.exe|\\\\Windows Defender\\\\\.\\\\MsMpEng.exe</field>
 	<description>ATT&CK T1036: Windows Processes Suspicious Parent Directory</description>
 	<info type="text">Detect suspicious parent processes of well-known Windows processes </info>
 	<info type="text">Falsepositives: Some security products seem to spawn these. </info>

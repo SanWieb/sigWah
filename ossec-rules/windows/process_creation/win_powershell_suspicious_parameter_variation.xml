@@ -1,6 +1,6 @@
 <rule id="261070" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\Powershell.exe</field>
+	<field name="win.eventdata.Image">\\\\Powershell.exe</field>
 	<field name="win.eventdata.CommandLine"> -windowstyle\s+h | -windowstyl\s+h| -windowsty\s+h| -windowst\s+h| -windows\s+h| -windo\s+h| -wind\s+h| -win\s+h| -wi\s+h| -win\s+h | -win\s+hi | -win\s+hid | -win\s+hidd | -win\s+hidde | -NoPr | -NoPro | -NoProf | -NoProfi | -NoProfil | -nonin | -nonint | -noninte | -noninter | -nonintera | -noninterac | -noninteract | -noninteracti | -noninteractiv | -ec | -encodedComman | -encodedComma | -encodedComm | -encodedCom | -encodedCo | -encodedC | -encoded | -encode | -encod | -enco | -en </field>
 	<description>ATT&CK T1086: Suspicious PowerShell Parameter Substring</description>
 	<info type="text">Detects suspicious PowerShell invocation with a parameter substring </info>

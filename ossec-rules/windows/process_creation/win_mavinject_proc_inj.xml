@@ -1,6 +1,6 @@
 <rule id="260770" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\. /INJECTRUNNING \.</field>
+	<field name="win.eventdata.CommandLine"> /INJECTRUNNING </field>
 	<description>ATT&CK T1055 T1218: MavInject Process Injection</description>
 	<info type="text">Detects process injection using the signed Windows tool Mavinject32.exe </info>
 	<info type="text">Falsepositives: unknown. </info>

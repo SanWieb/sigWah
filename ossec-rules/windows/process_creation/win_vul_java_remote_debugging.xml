@@ -1,7 +1,7 @@
 Manual check needed! Unknown condition
 <rule id="262180" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.transport=dt_socket,address=\.</field>
+	<field name="win.eventdata.CommandLine">transport=dt_socket,address=</field>
 	<description>ATT&CK T1046: Java Running with Remote Debugging</description>
 	<info type="text">Detects a JAVA process running with remote debugging allowing more than just localhost to connect </info>
 	<info type="text">Falsepositives: unknown. </info>
@@ -11,8 +11,8 @@ Manual check needed! Unknown condition
 
 <rule id="262181" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\.address=127.0.0.1\.</field>
-	<field name="win.eventdata.CommandLine">\.address=localhost\.</field>
+	<field name="win.eventdata.CommandLine">address=127.0.0.1</field>
+	<field name="win.eventdata.CommandLine">address=localhost</field>
 	<description>ATT&CK T1046: Java Running with Remote Debugging</description>
 	<info type="text">Detects a JAVA process running with remote debugging allowing more than just localhost to connect </info>
 	<info type="text">Falsepositives: unknown. </info>

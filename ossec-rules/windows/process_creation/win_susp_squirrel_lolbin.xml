@@ -1,7 +1,7 @@
 <rule id="261950" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\update.exe</field>
-	<field name="win.eventdata.CommandLine">\.--processStart\..exe\.|\.--processStartAndWait\..exe\.|\.--createShortcut\..exe\.</field>
+	<field name="win.eventdata.Image">\\\\update.exe</field>
+	<field name="win.eventdata.CommandLine">--processStart\..exe|--processStartAndWait\..exe|--createShortcut\..exe</field>
 	<description>ATT&CK: Squirrel Lolbin</description>
 	<info type="text">Detects Possible Squirrel Packages Manager as Lolbin </info>
 	<info type="text">Falsepositives: 1Clipboard. Beaker Browser. Caret. Collectie. Discord. Figma. Flow. Ghost. GitHub Desktop. GitKraken. Hyper. Insomnia. JIBO. Kap. Kitematic. Now Desktop. Postman. PostmanCanary. Rambox. Simplenote. Skype. Slack. SourceTree. Stride. Svgsus. WebTorrent. WhatsApp. WordPress.com. atom. gitkraken. slack. teams. </info>

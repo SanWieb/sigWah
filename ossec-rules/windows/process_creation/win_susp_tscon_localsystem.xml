@@ -1,7 +1,7 @@
 <rule id="262020" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.User">NT AUTHORITY\\\\SYSTEM</field>
-	<field name="win.eventdata.Image">\.\\\\tscon.exe</field>
+	<field name="win.eventdata.Image">\\\\tscon.exe</field>
 	<description>ATT&CK T1219: Suspicious TSCON Start</description>
 	<info type="text">Detects a tscon.exe start as LOCAL SYSTEM </info>
 	<info type="text">Falsepositives: Unknown. </info>

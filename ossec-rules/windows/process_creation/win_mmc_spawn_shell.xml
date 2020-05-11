@@ -1,7 +1,7 @@
 <rule id="260800" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentImage">\.\\\\mmc.exe</field>
-	<field name="win.eventdata.Image">\.\\\\cmd.exe|\.\\\\powershell.exe|\.\\\\wscript.exe|\.\\\\cscript.exe|\.\\\\sh.exe|\.\\\\bash.exe|\.\\\\reg.exe|\.\\\\regsvr32.exe|\.\\\\BITSADMIN\.</field>
+	<field name="win.eventdata.ParentImage">\\\\mmc.exe</field>
+	<field name="win.eventdata.Image">\\\\cmd.exe|\\\\powershell.exe|\\\\wscript.exe|\\\\cscript.exe|\\\\sh.exe|\\\\bash.exe|\\\\reg.exe|\\\\regsvr32.exe|\\\\BITSADMIN</field>
 	<description>ATT&CK T1175: MMC Spawning Windows Shell</description>
 	<info type="text">Detects a Windows command line executable started from MMC. </info>
 	<info type="text">Falsepositives: Legitimate Administrator using tool for password recovery. </info>

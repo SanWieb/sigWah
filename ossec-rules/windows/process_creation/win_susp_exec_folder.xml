@@ -1,6 +1,6 @@
 <rule id="261580" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.:\\\\PerfLogs\\\\\.|\.:\\\\\$Recycle.bin\\\\\.|\.:\\\\Intel\\\\Logs\\\\\.|\.:\\\\Users\\\\Default\\\\\.|\.:\\\\Users\\\\Public\\\\\.|\.:\\\\Users\\\\NetworkService\\\\\.|\.:\\\\Windows\\\\Fonts\\\\\.|\.:\\\\Windows\\\\Debug\\\\\.|\.:\\\\Windows\\\\Media\\\\\.|\.:\\\\Windows\\\\Help\\\\\.|\.:\\\\Windows\\\\addins\\\\\.|\.:\\\\Windows\\\\repair\\\\\.|\.:\\\\Windows\\\\security\\\\\.|\.\\\\RSA\\\\MachineKeys\\\\\.|\.:\\\\Windows\\\\system32\\\\config\\\\systemprofile\\\\\.|\.:\\\\Windows\\\\Tasks\\\\\.|\.:\\\\Windows\\\\System32\\\\Tasks\\\\\.</field>
+	<field name="win.eventdata.Image">:\\\\PerfLogs\\\\|:\\\\\$Recycle.bin\\\\|:\\\\Intel\\\\Logs\\\\|:\\\\Users\\\\Default\\\\|:\\\\Users\\\\Public\\\\|:\\\\Users\\\\NetworkService\\\\|:\\\\Windows\\\\Fonts\\\\|:\\\\Windows\\\\Debug\\\\|:\\\\Windows\\\\Media\\\\|:\\\\Windows\\\\Help\\\\|:\\\\Windows\\\\addins\\\\|:\\\\Windows\\\\repair\\\\|:\\\\Windows\\\\security\\\\|\\\\RSA\\\\MachineKeys\\\\|:\\\\Windows\\\\system32\\\\config\\\\systemprofile\\\\|:\\\\Windows\\\\Tasks\\\\|:\\\\Windows\\\\System32\\\\Tasks\\\\</field>
 	<description>ATT&CK T1036: Executables Started in Suspicious Folder</description>
 	<info type="text">Detects process starts of binaries from a suspicious folder </info>
 	<info type="text">Falsepositives: Unknown. </info>

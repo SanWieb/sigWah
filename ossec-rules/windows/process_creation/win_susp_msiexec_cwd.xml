@@ -1,6 +1,6 @@
 <rule id="261630" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\msiexec.exe</field>
+	<field name="win.eventdata.Image">\\\\msiexec.exe</field>
 	<description>ATT&CK T1036: Suspicious MsiExec Directory</description>
 	<info type="text">Detects suspicious msiexec process starts in an uncommon directory </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -11,7 +11,7 @@
 
 <rule id="261631" level="0">
 	<if_sid>261630</if_sid>
-	<field name="win.eventdata.Image">\.:\\\\Windows\\\\System32\\\\\.|\.:\\\\Windows\\\\SysWOW64\\\\\.|\.:\\\\Windows\\\\WinSxS\\\\\.</field>
+	<field name="win.eventdata.Image">:\\\\Windows\\\\System32\\\\|:\\\\Windows\\\\SysWOW64\\\\|:\\\\Windows\\\\WinSxS\\\\</field>
 	<description>Whitelist Interaction: Suspicious MsiExec Directory</description>
 </rule>
 

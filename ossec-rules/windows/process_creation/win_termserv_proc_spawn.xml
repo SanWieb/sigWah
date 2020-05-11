@@ -1,6 +1,6 @@
 <rule id="262120" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentCommandLine">\.\\\\svchost.exe\.termsvcs</field>
+	<field name="win.eventdata.ParentCommandLine">\\\\svchost.exe\.termsvcs</field>
 	<description>ATT&CK: Terminal Service Process Spawn</description>
 	<info type="text">Detects a process spawned by the terminal service server process (this could be an indicator for an exploitation of CVE-2019-0708) </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -11,7 +11,7 @@
 
 <rule id="262121" level="0">
 	<if_sid>262120</if_sid>
-	<field name="win.eventdata.Image">\.\\\\rdpclip.exe</field>
+	<field name="win.eventdata.Image">\\\\rdpclip.exe</field>
 	<description>Whitelist Interaction: Terminal Service Process Spawn</description>
 </rule>
 

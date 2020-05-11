@@ -1,7 +1,7 @@
 <rule id="260280" level="8">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\cmdkey.exe</field>
-	<field name="win.eventdata.CommandLine">\. /list \.</field>
+	<field name="win.eventdata.Image">\\\\cmdkey.exe</field>
+	<field name="win.eventdata.CommandLine"> /list </field>
 	<description>ATT&CK T1003: Cmdkey Cached Credentials Recon</description>
 	<info type="text">Detects usage of cmdkey to look for cached credentials </info>
 	<info type="text">Falsepositives: Legitimate administrative tasks.. </info>

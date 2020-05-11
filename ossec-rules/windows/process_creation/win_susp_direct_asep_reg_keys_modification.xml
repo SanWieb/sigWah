@@ -1,7 +1,7 @@
 Manual check needed! Unknown condition
 <rule id="261510" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\.\\\\reg.exe$</field>
+	<field name="win.eventdata.Image">\\\\reg.exe$</field>
 	<field name="win.eventdata.CommandLine">add</field>
 	<description>ATT&CK T1060: Direct Autorun Keys Modification</description>
 	<info type="text">Detects direct modification of autostart extensibility point (ASEP) in registry using reg.exe. </info>
