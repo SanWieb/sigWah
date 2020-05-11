@@ -1,7 +1,7 @@
 <rule id="250070" level="12">
 	<if_group>sysmon_event8</if_group>
 	<field name="win.eventdata.sourceimage">\\System32\\cscript.exe|\\System32\\wscript.exe|\\System32\\mshta.exe|\\winword.exe|\\excel.exe</field>
-  <field name="win.eventdata.targetimage">\\SysWOW64\\\.</field>
+  <field name="win.eventdata.targetimage">\\SysWOW64\\</field>
  	<field name="win.eventdata.startmodule">null</field>
 	<description>ATT&CK T1055 T1064: CACTUSTORCH Remote Thread Creation</description>
 	<info type="text">Detects remote thread creation from CACTUSTORCH as described in references. </info>

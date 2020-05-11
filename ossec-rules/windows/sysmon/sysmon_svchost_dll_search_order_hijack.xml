@@ -12,7 +12,7 @@
 
 <rule id="250821" level="0">
 	<if_sid>250820</if_sid>
-	<field name="win.eventdata.ImageLoaded">:\\Windows\\WinSxS\\\.</field>
+	<field name="win.eventdata.ImageLoaded">:\\Windows\\WinSxS\\</field>
 	<description>Whitelist Interaction: Svchost DLL Search Order Hijack</description>
 	<group>attack.persistence,attack.defense_evasion,attack.t1073,attack.t1038,attack.t1112,MITRE</group>
 </rule>
