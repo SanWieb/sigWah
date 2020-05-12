@@ -10,7 +10,7 @@
 	<group>attack.execution,attack.t1220,MITRE</group>
 </rule>
 
-<rule id="262290" level="10">
+<rule id="262291" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\msxsl.exe$</field>
 	<description>ATT&CK T1220: XSL Script Processing</description>

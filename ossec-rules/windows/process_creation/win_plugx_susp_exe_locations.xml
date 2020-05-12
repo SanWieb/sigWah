@@ -203,7 +203,7 @@
 </rule>
 
 <rule id="265981" level="0">
-	<if_group>265980</if_group>
+	<if_sid>265980</if_sid>
 	<field name="win.eventdata.Image">\\\\Microsoft Visual Studio|\\\\Microsoft SDK|\\\\Windows Kit|\\\\Windows Resource Kit\\\\</field>
 	<description>Whitelist Interaction: Executable Used by PlugX in Uncommon Location</description>
 	<group>attack.s0013,attack.defense_evasion,attack.t1073,MITRE</group>

@@ -21,7 +21,7 @@
 </rule>
 
 <rule id="260193" level="10" frequency="3" timeframe="60">
-	<if_group>260192</if_group>
+	<if_matched_sid>260192</if_matched_sid>
 	<description>ATT&CK T1059 T1077 T1083 T1135: Turla Group Lateral Movement</description>
 	<info type="text">Detects automated lateral movement by Turla group </info>
 	<info type="text">Falsepositives: Unknown. </info>

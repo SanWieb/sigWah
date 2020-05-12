@@ -10,7 +10,7 @@
 	<group>attack.defense_evasion,attack.t1222,MITRE</group>
 </rule>
 
-<rule id="260470" level="10">
+<rule id="260471" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\attrib.exe$</field>
 	<field name="win.eventdata.CommandLine">-r</field>

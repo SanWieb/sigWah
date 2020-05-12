@@ -9,7 +9,7 @@
 	<group>attack.execution,MITRE</group>
 </rule>
 
-<rule id="261290" level="14">
+<rule id="261291" level="14">
 	<if_group>sysmon_event7</if_group>
 	<field name="win.eventdata.Description">st2stager</field>
 	<description>ATT&CK: SILENTTRINITY Stager Execution</description>

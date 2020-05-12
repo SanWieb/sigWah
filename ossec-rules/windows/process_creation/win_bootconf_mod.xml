@@ -1,5 +1,5 @@
 <rule id="260250" level="14">
-	<if_sid>260250</if_sid>
+	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\bcdedit.exe$</field>
 	<field name="win.eventdata.CommandLine">set</field>
 	<field name="win.eventdata.CommandLine">bootstatuspolicy</field>
@@ -14,7 +14,7 @@
 </rule>
 
 <rule id="260251" level="14">
-	<if_sid>260250</if_sid>
+	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\bcdedit.exe$</field>
 	<field name="win.eventdata.CommandLine">set</field>
 	<field name="win.eventdata.CommandLine">recoveryenabled</field>
