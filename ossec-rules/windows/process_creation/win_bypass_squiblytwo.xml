@@ -1,7 +1,7 @@
 <rule id="260260" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\wmic.exe</field>
-	<field name="win.eventdata.CommandLine">wmic \. \.format:\\"http|wmic \. /format:'http|wmic \. /format:http</field>
+	<field name="win.eventdata.CommandLine">wmic \. \.format:\\\\"http|wmic \. /format:'http|wmic \. /format:http</field>
 	<description>ATT&CK T1047: SquiblyTwo</description>
 	<info type="text">Detects WMI SquiblyTwo Attack with possible renamed WMI by looking for imphash </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -14,7 +14,7 @@
 <rule id="260261" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Hashes">IMPHASH=1B1A3F43BF37B5BFE60751F2EE2F326E|IMPHASH=37777A96245A3C74EB217308F3546F4C|IMPHASH=9D87C9D67CE724033C0B40CC4CA1B206</field>
-	<field name="win.eventdata.CommandLine"> \.format:\\"http| /format:'http| /format:http</field>
+	<field name="win.eventdata.CommandLine"> \.format:\\\\"http| /format:'http| /format:http</field>
 	<description>ATT&CK T1047: SquiblyTwo</description>
 	<info type="text">Detects WMI SquiblyTwo Attack with possible renamed WMI by looking for imphash </info>
 	<info type="text">Falsepositives: Unknown. </info>

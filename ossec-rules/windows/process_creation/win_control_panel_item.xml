@@ -10,6 +10,7 @@
 
 <rule id="260301" level="0">
 	<if_sid>260300</if_sid>
-	<field name="win.eventdata.CommandLine">\\System32\\|%System%</field>
+	<field name="win.eventdata.CommandLine">\\\\System32\\\\|system32</field>
 	<description>Whitelist Interaction: Control Panel Items</description>
 </rule>
+

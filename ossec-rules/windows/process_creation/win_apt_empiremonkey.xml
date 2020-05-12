@@ -1,6 +1,6 @@
 <rule id="260091" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">/i:\.\AppData\\.\\logs.txt\s+scrobj.dll</field>
+	<field name="win.eventdata.CommandLine">/i:\.AppData\.\\\\logs.txt\s+scrobj.dll</field>
 	<field name="win.eventdata.Image">\\\\cutil.exe</field>
 	<description>ATT&CK T1086: Empire Monkey</description>
 	<info type="text">Detects EmpireMonkey APT reported Activity </info>
@@ -12,7 +12,7 @@
 
 <rule id="260092" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">/i:\.\AppData\\.\\logs.txt\s+scrobj.dll</field>
+	<field name="win.eventdata.CommandLine">/i:\.AppData\.\\\\logs.txt\s+scrobj.dll</field>
 	<field name="win.eventdata.Description">Microsoft\(C\) Registerserver</field>
 	<description>ATT&CK T1086: Empire Monkey</description>
 	<info type="text">Detects EmpireMonkey APT reported Activity </info>
@@ -21,3 +21,4 @@
 	<info type="link">https://app.any.run/tasks/a4107649-8cb0-41af-ad75-113152d4d57b </info>
 	<group>attack.t1086,attack.execution,MITRE</group>
 </rule>
+

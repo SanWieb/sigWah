@@ -10,3 +10,4 @@
 	<info type="link">https://blog.f-secure.com/hunting-for-koadic-a-com-based-rootkit/ </info>
 	<group>attack.execution,attack.t1170,MITRE</group>
 </rule>
+

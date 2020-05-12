@@ -49,3 +49,4 @@
 	<info type="link">https://abuse.io/lockergoga.txt </info>
 	<group>attack.execution,attack.t1070,car.2016-04-002,MITRE</group>
 </rule>
+

@@ -10,3 +10,4 @@
 	<info type="link">https://twitter.com/hFireF0X/status/897640081053364225 </info>
 	<group>attack.defense_evasion,attack.privilege_escalation,attack.execution,attack.t1088,attack.t1191,attack.g0069,car.2019-04-001,MITRE</group>
 </rule>
+

@@ -1,6 +1,6 @@
 <rule id="260151" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">schtasks\. /delete \.Defrag\\ScheduledDefrag</field>
+	<field name="win.eventdata.CommandLine">schtasks\. /delete \.Defrag\\\\ScheduledDefrag</field>
 	<description>ATT&CK T1053 S0111: Defrag Deactivation</description>
 	<info type="text">Detects the deactivation of the Scheduled defragmentation task as seen by Slingshot APT group </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -10,7 +10,7 @@
 </rule>
 
 <rule id="260152" level="10">
-	<field name="win.system.eventID">4701</field>
+	<field name="win.system.EventID">^4701$</field>
 	<field name="win.eventdata.TaskName">\\\\Microsoft\\\\Windows\\\\Defrag\\\\ScheduledDefrag</field>
 	<description>ATT&CK T1053 S0111: Defrag Deactivation</description>
 	<info type="text">Detects the deactivation of the Scheduled defragmentation task as seen by Slingshot APT group </info>
@@ -19,3 +19,4 @@
 	<info type="link">https://securelist.com/apt-slingshot/84312/ </info>
 	<group>attack.persistence,attack.t1053,attack.s0111,MITRE</group>
 </rule>
+

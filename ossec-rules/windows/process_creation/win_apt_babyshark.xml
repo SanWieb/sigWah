@@ -1,6 +1,6 @@
 <rule id="260010" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">reg\s+query\s+"HKEY_CURRENT_USER\\Software\\Microsoft\\Terminal\s+Server\s+Client\\Default"|powershell.exe\s+mshta.exe\s+http|cmd.exe\s+/c\s+taskkill\s+/im\s+cmd.exe</field>
+	<field name="win.eventdata.CommandLine">reg\s+query\s+"HKEY_CURRENT_USER\\\\Software\\\\Microsoft\\\\Terminal\s+Server\s+Client\\\\Default"|powershell.exe\s+mshta.exe\s+http|cmd.exe\s+/c\s+taskkill\s+/im\s+cmd.exe</field>
 	<description>ATT&CK T1059 T1086 T1012 T1170: Baby Shark Activity</description>
 	<info type="text">Detects activity that could be related to Baby Shark malware </info>
 	<info type="text">Falsepositives: unknown. </info>

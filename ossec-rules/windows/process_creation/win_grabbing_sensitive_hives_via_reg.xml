@@ -3,7 +3,7 @@
 	<field name="win.eventdata.Image">\\\\reg.exe</field>
 	<field name="win.eventdata.CommandLine">save|export</field>
 	<field name="win.eventdata.CommandLine">hklm|hkey_local_machine</field>
-	<field name="win.eventdata.CommandLine">\\system$|\\sam$|\\security$</field>
+	<field name="win.eventdata.CommandLine">\\\\system$|\\\\sam$|\\\\security$</field>
 	<description>ATT&CK T1003: Grabbing Sensitive Hives via Reg Utility</description>
 	<info type="text">Dump sam, system or security hives using REG.exe utility </info>
 	<info type="text">Falsepositives: Dumping hives for legitimate purpouse i.e. backup or forensic investigation. </info>
