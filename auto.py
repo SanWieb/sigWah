@@ -34,13 +34,14 @@ class SigmaOssec(object):
         self.static_title = self.getTitle(documentData[0])
         self.static_title_whitelist = self.getTitle(documentData[0], True)
         self.static_lastpart = self.getLastPart(documentData[0])
-        if len(documentData) != 1:
-            self.output['validation_failed_xml'] = 'Manual check needed! More than 1 XML document'
         output_all = {}
         document_number = 1
         for data in documentData:
             output = {}
             if 'detection' not in data.keys():
+                if document_number == 1 and len(documentData) > 1:
+                    # not a problem if the first document of a series does not contain any detection
+                    continue
                 output['validation_failed_detection'] = 'Manual check needed! No detection key'
                 output['opentag'] = self.getOpenTag(data)
                 output['if_group'] = '\t<if_group>sysmon_event1</if_group>'
@@ -50,22 +51,26 @@ class SigmaOssec(object):
                 for part in lastpart:
                     output['{}'.format(part)] = lastpart[part]
                 output['empty_line'] = ''
-            elif 'condition' not in data['detection'].keys():
-                output['validation_failed_detection'] = 'Manual check needed! Unknown condition'
-                # manual check needed, for now it will be processed as OR statement
-                output = self.handle_standard_or(data, output)
-            elif data['detection']['condition'] in ['selection', '1 of them', 'selection1 or selection2',
-                                                    'selection1 or selection2 or selection3',
-                                                    'selection_1 or selection_2', 'selection or selection2']:
-                output = self.handle_standard_or(data, output)
-            elif data['detection']['condition'] in ['selection and not filter']:
-                # selection and not falsepositive | selection1 and not falsepositive1 | selection and not exclusion
-                output = self.handle_and_not_filter(data, output)
-                output['validation_failed_detection'] = '!Selection and not filter'
+            elif 'condition' not in data['detection'].keys() and 'detection' not in documentData[0].keys() and 'condition' not in documentData[0]['detection'].keys():
+                    output['validation_failed_detection'] = 'Manual check needed! No condition'
+                    # manual check needed, for now it will be processed as OR statement
+                    output = self.handle_standard_or(data, output)
             else:
-                output['validation_failed_detection'] = 'Manual check needed! Unknown condition'
-                # manual check needed, for now it will be processed as OR statement
-                output = self.handle_standard_or(data, output)
+                if 'condition' not in data['detection'].keys():
+                    condition = documentData[0]['detection']['condition']
+                else:
+                    condition = data['detection']['condition']
+                if self.is_and_statement(condition):
+                    output['validation_failed_detection'] = 'Manual check needed! And condition'
+                    output = self.handle_and(data, output)
+                elif self.is_or_statement(condition):
+                    output = self.handle_standard_or(data, output)
+                elif self.is_and_not_statement(condition):
+                    output = self.handle_and_not_filter(data, output)
+                else:
+                    output['validation_failed_detection'] = 'Manual check needed! Unknown condition'
+                    # manual check needed, for now it will be processed as OR statement
+                    output = self.handle_standard_or(data, output)
             # merge the document
             for lines in output:
                 output_all['{}{}'.format(lines, document_number)] = output[lines]
@@ -77,9 +82,10 @@ class SigmaOssec(object):
         for selection in data['detection']:
             # for each selection a new rule (OR condition)
             if selection != 'condition':
+                self.get_event_id(data, data['detection'][selection])
                 # start rule
                 output['opentag{}'.format(section_number)] = self.getOpenTag(data)
-                output['if_group{}'.format(section_number)] = self.static_ifgroup
+                output['if_group{}'.format(section_number)] = self.get_event_id(data, data['detection'][selection])
                 # get the detection rules (fieldnames)
                 all_rules = self.start_parse(data['detection'][selection])
                 output['field_rule{}'.format(section_number)] = all_rules
@@ -96,13 +102,14 @@ class SigmaOssec(object):
 
     def handle_and_not_filter(self, data, output):
         section_number = 1
+        filter = data['detection']['condition'].split(' ')[3]
         for selection in data['detection']:
             # for each selection a new rule (OR condition)
             if selection != 'condition':
-                if selection != 'filter':
+                if selection != filter:
                     # start rule
                     output['opentag{}'.format(section_number)] = self.getOpenTag(data)
-                    output['if_group{}'.format(section_number)] = self.static_ifgroup
+                    output['if_group{}'.format(section_number)] = self.get_event_id(data, data['detection'][selection])
                 else:
                     # start rule
                     output['opentag{}'.format(section_number)] = self.getOpenTag(data, True)
@@ -111,7 +118,7 @@ class SigmaOssec(object):
                 all_rules = self.start_parse(data['detection'][selection])
                 output['field_rule{}'.format(section_number)] = all_rules
                 # Whitelist rules only get the <description> tag
-                if selection == 'filter':
+                if selection == filter:
                     output['title{}'.format(section_number)] = self.static_title_whitelist
                     output['close_rule{}'.format(section_number)] = '</rule>'
                 else:
@@ -127,6 +134,58 @@ class SigmaOssec(object):
                 self.rulenumber += 1
         return output
 
+    def handle_and(self, data, output):
+        section_number = 1
+        output['opentag{}'] = self.getOpenTag(data)
+        output['if_group{}'] = self.get_event_id(data, None)
+        for selection in data['detection']:
+            # for each selection a new rule (OR condition)
+            if selection != 'condition':
+                # get the detection rules (fieldnames)
+                all_rules = self.start_parse(data['detection'][selection])
+                output['field_rule{}'.format(section_number)] = all_rules
+            section_number += 1
+        # finish with the last part of the rule
+        output['title{}'] = self.static_title
+        lastpart = self.static_lastpart
+        # merge lastpart in output
+        for part in lastpart:
+            output['{}'.format(part)] = lastpart[part]
+        output['empty_line'] = ''
+        return output
+
+# -----------  Condition Checkers ------------- #
+    def is_or_statement(self, condition):
+        condition_parts = condition.split(' ')
+        if len(condition_parts) == 1 or condition == '1 of them':
+            return True
+        elif len(condition_parts) > 2:
+            i = 1
+            while len(condition_parts) > i:
+                if condition_parts[i] != 'or':
+                    return False
+                # only odd numbers
+                i += 2
+            return True
+    def is_and_statement(self, condition):
+        condition_parts = condition.split(' ')
+        if len(condition_parts) > 2:
+            i = 1
+            while len(condition_parts) > i:
+                if condition_parts[i] != 'and':
+                    return False
+                # only odd numbers
+                i += 2
+            return True
+        else:
+            return False
+    def is_and_not_statement(self, condition):
+        condition_parts = condition.split(' ')
+        if len(condition_parts) == 4 and condition_parts[1] == 'and' and condition_parts[2] == 'not':
+            return True
+        else:
+            return False
+
 # ------------- Parse Functions ------------- #
     def start_parse(self, selectionList):
         # Change all types to list
@@ -137,9 +196,10 @@ class SigmaOssec(object):
         all_rules = []
         for selection in selectionList:
             for fieldname in selection:
-                sub_rules = self.parse_value_modifiers(selection, fieldname)
-                for rule in sub_rules:
-                    all_rules.append(rule)
+                if not re.match(r'eventid', fieldname, re.IGNORECASE):
+                    sub_rules = self.parse_value_modifiers(selection, fieldname)
+                    for rule in sub_rules:
+                        all_rules.append(rule)
         return all_rules
 
     def parse_value_modifiers(self, selection, fieldname):
@@ -158,6 +218,8 @@ class SigmaOssec(object):
             elif fieldname_splitted[1].lower() == 'endswith':
                 # modifier type 2
                 field_rules.append(self.parse_fieldtype(selection, fieldname,2))
+            else:
+                field_rules.append('Manual check needed! Modifier parse failed:{}'.format(fieldname))
         elif len(fieldname_splitted) == 3 and fieldname_splitted[1] == 'contains' and fieldname_splitted[2] == 'all':
             if type(selection[fieldname]) == list:
                 for item in selection[fieldname]:
@@ -189,7 +251,6 @@ class SigmaOssec(object):
         elif fieldname_stripped in self.common_fields:
             rule = self.parse_common(selection, fieldname, start_string, end_string)
         else:
-            print(fieldname)
             rule = 'Manual check needed! Rule failed Field: {}'.format(fieldname)
         return rule
 
@@ -204,7 +265,7 @@ class SigmaOssec(object):
                 else:
                     first_key = False
                 # replace with single backslash
-                item = self.replace_backslash_wildcard(item, '\\\\')
+                item = self.replace_backslash_wildcard(item)
                 item = self.replace_variables(item)
                 item = self.replace_space(item)
                 query += start_string + item + end_string
@@ -212,7 +273,7 @@ class SigmaOssec(object):
         elif type(selection[fieldname]) == str:
             item = selection[fieldname]
             # replace with single backslash
-            item = self.replace_backslash_wildcard(item, '\\\\')
+            item = self.replace_backslash_wildcard(item)
             item = self.replace_variables(item)
             item = self.replace_space(item)
             query += start_string + item + end_string
@@ -282,6 +343,7 @@ class SigmaOssec(object):
             return 'Manual check needed! Rule parse failed (Parse Common)'
 
     def replace_variables(self, item):
+        print(item)
         # ! backslashes
         # replace ( with \(  (must be escaped)
         item = item.replace('(', '\\(').replace(')', '\\)')
@@ -291,24 +353,24 @@ class SigmaOssec(object):
         item = item.replace('|', '\\|')
         # replace < with \<  (must be escaped)
         item = item.replace('<', '\\<')
+        # \p will match asterisk or plus, along with some other characters
+        item = item.replace('+', '\\p')
         # replace C driveletter with \.
         item = item.replace('c:\\', '\\.:\\').replace('C:\\', '\\.:\\')
-        # replace %APPDATA% with \.\AppData\\.
-        item = item.replace('%AppData%', '\\.\\AppData\\\\.').replace('%APPDATA%', '\\.\\AppData\\\\.')
-        # replace %System% with \.\AppData\\.
-        item = item.replace('%AppData%', '\\.\\AppData\\\\.').replace('%APPDATA%', '\\.\\AppData\\\\.')
-        # replace %WINDIR% with \.\Windows\\.
-        item = item.replace('%WinDir%', '\\.\\Windows\\\\.').replace('%WINDIR%', '\\.\\Windows\\\\.')
+        # replace %APPDATA% with \.AppData\.
+        item = re.sub(r'%AppData%', '\\.AppData\\.', item, flags=re.I)
+        # replace %System% with \.system32\.
+        item = re.sub(r'%System%', '\\.system32\\.', item, flags=re.I)
+        # replace %WINDIR% with \.Windows\.
+        item = re.sub(r'%WinDir%', '\\.Windows\\.', item, flags=re.I)
         # remove wildcard start and end of string
-        item = re.sub(r'\\.$', '', item)
-        item = re.sub(r'^\\.', '', item)
+        item = re.sub(r'\\\.$', '', item)
+        item = re.sub(r'^\\\.', '', item)
+        print(item)
         return item
 
-    def replace_backslash_wildcard(self, item, backshlash='\\\\\\\\'):
-        # remove wildcard start and end of string
-        item = re.sub(r'\*$', '', item)
-        item = re.sub(r'^\*', '', item)
-        # Write \\\\ if you want two backslahes
+    def replace_backslash_wildcard(self, item, backslash='\\\\\\\\'):
+        # Write \\\\ if you want two backslashes
         # Write \* if you want a plain wildcard * as resulting value.
         # Write \\* if you want a plain backslash followed by a wildcard * as resulting value.
         # Write \\\* if you want a plain backslash followed by a plain * as resulting value.
@@ -319,24 +381,14 @@ class SigmaOssec(object):
         item = item.replace('*', '%|WILDCARD|%')
         # double backslash
         item = item.replace('%|TWO-P-BACKSLASH|%', '\\\\')
-        item = item.replace('\\', backshlash)
-        item = item.replace('%|P-BACKSLASH-P-WILDCARD|%', backshlash + '*')
-        item = item.replace('%|P-BACKSLASH-WILDCARD', backshlash + '\\.')
-        item = item.replace('%|P-WILDCARD|%', '*')
+        item = item.replace('\\', backslash)
+        item = item.replace('%|P-BACKSLASH-P-WILDCARD|%', backslash + '\\p')
+        item = item.replace('%|P-BACKSLASH-WILDCARD', backslash + '\\.')
+        item = item.replace('%|P-WILDCARD|%', '\\p')
         item = item.replace('%|WILDCARD|%', '\\.')
-
-
-
-
-
-        # # standard double backslash > Wazuh events convert \ to \\ (except commandline field)
-        # # replace \* and *  with (PLACEHOLDER) to prevent \. is converted to \\.
-        # item = item.replace('\\*', '!@#$%^&()PLACEHOLDER')
-        # item = item.replace('*', '!@#$%^&()PLACEHOLDER')
-        # # replace \ with \\
-        # item = item.replace('\\', backshlash)
-        # # replace PLACEHOLDER with \.
-        # item = item.replace('!@#$%^&()PLACEHOLDER', '\\.')
+        # remove wildcard start and end of string
+        item = re.sub(r'\\\.$', '', item)
+        item = re.sub(r'^\\\.', '', item)
         return item
 
     def replace_space(self, item):
@@ -371,7 +423,34 @@ class SigmaOssec(object):
             level = '%'
             if 'level' in data.keys():
                 level = self.convertLevel(data['level'])
+            elif 'level' in self.documentData[0]:
+                level = self.convertLevel(self.documentData[0]['level'])
             return '<rule id="{}" level="{}">'.format(self.rulenumber, level)
+
+    def get_event_id(self, data, selection):
+        if type(selection) is dict:
+            selection_lower = {k.lower(): v for k, v in selection.items()}
+            if 'eventid' in selection_lower:
+                event_id = selection_lower['eventid']
+                if event_id < 16:
+                    if event_id > 9:
+                        return '\t<if_group>sysmon_event_{}</if_group>'.format(event_id)
+                    else:
+                        return '\t<if_group>sysmon_event{}</if_group>'.format(event_id)
+                else:
+                    return '\t<field name="win.system.EventID">^{}$</field>'.format(event_id)
+        if 'logsource' in data and 'category' in data['logsource'] and 'product' in data['logsource']:
+            if data['logsource']['category'] == 'process_creation' and data['logsource']['product'] == 'windows':
+                return '\t<if_group>sysmon_event1</if_group>'
+        elif 'logsource' in data and 'service' in data['logsource'] and 'product' in data['logsource']:
+            if data['logsource']['service'] == 'process_creation' and data['logsource']['product'] == 'windows':
+                return '\t<if_group>sysmon_event1</if_group>'
+        else:
+            first_document = self.documentData[0]
+            if 'logsource' in first_document and 'category' in first_document['logsource'] and 'product' in first_document['logsource']:
+                if first_document['logsource']['category'] == 'process_creation' and first_document['logsource']['product'] == 'windows':
+                    return '\t<if_group>sysmon_event1</if_group>'
+        return 'Manual check needed! Doublecheck no EventID'
 
     def getTitle(self, data, whitelist=False):
         start_title = ''
@@ -441,6 +520,7 @@ def main():
     rule_number = 260000
     for filename in os.listdir(directory):
         if filename.endswith(".yml"):
+            print(filename)
             documentData = readFile(os.path.join(directory, filename))
             sigmaconvert = SigmaOssec(documentData, rule_number)
             output = sigmaconvert.getOutput()
