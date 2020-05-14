@@ -15,4 +15,6 @@
 	<if_sid>261880</if_sid>
 	<field name="win.eventdata.Image">\\\\dctask64.exe$</field>
 	<description>Whitelist Interaction: Renamed ZOHO Dctask64</description>
+	<group>attack.defense_evasion,attack.t1055,MITRE</group>
 </rule>
+

@@ -1,7 +1,7 @@
 <rule id="262110" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">echo |copy |type |file\s+createnew</field>
-	<field name="win.eventdata.CommandLine"> \.:\\Windows\\System32\\Tasks\\| \.:\\Windows\\SysWow64\\Tasks\\</field>
+	<field name="win.eventdata.CommandLine"> \.:\\\\Windows\\\\System32\\\\Tasks\\\\| \.:\\\\Windows\\\\SysWow64\\\\Tasks\\\\</field>
 	<description>ATT&CK T1064 T1211 T1059: Tasks Folder Evasion</description>
 	<info type="text">The Tasks folder in system32 and syswow64 are globally writable paths. Adversaries can take advantage of this and load or influence any script hosts or ANY .NET Application in Tasks to load and execute a custom assembly into cscript, wscript, regsvr32, mshta, eventvwr </info>
 	<info type="text">Falsepositives: Unknown. </info>

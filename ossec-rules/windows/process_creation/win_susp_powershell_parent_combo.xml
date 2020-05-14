@@ -16,3 +16,4 @@
 	<description>Whitelist Interaction: Suspicious PowerShell Invocation Based on Parent Process</description>
 	<group>attack.execution,attack.t1086,MITRE</group>
 </rule>
+

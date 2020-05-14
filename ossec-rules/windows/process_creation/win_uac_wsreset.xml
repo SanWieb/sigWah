@@ -13,6 +13,6 @@
 	<if_sid>262160</if_sid>
 	<field name="win.eventdata.Image">\\\\conhost.exe$</field>
 	<description>Whitelist Interaction: Bypass UAC via WSReset.exe</description>
+	<group>attack.privilege_escalation,attack.t1088,MITRE</group>
 </rule>
 
-!Selection and not filter

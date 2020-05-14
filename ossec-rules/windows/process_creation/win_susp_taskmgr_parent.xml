@@ -12,4 +12,6 @@
 	<if_sid>262010</if_sid>
 	<field name="win.eventdata.Image">\\\\resmon.exe|\\\\mmc.exe|\\\\taskmgr.exe</field>
 	<description>Whitelist Interaction: Taskmgr as Parent</description>
+	<group>attack.defense_evasion,attack.t1036,MITRE</group>
 </rule>
+

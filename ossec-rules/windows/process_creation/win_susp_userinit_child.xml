@@ -11,7 +11,7 @@
 
 <rule id="262041" level="0">
 	<if_sid>262040</if_sid>
-	<field name="win.eventdata.CommandLine">\\\\netlogon\\</field>
+	<field name="win.eventdata.CommandLine">\\\\netlogon\\\\</field>
 	<description>Whitelist Interaction: Suspicious Userinit Child Process</description>
 	<group>MITRE</group>
 </rule>

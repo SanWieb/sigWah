@@ -13,4 +13,6 @@
 	<if_sid>262120</if_sid>
 	<field name="win.eventdata.Image">\\\\rdpclip.exe</field>
 	<description>Whitelist Interaction: Terminal Service Process Spawn</description>
+	<group>car.2013-07-002,MITRE</group>
 </rule>
+

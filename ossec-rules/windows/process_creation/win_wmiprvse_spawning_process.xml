@@ -13,10 +13,12 @@
 	<if_sid>262230</if_sid>
 	<field name="win.eventdata.LogonId">0x3e7</field>
 	<description>Whitelist Interaction: Wmiprvse Spawning Process</description>
+	<group>attack.execution,attack.t1047,MITRE</group>
 </rule>
 
 <rule id="262232" level="0">
 	<if_sid>262230</if_sid>
 	<field name="win.eventdata.User">NT AUTHORITY\\\\SYSTEM</field>
 	<description>Whitelist Interaction: Wmiprvse Spawning Process</description>
+	<group>attack.execution,attack.t1047,MITRE</group>
 </rule>

@@ -1,6 +1,6 @@
 <rule id="261900" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\\rundll32.exe \.,#</field>
+	<field name="win.eventdata.CommandLine">\\\\rundll32.exe \.,#</field>
 	<description>ATT&CK T1085: Suspicious Call by Ordinal</description>
 	<info type="text">Detects suspicious calls of DLLs in rundll32.dll exports by ordinal </info>
 	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. Windows contol panel elements have been identified as source (mmc). </info>

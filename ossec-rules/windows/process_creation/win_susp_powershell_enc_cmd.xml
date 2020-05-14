@@ -3,7 +3,6 @@
 	<field name="win.eventdata.CommandLine"> -e\s+JAB| -e\s+\s+JAB| -e\s+\s+\s+JAB| -e\s+\s+\s+\s+JAB| -e\s+\s+\s+\s+\s+JAB| -e\s+\s+\s+\s+\s+\s+JAB| -en\s+JAB| -enc\s+JAB| -enc\. JAB| -w\s+hidden\s+-e\. JAB| BA^J\s+e-| -e\s+SUVYI| -e\s+aWV4I| -e\s+SQBFAFgA| -e\s+aQBlAHgA| -enc\s+SUVYI| -enc\s+aWV4I| -enc\s+SQBFAFgA| -enc\s+aQBlAHgA</field>
 	<description>ATT&CK T1086: Suspicious Encoded PowerShell Command Line</description>
 	<info type="text">Detects suspicious powershell process starts with base64 encoded commands (e.g. Emotet) </info>
-	<info type="text">Falsepositives: unknown. </info>
 	<info type="text">Sigma UUID: ca2092a1-c273-4878-9b4b-0d60115bf5ea </info>
 	<info type="link">https://app.any.run/tasks/6217d77d-3189-4db2-a957-8ab239f3e01e </info>
 	<group>attack.execution,attack.t1086,MITRE</group>
@@ -15,3 +14,4 @@
 	<description>Whitelist Interaction: Suspicious Encoded PowerShell Command Line</description>
 	<group>attack.execution,attack.t1086,MITRE</group>
 </rule>
+

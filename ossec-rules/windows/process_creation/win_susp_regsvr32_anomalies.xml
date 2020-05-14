@@ -1,7 +1,7 @@
 <rule id="261870" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\regsvr32.exe</field>
-	<field name="win.eventdata.CommandLine">\\Temp\\</field>
+	<field name="win.eventdata.CommandLine">\\\\Temp\\\\</field>
 	<description>ATT&CK T1117: Regsvr32 Anomaly</description>
 	<info type="text">Detects various anomalies in relation to regsvr32.exe </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -61,7 +61,7 @@
 <rule id="261875" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\EXCEL.EXE</field>
-	<field name="win.eventdata.CommandLine">..\\..\\..\\Windows\\System32\\regsvr32.exe </field>
+	<field name="win.eventdata.CommandLine">..\\\\..\\\\..\\\\Windows\\\\System32\\\\regsvr32.exe </field>
 	<description>ATT&CK T1117: Regsvr32 Anomaly</description>
 	<info type="text">Detects various anomalies in relation to regsvr32.exe </info>
 	<info type="text">Falsepositives: Unknown. </info>

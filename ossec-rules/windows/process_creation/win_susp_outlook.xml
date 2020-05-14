@@ -13,7 +13,7 @@
 <rule id="261711" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentImage">\\\\outlook.exe</field>
-	<field name="win.eventdata.CommandLine">\\\\\.\\\..exe</field>
+	<field name="win.eventdata.CommandLine">\\\\\.\\\\\..exe</field>
 	<description>ATT&CK T1059 T1202: Suspicious Execution from Outlook</description>
 	<info type="text">Detects EnableUnsafeClientMailRules used for Script Execution from Outlook </info>
 	<info type="text">Falsepositives: unknown. </info>
@@ -22,3 +22,4 @@
 	<info type="link">https://www.fireeye.com/blog/threat-research/2018/12/overruled-containing-a-potentially-destructive-adversary.html </info>
 	<group>attack.execution,attack.t1059,attack.t1202,MITRE</group>
 </rule>
+

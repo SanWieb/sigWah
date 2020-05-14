@@ -1,7 +1,7 @@
 <rule id="261470" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\csc.exe</field>
-	<field name="win.eventdata.CommandLine">\\AppData\\|\\Windows\\Temp\\</field>
+	<field name="win.eventdata.CommandLine">\\\\AppData\\\\|\\\\Windows\\\\Temp\\\\</field>
 	<description>ATT&CK T1500: Suspicious Csc.exe Source File Folder</description>
 	<info type="text">Detects a suspicious execution of csc.exe, which uses a source in a suspicious folder (e.g. AppData) </info>
 	<info type="text">Falsepositives: https://twitter.com/gN3mes1s/status/1206874118282448897. https://twitter.com/gabriele_pippi/status/1206907900268072962. </info>
@@ -17,4 +17,6 @@
 	<if_sid>261470</if_sid>
 	<field name="win.eventdata.ParentImage">:\\\\Program Files|\\\\sdiagnhost.exe|\\\\w3wp.exe</field>
 	<description>Whitelist Interaction: Suspicious Csc.exe Source File Folder</description>
+	<group>attack.defense_evasion,attack.t1500,MITRE</group>
 </rule>
+

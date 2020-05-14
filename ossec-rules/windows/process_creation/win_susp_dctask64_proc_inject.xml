@@ -13,6 +13,8 @@
 
 <rule id="261491" level="0">
 	<if_sid>261490</if_sid>
-	<field name="win.eventdata.CommandLine">DesktopCentral_Agent\\agent</field>
+	<field name="win.eventdata.CommandLine">DesktopCentral_Agent\\\\agent</field>
 	<description>Whitelist Interaction: ZOHO Dctask64 Process Injection</description>
+	<group>attack.defense_evasion,attack.t1055,MITRE</group>
 </rule>
+

@@ -1,4 +1,4 @@
-<rule id="261481" level="10">
+<rule id="261480" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">curl\. start </field>
 	<description>ATT&CK T1218: Curl Start Combination</description>

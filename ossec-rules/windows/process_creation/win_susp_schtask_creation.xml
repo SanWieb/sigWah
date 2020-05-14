@@ -13,6 +13,6 @@
 	<if_sid>261920</if_sid>
 	<field name="win.eventdata.User">NT AUTHORITY\\\\SYSTEM</field>
 	<description>Whitelist Interaction: Scheduled Task Creation</description>
+	<group>attack.execution,attack.persistence,attack.privilege_escalation,attack.t1053,attack.s0111,car.2013-08-001,MITRE</group>
 </rule>
 
-!Selection and not filter

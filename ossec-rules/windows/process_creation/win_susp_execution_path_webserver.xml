@@ -13,4 +13,6 @@
 	<field name="win.eventdata.Image">bin\\\\|\\\\Tools\\\\|\\\\SMSComponent\\\\</field>
 	<field name="win.eventdata.ParentImage">\\\\services.exe</field>
 	<description>Whitelist Interaction: Execution in Webserver Root Folder</description>
+	<group>attack.persistence,attack.t1100,MITRE</group>
 </rule>
+

@@ -3,7 +3,6 @@
 	<field name="win.eventdata.CommandLine"> -NoP\s+-sta\s+-NonI\s+-W\s+Hidden\s+-Enc | -noP\s+-sta\s+-w\s+1\s+-enc | -NoP\s+-NonI\s+-W\s+Hidden\s+-enc </field>
 	<description>ATT&CK T1086: Empire PowerShell Launch Parameters</description>
 	<info type="text">Detects suspicious powershell command line parameters used in Empire </info>
-	<info type="text">Falsepositives: Unlikely, because no sane admin pings IP addresses in a hexadecimal form. </info>
 	<info type="text">Sigma UUID: 79f4ede3-402e-41c8-bc3e-ebbf5f162581 </info>
 	<info type="link">https://github.com/EmpireProject/Empire/blob/c2ba61ca8d2031dad0cfc1d5770ba723e8b710db/lib/common/helpers.py#L165 </info>
 	<info type="link">https://github.com/EmpireProject/Empire/blob/e37fb2eef8ff8f5a0a689f1589f424906fe13055/lib/modules/powershell/persistence/powerbreach/deaduser.py#L191 </info>
