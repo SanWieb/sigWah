@@ -1,4 +1,4 @@
-<rule id="260151" level="10">
+<rule id="260150" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">schtasks\. /delete \.Defrag\\\\ScheduledDefrag</field>
 	<description>ATT&CK T1053 S0111: Defrag Deactivation</description>
@@ -9,7 +9,7 @@
 	<group>attack.persistence,attack.t1053,attack.s0111,MITRE</group>
 </rule>
 
-<rule id="260152" level="10">
+<rule id="260151" level="10">
 	<field name="win.system.EventID">^4701$</field>
 	<field name="win.eventdata.TaskName">\\\\Microsoft\\\\Windows\\\\Defrag\\\\ScheduledDefrag</field>
 	<description>ATT&CK T1053 S0111: Defrag Deactivation</description>

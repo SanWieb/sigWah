@@ -3,7 +3,6 @@
 	<field name="win.eventdata.CommandLine">abCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCc</field>
 	<description>ATT&CK T1085: TropicTrooper Campaign November 2018</description>
 	<info type="text">Detects TropicTrooper activity, an actor who targeted high-profile organizations in the energy and food and beverage sectors in Asia </info>
-	<info type="text">Falsepositives: Renamed SysInternals tool. </info>
 	<info type="text">Sigma UUID: 8c7090c3-e0a0-4944-bd08-08c3a0cecf79 </info>
 	<info type="link">https://cloudblogs.microsoft.com/microsoftsecure/2018/11/28/windows-defender-atp-device-risk-score-exposes-new-cyberattack-drives-conditional-access-to-protect-networks/ </info>
 	<group>attack.execution,attack.t1085,MITRE</group>

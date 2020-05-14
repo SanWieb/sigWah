@@ -1,4 +1,4 @@
-<rule id="260091" level="15">
+<rule id="260090" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">/i:\.AppData\.\\\\logs.txt\s+scrobj.dll</field>
 	<field name="win.eventdata.Image">\\\\cutil.exe</field>
@@ -10,7 +10,7 @@
 	<group>attack.t1086,attack.execution,MITRE</group>
 </rule>
 
-<rule id="260092" level="15">
+<rule id="260091" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">/i:\.AppData\.\\\\logs.txt\s+scrobj.dll</field>
 	<field name="win.eventdata.Description">Microsoft\(C\) Registerserver</field>

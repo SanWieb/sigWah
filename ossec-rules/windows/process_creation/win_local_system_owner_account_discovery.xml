@@ -39,7 +39,7 @@
 	<field name="win.eventdata.Image">\\\\cmd.exe$</field>
 	<field name="win.eventdata.CommandLine">/c</field>
 	<field name="win.eventdata.CommandLine">dir </field>
-	<field name="win.eventdata.CommandLine">\\Users\\</field>
+	<field name="win.eventdata.CommandLine">\\\\Users\\\\</field>
 	<description>ATT&CK T1033 T1087: Local Accounts Discovery</description>
 	<info type="text">Local accounts, System Owner/User discovery using operating systems utilities </info>
 	<info type="text">Falsepositives: Legitimate administrator or user enumerates local users for legitimate reason. </info>
@@ -73,3 +73,4 @@
 	<description>Whitelist Interaction: Local Accounts Discovery</description>
 	<group>attack.discovery,attack.t1033,attack.t1087,MITRE</group>
 </rule>
+

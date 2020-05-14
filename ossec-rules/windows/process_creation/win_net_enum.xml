@@ -13,6 +13,8 @@
 
 <rule id="260901" level="0">
 	<if_sid>260900</if_sid>
-	<field name="win.eventdata.CommandLine">\\\\</field>
+	<field name="win.eventdata.CommandLine">\\\\\\\\</field>
 	<description>Whitelist Interaction: Windows Network Enumeration</description>
+	<group>attack.discovery,attack.t1018,MITRE</group>
 </rule>
+

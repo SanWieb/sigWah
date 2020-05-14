@@ -18,7 +18,7 @@
 	<field name="win.eventdata.CommandLine">cmd</field>
 	<field name="win.eventdata.CommandLine">/c</field>
 	<field name="win.eventdata.CommandLine">echo</field>
-	<field name="win.eventdata.CommandLine">\\pipe\\</field>
+	<field name="win.eventdata.CommandLine">\\\\pipe\\\\</field>
 	<description>ATT&CK T1134: Meterpreter or Cobalt Strike Getsystem Service Start</description>
 	<info type="text">Detects the use of getsystem Meterpreter/Cobalt Strike command by detecting a specific service starting </info>
 	<info type="text">Falsepositives: Commandlines containing components like cmd accidentally. Jobs and services started with cmd. </info>
@@ -47,10 +47,6 @@
 	<if_sid>260780, 260781, 260782</if_sid>
 	<field name="win.eventdata.CommandLine">MpCmdRun</field>
 	<description>Whitelist Interaction: Meterpreter or Cobalt Strike Getsystem Service Start</description>
-	<info type="text">Detects the use of getsystem Meterpreter/Cobalt Strike command by detecting a specific service starting </info>
-	<info type="text">Falsepositives: Commandlines containing components like cmd accidentally. Jobs and services started with cmd. </info>
-	<info type="text">Sigma UUID: 15619216-e993-4721-b590-4c520615a67d </info>
-	<info type="link">https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment </info>
-	<info type="link">https://blog.cobaltstrike.com/2014/04/02/what-happens-when-i-type-getsystem/ </info>
 	<group>attack.privilege_escalation,attack.t1134,MITRE</group>
 </rule>
+

@@ -20,7 +20,7 @@
 	<group>attack.credential_access,attack.t1003,MITRE</group>
 </rule>
 
-<rule id="260543" level="14">
+<rule id="260542" level="14">
 	<if_group>sysmon_event_11</if_group>
 	<field name="win.eventdata.TargetFileName">\\\\lsass.dmp</field>
 	<description>ATT&CK T1003: CreateMiniDump Hacktool</description>

@@ -13,4 +13,6 @@
 	<if_sid>260930</if_sid>
 	<field name="win.eventdata.ParentImage">\\\\explorer.exe$</field>
 	<description>Whitelist Interaction: Non Interactive PowerShell</description>
+	<group>attack.execution,attack.t1086,MITRE</group>
 </rule>
+

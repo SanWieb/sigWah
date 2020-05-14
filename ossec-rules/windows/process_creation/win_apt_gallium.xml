@@ -10,7 +10,7 @@
 	<group>attack.credential_access,attack.command_and_control,MITRE</group>
 </rule>
 
-<rule id="260112" level="14">
+<rule id="260111" level="14">
 	<field name="win.system.EventID">^257$</field>
 	<field name="win.eventdata.QNAME">asyspy256.ddns.net|hotkillmail9sddcc.ddns.net|rosaf112.ddns.net|cvdfhjh1231.myftp.biz|sz2016rose.ddns.net|dffwescwer4325.myftp.biz|cvdfhjh1231.ddns.net</field>
 	<description>ATT&CK: GALLIUM Artefacts</description>
@@ -22,7 +22,7 @@
 	<group>attack.credential_access,attack.command_and_control,MITRE</group>
 </rule>
 
-<rule id="260113" level="14">
+<rule id="260112" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Hashes">SHA1=e570585edc69f9074cb5e8a790708336bd45ca0f</field>
 	<description>ATT&CK: GALLIUM Artefacts</description>
@@ -34,8 +34,8 @@
 	<group>attack.credential_access,attack.command_and_control,MITRE</group>
 </rule>
 
-<rule id="260114" level="0">
-	<if_sid>260113</if_sid>
+<rule id="260113" level="0">
+	<if_sid>260112</if_sid>
 	<field name="win.eventdata.Image">:\\\\Program Files\(x86\)\\\\|:\\\\Program Files\\\\</field>
 	<description>Whitelist Interaction: GALLIUM Artefacts</description>
 	<group>attack.credential_access,attack.command_and_control,MITRE</group>

@@ -1,4 +1,4 @@
-<rule id="260041" level="15">
+<rule id="260040" level="15">
 	<field name="win.system.EventID">^7045$</field>
 	<field name="win.eventdata.ServiceName">SC Scheduled Scan|UpdatMachine</field>
 	<description>ATT&CK T1053 S0111 T1112: Chafer Activity</description>
@@ -9,7 +9,7 @@
 	<group>attack.persistence,attack.g0049,attack.t1053,attack.s0111,attack.defense_evasion,attack.t1112,MITRE</group>
 </rule>
 
-<rule id="260042" level="15">
+<rule id="260041" level="15">
 	<field name="win.system.EventID">^4698$</field>
 	<field name="win.eventdata.TaskName">SC Scheduled Scan|UpdatMachine</field>
 	<description>ATT&CK T1053 S0111 T1112: Chafer Activity</description>
@@ -20,7 +20,7 @@
 	<group>attack.persistence,attack.g0049,attack.t1053,attack.s0111,attack.defense_evasion,attack.t1112,MITRE</group>
 </rule>
 
-<rule id="260043" level="15">
+<rule id="260042" level="15">
 	<if_group>sysmon_event_13</if_group>
 	<field name="win.eventdata.TargetObject">SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\UMe|SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\UT</field>
 	<field name="win.eventdata.EventType">SetValue</field>
@@ -32,7 +32,7 @@
 	<group>attack.persistence,attack.g0049,attack.t1053,attack.s0111,attack.defense_evasion,attack.t1112,MITRE</group>
 </rule>
 
-<rule id="260044" level="15">
+<rule id="260043" level="15">
 	<if_group>sysmon_event_13</if_group>
 	<field name="win.eventdata.TargetObject">\\\\Control\\\\SecurityProviders\\\\WDigest\\\\UseLogonCredential</field>
 	<field name="win.eventdata.EventType">SetValue</field>
@@ -45,7 +45,7 @@
 	<group>attack.persistence,attack.g0049,attack.t1053,attack.s0111,attack.defense_evasion,attack.t1112,MITRE</group>
 </rule>
 
-<rule id="260045" level="15">
+<rule id="260044" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\\\\Service.exe\s+i|\\\\Service.exe\s+u|\\\\microsoft\\\\Taskbar\\\\autoit3.exe|:\\\\wsc.exe</field>
 	<description>ATT&CK T1053 S0111 T1112: Chafer Activity</description>
@@ -56,7 +56,7 @@
 	<group>attack.persistence,attack.g0049,attack.t1053,attack.s0111,attack.defense_evasion,attack.t1112,MITRE</group>
 </rule>
 
-<rule id="260046" level="15">
+<rule id="260045" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\Windows\\\\Temp\\\\DB\\\\\..exe</field>
 	<description>ATT&CK T1053 S0111 T1112: Chafer Activity</description>
@@ -67,7 +67,7 @@
 	<group>attack.persistence,attack.g0049,attack.t1053,attack.s0111,attack.defense_evasion,attack.t1112,MITRE</group>
 </rule>
 
-<rule id="260047" level="15">
+<rule id="260046" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\\\\nslookup.exe\s+-q=TXT</field>
 	<field name="win.eventdata.ParentImage">\\\\Autoit</field>

@@ -2,10 +2,6 @@
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\net.exe$|\\\\net1.exe$</field>
 	<field name="win.eventdata.CommandLine">time</field>
-	<field name="win.eventdata.Image">\\\\w32tm.exe$</field>
-	<field name="win.eventdata.CommandLine">tz</field>
-	<field name="win.eventdata.Image">\\\\powershell.exe$</field>
-	<field name="win.eventdata.CommandLine">Get-Date</field>
 	<description>ATT&CK T1124: Discovery of a System Time</description>
 	<info type="text">Identifies use of various commands to query a systems time. This technique may be used before executing a scheduled task or to discover the time zone of a target system. </info>
 	<info type="text">Falsepositives: Legitimate use of the system utilities to discover system time for legitimate reason. </info>
@@ -17,19 +13,6 @@
 
 <rule id="261171" level="8">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\\\\net.exe$|\\\\net1.exe$</field>
-	<field name="win.eventdata.CommandLine">time</field>
-	<description>ATT&CK T1124: Discovery of a System Time</description>
-	<info type="text">Identifies use of various commands to query a systems time. This technique may be used before executing a scheduled task or to discover the time zone of a target system. </info>
-	<info type="text">Falsepositives: Legitimate use of the system utilities to discover system time for legitimate reason. </info>
-	<info type="text">Sigma UUID: b243b280-65fe-48df-ba07-6ddea7646427 </info>
-	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/fcdb99c2-ac3c-4bde-b664-4b336329bed2.html </info>
-	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1124/T1124.md </info>
-	<group>attack.discovery,attack.t1124,MITRE</group>
-</rule>
-
-<rule id="261172" level="8">
-	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\w32tm.exe$</field>
 	<field name="win.eventdata.CommandLine">tz</field>
 	<description>ATT&CK T1124: Discovery of a System Time</description>
@@ -41,7 +24,7 @@
 	<group>attack.discovery,attack.t1124,MITRE</group>
 </rule>
 
-<rule id="261173" level="8">
+<rule id="261172" level="8">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\powershell.exe$</field>
 	<field name="win.eventdata.CommandLine">Get-Date</field>

@@ -12,7 +12,7 @@
 </rule>
 
 <rule id="261202" level="0">
-	<if_sid>261200</if_sid>
+	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">paexec</field>
 	<description>ATT&CK T1036: Execution of Renamed PaExec</description>
 	<info type="text">Detects execution of renamed paexec via imphash and executable product string </info>

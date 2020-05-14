@@ -1,7 +1,7 @@
 <rule id="260570" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentImage">\\\\wmiprvse.exe|\\\\mmc.exe|\\\\explorer.exe|\\\\services.exe</field>
-	<field name="win.eventdata.CommandLine">cmd.exe\. /Q\s+/c \. \\\\127.0.0.1\\\.&1</field>
+	<field name="win.eventdata.CommandLine">cmd.exe\. /Q\s+/c \. \\\\\\\\127.0.0.1\\\\\.&1</field>
 	<description>ATT&CK T1047 T1175: Impacket Lateralization Detection</description>
 	<info type="text">Detects wmiexec/dcomexec/atexec/smbexec from Impacket framework </info>
 	<info type="text">Falsepositives: pentesters. </info>
@@ -15,8 +15,8 @@
 
 <rule id="260571" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentCommandLine">svchost.exe -k netsvcs|taskeng.exe</field>
-	<field name="win.eventdata.CommandLine">cmd.exe\s+/C \.Windows\\\\Temp\\\.&1</field>
+	<field name="win.eventdata.ParentCommandLine">svchost.exe\s+-k\s+netsvcs|taskeng.exe</field>
+	<field name="win.eventdata.CommandLine">cmd.exe\s+/C \.Windows\\\\\\\\Temp\\\\\.&1</field>
 	<description>ATT&CK T1047 T1175: Impacket Lateralization Detection</description>
 	<info type="text">Detects wmiexec/dcomexec/atexec/smbexec from Impacket framework </info>
 	<info type="text">Falsepositives: pentesters. </info>
@@ -27,3 +27,4 @@
 	<info type="link">https://github.com/SecureAuthCorp/impacket/blob/master/examples/dcomexec.py </info>
 	<group>attack.lateral_movement,attack.t1047,attack.t1175,MITRE</group>
 </rule>
+

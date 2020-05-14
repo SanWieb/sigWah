@@ -4,7 +4,6 @@
 	<field name="win.eventdata.CommandLine">delete|deletevalue|import</field>
 	<description>ATT&CK T1070 T1067: Possible Ransomware or Unauthorized MBR Modifications</description>
 	<info type="text">Detects, possibly, malicious unauthorized usage of bcdedit.exe </info>
-	<info type="text">Falsepositives: Administrator Activity. </info>
 	<info type="text">Sigma UUID: c9fbe8e9-119d-40a6-9b59-dd58a5d84429 </info>
 	<info type="link">https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/bcdedit--set </info>
 	<group>attack.defense_evasion,attack.t1070,attack.persistence,attack.t1067,MITRE</group>

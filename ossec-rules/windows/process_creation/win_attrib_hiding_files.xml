@@ -1,7 +1,7 @@
 <rule id="260240" level="8">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\attrib.exe</field>
-	<field name="win.eventdata.CommandLine"> +h </field>
+	<field name="win.eventdata.CommandLine"> \ph </field>
 	<description>ATT&CK T1158: Hiding Files with Attrib.exe</description>
 	<info type="text">Detects usage of attrib.exe to hide files from users. </info>
 	<info type="text">Falsepositives: igfxCUIService.exe hiding *.cui files via .bat script (attrib.exe a child of cmd.exe and igfxCUIService.exe is the parent of the cmd.exe). msiexec.exe hiding desktop.ini. </info>
@@ -11,22 +11,17 @@
 
 <rule id="260241" level="0">
 	<if_sid>260240</if_sid>
-	<field name="win.eventdata.CommandLine">\\desktop.ini </field>
-	<description>ATT&CK T1158: Hiding Files with Attrib.exe</description>
-	<info type="text">Detects usage of attrib.exe to hide files from users. </info>
-	<info type="text">Falsepositives: igfxCUIService.exe hiding *.cui files via .bat script (attrib.exe a child of cmd.exe and igfxCUIService.exe is the parent of the cmd.exe). msiexec.exe hiding desktop.ini. </info>
-	<info type="text">Sigma UUID: 4281cb20-2994-4580-aa63-c8b86d019934 </info>
+	<field name="win.eventdata.CommandLine">\\\\desktop.ini </field>
+	<description>Whitelist Interaction: Hiding Files with Attrib.exe</description>
 	<group>attack.defense_evasion,attack.persistence,attack.t1158,MITRE</group>
 </rule>
 
 <rule id="260242" level="0">
 	<if_sid>260240</if_sid>
 	<field name="win.eventdata.ParentImage">\\\\cmd.exe</field>
-	<field name="win.eventdata.CommandLine">+R\s++H\s++S\s++A\s+\\\..cui</field>
+	<field name="win.eventdata.CommandLine">\pR\s+\pH\s+\pS\s+\pA\s+\\\\\..cui</field>
 	<field name="win.eventdata.ParentCommandLine">:\\\\WINDOWS\\\\system32\\\\\..bat</field>
-	<description>ATT&CK T1158: Hiding Files with Attrib.exe</description>
-	<info type="text">Detects usage of attrib.exe to hide files from users. </info>
-	<info type="text">Falsepositives: igfxCUIService.exe hiding *.cui files via .bat script (attrib.exe a child of cmd.exe and igfxCUIService.exe is the parent of the cmd.exe). msiexec.exe hiding desktop.ini. </info>
-	<info type="text">Sigma UUID: 4281cb20-2994-4580-aa63-c8b86d019934 </info>
+	<description>Whitelist Interaction: Hiding Files with Attrib.exe</description>
 	<group>attack.defense_evasion,attack.persistence,attack.t1158,MITRE</group>
 </rule>
+
