@@ -1,6 +1,7 @@
-<rule id="250880" level="12">
+<rule id="250880" level="15">
 	<if_group>sysmon_event_11</if_group>
-	<regex>\\\\inetpub\\\\wwwroot\.asp|\\\\inetpub\\\\wwwroot\.ashx|\\\\inetpub\\\\wwwroot\.ph</regex>
+	<field name="win.eventdata.TargetFilename">\\\\inetpub\\\\wwwroot\\\\</field>
+	<field name="win.eventdata.TargetFilename">.asp|.ashx|.ph</field>
 	<description>ATT&CK T1100: Windows Webshell Creation</description>
 	<info type="text">Possible webshell file creation on a static web site </info>
 	<info type="text">Falsepositives: Legitimate administrator or developer creating legitimate executable files in a web application folder. </info>
@@ -9,9 +10,10 @@
 	<group>attack.persistence,attack.t1100,MITRE</group>
 </rule>
 
-<rule id="250881" level="12">
+<rule id="250880" level="15">
 	<if_group>sysmon_event_11</if_group>
-	<regex>\\\\www\\\\\.ph|\\\\htdocs\\\\\.ph|\\\\html\\\\\.ph</regex>
+	<field name="win.eventdata.TargetFilename">\\\\www\\\\|\\\\htdocs\\\\|\\\\html\\\\</field>
+	<field name="win.eventdata.TargetFilename">.ph</field>
 	<description>ATT&CK T1100: Windows Webshell Creation</description>
 	<info type="text">Possible webshell file creation on a static web site </info>
 	<info type="text">Falsepositives: Legitimate administrator or developer creating legitimate executable files in a web application folder. </info>
@@ -19,3 +21,17 @@
 	<info type="link">PT ESC rule and personal experience </info>
 	<group>attack.persistence,attack.t1100,MITRE</group>
 </rule>
+
+<rule id="250885" level="15">
+	<if_group>sysmon_event_11</if_group>
+	<field name="win.eventdata.TargetFilename">.jsp$</field>
+	<field name="win.eventdata.TargetFilename">\\\\cgi-bin\\\\</field>
+	<field name="win.eventdata.TargetFilename">.pl</field>
+	<description>ATT&CK T1100: Windows Webshell Creation</description>
+	<info type="text">Possible webshell file creation on a static web site </info>
+	<info type="text">Falsepositives: Legitimate administrator or developer creating legitimate executable files in a web application folder. </info>
+	<info type="text">Sigma UUID: 39f1f9f2-9636-45de-98f6-a4046aa8e4b9 </info>
+	<info type="link">PT ESC rule and personal experience </info>
+	<group>attack.persistence,attack.t1100,MITRE</group>
+</rule>
+

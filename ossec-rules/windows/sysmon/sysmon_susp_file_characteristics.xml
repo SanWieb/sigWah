@@ -1,4 +1,4 @@
-<rule id="250650" level="8">
+<rule id="250650" level="10">
 	<field name="win.eventdata.Description">^$|^ $|^-$</field>
 	<field name="win.eventdata.FileVersion">^$|^ $|^-$</field>
 	<description>ATT&CK T1064: Suspicious File Characteristics Due to Missing Fields</description>
@@ -10,7 +10,7 @@
 	<group>attack.defense_evasion,attack.execution,attack.t1064,MITRE</group>
 </rule>
 
-<rule id="250651" level="8">
+<rule id="250651" level="10">
 	<field name="win.eventdata.Description">^$|^ $|^-$</field>
 	<field name="win.eventdata.Product">^$|^ $|^-$</field>
 	<description>ATT&CK T1064: Suspicious File Characteristics Due to Missing Fields</description>
@@ -22,7 +22,7 @@
 	<group>attack.defense_evasion,attack.execution,attack.t1064,MITRE</group>
 </rule>
 
-<rule id="250652" level="8">
+<rule id="250652" level="10">
 	<field name="win.eventdata.Description">^$|^ $|^-$</field>
 	<field name="win.eventdata.Company">^$|^ $|^-$</field>
 	<description>ATT&CK T1064: Suspicious File Characteristics Due to Missing Fields</description>

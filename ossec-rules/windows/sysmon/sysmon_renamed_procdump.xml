@@ -1,5 +1,4 @@
-<rule id="250530" level="12">
-	<if_group>sysmon_event1</if_group>
+<rule id="250530" level="15">
 	<field name="win.eventdata.OriginalFileName">procdump</field>
 	<description>ATT&CK T1036: Renamed ProcDump</description>
 	<info type="text">Detects the execution of a renamed ProcDump executable often used by attackers or malware </info>
@@ -9,9 +8,10 @@
 	<group>attack.defense_evasion,attack.t1036,MITRE</group>
 </rule>
 
-<rule id="250531" level="12">
+<rule id="250531" level="0">
 	<if_sid>250530</if_sid>
-	<field name="win.eventdata.image">\\procdump.exe|\\procdump64.exe</field>
+	<field name="win.eventdata.Image">\\\\procdump.exe|\\\\procdump64.exe</field>
 	<description>Whitelist Interaction: Renamed ProcDump</description>
 	<group>attack.defense_evasion,attack.t1036,MITRE</group>
 </rule>
+

@@ -1,6 +1,6 @@
-<rule id="250410" level="12">
+<rule id="250410" level="15">
 	<if_group>sysmon_event_11</if_group>
-	<regex>\\\\AppData\\\\Local\\\\Temp\\\\SAM-\..dmp</regex>
+	<field name="win.eventdata.TargetFilename">\\\\AppData\\\\Local\\\\Temp\\\\SAM-\..dmp</field>
 	<description>ATT&CK T1003: QuarksPwDump Dump File</description>
 	<info type="text">Detects a dump file written by QuarksPwDump password dumper </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -8,3 +8,4 @@
 	<info type="link">https://jpcertcc.github.io/ToolAnalysisResultSheet/details/QuarksPWDump.htm </info>
 	<group>attack.credential_access,attack.t1003,MITRE</group>
 </rule>
+

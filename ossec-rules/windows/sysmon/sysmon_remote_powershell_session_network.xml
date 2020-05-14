@@ -1,4 +1,4 @@
-<rule id="250500" level="12">
+<rule id="250500" level="14">
 	<if_group>sysmon_event3</if_group>
 	<field name="win.eventdata.DestinationPort">^5985$|^5986$</field>
 	<description>ATT&CK T1086: Remote PowerShell Session</description>
@@ -11,7 +11,8 @@
 
 <rule id="250501" level="0">
 	<if_sid>250500</if_sid>
-	<field name="win.eventdata.User">NT AUTHORITY\\NETWORK SERVICE</field>
+	<field name="win.eventdata.User">NT AUTHORITY\\\\NETWORK SERVICE</field>
 	<description>Whitelist Interaction: Remote PowerShell Session</description>
 	<group>attack.execution,attack.t1086,MITRE</group>
 </rule>
+

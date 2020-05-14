@@ -1,10 +1,11 @@
-<rule id="250840" level="12">
+<rule id="250840" level="14">
 	<if_group>sysmon_event_11</if_group>
-	<field name="win.eventdata.image">\\mstsc.exe</field>
-	<field name="win.eventdata.TargetFileName">\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\</field>
+	<field name="win.eventdata.Image">\\\\mstsc.exe</field>
+	<field name="win.eventdata.TargetFileName">\\\\Microsoft\\\\Windows\\\\Start Menu\\\\Programs\\\\Startup\\\\</field>
 	<description>ATT&CK: Hijack Legit RDP Session to Move Laterally</description>
 	<info type="text">Detects the usage of tsclient share to place a backdoor on the RDP source machine's startup folder </info>
 	<info type="text">Falsepositives: unknown. </info>
 	<info type="text">Sigma UUID: 52753ea4-b3a0-4365-910d-36cff487b789 </info>
 	<group>MITRE</group>
 </rule>
+

@@ -1,6 +1,6 @@
-<rule id="250510" level="12">
+<rule id="250510" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.description">Java Update Scheduler|Java(TM) Update Scheduler</field>
+	<field name="win.eventdata.Description">Java Update Scheduler|Java\(TM\) Update Scheduler</field>
 	<description>ATT&CK T1036: Renamed jusched.exe</description>
 	<info type="text">Detects renamed jusched.exe used by cobalt group </info>
 	<info type="text">Falsepositives: penetration tests, red teaming. </info>
@@ -11,7 +11,8 @@
 
 <rule id="250511" level="0">
 	<if_sid>250510</if_sid>
-	<field name="win.eventdata.image">\\jusched.exe</field>
+	<field name="win.eventdata.Image">\\\\jusched.exe$</field>
 	<description>Whitelist Interaction: Renamed jusched.exe</description>
 	<group>attack.t1036,attack.execution,MITRE</group>
 </rule>
+

@@ -1,6 +1,6 @@
 <rule id="250250" level="10">
 	<if_group>sysmon_event_11</if_group>
-	<field name="win.eventdata.targetfilename">lsass</field>
+	<field name="win.eventdata.TargetFilename">lsass</field>
 	<field name="win.eventdata.TargetFilename">dmp$</field>
 	<description>ATT&CK T1003: LSASS Memory Dump File Creation</description>
 	<info type="text">LSASS memory dump creation using operating systems utilities. Procdump will use process name in output file if no name is specified </info>
@@ -9,3 +9,4 @@
 	<info type="link">https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment </info>
 	<group>attack.credential_access,attack.t1003,MITRE</group>
 </rule>
+

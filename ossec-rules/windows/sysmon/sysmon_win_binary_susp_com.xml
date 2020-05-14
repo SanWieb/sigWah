@@ -1,8 +1,8 @@
-<rule id="250900" level="12">
+<rule id="250900" level="14">
 	<if_group>sysmon_event3</if_group>
 	<field name="win.eventdata.Initiated">true</field>
 	<field name="win.eventdata.DestinationHostname">dl.dropboxusercontent.com|.pastebin.com|.githubusercontent.com</field>
-	<field name="win.eventdata.Image">:\\Windows\\</field>
+	<field name="win.eventdata.Image">:\\\\Windows\\\\</field>
 	<description>ATT&CK T1105: Microsoft Binary Suspicious Communication Endpoint</description>
 	<info type="text">Detects an executable in the Windows folder accessing suspicious domains </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -11,3 +11,4 @@
 	<info type="link">https://twitter.com/M_haggis/status/1032799638213066752 </info>
 	<group>attack.lateral_movement,attack.t1105,MITRE</group>
 </rule>
+

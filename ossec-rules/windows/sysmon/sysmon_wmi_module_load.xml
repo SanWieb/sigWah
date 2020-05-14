@@ -1,6 +1,6 @@
-<rule id="250930" level="12">
+<rule id="250930" level="14">
 	<if_group>sysmon_event7</if_group>
-	<field name="win.eventdata.ImageLoaded">\\wmiclnt.dll|\\WmiApRpl.dll|\\wmiprov.dll|\\wmiutils.dll|\\wbemcomn.dll|\\wbemprox.dll|\\WMINet_Utils.dll|\\wbemsvc.dll|\\fastprox.dll</field>
+	<field name="win.eventdata.ImageLoaded">\\\\wmiclnt.dll$|\\\\WmiApRpl.dll$|\\\\wmiprov.dll$|\\\\wmiutils.dll$|\\\\wbemcomn.dll$|\\\\wbemprox.dll$|\\\\WMINet_Utils.dll$|\\\\wbemsvc.dll$|\\\\fastprox.dll$</field>
 	<description>ATT&CK T1047: WMI Modules Loaded</description>
 	<info type="text">Detects non wmiprvse loading WMI modules </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -11,7 +11,8 @@
 
 <rule id="250931" level="0">
 	<if_sid>250930</if_sid>
-	<field name="win.eventdata.image">\\WmiPrvSe.exe|\\WmiPrvSE.exe|\\WmiAPsrv.exe|\\svchost.exe</field>
+	<field name="win.eventdata.Image">\\\\WmiPrvSe.exe$|\\\\WmiPrvSE.exe$|\\\\WmiAPsrv.exe$|\\\\svchost.exe$</field>
 	<description>Whitelist Interaction: WMI Modules Loaded</description>
 	<group>attack.execution,attack.t1047,MITRE</group>
 </rule>
+

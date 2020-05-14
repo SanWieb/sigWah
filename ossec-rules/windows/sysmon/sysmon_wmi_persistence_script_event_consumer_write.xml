@@ -1,6 +1,6 @@
-<rule id="250950" level="12">
+<rule id="250950" level="14">
 	<if_group>sysmon_event_11</if_group>
-	<field name="win.eventdata.Image">\\WINDOWS\\system32\\wbem\\scrcons.exe</field>
+	<field name="win.eventdata.Image">:\\\\WINDOWS\\\\system32\\\\wbem\\\\scrcons.exe</field>
 	<description>ATT&CK T1084: WMI Persistence - Script Event Consumer File Write</description>
 	<info type="text">Detects file writes of WMI script event consumer </info>
 	<info type="text">Falsepositives: Unknown (data set is too small; further testing needed). </info>
@@ -8,3 +8,4 @@
 	<info type="link">https://www.eideon.com/2018-03-02-THL03-WMIBackdoors/ </info>
 	<group>attack.t1084,attack.persistence,MITRE</group>
 </rule>
+

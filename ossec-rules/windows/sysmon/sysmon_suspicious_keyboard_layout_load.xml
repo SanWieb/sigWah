@@ -1,6 +1,6 @@
-<rule id="250580" level="8">
+<rule id="250580" level="10">
 	<if_group>sysmon_event_13</if_group>
-	<field name="win.eventdata.targetobject">\\Keyboard Layout\\Preload\\|\\Keyboard Layout\\Substitutes</field>
+	<field name="win.eventdata.TargetObject">\\\\Keyboard Layout\\\\Preload|\\\\Keyboard Layout\\\\Substitutes</field>
 	<field name="win.eventdata.Details">00000429|00050429|0000042a</field>
 	<description>ATT&CK: Suspicious Keyboard Layout Load</description>
 	<info type="text">Detects the keyboard preload installation with a suspicious keyboard layout, e.g. Chinese, Iranian or Vietnamese layout load in user session on systems maintained by US staff only </info>
@@ -10,3 +10,4 @@
 	<info type="link">https://github.com/SwiftOnSecurity/sysmon-config/pull/92/files </info>
 	<group>MITRE</group>
 </rule>
+

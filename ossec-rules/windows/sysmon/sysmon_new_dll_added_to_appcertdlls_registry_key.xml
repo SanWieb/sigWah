@@ -1,6 +1,6 @@
-<rule id="250330" level="8">
-	<if_group>sysmon_event_12</if_group>
-	<field name="win.eventdata.targetobject">HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\AppCertDlls</field>
+<rule id="250330" level="10">
+	<field name="win.system.EventID">^12$|^13$</field>
+	<field name="win.eventdata.TargetObject">HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\Session Manager\\\\AppCertDlls</field>
 	<description>ATT&CK T1182: New DLL Added to AppCertDlls Registry Key</description>
 	<info type="text">Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs value in the Registry key can be abused to obtain persistence and privilege escalation by causing a malicious DLL to be loaded and run in the context of separate processes on the computer. </info>
 	<info type="text">Falsepositives: Unkown. </info>
@@ -10,9 +10,9 @@
 	<group>attack.persistence,attack.t1182,MITRE</group>
 </rule>
 
-<rule id="250331" level="8">
-	<if_group>sysmon_event_13</if_group>
-	<field name="win.eventdata.targetobject">HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\AppCertDlls</field>
+<rule id="250330" level="10">
+	<field name="win.system.EventID">^14$</field>
+	<field name="win.eventdata.NewName">HKLM\\\\SYSTEM\\\\CurentControlSet\\\\Control\\\\Session Manager\\\\AppCertDlls</field>
 	<description>ATT&CK T1182: New DLL Added to AppCertDlls Registry Key</description>
 	<info type="text">Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs value in the Registry key can be abused to obtain persistence and privilege escalation by causing a malicious DLL to be loaded and run in the context of separate processes on the computer. </info>
 	<info type="text">Falsepositives: Unkown. </info>
@@ -22,14 +22,4 @@
 	<group>attack.persistence,attack.t1182,MITRE</group>
 </rule>
 
-<rule id="250332" level="8">
-	<if_group>sysmon_event_14</if_group>
-	<field name="win.eventdata.newname">HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\AppCertDlls</field>
-	<description>ATT&CK T1182: New DLL Added to AppCertDlls Registry Key</description>
-	<info type="text">Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs value in the Registry key can be abused to obtain persistence and privilege escalation by causing a malicious DLL to be loaded and run in the context of separate processes on the computer. </info>
-	<info type="text">Falsepositives: Unkown. </info>
-	<info type="text">Sigma UUID: 6aa1d992-5925-4e9f-a49b-845e51d1de01 </info>
-	<info type="link">http://www.hexacorn.com/blog/2013/01/19/beyond-good-ol-run-key-part-3/ </info>
-	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/14f90406-10a0-4d36-a672-31cabe149f2f.html </info>
-	<group>attack.persistence,attack.t1182,MITRE</group>
-</rule>
+

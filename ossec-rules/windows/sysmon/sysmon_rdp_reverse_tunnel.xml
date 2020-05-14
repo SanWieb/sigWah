@@ -1,9 +1,9 @@
-<rule id="250440" level="12">
+<rule id="250440" level="14">
 	<if_group>sysmon_event3</if_group>
-	<field name="win.eventdata.Image">\\svchost.exe</field>
+	<field name="win.eventdata.Image">\\\\svchost.exe</field>
 	<field name="win.eventdata.Initiated">true</field>
-	<field name="win.eventdata.SourcePort">3389</field>
-	<field name="win.eventdata.DestinationIp">^127.|::1</field>
+	<field name="win.eventdata.SourcePort">^3389$</field>
+	<field name="win.eventdata.DestinationIp">127.|::1</field>
 	<description>ATT&CK T1076: RDP Over Reverse SSH Tunnel</description>
 	<info type="text">Detects svchost hosting RDP termsvcs communicating with the loopback address and on TCP port 3389 </info>
 	<info type="text">Falsepositives: unknown. </info>
@@ -11,3 +11,4 @@
 	<info type="link">https://twitter.com/SBousseaden/status/1096148422984384514 </info>
 	<group>attack.defense_evasion,attack.command_and_control,attack.t1076,car.2013-07-002,MITRE</group>
 </rule>
+

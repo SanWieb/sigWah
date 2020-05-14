@@ -1,6 +1,6 @@
-<rule id="250830" level="5">
+<rule id="250830" level="8">
 	<if_group>sysmon_event_13</if_group>
-	<field name="win.eventdata.targetobject">\\EulaAccepted</field>
+	<field name="win.eventdata.TargetObject">\\\\EulaAccepted</field>
 	<description>ATT&CK: Usage of Sysinternals Tools</description>
 	<info type="text">Detects the usage of Sysinternals Tools due to accepteula key being added to Registry </info>
 	<info type="text">Falsepositives: Legitimate use of SysInternals tools. Programs that use the same Registry Key. </info>
@@ -8,3 +8,4 @@
 	<info type="link">https://twitter.com/Moti_B/status/1008587936735035392 </info>
 	<group>MITRE</group>
 </rule>
+

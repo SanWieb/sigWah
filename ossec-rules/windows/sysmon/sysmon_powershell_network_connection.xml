@@ -1,6 +1,6 @@
 <rule id="250400" level="8">
 	<if_group>sysmon_event3</if_group>
-	<field name="win.eventdata.image">\\powershell.exe</field>
+	<field name="win.eventdata.Image">\\\\powershell.exe</field>
 	<field name="win.eventdata.Initiated">true</field>
 	<description>ATT&CK T1086: PowerShell Network Connections</description>
 	<info type="text">Detects a Powershell process that opens network connections - check for suspicious target ports and target systems - adjust to your environment (e.g. extend filters with company's ip range') </info>
@@ -12,9 +12,10 @@
 
 <rule id="250401" level="0">
 	<if_sid>250400</if_sid>
-	<field name="win.eventdata.DestinationIp">^10.|^192.168.|^172.16.|^172.17.|^172.18.|^172.19.|^172.20.|^172.21.|^172.22.|^172.23.|^172.24.|^172.25.|^172.26.|^172.27.|^172.28.|^172.29.|^172.30.|^172.31.|^127.0.0.1</field>
+	<field name="win.eventdata.DestinationIp">10.|192.168.|172.16.|172.17.|172.18.|172.19.|172.20.|172.21.|172.22.|172.23.|172.24.|172.25.|172.26.|172.27.|172.28.|172.29.|172.30.|172.31.|127.0.0.1</field>
 	<field name="win.eventdata.DestinationIsIpv6">false</field>
-	<field name="win.eventdata.user">NT AUTHORITY\SYSTEM</field>
+	<field name="win.eventdata.User">NT AUTHORITY\\\\SYSTEM</field>
 	<description>Whitelist Interaction: PowerShell Network Connections</description>
 	<group>attack.execution,attack.t1086,MITRE</group>
 </rule>
+

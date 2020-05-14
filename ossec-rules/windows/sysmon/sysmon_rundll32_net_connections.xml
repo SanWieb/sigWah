@@ -1,6 +1,6 @@
-<rule id="250550" level="8">
+<rule id="250550" level="10">
 	<if_group>sysmon_event3</if_group>
-	<field name="win.eventdata.image">\\rundll32.exe</field>
+	<field name="win.eventdata.Image">\\\\rundll32.exe</field>
 	<field name="win.eventdata.Initiated">true</field>
 	<description>ATT&CK T1085: Rundll32 Internet Connection</description>
 	<info type="text">Detects a rundll32 that communicates with public IP addresses </info>
@@ -16,3 +16,4 @@
 	<description>Whitelist Interaction: Rundll32 Internet Connection</description>
 	<group>attack.t1085,attack.defense_evasion,attack.execution,MITRE</group>
 </rule>
+

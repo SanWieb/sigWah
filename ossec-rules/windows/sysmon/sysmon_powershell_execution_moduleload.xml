@@ -1,6 +1,6 @@
-<rule id="250380" level="8">
+<rule id="250380" level="10">
 	<if_group>sysmon_event7</if_group>
-	<field name="win.eventdata.description">system.management.automation</field>
+	<field name="win.eventdata.Description">system.management.automation</field>
 	<field name="win.eventdata.ImageLoaded">system.management.automation</field>
 	<description>ATT&CK T1086: PowerShell Execution</description>
 	<info type="text">Detects execution of PowerShell </info>
@@ -9,3 +9,4 @@
 	<info type="link">https://github.com/hunters-forge/ThreatHunter-Playbook/blob/8869b7a58dba1cff63bae1d7ab923974b8c0539b/playbooks/WIN-190410151110.yaml </info>
 	<group>attack.execution,attack.t1086,MITRE</group>
 </rule>
+

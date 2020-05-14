@@ -1,6 +1,6 @@
-<rule id="250750" level="12">
+<rule id="250750" level="14">
 	<if_group>sysmon_event3</if_group>
-	<field name="win.eventdata.image">\\$Recycle.bin|\\Users\\All Users\\|\\Users\\Default\\|\\Users\\Public\\|\\Users\\Contacts\\|\\Users\\Searches\\|:\\Perflogs\\|\\config\\systemprofile\\|\\Windows\\Fonts\\|\\Windows\\IME\\|\\Windows\\addins\\</field>
+	<field name="win.eventdata.Image">\\\\\$Recycle.bin|\\\\Users\\\\All Users\\\\|\\\\Users\\\\Default\\\\|\\\\Users\\\\Public\\\\|\\\\Users\\\\Contacts\\\\|\\\\Users\\\\Searches\\\\|:\\\\Perflogs\\\\|\\\\config\\\\systemprofile\\\\|\\\\Windows\\\\Fonts\\\\|\\\\Windows\\\\IME\\\\|\\\\Windows\\\\addins\\\\</field>
 	<description>ATT&CK: Suspicious Program Location with Network Connections</description>
 	<info type="text">Detects programs with network connections running in suspicious files system locations </info>
 	<info type="text">Falsepositives: unknown. </info>
@@ -8,3 +8,4 @@
 	<info type="link">https://docs.google.com/spreadsheets/d/17pSTDNpa0sf6pHeRhusvWG6rThciE8CsXTSlDUAZDyo </info>
 	<group>MITRE</group>
 </rule>
+

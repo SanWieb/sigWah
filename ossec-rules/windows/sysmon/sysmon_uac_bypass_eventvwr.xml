@@ -1,6 +1,6 @@
-<rule id="250850" level="12">
+<rule id="250850" level="15">
 	<if_group>sysmon_event_13</if_group>
-	<regex>HKU\\\\\.\\\\mscfile\\\\shell\\\\open\\\\command</regex>
+	<field name="win.eventdata.TargetObject">HKU\\\\\.\\\\mscfile\\\\shell\\\\open\\\\command</field>
 	<description>ATT&CK T1088: UAC Bypass via Event Viewer</description>
 	<info type="text">Detects UAC bypass method using Windows event viewer </info>
 	<info type="text">Falsepositives: unknown. </info>
@@ -10,9 +10,9 @@
 	<group>attack.defense_evasion,attack.privilege_escalation,attack.t1088,car.2019-04-001,MITRE</group>
 </rule>
 
-<rule id="250851" level="12">
+<rule id="250851" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentImage">\\eventvwr.exe</field>
+	<field name="win.eventdata.ParentImage">\\\\eventvwr.exe</field>
 	<description>ATT&CK T1088: UAC Bypass via Event Viewer</description>
 	<info type="text">Detects UAC bypass method using Windows event viewer </info>
 	<info type="text">Falsepositives: unknown. </info>
@@ -24,7 +24,8 @@
 
 <rule id="250852" level="0">
 	<if_sid>250851</if_sid>
-	<field name="win.eventdata.Image">\\mmc.exe</field>
+	<field name="win.eventdata.Image">\\\\mmc.exe</field>
 	<description>Whitelist Interaction: UAC Bypass via Event Viewer</description>
 	<group>attack.defense_evasion,attack.privilege_escalation,attack.t1088,car.2019-04-001,MITRE</group>
 </rule>
+

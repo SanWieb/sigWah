@@ -1,8 +1,8 @@
-<rule id="250240" level="12">
+<rule id="250240" level="14">
 	<if_group>sysmon_event_10</if_group>
-	<field name="win.eventdata.targetimage">\\windows\\system32\\lsass.exe</field>
-	<field name="win.eventdata.grantedaccess">0x1fffff</field>
-	<field name="win.eventdata.calltrace">dbghelp.dll|dbgcore.dll</field>
+	<field name="win.eventdata.TargetImage">:\\\\windows\\\\system32\\\\lsass.exe</field>
+	<field name="win.eventdata.GrantedAccess">0x1fffff</field>
+	<field name="win.eventdata.CallTrace">dbghelp.dll|dbgcore.dll</field>
 	<description>ATT&CK T1003 S0002: LSASS Memory Dump</description>
 	<info type="text">Detects process LSASS memory dump using procdump or taskmgr based on the CallTrace pointing to dbghelp.dll or dbgcore.dll for win10 </info>
 	<info type="text">Falsepositives: unknown. </info>
@@ -10,3 +10,4 @@
 	<info type="link">https://blog.menasec.net/2019/02/threat-hunting-21-procdump-or-taskmgr.html </info>
 	<group>attack.t1003,attack.s0002,attack.credential_access,MITRE</group>
 </rule>
+

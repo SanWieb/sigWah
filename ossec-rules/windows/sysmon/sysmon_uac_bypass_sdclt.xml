@@ -1,6 +1,6 @@
-<rule id="250860" level="12">
+<rule id="250860" level="14">
 	<if_group>sysmon_event_13</if_group>
-	<regex>HKU\\\\\._Classes\\\\exefile\\\\shell\\\\runas\\\\command\\\\isolatedCommand</regex>
+	<field name="win.eventdata.TargetObject">HKU\\\\\._Classes\\\\exefile\\\\shell\\\\runas\\\\command\\\\isolatedCommand</field>
 	<description>ATT&CK T1088: UAC Bypass via Sdclt</description>
 	<info type="text">Detects changes to HKCU:\Software\Classes\exefile\shell\runas\command\isolatedCommand </info>
 	<info type="text">Falsepositives: unknown. </info>
@@ -8,3 +8,4 @@
 	<info type="link">https://enigma0x3.net/2017/03/17/fileless-uac-bypass-using-sdclt-exe/ </info>
 	<group>attack.defense_evasion,attack.privilege_escalation,attack.t1088,car.2019-04-001,MITRE</group>
 </rule>
+

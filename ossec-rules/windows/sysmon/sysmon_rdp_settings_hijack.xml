@@ -1,6 +1,6 @@
-<rule id="250450" level="12">
+<rule id="250450" level="14">
 	<if_group>sysmon_event_13</if_group>
-	<field name="win.eventdata.targetobject">\\services\\TermService\\Parameters\\ServiceDll|\\Control\\Terminal Server\\fSingleSessionPerUser|\\Control\\Terminal Server\\fDenyTSConnections</field>
+	<field name="win.eventdata.TargetObject">\\\\services\\\\TermService\\\\Parameters\\\\ServiceDll|\\\\Control\\\\Terminal Server\\\\fSingleSessionPerUser|\\\\Control\\\\Terminal Server\\\\fDenyTSConnections</field>
 	<description>ATT&CK: RDP Sensitive Settings Changed</description>
 	<info type="text">Detects changes to RDP terminal service sensitive settings </info>
 	<info type="text">Falsepositives: unknown. </info>
@@ -8,3 +8,4 @@
 	<info type="link">https://blog.menasec.net/2019/02/threat-hunting-rdp-hijacking-via.html </info>
 	<group>attack.defense_evasion,MITRE</group>
 </rule>
+

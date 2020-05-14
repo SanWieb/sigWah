@@ -1,7 +1,8 @@
-<rule id="250370" level="12">
+<rule id="250370" level="14">
 	<if_group>sysmon_event_13</if_group>
-	<field name="win.eventdata.targetobject">\\services\\|\\ImagePath$|\\FailureCommand$|\\Parameters\\ServiceDll$</field>
 	<field name="win.eventdata.IntegrityLevel">Medium</field>
+	<field name="win.eventdata.TargetObject">\\\\services\\\\</field>
+	<field name="win.eventdata.TargetObject">\\\\ImagePath$|\\\\FailureCommand$|\\\\Parameters\\\\ServiceDll$</field>
 	<description>ATT&CK T1058: Possible Privilege Escalation via Service Permissions Weakness</description>
 	<info type="text">Detect modification of services configuration (ImagePath, FailureCommand and ServiceDLL) in registry by processes with Medium integrity level </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -10,3 +11,4 @@
 	<info type="link">https://pentestlab.blog/2017/03/31/insecure-registry-permissions/ </info>
 	<group>attack.privilege_escalation,attack.t1058,MITRE</group>
 </rule>
+

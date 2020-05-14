@@ -1,4 +1,4 @@
-<rule id="250590" level="12">
+<rule id="250590" level="14">
 	<if_group>sysmon_event3</if_group>
 	<field name="win.eventdata.DestinationPort">^88$</field>
 	<field name="win.eventdata.Initiated">true</field>
@@ -12,7 +12,8 @@
 
 <rule id="250591" level="0">
 	<if_sid>250590</if_sid>
-	<field name="win.eventdata.image">\\lsass.exe|\\opera.exe|\\chrome.exe|\\firefox.exe</field>
+	<field name="win.eventdata.Image">\\\\lsass.exe$|\\\\opera.exe$|\\\\chrome.exe$|\\\\firefox.exe$</field>
 	<description>Whitelist Interaction: Suspicious Outbound Kerberos Connection</description>
 	<group>attack.lateral_movement,attack.t1208,MITRE</group>
 </rule>
+

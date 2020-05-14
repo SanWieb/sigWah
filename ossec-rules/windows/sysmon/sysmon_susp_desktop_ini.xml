@@ -1,6 +1,6 @@
-<rule id="250620" level="8">
+<rule id="250620" level="10">
 	<if_group>sysmon_event_11</if_group>
-	<field name="win.eventdata.TargetFilename">\\desktop.ini</field>
+	<field name="win.eventdata.TargetFilename">\\\\desktop.ini$</field>
 	<description>ATT&CK T1023: Suspicious desktop.ini Action</description>
 	<info type="text">Detects unusual processes accessing desktop.ini, which can be leveraged to alter how Explorer displays a folder's content (i.e. renaming files) without changing them on disk. </info>
 	<info type="text">Falsepositives: Operations performed through Windows SCCM or equivalent. </info>
@@ -11,7 +11,8 @@
 
 <rule id="250621" level="0">
 	<if_sid>250620</if_sid>
-	<field name="win.eventdata.TargetFilename">\\Windows\\explorer.exe|\\Windows\\System32\\msiexec.exe|\\Windows\\System32\\mmc.exe</field>
-	<description>ATT&CK T1023: Suspicious desktop.ini Action</description>
+	<field name="win.eventdata.Image">:\\\\Windows\\\\explorer.exe|:\\\\Windows\\\\System32\\\\msiexec.exe|:\\\\Windows\\\\System32\\\\mmc.exe</field>
+	<description>Whitelist Interaction: Suspicious desktop.ini Action</description>
 	<group>attack.persistence,attack.t1023,MITRE</group>
 </rule>
+

@@ -1,7 +1,7 @@
-<rule id="250910" level="12">
+<rule id="250910" level="15">
 	<if_group>sysmon_event_13</if_group>
+	<field name="win.eventdata.TargetObject">\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Image File Execution Options\\\\\.\\\\GlobalFlag|\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\SilentProcessExit\\\\\.\\\\ReportingMode|\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\SilentProcessExit\\\\\.\\\\MonitorProcess</field>
 	<field name="win.eventdata.EventType">SetValue</field>
-	<regex>\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Image File Execution Options\\\\.\\\\GlobalFlag|\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\SilentProcessExit\\\\\.\\\\ReportingMode|\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\SilentProcessExit\\\\\.\\\\MonitorProcess</regex>
 	<description>ATT&CK T1183: Registry Persistence Mechanisms</description>
 	<info type="text">Detects persistence registry keys </info>
 	<info type="text">Falsepositives: unknown. </info>
@@ -9,3 +9,4 @@
 	<info type="link">https://oddvar.moe/2018/04/10/persistence-using-globalflags-in-image-file-execution-options-hidden-from-autoruns-exe/ </info>
 	<group>attack.privilege_escalation,attack.persistence,attack.defense_evasion,attack.t1183,car.2013-01-002,MITRE</group>
 </rule>
+
