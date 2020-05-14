@@ -1,6 +1,6 @@
 <rule id="260140" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">Temp\\\\wtask.exe\s+/create|%windir:~-3,1%%PUBLIC:~-9,1%|/E:vbscript \. \.:\\\\Users\p.txt"\s+/F|/tn\s+"Security\s+Script |%windir:~-1,1%</field>
+	<field name="win.eventdata.CommandLine">Temp\\\\wtask.exe\s+/create|%windir:~-3,1%%PUBLIC:~-9,1%|/E:vbscript \. \.:\\\\Users\..txt"\s+/F|/tn\s+"Security\s+Script |%windir:~-1,1%</field>
 	<description>ATT&CK: Mustang Panda Dropper</description>
 	<info type="text">Detects specific process parameters as used by Mustang Panda droppers </info>
 	<info type="text">Falsepositives: Unlikely. </info>
