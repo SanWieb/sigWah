@@ -2,13 +2,47 @@ import yaml
 import os
 import re
 
-directory = 'sigma-rules/windows/process_creation'
-output_dir = 'ossec-rules/windows/process_creation'
+directory = 'sigma-rules/windows/sysmon'
+output_dir = 'ossec-rules/windows/sysmon'
 
 
 class SigmaOssec(object):
     rulenumber = 0
     data = {}
+    events ={}
+    events['system'] = ['Provider', 'EventID', 'Version', 'Level', 'Task', 'Opcode', 'Keywords', 'TimeCreated', 'EventRecordID', 'Correlation', 'Execution', 'Channel', 'Computer', 'Security']
+    events['event1'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'CommandLine', 'CurrentDirectory', 'User', 'LogonGuid', 'LogonId', 'TerminalSessionId', 'IntegrityLevel', 'Hashes', 'ParentProcessGuid', 'ParentProcessId', 'ParentImage', 'ParentCommandLine', 'OriginalFilename', 'Description', 'Product', 'Company']
+    events['event2'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'TargetFilename', 'CreationUtcTime', 'PreviousCreationUtcTime']
+    events['event3'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'User', 'Protocol', 'Initiated', 'SourceIsIpv6', 'SourceIp', 'SourceHostname', 'SourcePort', 'SourcePortName', 'DestinationIsIpv6', 'DestinationIp', 'DestinationHostname', 'DestinationPort', 'DestinationPortName']
+    events['event4'] = ['UtcTime', 'State', 'Version', 'SchemaVersion']
+    events['event5'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image']
+    events['event6'] = ['UtcTime', 'ImageLoaded', 'Hashes', 'Signed', 'Signature', 'SignatureStatus']
+    events['event7'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'ImageLoaded', 'Hashes', 'Signed', 'Signature', 'SignatureStatus', 'OriginalFilename']
+    events['event8'] = ['UtcTime', 'SourceProcessGuid', 'SourceProcessId', 'SourceImage', 'TargetProcessGuid', 'TargetProcessId', 'TargetImage', 'NewThreadId', 'StartAddress', 'StartModule', 'StartFunction']
+    events['event9'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'Device']
+    events['event10'] = ['UtcTime', 'SourceProcessGUID', 'SourceProcessId', 'SourceThreadId', 'SourceImage', 'TargetProcessGUID', 'TargetProcessId', 'TargetImage', 'GrantedAccess', 'CallTrace']
+    events['event11'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'TargetFilename', 'CreationUtcTime']
+    events['event12'] = ['EventType', 'UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'TargetObject']
+    events['event13'] = ['EventType', 'UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'TargetObject', 'Details']
+    events['event14'] = ['EventType', 'UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'TargetObject', 'NewName']
+    events['event15'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'TargetFilename', 'CreationUtcTime', 'Hash']
+    events['event16'] = ['UtcTime', 'Configuration', 'ConfigurationFileHash']
+    events['event17'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'PipeName', 'Image']
+    events['event18'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'PipeName', 'Image']
+    events['event19'] = ['EventType', 'UtcTime', 'Operation', 'User', 'EventNamespace', 'Name', 'Query']
+    events['event20'] = ['EventType', 'UtcTime', 'Operation', 'User', 'Name', 'Type', 'Destination']
+    events['event21'] = ['EventType', 'UtcTime', 'Operation', 'User', 'Consumer', 'Filter']
+    events['event225'] = []
+    events['extra_fields'] = ['servicename', 'taskname', 'qname', 'groupname', 'processname', 'parentintegritylevel', 'parentuser']
+    events['syntax_errors'] = ['command', 'username', 'processcommandline', 'newprocessname']
+    known_fields = []
+    for event in events:
+        known_fields += [x.lower() for x in events[event]]
+    known_fields = list(set(known_fields))
+
+    commandline_fields = ['commandline', 'command', 'parentcommandline']
+    hash_fields = ['sha1', 'sha256', 'md5', 'imphash']
+
     common_fields = ['utctime', 'processguid', 'processid', 'image', 'currentdirectory', 'user', 'logonguid',
                      'logonid', 'terminalsessionid', 'integritylevel', 'parentintegritylevel', 'parentprocessguid',
                      'parentprocessid', 'parentimage', 'parentcommandline', 'originalfilename', 'company', 'eventid',
@@ -68,7 +102,7 @@ class SigmaOssec(object):
                 elif self.is_and_not_statement(condition):
                     output = self.handle_and_not_filter(data, output)
                 else:
-                    output['validation_failed_detection'] = 'Manual check needed! Unknown condition'
+                    output['validation_failed_detection'] = 'Manual check needed! Unknown condition {}'.format(condition)
                     # manual check needed, for now it will be processed as OR statement
                     output = self.handle_standard_or(data, output)
             # merge the document
@@ -157,12 +191,12 @@ class SigmaOssec(object):
 # -----------  Condition Checkers ------------- #
     def is_or_statement(self, condition):
         condition_parts = condition.split(' ')
-        if len(condition_parts) == 1 or condition == '1 of them':
+        if len(condition_parts) == 1 or condition.lower() == '1 of them':
             return True
         elif len(condition_parts) > 2:
             i = 1
             while len(condition_parts) > i:
-                if condition_parts[i] != 'or':
+                if condition_parts[i].lower() != 'or':
                     return False
                 # only odd numbers
                 i += 2
@@ -172,7 +206,7 @@ class SigmaOssec(object):
         if len(condition_parts) > 2:
             i = 1
             while len(condition_parts) > i:
-                if condition_parts[i] != 'and':
+                if condition_parts[i].lower() != 'and':
                     return False
                 # only odd numbers
                 i += 2
@@ -181,7 +215,7 @@ class SigmaOssec(object):
             return False
     def is_and_not_statement(self, condition):
         condition_parts = condition.split(' ')
-        if len(condition_parts) == 4 and condition_parts[1] == 'and' and condition_parts[2] == 'not':
+        if len(condition_parts) == 4 and condition_parts[1].lower() == 'and' and condition_parts[2].lower() == 'not':
             return True
         else:
             return False
@@ -244,42 +278,16 @@ class SigmaOssec(object):
             end_string = '$'
         # try:
         fieldname_stripped = fieldname.split('|')[0].lower()
-        if fieldname_stripped in ['commandline', 'command']:
-            rule = self.parse_commandline(selection, fieldname, start_string, end_string)
-        elif fieldname_stripped in ['sha1', 'sha256', 'md5', 'imphash']:
+        if fieldname_stripped in self.commandline_fields:
+            rule = self.parse_common(selection, fieldname, start_string, end_string)
+        elif fieldname_stripped in self.hash_fields:
             rule = self.parse_hash(selection, fieldname)
-        elif fieldname_stripped in self.common_fields:
+        elif fieldname_stripped in self.known_fields:
             rule = self.parse_common(selection, fieldname, start_string, end_string)
         else:
+            print(fieldname_stripped)
             rule = 'Manual check needed! Rule failed Field: {}'.format(fieldname)
         return rule
-
-    def parse_commandline(self, selection, fieldname, start_string, end_string):
-        query = ''
-        # handle wrong syntax of Sigma > should be dict not str
-        if type(selection[fieldname]) == list:
-            first_key = True
-            for item in selection[fieldname]:
-                if not first_key:
-                    query += '|'
-                else:
-                    first_key = False
-                # replace with single backslash
-                item = self.replace_backslash_wildcard(item)
-                item = self.replace_variables(item)
-                item = self.replace_space(item)
-                query += start_string + item + end_string
-            return '\t<field name="win.eventdata.CommandLine">{}</field>'.format(query)
-        elif type(selection[fieldname]) == str:
-            item = selection[fieldname]
-            # replace with single backslash
-            item = self.replace_backslash_wildcard(item)
-            item = self.replace_variables(item)
-            item = self.replace_space(item)
-            query += start_string + item + end_string
-            return '\t<field name="win.eventdata.CommandLine">{}</field>'.format(query)
-        else:
-            return 'Manual check needed! Rule parse failed (Parse Commandline)'
 
     def parse_hash(self, selection, fieldname):
         fieldname_stripped = fieldname.split('|')[0].lower()
@@ -300,7 +308,10 @@ class SigmaOssec(object):
                     query += '|'
                 else:
                     first_key = False
-                query += hash + item
+                if item is None:
+                    query += 'none|^$|^ $|^-$'
+                else:
+                    query += hash + item
             return '\t<field name="win.eventdata.Hashes">{}</field>'.format(query)
         elif type(selection[fieldname]) == str:
             item = hash + selection[fieldname]
@@ -326,12 +337,16 @@ class SigmaOssec(object):
                     first_key = False
                 item = self.replace_backslash_wildcard(item)
                 item = self.replace_variables(item)
+                if fieldname_stripped.lower() in ['commandline', 'command']:
+                    item = self.replace_space(item)
                 query += start_string + item + end_string
             return '\t<field name="win.eventdata.{}">{}</field>'.format(fieldname_stripped, query)
         elif type(selection[fieldname]) == str:
             item = selection[fieldname]
             item = self.replace_backslash_wildcard(item)
             item = self.replace_variables(item)
+            if fieldname_stripped.lower() in ['commandline', 'command']:
+                item = self.replace_space(item)
             query += start_string + item + end_string
             return '\t<field name="win.eventdata.{}">{}</field>'.format(fieldname_stripped, query)
         # event ids
@@ -343,7 +358,6 @@ class SigmaOssec(object):
             return 'Manual check needed! Rule parse failed (Parse Common)'
 
     def replace_variables(self, item):
-        print(item)
         # ! backslashes
         # replace ( with \(  (must be escaped)
         item = item.replace('(', '\\(').replace(')', '\\)')
@@ -366,7 +380,6 @@ class SigmaOssec(object):
         # remove wildcard start and end of string
         item = re.sub(r'\\\.$', '', item)
         item = re.sub(r'^\\\.', '', item)
-        print(item)
         return item
 
     def replace_backslash_wildcard(self, item, backslash='\\\\\\\\'):
@@ -374,6 +387,7 @@ class SigmaOssec(object):
         # Write \* if you want a plain wildcard * as resulting value.
         # Write \\* if you want a plain backslash followed by a wildcard * as resulting value.
         # Write \\\* if you want a plain backslash followed by a plain * as resulting value.
+        print(item)
         item = item.replace('\\\\\\\\', '%|TWO-P-BACKSLASH|%')
         item = item.replace('\\\\\\*', '%|P-BACKSLASH-P-WILDCARD|%')
         item = item.replace('\\\\*', '%|P-BACKSLASH-WILDCARD')
@@ -432,13 +446,24 @@ class SigmaOssec(object):
             selection_lower = {k.lower(): v for k, v in selection.items()}
             if 'eventid' in selection_lower:
                 event_id = selection_lower['eventid']
-                if event_id < 16:
-                    if event_id > 9:
-                        return '\t<if_group>sysmon_event_{}</if_group>'.format(event_id)
-                    else:
-                        return '\t<if_group>sysmon_event{}</if_group>'.format(event_id)
+                if type(event_id) is list:
+                    first_key = True
+                    query = ''
+                    for item in event_id:
+                        if not first_key:
+                            query += '|'
+                        else:
+                            first_key = False
+                        query += '^{}$'.format(item)
+                    return '\t<field name="win.system.EventID">{}</field>'.format(query)
                 else:
-                    return '\t<field name="win.system.EventID">^{}$</field>'.format(event_id)
+                    if event_id < 16:
+                        if event_id > 9:
+                            return '\t<if_group>sysmon_event_{}</if_group>'.format(event_id)
+                        else:
+                            return '\t<if_group>sysmon_event{}</if_group>'.format(event_id)
+                    else:
+                        return '\t<field name="win.system.EventID">^{}$</field>'.format(event_id)
         if 'logsource' in data and 'category' in data['logsource'] and 'product' in data['logsource']:
             if data['logsource']['category'] == 'process_creation' and data['logsource']['product'] == 'windows':
                 return '\t<if_group>sysmon_event1</if_group>'
