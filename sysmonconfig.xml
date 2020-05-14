@@ -150,8 +150,8 @@
 			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k localSystemNetworkRestricted -s TabletInputService</CommandLine>
 			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k localSystemNetworkRestricted -s UmRdpService</CommandLine>
 			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k localSystemNetworkRestricted -s WPDBusEnum</CommandLine>
-			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k localSystemNetworkRestricted -p -s NgcSvc</CommandLine> <!--Microsoft:Passport--> 
-			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k localServiceNetworkRestricted -p -s NgcCtnrSvc</CommandLine> <!--Microsoft:Passport Container--> 
+			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k localSystemNetworkRestricted -p -s NgcSvc</CommandLine> <!--Microsoft:Passport-->
+			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k localServiceNetworkRestricted -p -s NgcCtnrSvc</CommandLine> <!--Microsoft:Passport Container-->
 			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k localServiceAndNoImpersonation -s SCardSvr</CommandLine>
 			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s wuauserv</CommandLine>
 			<CommandLine condition="is">C:\Windows\System32\svchost.exe -k netsvcs -p -s SessionEnv</CommandLine> <!--Windows:Remote desktop configuration-->
@@ -226,7 +226,7 @@
 			<CommandLine condition="begin with">"C:\Program Files\Google\Chrome\Application\chrome.exe" --type=</CommandLine> <!--Google:Chrome: massive command-line arguments-->
 		</ProcessCreate>
 	</RuleGroup>
-	
+
 	<!--SYSMON EVENT ID 2 : FILE CREATION TIME RETROACTIVELY CHANGED IN THE FILESYSTEM [FileCreateTime]-->
 		<!--COMMENT:	[ https://attack.mitre.org/wiki/Technique/T1099 ] -->
 
@@ -258,7 +258,7 @@
 		<!--TECHNICAL:	For the DestinationHostname, Sysmon uses the GetNameInfo API, which will often not have any information, and may just be a CDN. This is NOT reliable for filtering.-->
 		<!--TECHNICAL:	For the DestinationPortName, Sysmon uses the GetNameInfo API for the friendly name of ports you see in logs.-->
 		<!--TECHNICAL:	These exe do not initiate their connections, and thus includes do not work in this section: BITSADMIN NLTEST-->
-		
+
 		<!-- https://www.first.org/resources/papers/conf2017/APT-Log-Analysis-Tracking-Attack-Tools-by-Audit-Policy-and-Sysmon.pdf -->
 
 		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image, User, Protocol, Initiated, SourceIsIpv6, SourceIp, SourceHostname, SourcePort, SourcePortName, DestinationIsIpV6, DestinationIp, DestinationHostname, DestinationPort, DestinationPortName-->
@@ -447,9 +447,17 @@
 		<!--DATA: UtcTime, SourceProcessGuid, SourceProcessId, SourceThreadId, SourceImage, TargetProcessGuid, TargetProcessId, TargetImage, GrantedAccess, CallTrace-->
 	<RuleGroup name="" groupRelation="or">
 		<ProcessAccess onmatch="include">
+			<CallTrace condition="contains">VBE7.DLL</CallTrace>
 			<!--NOTE: Using "include" with no rules means nothing in this section will be logged-->
 		</ProcessAccess>
 	</RuleGroup>
+
+	<RuleGroup name="" groupRelation="or">
+		<ProcessAccess onmatch="exclude">
+			<CallTrace condition="excludes">UNKNOWN</CallTrace>
+		</ProcessAccess>
+	</RuleGroup>
+
 
 	<!--SYSMON EVENT ID 11 : FILE CREATED [FileCreate]-->
 		<!--EVENT 11: "File created"-->
@@ -692,6 +700,8 @@
 			<TargetObject name="InvDB" condition="contains">Compatibility Assistant\Store\</TargetObject> <!-- Inventory -->
 			<!--Suspicious sources-->
 			<Image name="Suspicious,ImageBeginWithBackslash" condition="begin with">\</Image> <!--Devices and VSC shouldn't be executing changes | Credit: @SBousseaden @ionstorm @neu5ron @PerchedSystems [ https://twitter.com/SwiftOnSecurity/status/1133167323991486464 ] -->
+			<!-- Sigma -->
+			<TargetObject name="T1105: Pandemic Registry Key" condition="begin with">HKLM\SYSTEM\CurrentControlSet\services\null\Instance</TargetObject>
 		</RegistryEvent>
 	</RuleGroup>
 
@@ -789,6 +799,8 @@
 			<TargetFilename condition="end with">.vb</TargetFilename> <!--VisualBasicScripting files-->
 			<TargetFilename condition="end with">.vbe</TargetFilename> <!--VisualBasicScripting files-->
 			<TargetFilename condition="end with">.vbs</TargetFilename> <!--VisualBasicScripting files-->
+			<Hash condition="excludes">IMPHASH=00000000000000000000000000000000</Hash> <!-- Detects executable (non-empty imphash) https://twitter.com/0xrawsec/status/1002478725605273600?s=21 -->
+			<Hash condition="excludes">IMPHASH=null</Hash> <!-- Detects executable (non-empty imphash) https://twitter.com/0xrawsec/status/1002478725605273600?s=21 -->
 		</FileCreateStreamHash>
 
 	<RuleGroup name="" groupRelation="or">
@@ -799,7 +811,7 @@
 	<!--SYSMON EVENT ID 16 : SYSMON CONFIGURATION CHANGE-->
 		<!--EVENT 16: "Sysmon config state changed"-->
 		<!--COMMENT:	This ONLY logs if the hash of the configuration changes. Running "sysmon.exe -c" with the current configuration will not be logged with Event 16-->
-		
+
 		<!--DATA: UtcTime, Configuration, ConfigurationFileHash-->
 		<!--Cannot be filtered.-->
 
@@ -813,7 +825,30 @@
 		<!--DATA: UtcTime, ProcessGuid, ProcessId, PipeName, Image-->
 	<RuleGroup name="" groupRelation="or">
 		<PipeEvent onmatch="include">
-			<!--NOTE: Using incide with no rules means nothing in this section will be logged-->
+			<PipeName name="T1099 Mal Named Pipe" condition="is">\isapi_http</PipeName>  <!--  # Uroburos Malware Named Pipe -->
+			<PipeName name="T1099 Mal Named Pipe" condition="is">\isapi_dg</PipeName>  <!--  # Uroburos Malware Named Pipe -->
+			<PipeName name="T1099 Mal Named Pipe" condition="is">\isapi_dg2</PipeName>  <!--  # Uroburos Malware Named Pipe -->
+			<PipeName name="T1099 Mal Named Pipe" condition="is">\sdlrpc</PipeName>  <!--  # Cobra Trojan Named Pipe http://goo.gl/8rOZUX -->
+			<PipeName name="T1099 Mal Named Pipe" condition="is">\ahexec</PipeName>  <!--  # Sofacy group malware -->
+			<PipeName name="T1099 Mal Named Pipe" condition="is">\winsession</PipeName>  <!--  # Wild Neutron APT malware https://goo.gl/pivRZJ -->
+			<PipeName name="T1099 Mal Named Pipe" condition="is">\lsassw</PipeName>  <!--  # Wild Neutron APT malware https://goo.gl/pivRZJ -->
+			<PipeName name="T1099 Mal Named Pipe" condition="is">\46a676ab7f179e511e30dd2dc41bd388</PipeName>  <!--  # Project Sauron https://goo.gl/eFoP4A -->
+			<PipeName name="T1099 Mal Named Pipe" condition="is">\9f81f59bc58452127884ce513865ed20</PipeName>  <!--  # Project Sauron https://goo.gl/eFoP4A -->
+			<PipeName name="T1099 Mal Named Pipe" condition="is">\e710f28d59aa529d6792ca6ff0ca1b34</PipeName>  <!--  # Project Sauron https://goo.gl/eFoP4A -->
+			<PipeName name="T1099 Mal Named Pipe" condition="is">\rpchlp_3</PipeName>  <!--  # Project Sauron https://goo.gl/eFoP4A - Technical Analysis Input -->
+			<PipeName name="T1099 Mal Named Pipe" condition="is">\NamePipe_MoreWindows</PipeName>  <!--  # Cloud Hopper Annex B https://www.pwc.co.uk/cyber-security/pdf/cloud-hopper-annex-b-final.pdf, US-CERT Alert - RedLeaves https://www.us-cert.gov/ncas/alerts/TA17-117A -->
+			<PipeName name="T1099 Mal Named Pipe" condition="is">\pcheap_reuse</PipeName>  <!--  # Pipe used by Equation Group malware 77486bb828dba77099785feda0ca1d4f33ad0d39b672190079c508b3feb21fb0 -->
+			<PipeName name="T1099 Mal Named Pipe" condition="begin with	">\msagent_</PipeName>  <!--  # CS default named pipes https://github.com/Neo23x0/sigma/issues/253 -->
+			<PipeName name="T1099 Mal Named Pipe" condition="is">\gruntsvc</PipeName>  <!-- # Covenant default named pipe -->
+			<PipeName name="Turla Group Named Pipe" condition="is">\atctl</PipeName>  <!-- # https://github.com/Neo23x0/sigma/blob/master/rules/windows/sysmon/sysmon_apt_turla_namedpipes.yml -->
+			<PipeName name="Turla Group Named Pipe" condition="is">\userpipe</PipeName>  <!-- # https://github.com/Neo23x0/sigma/blob/master/rules/windows/sysmon/sysmon_apt_turla_namedpipes.yml -->
+			<PipeName name="Turla Group Named Pipe" condition="is">\iehelper</PipeName>  <!-- # https://github.com/Neo23x0/sigma/blob/master/rules/windows/sysmon/sysmon_apt_turla_namedpipes.yml -->
+			<PipeName name="Turla Group Named Pipe" condition="is">\sdlrpc</PipeName>  <!-- # https://github.com/Neo23x0/sigma/blob/master/rules/windows/sysmon/sysmon_apt_turla_namedpipes.yml -->
+			<PipeName name="Turla Group Named Pipe" condition="is">\comnap</PipeName>  <!-- # https://github.com/Neo23x0/sigma/blob/master/rules/windows/sysmon/sysmon_apt_turla_namedpipes.yml -->
+			<PipeName name="T1003: Cred Dump-Tool" condition="is">\lsadump</PipeName>  <!-- # https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment -->
+			<PipeName name="T1003: Cred Dump-Tool" condition="is">\cachedump</PipeName>  <!-- # https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment -->
+			<PipeName name="T1003: Cred Dump-Tool" condition="is">\wceservicepipe</PipeName>  <!-- # https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment -->
+			<PipeName name="T1086" condition="is">\PSHost</PipeName> <!-- Detects alternate PowerShell hosts potentially bypassing detections looking for powershell.exe -->
 		</PipeEvent>
 	</RuleGroup>
 
@@ -969,7 +1004,7 @@
 			<QueryName condition="end with">.criteo.net</QueryName> <!--Ads [ https://better.fyi/trackers/criteo.com/ ] -->
 			<QueryName condition="end with">.crwdcntrl.net</QueryName> <!--Ads: Lotame [ https://better.fyi/trackers/crwdcntrl.net/ ] -->
 			<QueryName condition="end with">.demdex.net</QueryName> <!--Ads | Microsoft default exclusion-->
-			<QueryName condition="end with">.domdex.com</QueryName> 
+			<QueryName condition="end with">.domdex.com</QueryName>
 			<QueryName condition="end with">.dotomi.com</QueryName> <!--Ads | Microsoft default exclusion-->
 			<QueryName condition="end with">.doubleclick.net</QueryName> <!--Ads:Conversant | Microsoft default exclusion [ https://www.crunchbase.com/organization/dotomi ] -->
 			<QueryName condition="end with">.doubleverify.com</QueryName> <!--Ads: Google-->

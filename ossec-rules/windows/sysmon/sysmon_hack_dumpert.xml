@@ -1,6 +1,6 @@
-<rule id="250180" level="12">
-	<if_group>sysmon_event_11</if_group>
-	<field name="win.eventdata.targetfilename">:\\Windows\\Temp\\dumpert.dmp</field>
+<rule id="250180" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Hashes">IMPHASH=09D278F9DE118EF09163C6140255C690</field>
 	<description>ATT&CK T1003: Dumpert Process Dumper</description>
 	<info type="text">Detects the use of Dumpert process dumper, which dumps the lsass.exe process memory </info>
 	<info type="text">Falsepositives: Very unlikely. </info>
@@ -10,9 +10,9 @@
 	<group>attack.credential_access,attack.t1003,MITRE</group>
 </rule>
 
-<rule id="250181" level="12">
-	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.hashes">IMPHASH=09D278F9DE118EF09163C6140255C690</field>
+<rule id="250181" level="15">
+	<if_group>sysmon_event_11</if_group>
+	<field name="win.eventdata.TargetFilename">:\\\\Windows\\\\Temp\\\\dumpert.dmp</field>
 	<description>ATT&CK T1003: Dumpert Process Dumper</description>
 	<info type="text">Detects the use of Dumpert process dumper, which dumps the lsass.exe process memory </info>
 	<info type="text">Falsepositives: Very unlikely. </info>
@@ -21,3 +21,4 @@
 	<info type="link">https://unit42.paloaltonetworks.com/actors-still-exploiting-sharepoint-vulnerability/ </info>
 	<group>attack.credential_access,attack.t1003,MITRE</group>
 </rule>
+

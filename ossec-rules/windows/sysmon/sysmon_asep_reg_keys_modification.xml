@@ -1,6 +1,6 @@
-<rule id="250060" level="8">
+<rule id="250060" level="10">
 	<if_group>sysmon_event_13</if_group>
-	<field name="win.eventdata.targetobject">\\software\\Microsoft\\Windows\\CurrentVersion\\Run|\\software\\Microsoft\\Windows\\CurrentVersion\\RunOnce|\\software\\Microsoft\\Windows\\CurrentVersion\\RunOnceEx|\\software\\Microsoft\\Windows\\CurrentVersion\\RunServices|\\software\\Microsoft\\Windows\\CurrentVersion\\RunServicesOnce|\\software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Userinit|\\software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Shell|\\software\\Microsoft\\Windows NT\\CurrentVersion\\Windows|\\software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders</field>
+	<field name="win.eventdata.TargetObject">\\\\software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run|\\\\software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\RunOnce|\\\\software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\RunOnceEx|\\\\software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\RunServices|\\\\software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\RunServicesOnce|\\\\software\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Winlogon\\\\Userinit|\\\\software\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Winlogon\\\\Shell|\\\\software\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Windows|\\\\software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\User Shell Folders</field>
 	<description>ATT&CK T1060: Autorun Keys Modification</description>
 	<info type="text">Detects modification of autostart extensibility point (ASEP) in registry </info>
 	<info type="text">Falsepositives: Legitimate software automatically (mostly, during installation) sets up autorun keys for legitimate reason. Legitimate administrator sets up autorun keys for legitimate reason. </info>
@@ -8,3 +8,4 @@
 	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1060/T1060.yaml </info>
 	<group>attack.persistence,attack.t1060,MITRE</group>
 </rule>
+

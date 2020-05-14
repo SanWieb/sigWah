@@ -1,6 +1,6 @@
-<rule id="250130" level="12">
-	<if_group>sysmon_event_17</if_group>
-	<field name="win.eventdata.pipename">\\lsadump|\\cachedump|\\wceservicepipe</field>
+<rule id="250130" level="15">
+	<field name="win.system.EventID">^17$</field>
+	<field name="win.eventdata.PipeName">\\\\lsadump|\\\\cachedump|\\\\wceservicepipe</field>
 	<description>ATT&CK T1003: Cred Dump-Tools Named Pipes</description>
 	<info type="text">Detects well-known credential dumping tools execution via specific named pipes </info>
 	<info type="text">Falsepositives: Legitimate Administrator using tool for password recovery. </info>
@@ -8,3 +8,4 @@
 	<info type="link">https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment </info>
 	<group>attack.credential_access,attack.t1003,MITRE</group>
 </rule>
+

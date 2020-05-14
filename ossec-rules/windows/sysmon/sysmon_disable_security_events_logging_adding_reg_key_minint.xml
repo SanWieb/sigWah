@@ -1,6 +1,6 @@
-<rule id="250150" level="12">
+<rule id="250150" level="14">
 	<if_group>sysmon_event_12</if_group>
-	<field name="win.eventdata.targetobject">HKLM\\SYSTEM\\CurrentControlSet\\Control\\MiniNt</field>
+	<field name="win.eventdata.TargetObject">HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\MiniNt</field>
 	<description>ATT&CK T1089: Disable Security Events Logging Adding Reg Key MiniNt</description>
 	<info type="text">Detects the addition of a key 'MiniNt' to the registry. Upon a reboot, Windows Event Log service will stopped write events. </info>
 	<info type="text">Falsepositives: Unkown. </info>
@@ -9,9 +9,9 @@
 	<group>attack.defense_evasion,attack.t1089,MITRE</group>
 </rule>
 
-<rule id="250151" level="12">
+<rule id="250151" level="14">
 	<if_group>sysmon_event_14</if_group>
-	<field name="win.eventdata.targetobject">HKLM\\SYSTEM\\CurrentControlSet\\Control\\MiniNt</field>
+	<field name="win.eventdata.NewName">HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\MiniNt</field>
 	<description>ATT&CK T1089: Disable Security Events Logging Adding Reg Key MiniNt</description>
 	<info type="text">Detects the addition of a key 'MiniNt' to the registry. Upon a reboot, Windows Event Log service will stopped write events. </info>
 	<info type="text">Falsepositives: Unkown. </info>
@@ -19,3 +19,4 @@
 	<info type="link">https://twitter.com/0gtweet/status/1182516740955226112 </info>
 	<group>attack.defense_evasion,attack.t1089,MITRE</group>
 </rule>
+

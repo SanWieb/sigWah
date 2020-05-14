@@ -1,6 +1,6 @@
-<rule id="250160" level="12">
+<rule id="250160" level="14">
 	<if_group>sysmon_event_13</if_group>
-	<field name="win.eventdata.targetobject">\\services\\DNS\\Parameters\\ServerLevelPluginDll</field>
+	<field name="win.eventdata.TargetObject">\\\\services\\\\DNS\\\\Parameters\\\\ServerLevelPluginDll</field>
 	<description>ATT&CK T1073: DNS ServerLevelPluginDll Install</description>
 	<info type="text">Detects the installation of a plugin DLL via ServerLevelPluginDll parameter in Registry, which can be used to execute code in context of the DNS server (restart required) </info>
 	<info type="text">Falsepositives: unknown. </info>
@@ -9,10 +9,9 @@
 	<group>attack.defense_evasion,attack.t1073,MITRE</group>
 </rule>
 
-<rule id="250161" level="12">
+<rule id="250161" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.image">\\dnscmd.exe</field>
-	<field name="win.eventdata.commandline">/config /serverlevelplugindll</field>
+	<field name="win.eventdata.CommandLine">dnscmd.exe\s+/config\s+/serverlevelplugindll </field>
 	<description>ATT&CK T1073: DNS ServerLevelPluginDll Install</description>
 	<info type="text">Detects the installation of a plugin DLL via ServerLevelPluginDll parameter in Registry, which can be used to execute code in context of the DNS server (restart required) </info>
 	<info type="text">Falsepositives: unknown. </info>
@@ -20,3 +19,4 @@
 	<info type="link">https://medium.com/@esnesenon/feature-not-bug-dnsadmin-to-dc-compromise-in-one-line-a0f779b8dc83 </info>
 	<group>attack.defense_evasion,attack.t1073,MITRE</group>
 </rule>
+

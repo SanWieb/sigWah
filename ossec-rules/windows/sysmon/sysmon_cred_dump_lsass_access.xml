@@ -1,7 +1,7 @@
-<rule id="250110" level="12">
+<rule id="250110" level="14">
 	<if_group>sysmon_event_10</if_group>
-	<field name="win.eventdata.targetImage">\\lsass.exe</field>
-  <field name="win.eventdata.grantedaccess">0x40|0x1000|0x1400|0x100000|0x1410|0x1010|0x1438|0x143a|0x1418|0x1f0fff|0x1f1fff|0x1f2fff|0x1f3fff</field>
+	<field name="win.eventdata.TargetImage">\\\\lsass.exe$</field>
+	<field name="win.eventdata.GrantedAccess">0x40|0x1000|0x1400|0x100000|0x1410|0x1010|0x1438|0x143a|0x1418|0x1f0fff|0x1f1fff|0x1f2fff|0x1f3fff</field>
 	<description>ATT&CK T1003 S0002: Credentials Dumping Tools Accessing LSASS Memory</description>
 	<info type="text">Detects process access LSASS memory which is typical for credentials dumping tools </info>
 	<info type="text">Falsepositives: Legitimate software accessing LSASS process for legitimate reason; update the whitelist with it. </info>
@@ -15,7 +15,8 @@
 
 <rule id="250111" level="0">
 	<if_sid>250110</if_sid>
-	<field name="win.eventdata.processname">\\wmiprvse.exe|\\taskmgr.exe|\\procexp64.exe|\\procexp.exe|\\lsm.exe|\\csrss.exe|\\wininit.exe|\\vmtoolsd.exe</field>
+	<field name="win.eventdata.ProcessName">\\\\wmiprvse.exe$|\\\\taskmgr.exe$|\\\\procexp64.exe$|\\\\procexp.exe$|\\\\lsm.exe$|\\\\csrss.exe$|\\\\wininit.exe$|\\\\vmtoolsd.exe$</field>
 	<description>Whitelist Interaction: Credentials Dumping Tools Accessing LSASS Memory</description>
 	<group>attack.t1003,attack.s0002,attack.credential_access,car.2019-04-004,MITRE</group>
 </rule>
+

@@ -1,4 +1,4 @@
-<rule id="255000" level="12">
+<rule id="250000" level="15">
 	<if_group>sysmon_event_15</if_group>
 	<description>ATT&CK T1027 S0139: Executable in ADS</description>
 	<info type="text">Detects the creation of an ADS data stream that contains an executable (non-empty imphash) </info>
@@ -8,9 +8,10 @@
 	<group>attack.defense_evasion,attack.t1027,attack.s0139,MITRE</group>
 </rule>
 
-<rule id="255001" level="0">
-	<if_sid>255000</if_sid>
-	<field name="win.eventdata.hash">IMPHASH=00000000000000000000000000000000|IMPHASH=null</field>
+<rule id="250001" level="0">
+	<if_sid>250000</if_sid>
+	<field name="win.eventdata.Hashes">IMPHASH=00000000000000000000000000000000|null|^$|^ $|^-$</field>
 	<description>Whitelist Interaction: Executable in ADS</description>
 	<group>attack.defense_evasion,attack.t1027,attack.s0139,MITRE</group>
 </rule>
+

@@ -1,6 +1,6 @@
-<rule id="250040" level="12">
+<rule id="250040" level="15">
 	<if_group>sysmon_event_13</if_group>
-	<field name="win.eventdata.targetObject">HKLM\\SYSTEM\\CurrentControlSet\\services\\null\\Instance</field>
+	<field name="win.eventdata.TargetObject">HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\services\\\\null\\\\Instance</field>
 	<description>ATT&CK T1105: Pandemic Registry Key</description>
 	<info type="text">Detects Pandemic Windows Implant </info>
 	<info type="text">Falsepositives: unknown. </info>
@@ -10,9 +10,9 @@
 	<group>attack.lateral_movement,attack.t1105,MITRE</group>
 </rule>
 
-<rule id="250041" level="12">
+<rule id="250041" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.commandline">loaddll -a </field>
+	<field name="win.eventdata.CommandLine">loaddll\s+-a </field>
 	<description>ATT&CK T1105: Pandemic Registry Key</description>
 	<info type="text">Detects Pandemic Windows Implant </info>
 	<info type="text">Falsepositives: unknown. </info>
@@ -21,3 +21,4 @@
 	<info type="link">https://twitter.com/MalwareJake/status/870349480356454401 </info>
 	<group>attack.lateral_movement,attack.t1105,MITRE</group>
 </rule>
+
