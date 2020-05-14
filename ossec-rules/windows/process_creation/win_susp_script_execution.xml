@@ -1,6 +1,6 @@
 <rule id="261930" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\\\\wscript.exe|\\\\cscript.exe</field>
+	<field name="win.eventdata.Image">\\\\wscript.exe$|\\\\cscript.exe$</field>
 	<field name="win.eventdata.CommandLine">.jse|.vbe|.js|.vba</field>
 	<description>ATT&CK T1064: WSF/JSE/JS/VBA/VBE File Execution</description>
 	<info type="text">Detects suspicious file execution by wscript and cscript </info>
