@@ -18,4 +18,3 @@
 	<description>Whitelist Interaction: PowerShell Network Connections</description>
 	<group>attack.execution,attack.t1086,MITRE</group>
 </rule>
-/
