@@ -2,6 +2,7 @@
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentImage">\\\\wscript.exe|\\\\cscript.exe</field>
 	<field name="win.eventdata.Image">\\\\powershell.exe</field>
+	<match>!\\Health Service State\\</match>
 	<description>ATT&CK T1086: Suspicious PowerShell Invocation Based on Parent Process</description>
 	<info type="text">Detects suspicious powershell invocations from interpreters or unusual programs </info>
 	<info type="text">Falsepositives: Microsoft Operations Manager (MOM). Other scripts. </info>
@@ -9,11 +10,3 @@
 	<info type="link">https://www.carbonblack.com/2017/03/15/attackers-leverage-excel-powershell-dns-latest-non-malware-attack/ </info>
 	<group>attack.execution,attack.t1086,MITRE</group>
 </rule>
-
-<rule id="261781" level="0">
-	<if_sid>261780</if_sid>
-	<field name="win.eventdata.CurrentDirectory">\\\\Health Service State\\\\</field>
-	<description>Whitelist Interaction: Suspicious PowerShell Invocation Based on Parent Process</description>
-	<group>attack.execution,attack.t1086,MITRE</group>
-</rule>
-

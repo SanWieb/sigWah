@@ -1,6 +1,7 @@
 <rule id="262230" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentImage">\\\\WmiPrvSe.exe$</field>
+	<match>!NT AUTHORITY\\SYSTEM<<match>
 	<description>ATT&CK T1047: Wmiprvse Spawning Process</description>
 	<info type="text">Detects wmiprvse spawning processes </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -12,13 +13,6 @@
 <rule id="262231" level="0">
 	<if_sid>262230</if_sid>
 	<field name="win.eventdata.LogonId">0x3e7</field>
-	<description>Whitelist Interaction: Wmiprvse Spawning Process</description>
-	<group>attack.execution,attack.t1047,MITRE</group>
-</rule>
-
-<rule id="262232" level="0">
-	<if_sid>262230</if_sid>
-	<field name="win.eventdata.User">NT AUTHORITY\\\\SYSTEM</field>
 	<description>Whitelist Interaction: Wmiprvse Spawning Process</description>
 	<group>attack.execution,attack.t1047,MITRE</group>
 </rule>

@@ -1,6 +1,7 @@
 <rule id="260930" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\powershell.exe$</field>
+	<match>!\\windows\\explorer.exe</match>
 	<description>ATT&CK T1086: Non Interactive PowerShell</description>
 	<info type="text">Detects non-interactive PowerShell activity by looking at powershell.exe with not explorer.exe as a parent. </info>
 	<info type="text">Falsepositives: Legitimate programs executing PowerShell scripts. </info>
@@ -8,11 +9,3 @@
 	<info type="link">https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1086_powershell/basic_powershell_execution.md </info>
 	<group>attack.execution,attack.t1086,MITRE</group>
 </rule>
-
-<rule id="260931" level="0">
-	<if_sid>260930</if_sid>
-	<field name="win.eventdata.ParentImage">\\\\explorer.exe$</field>
-	<description>Whitelist Interaction: Non Interactive PowerShell</description>
-	<group>attack.execution,attack.t1086,MITRE</group>
-</rule>
-

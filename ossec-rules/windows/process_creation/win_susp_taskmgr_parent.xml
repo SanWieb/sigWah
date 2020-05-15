@@ -1,6 +1,7 @@
 <rule id="262010" level="8">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentImage">\\\\taskmgr.exe</field>
+	<match>!\\resmon.exe|\\mmc.exe</match>
 	<description>ATT&CK T1036: Taskmgr as Parent</description>
 	<info type="text">Detects the creation of a process from Windows task manager </info>
 	<info type="text">Falsepositives: Administrative activity. </info>

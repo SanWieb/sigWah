@@ -1,6 +1,7 @@
 <rule id="261960" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\svchost.exe</field>
+	<match>!\\services.exe|\\MsMpEng.exe|\\Mrt.exe|\\rpcnet.exe<match>
 	<description>ATT&CK T1036: Suspicious Svchost Process</description>
 	<info type="text">Detects a suspicious svchost process start </info>
 	<info type="text">Falsepositives: Unknown. </info>

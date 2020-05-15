@@ -2,6 +2,7 @@
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentImage">\\\\System32\\\\control.exe</field>
 	<field name="win.eventdata.CommandLine">\\\\rundll32.exe </field>
+	<match>!Shell32.dll</match>
 	<description>ATT&CK T1073 T1085: Suspicious Control Panel DLL Load</description>
 	<info type="text">Detects suspicious Rundll32 execution from control.exe as used by Equation Group and Exploit Kits </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -9,11 +10,3 @@
 	<info type="link">https://twitter.com/rikvduijn/status/853251879320662017 </info>
 	<group>attack.defense_evasion,attack.t1073,attack.t1085,car.2013-10-002,MITRE</group>
 </rule>
-
-<rule id="261441" level="0">
-	<if_sid>261440</if_sid>
-	<field name="win.eventdata.CommandLine">Shell32.dll</field>
-	<description>Whitelist Interaction: Suspicious Control Panel DLL Load</description>
-	<group>attack.defense_evasion,attack.t1073,attack.t1085,car.2013-10-002,MITRE</group>
-</rule>
-

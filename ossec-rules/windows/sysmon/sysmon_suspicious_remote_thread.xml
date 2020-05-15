@@ -1,6 +1,7 @@
 <rule id="250600" level="14">
 	<if_group>sysmon_event8</if_group>
 	<field name="win.eventdata.SourceImage">\\\\bash.exe$|\\\\cvtres.exe$|\\\\defrag.exe$|\\\\dnx.exe$|\\\\esentutl.exe$|\\\\excel.exe$|\\\\expand.exe$|\\\\explorer.exe$|\\\\find.exe$|\\\\findstr.exe$|\\\\forfiles.exe$|\\\\git.exe$|\\\\gpupdate.exe$|\\\\hh.exe$|\\\\iexplore.exe$|\\\\installutil.exe$|\\\\lync.exe$|\\\\makecab.exe$|\\\\mDNSResponder.exe$|\\\\monitoringhost.exe$|\\\\msbuild.exe$|\\\\mshta.exe$|\\\\msiexec.exe$|\\\\mspaint.exe$|\\\\outlook.exe$|\\\\ping.exe$|\\\\powerpnt.exe$|\\\\powershell.exe$|\\\\provtool.exe$|\\\\python.exe$|\\\\regsvr32.exe$|\\\\robocopy.exe$|\\\\runonce.exe$|\\\\sapcimc.exe$|\\\\schtasks.exe$|\\\\smartscreen.exe$|\\\\spoolsv.exe$|\\\\tstheme.exe$|\\\\userinit.exe$|\\\\vssadmin.exe$|\\\\vssvc.exe$|\\\\w3wp.exe$|\\\\winlogon.exe$|\\\\winscp.exe$|\\\\wmic.exe$|\\\\word.exe$|\\\\wscript.exe$</field>
+	<match>!Visual Studio<<match>
 	<description>ATT&CK T1055: Suspicious Remote Thread Created</description>
 	<info type="text">Offensive tradecraft is switching away from using APIs like "CreateRemoteThread", however, this is still largely observed in the wild. This rule aims to detect suspicious processes (those we would not expect to behave in this way like word.exe or outlook.exe) creating remote threads on other processes. It is a generalistic rule, but it should have a low FP ratio due to the selected range of processes. </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -9,11 +10,3 @@
 	<info type="link">https://lolbas-project.github.io </info>
 	<group>attack.privilege_escalation,attack.t1055,MITRE</group>
 </rule>
-
-<rule id="250601" level="0">
-	<if_sid>250600</if_sid>
-	<field name="win.eventdata.SourceImage">Visual Studio</field>
-	<description>Whitelist Interaction: Suspicious Remote Thread Created</description>
-	<group>attack.privilege_escalation,attack.t1055,MITRE</group>
-</rule>
-

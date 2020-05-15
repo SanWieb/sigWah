@@ -1,6 +1,7 @@
 <rule id="250540" level="14">
 	<field name="win.eventdata.Description">Execute processes remotely</field>
 	<field name="win.eventdata.Product">Sysinternals PsExec</field>
+	<match>!\\PsExec.exe|\\PsExec64.exe</match>
 	<description>ATT&CK: Renamed PsExec</description>
 	<info type="text">Detects the execution of a renamed PsExec often used by attackers or malware </info>
 	<info type="text">Falsepositives: Software that illegaly integrates PsExec in a renamed form. Administrators that have renamed PsExec and no one knows why. </info>
@@ -8,11 +9,3 @@
 	<info type="link">https://www.trendmicro.com/vinfo/hk-en/security/news/cybercrime-and-digital-threats/megacortex-ransomware-spotted-attacking-enterprise-networks </info>
 	<group>car.2013-05-009,MITRE</group>
 </rule>
-
-<rule id="250541" level="0">
-	<if_sid>250540</if_sid>
-	<field name="win.eventdata.Image">\\\\PsExec.exe|\\\\PsExec64.exe</field>
-	<description>Whitelist Interaction: Renamed PsExec</description>
-	<group>car.2013-05-009,MITRE</group>
-</rule>
-

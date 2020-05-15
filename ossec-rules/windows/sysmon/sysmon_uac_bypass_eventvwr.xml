@@ -13,6 +13,7 @@
 <rule id="250851" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentImage">\\\\eventvwr.exe</field>
+	<match>!\\mmc.exe</match>
 	<description>ATT&CK T1088: UAC Bypass via Event Viewer</description>
 	<info type="text">Detects UAC bypass method using Windows event viewer </info>
 	<info type="text">Falsepositives: unknown. </info>
@@ -21,11 +22,3 @@
 	<info type="link">https://www.hybrid-analysis.com/sample/e122bc8bf291f15cab182a5d2d27b8db1e7019e4e96bb5cdbd1dfe7446f3f51f?environmentId=100 </info>
 	<group>attack.defense_evasion,attack.privilege_escalation,attack.t1088,car.2019-04-001,MITRE</group>
 </rule>
-
-<rule id="250852" level="0">
-	<if_sid>250851</if_sid>
-	<field name="win.eventdata.Image">\\\\mmc.exe</field>
-	<description>Whitelist Interaction: UAC Bypass via Event Viewer</description>
-	<group>attack.defense_evasion,attack.privilege_escalation,attack.t1088,car.2019-04-001,MITRE</group>
-</rule>
-

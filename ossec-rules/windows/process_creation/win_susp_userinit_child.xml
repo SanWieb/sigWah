@@ -1,6 +1,7 @@
 <rule id="262040" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentImage">\\\\userinit.exe</field>
+	<match>!\\explorer.exe<match>
 	<description>ATT&CK: Suspicious Userinit Child Process</description>
 	<info type="text">Detects a suspicious child process of userinit </info>
 	<info type="text">Falsepositives: Administrative scripts. </info>
@@ -16,9 +17,3 @@
 	<group>MITRE</group>
 </rule>
 
-<rule id="262042" level="0">
-	<if_sid>262040</if_sid>
-	<field name="win.eventdata.Image">\\\\explorer.exe</field>
-	<description>Whitelist Interaction: Suspicious Userinit Child Process</description>
-	<group>MITRE</group>
-</rule>

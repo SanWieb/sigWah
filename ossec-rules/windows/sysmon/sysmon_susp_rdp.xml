@@ -2,6 +2,7 @@
 	<if_group>sysmon_event3</if_group>
 	<field name="win.eventdata.DestinationPort">^3389$</field>
 	<field name="win.eventdata.Initiated">true</field>
+	<match>!\\mstsc.exe|\\RTSApp.exe|\\RTS2App.exe|\\RDCMan.exe|\\ws_TunnelService.exe|\\RSSensor.exe|\\RemoteDesktopManagerFree.exe|\\RemoteDesktopManager.exe|\\RemoteDesktopManager64.exe|\\mRemoteNG.exe|\\mRemote.exe|\\Terminals.exe|\\spiceworks-finder.exe|\\FSDiscovery.exe|\\FSAssessment.exe|\\MobaRTE.exe|\\chrome.exe|\\thor.exe|\\thor64.exe<match>
 	<description>ATT&CK T1210: Suspicious Outbound RDP Connections</description>
 	<info type="text">Detects Non-Standard Tools Connecting to TCP port 3389 indicating possible lateral movement </info>
 	<info type="text">Falsepositives: Other Remote Desktop RDP tools. </info>
@@ -9,11 +10,3 @@
 	<info type="link">https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0708 </info>
 	<group>attack.lateral_movement,attack.t1210,car.2013-07-002,MITRE</group>
 </rule>
-
-<rule id="250761" level="0">
-	<if_sid>250760</if_sid>
-	<field name="win.eventdata.Image">\\\\mstsc.exe|\\\\RTSApp.exe|\\\\RTS2App.exe|\\\\RDCMan.exe|\\\\ws_TunnelService.exe|\\\\RSSensor.exe|\\\\RemoteDesktopManagerFree.exe|\\\\RemoteDesktopManager.exe|\\\\RemoteDesktopManager64.exe|\\\\mRemoteNG.exe|\\\\mRemote.exe|\\\\Terminals.exe|\\\\spiceworks-finder.exe|\\\\FSDiscovery.exe|\\\\FSAssessment.exe|\\\\MobaRTE.exe|\\\\chrome.exe|\\\\thor.exe|\\\\thor64.exe</field>
-	<description>Whitelist Interaction: Suspicious Outbound RDP Connections</description>
-	<group>attack.lateral_movement,attack.t1210,car.2013-07-002,MITRE</group>
-</rule>
-

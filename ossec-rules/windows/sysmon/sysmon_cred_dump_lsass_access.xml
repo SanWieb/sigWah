@@ -2,6 +2,7 @@
 	<if_group>sysmon_event_10</if_group>
 	<field name="win.eventdata.TargetImage">\\\\lsass.exe$</field>
 	<field name="win.eventdata.GrantedAccess">0x40|0x1000|0x1400|0x100000|0x1410|0x1010|0x1438|0x143a|0x1418|0x1f0fff|0x1f1fff|0x1f2fff|0x1f3fff</field>
+	<match>!\\wmiprvse.exe$|\\taskmgr.exe$|\\procexp64.exe$|\\procexp.exe$|\\lsm.exe$|\\csrss.exe$|\\wininit.exe$|\\vmtoolsd.exe$</match>
 	<description>ATT&CK T1003 S0002: Credentials Dumping Tools Accessing LSASS Memory</description>
 	<info type="text">Detects process access LSASS memory which is typical for credentials dumping tools </info>
 	<info type="text">Falsepositives: Legitimate software accessing LSASS process for legitimate reason; update the whitelist with it. </info>
@@ -12,11 +13,3 @@
 	<info type="link">http://security-research.dyndns.org/pub/slides/FIRST2017/FIRST-2017_Tom-Ueltschi_Sysmon_FINAL_notes.pdf </info>
 	<group>attack.t1003,attack.s0002,attack.credential_access,car.2019-04-004,MITRE</group>
 </rule>
-
-<rule id="250111" level="0">
-	<if_sid>250110</if_sid>
-	<field name="win.eventdata.ProcessName">\\\\wmiprvse.exe$|\\\\taskmgr.exe$|\\\\procexp64.exe$|\\\\procexp.exe$|\\\\lsm.exe$|\\\\csrss.exe$|\\\\wininit.exe$|\\\\vmtoolsd.exe$</field>
-	<description>Whitelist Interaction: Credentials Dumping Tools Accessing LSASS Memory</description>
-	<group>attack.t1003,attack.s0002,attack.credential_access,car.2019-04-004,MITRE</group>
-</rule>
-

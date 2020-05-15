@@ -2,6 +2,7 @@
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentUser">NT AUTHORITY\\\\NETWORK SERVICE|NT AUTHORITY\\\\LOCAL SERVICE</field>
 	<field name="win.eventdata.User">NT AUTHORITY\\\\SYSTEM</field>
+	<match>!\\rundll32.exe</match>
 	<description>ATT&CK T1134: Detection of Possible Rotten Potato</description>
 	<info type="text">Detection of child processes spawned with SYSTEM privileges by parents with LOCAL SERVICE or NETWORK SERVICE privileges </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -13,9 +14,7 @@
 
 <rule id="260981" level="0">
 	<if_sid>260980</if_sid>
-	<field name="win.eventdata.Image">\\\\rundll32.exe$</field>
 	<field name="win.eventdata.CommandLine">DavSetCookie</field>
 	<description>Whitelist Interaction: Detection of Possible Rotten Potato</description>
 	<group>attack.privilege_escalation,attack.t1134,MITRE</group>
 </rule>
-

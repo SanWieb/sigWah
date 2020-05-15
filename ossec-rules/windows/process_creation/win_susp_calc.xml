@@ -12,17 +12,11 @@
 <rule id="261341" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\calc.exe</field>
+	<match>!\\Windows\\Sys</match>
 	<description>ATT&CK T1036: Suspicious Calculator Usage</description>
 	<info type="text">Detects suspicious use of calc.exe with command line parameters or in a suspicious directory, which is likely caused by some PoC or detection evasion </info>
 	<info type="text">Falsepositives: Unknown. </info>
 	<info type="text">Sigma UUID: 737e618a-a410-49b5-bec3-9e55ff7fbc15 </info>
 	<info type="link">https://twitter.com/ItsReallyNick/status/1094080242686312448 </info>
-	<group>attack.defense_evasion,attack.t1036,MITRE</group>
-</rule>
-
-<rule id="261342" level="0">
-	<if_sid>261341</if_sid>
-	<field name="win.eventdata.Image">\\\\Windows\\\\Sys</field>
-	<description>Whitelist Interaction: Suspicious Calculator Usage</description>
 	<group>attack.defense_evasion,attack.t1036,MITRE</group>
 </rule>
