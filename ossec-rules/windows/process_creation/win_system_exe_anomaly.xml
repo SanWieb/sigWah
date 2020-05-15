@@ -1,6 +1,7 @@
 <rule id="262090" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">\\\\svchost.exe|\\\\rundll32.exe|\\\\services.exe|\\\\powershell.exe|\\\\regsvr32.exe|\\\\spoolsv.exe|\\\\lsass.exe|\\\\smss.exe|\\\\csrss.exe|\\\\conhost.exe|\\\\wininit.exe|\\\\lsm.exe|\\\\winlogon.exe|\\\\explorer.exe|\\\\taskhost.exe</field>
+	<field name="win.eventdata.Image">\\\\svchost.exe|\\\\rundll32.exe|\\\\services.exe|\\\\powershell.exe|\\\\regsvr32.exe|\\\\spoolsv.exe|\\\\lsass.exe|\\\\smss.exe|\\\\csrss.exe|\\\\conhost.exe|\\\\wininit.exe|\\\\lsm.exe|\\\\winlogon.exe|\\\\taskhost.exe</field>
+	<match>!:\\Windows\\System32\\|:\\Windows\\system32\\|:\\Windows\\SysWow64\\|:\\Windows\\SysWOW64\\|:\\Windows\\winsxs\\|:\\Windows\\WinSxS\\|\\SystemRoot\\System32\\</match>
 	<description>ATT&CK T1036: System File Execution Location Anomaly</description>
 	<info type="text">Detects a Windows program executable started in a suspicious folder </info>
 	<info type="text">Falsepositives: Exotic software. </info>
@@ -9,10 +10,15 @@
 	<group>attack.defense_evasion,attack.t1036,MITRE</group>
 </rule>
 
-<rule id="262091" level="0">
-	<if_sid>262090</if_sid>
-	<field name="win.eventdata.Image">:\\\\Windows\\\\System32\\\\|:\\\\Windows\\\\system32\\\\|:\\\\Windows\\\\SysWow64\\\\|:\\\\Windows\\\\SysWOW64\\\\|:\\\\Windows\\\\explorer.exe|:\\\\Windows\\\\winsxs\\\\|:\\\\Windows\\\\WinSxS\\\\|\\\\SystemRoot\\\\System32\\\\</field>
-	<description>Whitelist Interaction: System File Execution Location Anomaly</description>
+
+<rule id="262091" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\explorer.exe</field>
+	<match>!:\\Windows\\explorer.exe</match>
+	<description>ATT&CK T1036: System File Execution Location Anomaly</description>
+	<info type="text">Detects a Windows program executable started in a suspicious folder </info>
+	<info type="text">Falsepositives: Exotic software. </info>
+	<info type="text">Sigma UUID: e4a6b256-3e47-40fc-89d2-7a477edd6915 </info>
+	<info type="link">https://twitter.com/GelosSnake/status/934900723426439170 </info>
 	<group>attack.defense_evasion,attack.t1036,MITRE</group>
 </rule>
-
