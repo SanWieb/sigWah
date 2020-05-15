@@ -10,7 +10,7 @@
 	<group>attack.persistence,attack.t1182,MITRE</group>
 </rule>
 
-<rule id="250330" level="10">
+<rule id="250331" level="10">
 	<field name="win.system.EventID">^14$</field>
 	<field name="win.eventdata.NewName">HKLM\\\\SYSTEM\\\\CurentControlSet\\\\Control\\\\Session Manager\\\\AppCertDlls</field>
 	<description>ATT&CK T1182: New DLL Added to AppCertDlls Registry Key</description>
@@ -21,5 +21,3 @@
 	<info type="link">https://eqllib.readthedocs.io/en/latest/analytics/14f90406-10a0-4d36-a672-31cabe149f2f.html </info>
 	<group>attack.persistence,attack.t1182,MITRE</group>
 </rule>
-
-

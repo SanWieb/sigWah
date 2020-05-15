@@ -9,7 +9,7 @@
 	<group>attack.persistence,attack.t1103,MITRE</group>
 </rule>
 
-<rule id="250340" level="10">
+<rule id="250341" level="10">
 	<field name="win.system.EventID">^14$</field>
 	<field name="win.eventdata.NewName">\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Windows\\\\AppInit_Dlls|\\\\SOFTWARE\\\\Wow6432Node\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Windows\\\\AppInit_Dlls</field>
 	<description>ATT&CK T1103: New DLL Added to AppInit_DLLs Registry Key</description>

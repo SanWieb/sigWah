@@ -10,7 +10,7 @@
 	<group>attack.persistence,attack.t1100,MITRE</group>
 </rule>
 
-<rule id="250880" level="15">
+<rule id="250881" level="15">
 	<if_group>sysmon_event_11</if_group>
 	<field name="win.eventdata.TargetFilename">\\\\www\\\\|\\\\htdocs\\\\|\\\\html\\\\</field>
 	<field name="win.eventdata.TargetFilename">.ph</field>
@@ -22,7 +22,7 @@
 	<group>attack.persistence,attack.t1100,MITRE</group>
 </rule>
 
-<rule id="250885" level="15">
+<rule id="250882" level="15">
 	<if_group>sysmon_event_11</if_group>
 	<field name="win.eventdata.TargetFilename">.jsp$</field>
 	<field name="win.eventdata.TargetFilename">\\\\cgi-bin\\\\</field>
