@@ -1,6 +1,6 @@
 <rule id="260190" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">net\s+use\s+\\\\%DomainController%\\\\C\$\s+"P@ssw0rd" |dir \.:\\\\\..doc\. /s|dir\s+%TEMP%\\\\\..exe</field>
+	<field name="win.eventdata.CommandLine">net\s+use\s+\\\\%DomainController%\\\\C\$\s+"P@ssw0rd" |dir \.:\\\\\..doc\. /s|dir\s+%TEMP%\\\\\..exe|dir\s+\.AppData\\\\Local\\\\Temp\.\\\\\..exe</field>
 	<description>ATT&CK T1059 T1077 T1083 T1135: Turla Group Lateral Movement</description>
 	<info type="text">Detects automated lateral movement by Turla group </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -9,7 +9,7 @@
 	<group>attack.g0010,attack.execution,attack.t1059,attack.lateral_movement,attack.t1077,attack.discovery,attack.t1083,attack.t1135,MITRE</group>
 </rule>
 
-<rule id="260192" level="0">
+<rule id="260192" level="1">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">net\s+view\s+/DOMAIN|net\s+session|net\s+share</field>
 	<description>If alert more than 3 times: ATT&CK T1059 T1077 T1083 T1135: Turla Group Lateral Movement</description>
