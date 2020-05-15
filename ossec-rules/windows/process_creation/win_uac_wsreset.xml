@@ -1,7 +1,7 @@
 <rule id="262160" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentImage">\\\\wsreset.exe$</field>
-	<math>!\\conhost.exe</match>
+	<match>!\\conhost.exe</match>
 	<description>ATT&CK T1088: Bypass UAC via WSReset.exe</description>
 	<info type="text">Identifies use of WSReset.exe to bypass User Account Control. Adversaries use this technique to execute privileged processes. </info>
 	<info type="text">Falsepositives: Unknown. </info>

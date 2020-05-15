@@ -1,7 +1,7 @@
 <rule id="250740" level="10">
 	<if_group>sysmon_event_11</if_group>
 	<field name="win.eventdata.TargetFilename">\\\\AppData\\\\Local\\\\Temp\.\\\\PROCEXP152.sys</field>
-	<match>!\\procexp64.exe|\\procexp.exe|\\procmon64.exe|\\procmon.exe<</match>
+	<match>!\\procexp64.exe|\\procexp.exe|\\procmon64.exe|\\procmon.exe</match>
 	<description>ATT&CK T1089: Suspicious PROCEXP152.sys File Created In TMP</description>
 	<info type="text">Detects the creation of the PROCEXP152.sys file in the application-data local temporary folder. This driver is used by Sysinternals Process Explorer but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU. </info>
 	<info type="text">Falsepositives: Other legimate tools using this driver and filename (like Sysinternals). Note - Clever attackers may easily bypass this detection by just renaming the driver filename. Therefore just Medium-level and don't rely on it.. </info>

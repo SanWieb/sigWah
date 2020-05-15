@@ -1,7 +1,7 @@
 <rule id="262230" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentImage">\\\\WmiPrvSe.exe$</field>
-	<match>!NT AUTHORITY\\SYSTEM<</match>
+	<match>!NT AUTHORITY\\SYSTEM</match>
 	<description>ATT&CK T1047: Wmiprvse Spawning Process</description>
 	<info type="text">Detects wmiprvse spawning processes </info>
 	<info type="text">Falsepositives: Unknown. </info>
