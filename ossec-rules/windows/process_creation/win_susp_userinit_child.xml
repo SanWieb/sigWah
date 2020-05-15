@@ -1,7 +1,7 @@
 <rule id="262040" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentImage">\\\\userinit.exe</field>
-	<match>!\\explorer.exe<match>
+	<match>!\\explorer.exe</match>
 	<description>ATT&CK: Suspicious Userinit Child Process</description>
 	<info type="text">Detects a suspicious child process of userinit </info>
 	<info type="text">Falsepositives: Administrative scripts. </info>

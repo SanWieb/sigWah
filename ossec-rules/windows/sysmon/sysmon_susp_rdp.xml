@@ -2,7 +2,7 @@
 	<if_group>sysmon_event3</if_group>
 	<field name="win.eventdata.DestinationPort">^3389$</field>
 	<field name="win.eventdata.Initiated">true</field>
-	<match>!\\mstsc.exe|\\RTSApp.exe|\\RTS2App.exe|\\RDCMan.exe|\\ws_TunnelService.exe|\\RSSensor.exe|\\RemoteDesktopManagerFree.exe|\\RemoteDesktopManager.exe|\\RemoteDesktopManager64.exe|\\mRemoteNG.exe|\\mRemote.exe|\\Terminals.exe|\\spiceworks-finder.exe|\\FSDiscovery.exe|\\FSAssessment.exe|\\MobaRTE.exe|\\chrome.exe|\\thor.exe|\\thor64.exe<match>
+	<match>!\\mstsc.exe|\\RTSApp.exe|\\RTS2App.exe|\\RDCMan.exe|\\ws_TunnelService.exe|\\RSSensor.exe|\\RemoteDesktopManagerFree.exe|\\RemoteDesktopManager.exe|\\RemoteDesktopManager64.exe|\\mRemoteNG.exe|\\mRemote.exe|\\Terminals.exe|\\spiceworks-finder.exe|\\FSDiscovery.exe|\\FSAssessment.exe|\\MobaRTE.exe|\\chrome.exe|\\thor.exe|\\thor64.exe</match>
 	<description>ATT&CK T1210: Suspicious Outbound RDP Connections</description>
 	<info type="text">Detects Non-Standard Tools Connecting to TCP port 3389 indicating possible lateral movement </info>
 	<info type="text">Falsepositives: Other Remote Desktop RDP tools. </info>
