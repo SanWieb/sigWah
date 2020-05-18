@@ -14,7 +14,7 @@
 
 <rule id="261121" level="0">
 	<if_sid>261120</if_sid>
-	<field name="win.eventdata.ParentImage">\\\\System32\\\\|\\\\SysWOW64\\\\|\\\\SavService.exe|\\\\Windows Defender\\\\\.\\\\MsMpEng.exe|null|^$|^ $</field>
+	<field name="win.eventdata.ParentImage">\\\\System32\\\\|\\\\SysWOW64\\\\|\\\\SavService.exe|\\\\Windows Defender\\\\\.*\\\\MsMpEng.exe|null|^$|^ $</field>
 	<description>Whitelist Interaction: Windows Processes Suspicious Parent Directory</description>
 	<group>attack.defense_evasion,attack.t1036,MITRE</group>
 </rule>

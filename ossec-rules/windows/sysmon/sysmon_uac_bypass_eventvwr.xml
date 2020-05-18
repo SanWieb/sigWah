@@ -1,6 +1,6 @@
 <rule id="250850" level="15">
 	<if_group>sysmon_event_13</if_group>
-	<field name="win.eventdata.TargetObject">HKU\\\\\.\\\\mscfile\\\\shell\\\\open\\\\command</field>
+	<field name="win.eventdata.TargetObject">HKU\\\\\.*\\\\mscfile\\\\shell\\\\open\\\\command</field>
 	<description>ATT&CK T1088: UAC Bypass via Event Viewer</description>
 	<info type="text">Detects UAC bypass method using Windows event viewer </info>
 	<info type="text">Falsepositives: unknown. </info>

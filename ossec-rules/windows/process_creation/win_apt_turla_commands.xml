@@ -1,6 +1,6 @@
 <rule id="260190" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">net\s+use\s+\\\\%DomainController%\\\\C\$\s+"P@ssw0rd" |dir \.:\\\\\..doc\. /s|dir\s+%TEMP%\\\\\..exe|dir\s+\.AppData\\\\Local\\\\Temp\.\\\\\..exe</field>
+	<field name="win.eventdata.CommandLine">net\s+use\s+\\\\\\\\%DomainController%\\\\C\$\s+"P@ssw0rd" |dir\s+\.:\\\\\.*.doc\.* /s|dir\s+%TEMP%\\\\\.*.exe|dir\s+\.*AppData\\\\Local\\\\Temp\.*\\\\\.*.exe</field>
 	<description>ATT&CK T1059 T1077 T1083 T1135: Turla Group Lateral Movement</description>
 	<info type="text">Detects automated lateral movement by Turla group </info>
 	<info type="text">Falsepositives: Unknown. </info>

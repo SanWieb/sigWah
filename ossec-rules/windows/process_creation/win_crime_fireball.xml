@@ -1,6 +1,6 @@
 <rule id="260320" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\\\\rundll32.exe \.,InstallArcherSvc</field>
+	<field name="win.eventdata.CommandLine">\\\\rundll32.exe \.*,InstallArcherSvc</field>
 	<description>ATT&CK T1059 T1085: Fireball Archer Install</description>
 	<info type="text">Detects Archer malware invocation via rundll32 </info>
 	<info type="text">Falsepositives: Unknown. </info>

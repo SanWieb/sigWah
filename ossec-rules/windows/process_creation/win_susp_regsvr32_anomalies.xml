@@ -37,7 +37,7 @@
 <rule id="261873" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\regsvr32.exe</field>
-	<field name="win.eventdata.CommandLine">/i:http\. scrobj.dll|/i:ftp\. scrobj.dll</field>
+	<field name="win.eventdata.CommandLine">/i:http\.* scrobj.dll|/i:ftp\.* scrobj.dll</field>
 	<description>ATT&CK T1117: Regsvr32 Anomaly</description>
 	<info type="text">Detects various anomalies in relation to regsvr32.exe </info>
 	<info type="text">Falsepositives: Unknown. </info>

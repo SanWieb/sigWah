@@ -19,8 +19,8 @@
 <rule id="260242" level="0">
 	<if_sid>260240</if_sid>
 	<field name="win.eventdata.ParentImage">\\\\cmd.exe</field>
-	<field name="win.eventdata.CommandLine">\pR\s+\pH\s+\pS\s+\pA\s+\\\\\..cui</field>
-	<field name="win.eventdata.ParentCommandLine">:\\\\WINDOWS\\\\system32\\\\\..bat</field>
+	<field name="win.eventdata.CommandLine">\pR\s+\pH\s+\pS\s+\pA\s+\\\\\.*.cui</field>
+	<field name="win.eventdata.ParentCommandLine">:\\\\WINDOWS\\\\system32\\\\\.*.bat</field>
 	<description>Whitelist Interaction: Hiding Files with Attrib.exe</description>
 	<group>attack.defense_evasion,attack.persistence,attack.t1158,MITRE</group>
 </rule>

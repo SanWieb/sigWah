@@ -1,6 +1,6 @@
 <rule id="261480" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">curl\. start </field>
+	<field name="win.eventdata.CommandLine">curl\.* start </field>
 	<description>ATT&CK T1218: Curl Start Combination</description>
 	<info type="text">Adversaries can use curl to download payloads remotely and execute them. Curl is included by default in Windows 10 build 17063 and later. </info>
 	<info type="text">Falsepositives: Administrative scripts (installers). </info>

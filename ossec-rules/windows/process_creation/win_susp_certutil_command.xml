@@ -1,6 +1,6 @@
 <rule id="261360" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine"> -decode | /decode | -decodehex | /decodehex | -urlcache | /urlcache | -verifyctl | /verifyctl | -encode | /encode |certutil\. -URL|certutil\. /URL|certutil\. -ping|certutil\. /ping</field>
+	<field name="win.eventdata.CommandLine"> -decode | /decode | -decodehex | /decodehex | -urlcache | /urlcache | -verifyctl | /verifyctl | -encode | /encode |certutil\.* -URL|certutil\.* /URL|certutil\.* -ping|certutil\.* /ping</field>
 	<description>ATT&CK T1140 T1105 S0189: Suspicious Certutil Command</description>
 	<info type="text">Detects a suspicious Microsoft certutil execution with sub commands like 'decode' sub command, which is sometimes used to decode malicious code with the built-in certutil utility </info>
 	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. </info>

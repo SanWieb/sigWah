@@ -1,7 +1,7 @@
 <rule id="260030" level="8">
 	<field name="win.system.EventID">^4104$</field>
 	<match>-Recurse</match>
-	<regex>\|\.Compress-Archive|Compress-Archive\.\|</regex>
+	<regex>\|\.*Compress-Archive|Compress-Archive\.*\|</regex>
 	<description>ATT&CK T1002: Data Compressed - Powershell</description>
 	<info type="text">An adversary may compress data (e.g., sensitive documents) that is collected prior to exfiltration in order to make it portable and minimize the amount of data sent over the network </info>
 	<info type="text">Falsepositives: highly likely if archive ops are done via PS. </info>

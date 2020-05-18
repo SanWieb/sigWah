@@ -1,6 +1,6 @@
 <rule id="260760" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\\\\AppData\\\\Roaming\\\\Oracle\.\\\\java\..exe |cscript.exe \.Retrive\..vbs </field>
+	<field name="win.eventdata.CommandLine">\\\\AppData\\\\Roaming\\\\Oracle\.*\\\\java\.*.exe |cscript.exe \.*Retrive\.*.vbs </field>
 	<description>ATT&CK T1064: Adwind RAT / JRAT</description>
 	<info type="text">Detects javaw.exe in AppData folder as used by Adwind / JRAT </info>
 	<info type="text">Sigma UUID: 1fac1481-2dbc-48b2-9096-753c49b4ec71 </info>
@@ -11,7 +11,7 @@
 
 <rule id="260761" level="14">
 	<if_group>sysmon_event_11</if_group>
-	<field name="win.eventdata.TargetFilename">\\\\AppData\\\\Roaming\\\\Oracle\\\\bin\\\\java\..exe|\\\\Retrive\..vbs</field>
+	<field name="win.eventdata.TargetFilename">\\\\AppData\\\\Roaming\\\\Oracle\\\\bin\\\\java\.*.exe|\\\\Retrive\.*.vbs</field>
 	<description>ATT&CK T1064: Adwind RAT / JRAT</description>
 	<info type="text">Detects javaw.exe in AppData folder as used by Adwind / JRAT </info>
 	<info type="text">Sigma UUID: 1fac1481-2dbc-48b2-9096-753c49b4ec71 </info>
@@ -23,7 +23,7 @@
 <rule id="260762" level="14">
 	<if_group>sysmon_event_13</if_group>
 	<field name="win.eventdata.TargetObject">HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run</field>
-	<field name="win.eventdata.Details">AppData\.\\\\Roaming\\\\Oracle\\\\bin\\\\</field>
+	<field name="win.eventdata.Details">AppData\.*\\\\Roaming\\\\Oracle\\\\bin\\\\</field>
 	<description>ATT&CK T1064: Adwind RAT / JRAT</description>
 	<info type="text">Detects javaw.exe in AppData folder as used by Adwind / JRAT </info>
 	<info type="text">Sigma UUID: 1fac1481-2dbc-48b2-9096-753c49b4ec71 </info>

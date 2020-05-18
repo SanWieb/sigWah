@@ -13,7 +13,7 @@
 <rule id="260021" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\adexplorer.exe</field>
-	<field name="win.eventdata.CommandLine"> -snapshot\s+"" \.:\\\\users\\\\</field>
+	<field name="win.eventdata.CommandLine"> -snapshot\s+""\s+\.:\\\\users\\\\</field>
 	<description>ATT&CK T1081 T1003: Judgement Panda Credential Access Activity</description>
 	<info type="text">Detects Russian group activity as described in Global Threat Report 2019 by Crowdstrike </info>
 	<info type="text">Falsepositives: unknown. </info>

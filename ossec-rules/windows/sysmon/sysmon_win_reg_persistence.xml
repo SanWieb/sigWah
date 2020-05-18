@@ -1,6 +1,6 @@
 <rule id="250910" level="15">
 	<if_group>sysmon_event_13</if_group>
-	<field name="win.eventdata.TargetObject">\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Image File Execution Options\\\\\.\\\\GlobalFlag|\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\SilentProcessExit\\\\\.\\\\ReportingMode|\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\SilentProcessExit\\\\\.\\\\MonitorProcess</field>
+	<field name="win.eventdata.TargetObject">\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Image File Execution Options\\\\\.*\\\\GlobalFlag|\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\SilentProcessExit\\\\\.*\\\\ReportingMode|\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\SilentProcessExit\\\\\.*\\\\MonitorProcess</field>
 	<field name="win.eventdata.EventType">SetValue</field>
 	<description>ATT&CK T1183: Registry Persistence Mechanisms</description>
 	<info type="text">Detects persistence registry keys </info>

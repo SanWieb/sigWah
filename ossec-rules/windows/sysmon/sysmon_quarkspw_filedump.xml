@@ -1,6 +1,6 @@
 <rule id="250410" level="15">
 	<if_group>sysmon_event_11</if_group>
-	<field name="win.eventdata.TargetFilename">\\\\AppData\\\\Local\\\\Temp\\\\SAM-\..dmp</field>
+	<field name="win.eventdata.TargetFilename">\\\\AppData\\\\Local\\\\Temp\\\\SAM-\.*.dmp</field>
 	<description>ATT&CK T1003: QuarksPwDump Dump File</description>
 	<info type="text">Detects a dump file written by QuarksPwDump password dumper </info>
 	<info type="text">Falsepositives: Unknown. </info>

@@ -1,6 +1,6 @@
 <rule id="260380" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine"> cl \./Trace</field>
+	<field name="win.eventdata.CommandLine"> cl \.*/Trace</field>
 	<description>ATT&CK T1070: Disable of ETW Trace</description>
 	<info type="text">Detects a command that clears or disables any ETW trace log which could indicate a logging evasion. </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -13,7 +13,7 @@
 
 <rule id="260381" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine"> clear-log \./Trace</field>
+	<field name="win.eventdata.CommandLine"> clear-log \.*/Trace</field>
 	<description>ATT&CK T1070: Disable of ETW Trace</description>
 	<info type="text">Detects a command that clears or disables any ETW trace log which could indicate a logging evasion. </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -26,7 +26,7 @@
 
 <rule id="260382" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine"> sl\. /e:false</field>
+	<field name="win.eventdata.CommandLine"> sl\.* /e:false</field>
 	<description>ATT&CK T1070: Disable of ETW Trace</description>
 	<info type="text">Detects a command that clears or disables any ETW trace log which could indicate a logging evasion. </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -39,7 +39,7 @@
 
 <rule id="260383" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine"> set-log\. /e:false</field>
+	<field name="win.eventdata.CommandLine"> set-log\.* /e:false</field>
 	<description>ATT&CK T1070: Disable of ETW Trace</description>
 	<info type="text">Detects a command that clears or disables any ETW trace log which could indicate a logging evasion. </info>
 	<info type="text">Falsepositives: Unknown. </info>

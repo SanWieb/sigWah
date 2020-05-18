@@ -1,6 +1,6 @@
 <rule id="261400" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">chcp\. 936|chcp\. 1258</field>
+	<field name="win.eventdata.CommandLine">chcp\.* 936|chcp\.* 1258</field>
 	<description>ATT&CK: Suspicious Code Page Switch</description>
 	<info type="text">Detects a code page switch in command line or batch scripts to a rare language </info>
 	<info type="text">Falsepositives: Administrative activity (adjust code pages according to your organisation's region). </info>

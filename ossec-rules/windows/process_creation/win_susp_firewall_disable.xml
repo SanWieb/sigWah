@@ -1,6 +1,6 @@
 <rule id="261590" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">netsh\s+firewall\s+set\s+opmode\s+mode=disable|netsh\s+advfirewall\s+set \. state\s+off</field>
+	<field name="win.eventdata.CommandLine">netsh\s+firewall\s+set\s+opmode\s+mode=disable|netsh\s+advfirewall\s+set \.* state\s+off</field>
 	<description>ATT&CK: Firewall Disabled via Netsh</description>
 	<info type="text">Detects netsh commands that turns off the Windows firewall </info>
 	<info type="text">Falsepositives: Legitimate administration. </info>

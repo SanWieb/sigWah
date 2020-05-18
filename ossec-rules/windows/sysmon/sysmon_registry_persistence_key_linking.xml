@@ -1,6 +1,6 @@
 <rule id="250460" level="10">
 	<if_group>sysmon_event_12</if_group>
-	<field name="win.eventdata.TargetObject">HKU\\\\\._Classes\\\\CLSID\\\\\.\\\\TreatAs</field>
+	<field name="win.eventdata.TargetObject">HKU\\\\\.*_Classes\\\\CLSID\\\\\.*\\\\TreatAs</field>
 	<description>ATT&CK T1122: Windows Registry Persistence COM Key Linking</description>
 	<info type="text">Detects COM object hijacking via TreatAs subkey </info>
 	<info type="text">Falsepositives: Maybe some system utilities in rare cases use linking keys for backward compability. </info>

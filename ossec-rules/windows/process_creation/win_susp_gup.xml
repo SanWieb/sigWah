@@ -11,7 +11,7 @@
 
 <rule id="261611" level="0">
 	<if_sid>261610</if_sid>
-	<field name="win.eventdata.Image">:\\\\Users\\\\\.\\\\AppData\\\\Local\\\\Notepad\p\p\\\\updater\\\\gup.exe|:\\\\Users\\\\\.\\\\AppData\\\\Roaming\\\\Notepad\p\p\\\\updater\\\\gup.exe|:\\\\Program Files\\\\Notepad\p\p\\\\updater\\\\gup.exe|:\\\\Program Files \(x86\)\\\\Notepad\p\p\\\\updater\\\\gup.exe</field>
+	<field name="win.eventdata.Image">:\\\\Users\\\\\.*\\\\AppData\\\\Local\\\\Notepad\p\p\\\\updater\\\\gup.exe|:\\\\Users\\\\\.*\\\\AppData\\\\Roaming\\\\Notepad\p\p\\\\updater\\\\gup.exe|:\\\\Program Files\\\\Notepad\p\p\\\\updater\\\\gup.exe|:\\\\Program Files \(x86\)\\\\Notepad\p\p\\\\updater\\\\gup.exe</field>
 	<description>Whitelist Interaction: Suspicious GUP Usage</description>
 	<group>attack.defense_evasion,attack.t1073,MITRE</group>
 </rule>

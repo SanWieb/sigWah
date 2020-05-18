@@ -1,6 +1,6 @@
 <rule id="250860" level="14">
 	<if_group>sysmon_event_13</if_group>
-	<field name="win.eventdata.TargetObject">HKU\\\\\._Classes\\\\exefile\\\\shell\\\\runas\\\\command\\\\isolatedCommand</field>
+	<field name="win.eventdata.TargetObject">HKU\\\\\.*_Classes\\\\exefile\\\\shell\\\\runas\\\\command\\\\isolatedCommand</field>
 	<description>ATT&CK T1088: UAC Bypass via Sdclt</description>
 	<info type="text">Detects changes to HKCU:\Software\Classes\exefile\shell\runas\command\isolatedCommand </info>
 	<info type="text">Falsepositives: unknown. </info>

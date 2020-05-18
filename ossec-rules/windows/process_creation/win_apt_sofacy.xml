@@ -1,6 +1,6 @@
 <rule id="260160" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">rundll32.exe \.AppData\.\\\\\..dat",|rundll32.exe \.AppData\.\\\\\..dll",#1</field>
+	<field name="win.eventdata.CommandLine">rundll32.exe \.*AppData\.*\\\\\.*.dat",|rundll32.exe \.*AppData\.*\\\\\.*.dll",#1</field>
 	<description>ATT&CK T1059 T1085: Sofacy Trojan Loader Activity</description>
 	<info type="text">Detects Trojan loader acitivty as used by APT28 </info>
 	<info type="text">Falsepositives: Unknown. </info>

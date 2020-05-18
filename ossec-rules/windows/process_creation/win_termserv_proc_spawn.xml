@@ -1,6 +1,6 @@
 <rule id="262120" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentCommandLine">\\\\svchost.exe\.termsvcs</field>
+	<field name="win.eventdata.ParentCommandLine">\\\\svchost.exe\.*termsvcs</field>
 	<match>!\\rdpclip.exe</match>
 	<description>ATT&CK: Terminal Service Process Spawn</description>
 	<info type="text">Detects a process spawned by the terminal service server process (this could be an indicator for an exploitation of CVE-2019-0708) </info>

@@ -1,6 +1,6 @@
 <rule id="261980" level="10">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\\\\sysprep.exe \.\\\\AppData\\\\|sysprep.exe \.\\\\AppData\\\\</field>
+	<field name="win.eventdata.CommandLine">\\\\sysprep.exe \.*\\\\AppData\\\\|sysprep.exe \.*\\\\AppData\\\\</field>
 	<description>ATT&CK: Sysprep on AppData Folder</description>
 	<info type="text">Detects suspicious sysprep process start with AppData folder as target (as used by Trojan Syndicasec in Thrip report by Symantec) </info>
 	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. </info>

@@ -1,6 +1,6 @@
 <rule id="260030" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">\\\\regsvr32\.\\\\AppData\\\\Local\\\\|\\\\AppData\\\\Local\\\\\.,DllEntry</field>
+	<field name="win.eventdata.CommandLine">\\\\regsvr32\.*\\\\AppData\\\\Local\\\\|\\\\AppData\\\\Local\\\\\.*,DllEntry</field>
 	<description>ATT&CK T1117: BlueMashroom DLL Load</description>
 	<info type="text">Detects a suspicious DLL loading from AppData Local path as described in BlueMashroom report </info>
 	<info type="text">Falsepositives: Unlikely. </info>
