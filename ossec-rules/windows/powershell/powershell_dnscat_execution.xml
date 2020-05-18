@@ -1,0 +1,10 @@
+<rule id="260040" level="15">
+	<field name="win.system.EventID">^4104$</field>
+	<field name="win.eventdata.ScriptBlockText">Start-Dnscat2</field>
+	<description>ATT&CK T1048: Dnscat Execution</description>
+	<info type="text">Dnscat exfiltration tool execution </info>
+	<info type="text">Falsepositives: Legitimate usage of PowerShell Dnscat2 — DNS Exfiltration tool (unlikely). </info>
+	<info type="text">Sigma UUID: a6d67db4-6220-436d-8afc-f3842fe05d43 </info>
+	<group>attack.exfiltration,attack.t1048,MITRE</group>
+</rule>
+

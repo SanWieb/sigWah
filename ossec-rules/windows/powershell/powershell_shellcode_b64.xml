@@ -1,0 +1,11 @@
+<rule id="260150" level="15">
+	<field name="win.system.EventID">^4104$</field>
+	<match>AAAAYInlM</match>
+	<regex>OiCAAAAYInlM|OiJAAAAYInlM</regex>
+	<description>ATT&CK T1055 T1086: PowerShell ShellCode</description>
+	<info type="text">Detects Base64 encoded Shellcode </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 16b37b70-6fcf-4814-a092-c36bd3aafcbd </info>
+	<info type="link">https://twitter.com/cyb3rops/status/1063072865992523776 </info>
+	<group>attack.privilege_escalation,attack.execution,attack.t1055,attack.t1086,MITRE</group>
+</rule>

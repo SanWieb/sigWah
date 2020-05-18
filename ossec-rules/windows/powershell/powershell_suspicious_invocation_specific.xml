@@ -1,0 +1,8 @@
+<rule id="260180" level="14">
+	<field name="win.eventdata.ScriptBlockText"> -nop -w hidden -c \. [Convert]::FromBase64String| -w hidden -noni -nop -c "iex\(New-Object| -w hidden -ep bypass -Enc|powershell.exe reg add HKCU\\\\software\\\\microsoft\\\\windows\\\\currentversion\\\\run|bypass -noprofile -windowstyle hidden \(new-object system.net.webclient\).download|iex\(New-Object Net.WebClient\).Download</field>
+	<description>ATT&CK T1086: Suspicious PowerShell Invocations - Specific</description>
+	<info type="text">Detects suspicious PowerShell invocation command parameters </info>
+	<info type="text">Falsepositives: Penetration tests. </info>
+	<info type="text">Sigma UUID: fce5f582-cc00-41e1-941a-c6fabf0fdb8c </info>
+	<group>attack.execution,attack.t1086,MITRE</group>
+</rule>

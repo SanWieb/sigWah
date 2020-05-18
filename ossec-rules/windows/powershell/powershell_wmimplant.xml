@@ -1,0 +1,9 @@
+<rule id="260220" level="14">
+	<field name="win.eventdata.ScriptBlockText">WMImplant| change_user | gen_cli | command_exec | disable_wdigest | disable_winrm | enable_wdigest | enable_winrm | registry_mod | remote_posh | sched_job | service_mod | process_kill | active_users | basic_info | power_off | vacant_system | logon_events </field>
+	<description>ATT&CK T1047: WMImplant Hack Tool</description>
+	<info type="text">Detects parameters used by WMImplant </info>
+	<info type="text">Falsepositives: Administrative scripts that use the same keywords.. </info>
+	<info type="text">Sigma UUID: 8028c2c3-e25a-46e3-827f-bbb5abf181d7 </info>
+	<info type="link">https://github.com/FortyNorthSecurity/WMImplant </info>
+	<group>attack.execution,attack.t1047,MITRE</group>
+</rule>

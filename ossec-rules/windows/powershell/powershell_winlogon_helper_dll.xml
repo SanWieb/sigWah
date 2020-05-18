@@ -1,0 +1,11 @@
+<rule id="260210" level="10">
+	<field name="win.system.EventID">^4104$</field>
+	<regex>Set-ItemProperty|New-Item</regex>
+	<match>CurrentVersion\\Winlogon</match>
+	<description>ATT&CK T1004: Winlogon Helper DLL</description>
+	<info type="text">Winlogon.exe is a Windows component responsible for actions at logon/logoff as well as the secure attention sequence (SAS) triggered by Ctrl-Alt-Delete. Registry entries in HKLM\Software[Wow6432Node]Microsoft\Windows NT\CurrentVersion\Winlogon\ and HKCU\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\ are used to manage additional helper programs and functionalities that support Winlogon. Malicious modifications to these Registry keys may cause Winlogon to load and execute malicious DLLs and/or executables. </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 851c506b-6b7c-4ce2-8802-c703009d03c0 </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1004/T1004.yaml </info>
+	<group>attack.persistence,attack.t1004,MITRE</group>
+</rule>

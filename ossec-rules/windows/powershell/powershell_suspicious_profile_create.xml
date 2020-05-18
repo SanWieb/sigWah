@@ -1,0 +1,23 @@
+<rule id="260201" level="14">
+	<if_group>sysmon_event_11</if_group>
+	<field name="win.eventdata.TargetFilename">\\\\My Documents\\\\PowerShell\\\\</field>
+	<field name="win.eventdata.TargetFilename">\\\\profile.ps1</field>
+	<description>ATT&CK: Powershell Profile.ps1 Modification</description>
+	<info type="text">Detects a change in profile.ps1 of the Powershell profile </info>
+	<info type="text">Falsepositives: System administrator create Powershell profile manually. </info>
+	<info type="text">Sigma UUID: b5b78988-486d-4a80-b991-930eff3ff8bf </info>
+	<info type="link">https://www.welivesecurity.com/2019/05/29/turla-powershell-usage/ </info>
+	<group>attack.persistence,attack.privilege_escalation,MITRE</group>
+</rule>
+
+<rule id="260202" level="14">
+	<if_group>sysmon_event_11</if_group>
+	<field name="win.eventdata.TargetFilename">:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\</field>
+	<field name="win.eventdata.TargetFilename">\\\\profile.ps1</field>
+	<description>ATT&CK: Powershell Profile.ps1 Modification</description>
+	<info type="text">Detects a change in profile.ps1 of the Powershell profile </info>
+	<info type="text">Falsepositives: System administrator create Powershell profile manually. </info>
+	<info type="text">Sigma UUID: b5b78988-486d-4a80-b991-930eff3ff8bf </info>
+	<info type="link">https://www.welivesecurity.com/2019/05/29/turla-powershell-usage/ </info>
+	<group>attack.persistence,attack.privilege_escalation,MITRE</group>
+</rule>

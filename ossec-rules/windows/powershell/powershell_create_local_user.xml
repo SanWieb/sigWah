@@ -1,0 +1,11 @@
+<rule id="260020" level="10">
+	<field name="win.system.EventID">^4104$</field>
+	<field name="win.eventdata.Message">New-LocalUser</field>
+	<description>ATT&CK T1086 T1136: PowerShell Create Local User</description>
+	<info type="text">Detects creation of a local user via PowerShell </info>
+	<info type="text">Falsepositives: Legitimate user creation. </info>
+	<info type="text">Sigma UUID: 243de76f-4725-4f2e-8225-a8a69b15ad61 </info>
+	<info type="link">https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1136/T1136.md </info>
+	<group>attack.execution,attack.t1086,attack.persistence,attack.t1136,MITRE</group>
+</rule>
+

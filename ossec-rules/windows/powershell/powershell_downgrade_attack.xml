@@ -1,0 +1,18 @@
+<rule id="260050" level="10">
+	<field name="win.system.EventID">^400$</field>
+	<field name="win.eventdata.EngineVersion">^2.</field>
+	<description>ATT&CK T1086: PowerShell Downgrade Attack</description>
+	<info type="text">Detects PowerShell downgrade attack by comparing the host versions with the actually used engine version 2.0 </info>
+	<info type="text">Falsepositives: Penetration Test. Unknown. </info>
+	<info type="text">Sigma UUID: 6331d09b-4785-4c13-980f-f96661356249 </info>
+	<info type="link">http://www.leeholmes.com/blog/2017/03/17/detecting-and-preventing-powershell-downgrade-attacks/ </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1086,MITRE</group>
+</rule>
+
+<rule id="260051" level="0">
+	<if_sid>260050</if_sid>
+	<field name="win.eventdata.HostVersion">^2.</field>
+	<description>Whitelist Interaction: PowerShell Downgrade Attack</description>
+	<group>attack.defense_evasion,attack.execution,attack.t1086,MITRE</group>
+</rule>
+

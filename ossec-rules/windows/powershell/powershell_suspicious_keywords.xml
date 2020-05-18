@@ -1,0 +1,11 @@
+<rule id="260190" level="14">
+	<field name="win.eventdata.ScriptBlockText">System.Reflection.Assembly.Load|[System.Reflection.Assembly]::Load|[Reflection.Assembly]::Load|System.Reflection.AssemblyName|Reflection.Emit.AssemblyBuilderAccess|Runtime.InteropServices.DllImportAttribute|SuspendThread</field>
+	<description>ATT&CK T1086: Suspicious PowerShell Keywords</description>
+	<info type="text">Detects keywords that could indicate the use of some PowerShell exploitation framework </info>
+	<info type="text">Falsepositives: Penetration tests. </info>
+	<info type="text">Sigma UUID: 1f49f2ab-26bc-48b3-96cc-dcffbc93eadf </info>
+	<info type="link">https://posts.specterops.io/entering-a-covenant-net-command-and-control-e11038bcf462 </info>
+	<info type="link">https://github.com/PowerShellMafia/PowerSploit/blob/master/CodeExecution/Invoke-ReflectivePEInjection.ps1 </info>
+	<info type="link">https://github.com/hlldz/Invoke-Phant0m/blob/master/Invoke-Phant0m.ps1 </info>
+	<group>attack.execution,attack.t1086,MITRE</group>
+</rule>

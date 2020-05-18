@@ -1,0 +1,9 @@
+<rule id="260010" level="10">
+	<match>del (Get-PSReadlineOption).HistorySavePath|Set-PSReadlineOption –HistorySaveStyle SaveNothing|Remove-Item (Get-PSReadlineOption).HistorySavePath|rm (Get-PSReadlineOption).HistorySavePath</match>
+	<description>ATT&CK T1146: Clear PowerShell History</description>
+	<info type="text">Detects keywords that could indicate clearing PowerShell history </info>
+	<info type="text">Falsepositives: some PS-scripts. </info>
+	<info type="text">Sigma UUID: dfba4ce1-e0ea-495f-986e-97140f31af2d </info>
+	<info type="link">https://gist.github.com/hook-s3c/7363a856c3cdbadeb71085147f042c1a </info>
+	<group>attack.defense_evasion,attack.t1146,MITRE</group>
+</rule>

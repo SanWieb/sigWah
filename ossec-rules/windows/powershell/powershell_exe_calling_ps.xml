@@ -1,0 +1,11 @@
+<rule id="260060" level="14">
+	<field name="win.system.EventID">^400$</field>
+	<field name="win.eventdata.EngineVersion">^2.|^4.|^5.</field>
+	<field name="win.eventdata.HostVersion">^3.</field>
+	<description>ATT&CK T1086: PowerShell Called from an Executable Version Mismatch</description>
+	<info type="text">Detects PowerShell called from an executable by the version mismatch method </info>
+	<info type="text">Falsepositives: Penetration Tests. Unknown. </info>
+	<info type="text">Sigma UUID: c70e019b-1479-4b65-b0cc-cd0c6093a599 </info>
+	<info type="link">https://adsecurity.org/?p=2921 </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1086,MITRE</group>
+</rule>

@@ -1,0 +1,10 @@
+<rule id="260110" level="14">
+	<match>set-content</match>
+	<regex>-stream</regex>
+	<description>ATT&CK T1096: NTFS Alternate Data Stream</description>
+	<info type="text">Detects writing data into NTFS alternate data streams from powershell. Needs Script Block Logging. </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: 8c521530-5169-495d-a199-0a3a881ad24e </info>
+	<info type="link">http://www.powertheshell.com/ntfsstreams/ </info>
+	<group>attack.defense_evasion,attack.t1096,MITRE</group>
+</rule>

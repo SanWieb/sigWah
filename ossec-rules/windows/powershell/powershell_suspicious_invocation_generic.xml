@@ -1,0 +1,9 @@
+<rule id="260170" level="14">
+	<regex> -enc \. -noni | -noni \. -enc | -enc \. -noninteractive | -noninteractive \. -enc | -EncodedCommand \. -noni | -noni \. -EncodedCommand | -EncodedCommand \. -noninteractive | -noninteractive \. -EncodedCommand </regex>
+	<match> -w hidden | -window hidden | -windowstyle hidden </match>
+	<description>ATT&CK T1086: Suspicious PowerShell Invocations - Generic</description>
+	<info type="text">Detects suspicious PowerShell invocation command parameters </info>
+	<info type="text">Falsepositives: Penetration tests. Very special / sneaky PowerShell scripts. </info>
+	<info type="text">Sigma UUID: 3d304fda-78aa-43ed-975c-d740798a49c1 </info>
+	<group>attack.execution,attack.t1086,MITRE</group>
+</rule>

@@ -1,0 +1,21 @@
+<rule id="260160" level="10">
+	<field name="win.System.Channel">PowerShell</field>
+	<field name="win.eventdata.Message">System.Net.WebClient</field>
+	<field name="win.eventdata.Message">.DownloadFile\(</field>
+	<description>ATT&CK T1086: Suspicious PowerShell Download</description>
+	<info type="text">Detects suspicious PowerShell download command </info>
+	<info type="text">Falsepositives: PowerShell scripts that download content from the Internet. </info>
+	<info type="text">Sigma UUID: 65531a81-a694-4e31-ae04-f8ba5bc33759 </info>
+	<group>attack.execution,attack.t1086,MITRE</group>
+</rule>
+
+<rule id="260161" level="10">
+	<field name="win.System.Channel">PowerShell</field>
+	<field name="win.eventdata.Message">System.Net.WebClient</field>
+	<field name="win.eventdata.Message">.DownloadString\(</field>
+	<description>ATT&CK T1086: Suspicious PowerShell Download</description>
+	<info type="text">Detects suspicious PowerShell download command </info>
+	<info type="text">Falsepositives: PowerShell scripts that download content from the Internet. </info>
+	<info type="text">Sigma UUID: 65531a81-a694-4e31-ae04-f8ba5bc33759 </info>
+	<group>attack.execution,attack.t1086,MITRE</group>
+</rule>

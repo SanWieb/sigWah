@@ -1,0 +1,10 @@
+<rule id="260000" level="10">
+	<field name="win.system.EventID">^4103$|^400$</field>
+	<match>!powershell.exe</match>
+	<description>ATT&CK T1086: Alternate PowerShell Hosts</description>
+	<info type="text">Detects alternate PowerShell hosts potentially bypassing detections looking for powershell.exe </info>
+	<info type="text">Falsepositives: Programs using PowerShell directly without invocation of a dedicated interpreter. MSP Detection Searcher. Citrix ConfigSync.ps1. </info>
+	<info type="text">Sigma UUID: 64e8e417-c19a-475a-8d19-98ea705394cc </info>
+	<info type="link">https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1086_powershell/alternate_signed_powershell_hosts.md </info>
+	<group>attack.execution,attack.t1086,MITRE</group>
+</rule>
