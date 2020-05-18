@@ -1,6 +1,6 @@
 <rule id="250020" level="10">
 	<field name="win.system.EventID">^17$</field>
-	<field name="win.eventdata.PipeName">\\\\PSHost$</field>
+	<field name="win.eventdata.PipeName">^\\\\PSHost</field>
 	<description>ATT&CK T1086: Alternate PowerShell Hosts Pipe</description>
 	<info type="text">Detects alternate PowerShell hosts potentially bypassing detections looking for powershell.exe </info>
 	<info type="text">Falsepositives: Programs using PowerShell directly without invocation of a dedicated interpreter.. </info>
@@ -15,4 +15,3 @@
 	<description>Whitelist Interaction: Alternate PowerShell Hosts Pipe</description>
 	<group>attack.execution,attack.t1086,MITRE</group>
 </rule>
-
