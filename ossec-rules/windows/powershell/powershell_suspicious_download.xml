@@ -1,7 +1,6 @@
 <rule id="260160" level="10">
-	<field name="win.System.Channel">PowerShell</field>
-	<field name="win.eventdata.Message">System.Net.WebClient</field>
-	<field name="win.eventdata.Message">.DownloadFile\(</field>
+	<field name="win.eventdata.ScriptBlockText">System.Net.WebClient</field>
+	<field name="win.eventdata.ScriptBlockText">.DownloadFile\(</field>
 	<description>ATT&CK T1086: Suspicious PowerShell Download</description>
 	<info type="text">Detects suspicious PowerShell download command </info>
 	<info type="text">Falsepositives: PowerShell scripts that download content from the Internet. </info>
@@ -10,9 +9,8 @@
 </rule>
 
 <rule id="260161" level="10">
-	<field name="win.System.Channel">PowerShell</field>
-	<field name="win.eventdata.Message">System.Net.WebClient</field>
-	<field name="win.eventdata.Message">.DownloadString\(</field>
+	<field name="win.eventdata.ScriptBlockText">System.Net.WebClient</field>
+	<field name="win.eventdata.ScriptBlockText">.DownloadString\(</field>
 	<description>ATT&CK T1086: Suspicious PowerShell Download</description>
 	<info type="text">Detects suspicious PowerShell download command </info>
 	<info type="text">Falsepositives: PowerShell scripts that download content from the Internet. </info>
