@@ -15,7 +15,7 @@
 
 <rule id="261471" level="0">
 	<if_sid>261470</if_sid>
-	<field name="win.eventdata.ParentImage">:\\\\Program Files|\\\\sdiagnhost.exe|\\\\w3wp.exe</field>
+	<field name="win.eventdata.ParentImage">\.:\\\\Program Files|\\\\sdiagnhost.exe|\\\\w3wp.exe</field>
 	<description>Whitelist Interaction: Suspicious Csc.exe Source File Folder</description>
 	<group>attack.defense_evasion,attack.t1500,MITRE</group>
 </rule>

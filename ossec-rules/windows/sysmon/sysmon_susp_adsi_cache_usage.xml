@@ -13,7 +13,7 @@
 
 <rule id="250611" level="0">
 	<if_sid>250610</if_sid>
-	<field name="win.eventdata.Image">:\\\\windows\\\\system32\\\\svchost.exe|:\\\\windows\\\\system32\\\\dllhost.exe|:\\\\windows\\\\system32\\\\mmc.exe|:\\\\windows\\\\system32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe</field>
+	<field name="win.eventdata.Image">\.:\\\\windows\\\\system32\\\\svchost.exe|\.:\\\\windows\\\\system32\\\\dllhost.exe|\.:\\\\windows\\\\system32\\\\mmc.exe|\.:\\\\windows\\\\system32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe</field>
 	<description>Whitelist Interaction: Suspicious ADSI-Cache Usage By Unknown Tool</description>
 	<group>attack.t1041,attack.persistence,MITRE</group>
 </rule>

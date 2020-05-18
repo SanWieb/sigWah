@@ -12,7 +12,7 @@
 
 <rule id="250181" level="15">
 	<if_group>sysmon_event_11</if_group>
-	<field name="win.eventdata.TargetFilename">:\\\\Windows\\\\Temp\\\\dumpert.dmp</field>
+	<field name="win.eventdata.TargetFilename">\.:\\\\Windows\\\\Temp\\\\dumpert.dmp</field>
 	<description>ATT&CK T1003: Dumpert Process Dumper</description>
 	<info type="text">Detects the use of Dumpert process dumper, which dumps the lsass.exe process memory </info>
 	<info type="text">Falsepositives: Very unlikely. </info>

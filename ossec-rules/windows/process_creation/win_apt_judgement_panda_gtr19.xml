@@ -11,7 +11,7 @@
 
 <rule id="260131" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">:\\\\Users\\\\Public\\\\7za.exe</field>
+	<field name="win.eventdata.Image">\.:\\\\Users\\\\Public\\\\7za.exe</field>
 	<description>ATT&CK T1098 T1002: Judgement Panda Exfil Activity</description>
 	<info type="text">Detects Judgement Panda activity as described in Global Threat Report 2019 by Crowdstrike </info>
 	<info type="text">Falsepositives: unknown. </info>

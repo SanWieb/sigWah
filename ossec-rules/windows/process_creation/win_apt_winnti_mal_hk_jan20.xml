@@ -1,6 +1,6 @@
 <rule id="260210" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.ParentImage">:\\\\Windows\\\\Temp|\\\\hpqhvind.exe</field>
+	<field name="win.eventdata.ParentImage">\.:\\\\Windows\\\\Temp|\\\\hpqhvind.exe</field>
 	<field name="win.eventdata.Image">^\.:\\\\ProgramData\\\\DRM</field>
 	<description>ATT&CK T1073: Winnti Malware HK University Campaign</description>
 	<info type="text">Detects specific process characteristics of Winnti malware noticed in Dec/Jan 2020 in a campaign against Honk Kong universities </info>
@@ -36,7 +36,7 @@
 
 <rule id="260213" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">:\\\\ProgramData\\\\DRM\\\\CLR\\\\CLR.exe</field>
+	<field name="win.eventdata.Image">\.:\\\\ProgramData\\\\DRM\\\\CLR\\\\CLR.exe</field>
 	<description>ATT&CK T1073: Winnti Malware HK University Campaign</description>
 	<info type="text">Detects specific process characteristics of Winnti malware noticed in Dec/Jan 2020 in a campaign against Honk Kong universities </info>
 	<info type="text">Falsepositives: Unlikely. </info>

@@ -36,7 +36,7 @@
 
 <rule id="260113" level="0">
 	<if_sid>260112</if_sid>
-	<field name="win.eventdata.Image">:\\\\Program Files\(x86\)\\\\|:\\\\Program Files\\\\</field>
+	<field name="win.eventdata.Image">\.:\\\\Program Files\(x86\)\\\\|\.:\\\\Program Files\\\\</field>
 	<description>Whitelist Interaction: GALLIUM Artefacts</description>
 	<group>attack.credential_access,attack.command_and_control,MITRE</group>
 </rule>

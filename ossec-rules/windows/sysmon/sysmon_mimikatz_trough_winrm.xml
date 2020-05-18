@@ -1,7 +1,7 @@
 <rule id="250300" level="14">
 	<if_group>sysmon_event_10</if_group>
-	<field name="win.eventdata.TargetImage">:\\\\windows\\\\system32\\\\lsass.exe</field>
-	<field name="win.eventdata.SourceImage">:\\\\Windows\\\\system32\\\\wsmprovhost.exe</field>
+	<field name="win.eventdata.TargetImage">\.:\\\\windows\\\\system32\\\\lsass.exe</field>
+	<field name="win.eventdata.SourceImage">\.:\\\\Windows\\\\system32\\\\wsmprovhost.exe</field>
 	<description>ATT&CK T1003 T1028 S0005: Mimikatz through Windows Remote Management</description>
 	<info type="text">Detects usage of mimikatz through WinRM protocol by monitoring access to lsass process by wsmprovhost.exe. </info>
 	<info type="text">Falsepositives: low. </info>

@@ -12,7 +12,7 @@
 
 <rule id="261421" level="0">
 	<if_sid>261420</if_sid>
-	<field name="win.eventdata.ParentImage">:\\\\Program</field>
+	<field name="win.eventdata.ParentImage">\.:\\\\Program</field>
 	<description>Whitelist Interaction: Suspicious Compression Tool Parameters</description>
 	<group>attack.exfiltration,attack.t1020,attack.t1002,MITRE</group>
 </rule>

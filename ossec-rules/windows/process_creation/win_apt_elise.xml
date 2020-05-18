@@ -1,6 +1,6 @@
 <rule id="260070" level="15">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">:\\\\Windows\\\\SysWOW64\\\\cmd.exe</field>
+	<field name="win.eventdata.Image">\.:\\\\Windows\\\\SysWOW64\\\\cmd.exe</field>
 	<field name="win.eventdata.CommandLine">\\\\Windows\\\\Caches\\\\NavShExt.dll </field>
 	<description>ATT&CK S0081: Elise Backdoor</description>
 	<info type="text">Detects Elise backdoor acitivty as used by APT32 </info>

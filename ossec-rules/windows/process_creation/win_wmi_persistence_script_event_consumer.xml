@@ -1,7 +1,7 @@
 <rule id="262250" level="14">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.Image">:\\\\WINDOWS\\\\system32\\\\wbem\\\\scrcons.exe</field>
-	<field name="win.eventdata.ParentImage">:\\\\Windows\\\\System32\\\\svchost.exe</field>
+	<field name="win.eventdata.Image">\.:\\\\WINDOWS\\\\system32\\\\wbem\\\\scrcons.exe</field>
+	<field name="win.eventdata.ParentImage">\.:\\\\Windows\\\\System32\\\\svchost.exe</field>
 	<description>ATT&CK T1047: WMI Persistence - Script Event Consumer</description>
 	<info type="text">Detects WMI script event consumers </info>
 	<info type="text">Falsepositives: Legitimate event consumers. </info>

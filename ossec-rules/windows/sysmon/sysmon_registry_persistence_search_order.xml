@@ -11,7 +11,7 @@
 
 <rule id="250471" level="0">
 	<if_sid>250470</if_sid>
-	<field name="win.eventdata.Details">:\\\\Windows\\\\system32\\\\|%%systemroot%%\\\\system32\\\\|%%systemroot%%\\\\SysWow64\\\\|:\\\\Windows\\\\SysWow64\\\\|\\\\AppData\\\\Local\\\\Microsoft\\\\OneDrive\\\\\.*\\\\FileCoAuthLib64.dll|\\\\AppData\\\\Local\\\\Microsoft\\\\OneDrive\\\\\.*\\\\FileSyncShell64.dll|\\\\AppData\\\\Local\\\\Microsoft\\\\TeamsMeetingAddin\\\\\.*\\\\Microsoft.Teams.AddinLoader.dll</field>
+	<field name="win.eventdata.Details">\.:\\\\Windows\\\\system32\\\\|%%systemroot%%\\\\system32\\\\|%%systemroot%%\\\\SysWow64\\\\|\.:\\\\Windows\\\\SysWow64\\\\|\\\\AppData\\\\Local\\\\Microsoft\\\\OneDrive\\\\\.*\\\\FileCoAuthLib64.dll|\\\\AppData\\\\Local\\\\Microsoft\\\\OneDrive\\\\\.*\\\\FileSyncShell64.dll|\\\\AppData\\\\Local\\\\Microsoft\\\\TeamsMeetingAddin\\\\\.*\\\\Microsoft.Teams.AddinLoader.dll</field>
 	<description>Whitelist Interaction: Windows Registry Persistence COM Search Order Hijacking</description>
 	<group>attack.persistence,attack.t1038,MITRE</group>
 </rule>

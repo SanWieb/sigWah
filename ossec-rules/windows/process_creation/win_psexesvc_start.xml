@@ -1,6 +1,6 @@
 <rule id="261130" level="8">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">:\\\\Windows\\\\PSEXESVC.exe</field>
+	<field name="win.eventdata.CommandLine">\.:\\\\Windows\\\\PSEXESVC.exe</field>
 	<description>ATT&CK T1035 S0029: PsExec Service Start</description>
 	<info type="text">Detects a PsExec service start </info>
 	<info type="text">Falsepositives: Administrative activity. </info>

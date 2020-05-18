@@ -1,7 +1,7 @@
 <rule id="260950" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentImage">\\\\WINWORD.EXE|\\\\EXCEL.EXE|\\\\POWERPNT.exe|\\\\MSPUB.exe|\\\\VISIO.exe|\\\\OUTLOOK.EXE</field>
-	<field name="win.eventdata.Image">:\\\\users\\\\\.*.exe</field>
+	<field name="win.eventdata.Image">\.:\\\\users\\\\\.*.exe</field>
 	<description>ATT&CK T1059 T1202: MS Office Product Spawning Exe in User Dir</description>
 	<info type="text">Detects an executable in the users directory started from Microsoft Word, Excel, Powerpoint, Publisher or Visio </info>
 	<info type="text">Falsepositives: unknown. </info>
