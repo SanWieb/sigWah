@@ -1,0 +1,19 @@
+<rule id="260360" level="14">
+	<if_group>sysmon_event3</if_group>
+	<field name="win.eventdata.Image">\\\\notepad.exe</field>
+	<description>ATT&CK: Notepad Making Network Connection</description>
+	<info type="text">Detects suspicious network connection by Notepad </info>
+	<info type="text">Falsepositives: None observed so far. </info>
+	<info type="text">Sigma UUID: e81528db-fc02-45e8-8e98-4e84aba1f10b </info>
+	<info type="link">https://www.sans.org/cyber-security-summit/archives/file/summit-archive-1492186586.pdf </info>
+	<info type="link">https://blog.cobaltstrike.com/2013/08/08/why-is-notepad-exe-connecting-to-the-internet/ </info>
+	<group>attack.command_and_control,attack.execution,MITRE</group>
+</rule>
+
+<rule id="260361" level="0">
+	<if_sid>260360</if_sid>
+	<field name="win.eventdata.DestinationPort">^9100$</field>
+	<description>Whitelist Interaction: Notepad Making Network Connection</description>
+	<group>attack.command_and_control,attack.execution,MITRE</group>
+</rule>
+
