@@ -35,3 +35,9 @@
 	<group>attack.persistence,attack.t1100,MITRE</group>
 </rule>
 
+<rule id="250883" level="0">
+	<if_sid>250880, 250881, 250882</if_sid>
+	<field name="win.eventdata.TargetFilename">\\\\AppData\\\\Local\\\\Temp\\\\|\\\\Windows\\\\Temp\\\\</field>
+	<description>Whitelist Interaction: Windows Webshell Creation</description>
+	<group>attack.persistence,attack.t1100,MITRE</group>
+</rule>
