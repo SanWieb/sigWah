@@ -1,4 +1,5 @@
 <rule id="260020" level="10">
+	<if_group>windows</if_group>
 	<field name="win.system.EventID">^4104$</field>
 	<field name="win.eventdata.ScriptBlockText">New-LocalUser</field>
 	<description>ATT&CK T1086 T1136: PowerShell Create Local User</description>

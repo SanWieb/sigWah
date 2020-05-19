@@ -1,4 +1,5 @@
 <rule id="260110" level="14">
+	<if_group>windows</if_group>
 	<match>set-content</match>
 	<regex>-stream</regex>
 	<description>ATT&CK T1096: NTFS Alternate Data Stream</description>

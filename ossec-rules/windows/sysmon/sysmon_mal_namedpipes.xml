@@ -1,4 +1,5 @@
 <rule id="250280" level="15">
+	<if_group>windows</if_group>
 	<field name="win.system.EventID">^17$|^18$</field>
 	<field name="win.eventdata.PipeName">\\\\isapi_http|\\\\isapi_dg|\\\\isapi_dg2|\\\\sdlrpc|\\\\ahexec|\\\\winsession|\\\\lsassw|\\\\46a676ab7f179e511e30dd2dc41bd388|\\\\9f81f59bc58452127884ce513865ed20|\\\\e710f28d59aa529d6792ca6ff0ca1b34|\\\\rpchlp_3|\\\\NamePipe_MoreWindows|\\\\pcheap_reuse|\\\\msagent_|\\\\gruntsvc</field>
 	<description>ATT&CK T1055: Malicious Named Pipe</description>

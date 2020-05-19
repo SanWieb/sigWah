@@ -1,4 +1,5 @@
 <rule id="260170" level="14">
+	<if_group>windows</if_group>
 	<regex> -enc \.* -noni | -noni \.* -enc | -enc \.* -noninteractive | -noninteractive \.* -enc | -EncodedCommand \.* -noni | -noni \.* -EncodedCommand | -EncodedCommand \.* -noninteractive | -noninteractive \.* -EncodedCommand </regex>
 	<match> -w hidden | -window hidden | -windowstyle hidden </match>
 	<description>ATT&CK T1086: Suspicious PowerShell Invocations - Generic</description>

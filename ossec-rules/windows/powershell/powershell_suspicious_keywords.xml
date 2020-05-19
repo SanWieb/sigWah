@@ -1,4 +1,5 @@
 <rule id="260190" level="14">
+	<if_group>windows</if_group>
 	<field name="win.eventdata.ScriptBlockText">System.Reflection.Assembly.Load|[System.Reflection.Assembly]::Load|[Reflection.Assembly]::Load|System.Reflection.AssemblyName|Reflection.Emit.AssemblyBuilderAccess|Runtime.InteropServices.DllImportAttribute|SuspendThread</field>
 	<description>ATT&CK T1086: Suspicious PowerShell Keywords</description>
 	<info type="text">Detects keywords that could indicate the use of some PowerShell exploitation framework </info>

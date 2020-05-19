@@ -11,6 +11,7 @@
 </rule>
 
 <rule id="260111" level="14">
+	<if_group>windows</if_group>
 	<field name="win.system.EventID">^257$</field>
 	<field name="win.eventdata.QNAME">asyspy256.ddns.net|hotkillmail9sddcc.ddns.net|rosaf112.ddns.net|cvdfhjh1231.myftp.biz|sz2016rose.ddns.net|dffwescwer4325.myftp.biz|cvdfhjh1231.ddns.net</field>
 	<description>ATT&CK: GALLIUM Artefacts</description>

@@ -1,4 +1,5 @@
 <rule id="250050" level="15">
+	<if_group>windows</if_group>
 	<field name="win.system.EventID">^17$|^18$</field>
 	<field name="win.eventdata.PipeName">\\\\atctl|\\\\userpipe|\\\\iehelper|\\\\sdlrpc|\\\\comnap</field>
 	<description>ATT&CK: Turla Group Named Pipes</description>

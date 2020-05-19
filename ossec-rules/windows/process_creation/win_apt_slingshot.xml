@@ -10,6 +10,7 @@
 </rule>
 
 <rule id="260151" level="10">
+	<if_group>windows</if_group>
 	<field name="win.system.EventID">^4701$</field>
 	<field name="win.eventdata.TaskName">\\\\Microsoft\\\\Windows\\\\Defrag\\\\ScheduledDefrag</field>
 	<description>ATT&CK T1053 S0111: Defrag Deactivation</description>

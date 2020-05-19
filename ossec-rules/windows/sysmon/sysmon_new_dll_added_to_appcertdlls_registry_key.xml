@@ -1,4 +1,5 @@
 <rule id="250330" level="10">
+	<if_group>windows</if_group>
 	<field name="win.system.EventID">^12$|^13$</field>
 	<field name="win.eventdata.TargetObject">HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\Session Manager\\\\AppCertDlls</field>
 	<description>ATT&CK T1182: New DLL Added to AppCertDlls Registry Key</description>
@@ -11,6 +12,7 @@
 </rule>
 
 <rule id="250331" level="10">
+	<if_group>windows</if_group>
 	<field name="win.system.EventID">^14$</field>
 	<field name="win.eventdata.NewName">HKLM\\\\SYSTEM\\\\CurentControlSet\\\\Control\\\\Session Manager\\\\AppCertDlls</field>
 	<description>ATT&CK T1182: New DLL Added to AppCertDlls Registry Key</description>

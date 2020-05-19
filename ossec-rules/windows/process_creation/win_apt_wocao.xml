@@ -1,4 +1,5 @@
 <rule id="260220" level="14">
+	<if_group>windows</if_group>
 	<field name="win.system.EventID">^4799$</field>
 	<field name="win.eventdata.GroupName">Administrators</field>
 	<field name="win.eventdata.ProcessName">\\\\checkadmin.exe</field>

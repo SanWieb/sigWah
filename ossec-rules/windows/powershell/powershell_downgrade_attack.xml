@@ -1,4 +1,5 @@
 <rule id="260050" level="10">
+	<if_group>windows</if_group>
 	<field name="win.system.EventID">^400$</field>
 	<field name="win.eventdata.EngineVersion">^2.</field>
 	<description>ATT&CK T1086: PowerShell Downgrade Attack</description>

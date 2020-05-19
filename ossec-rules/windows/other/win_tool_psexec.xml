@@ -1,4 +1,5 @@
 <rule id="260020" level="8">
+	<if_group>windows</if_group>
 	<field name="win.system.EventID">^7045$</field>
 	<field name="win.eventdata.ServiceName">PSEXESVC</field>
 	<field name="win.eventdata.ServiceFileName">\\\\PSEXESVC.exe</field>
@@ -12,6 +13,7 @@
 </rule>
 
 <rule id="260021" level="8">
+	<if_group>windows</if_group>
 	<field name="win.system.EventID">^7036$</field>
 	<field name="win.eventdata.ServiceName">PSEXESVC</field>
 	<description>ATT&CK T1035 S0029: PsExec Tool Execution</description>

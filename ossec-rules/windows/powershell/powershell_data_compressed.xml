@@ -1,4 +1,5 @@
 <rule id="260030" level="8">
+	<if_group>windows</if_group>
 	<field name="win.system.EventID">^4104$</field>
 	<match>-Recurse</match>
 	<regex>\|\.*Compress-Archive|Compress-Archive\.*\|</regex>

@@ -1,4 +1,5 @@
 <rule id="250960" level="14">
+	<if_group>windows</if_group>
 	<field name="win.system.EventID">^20$</field>
 	<field name="win.eventdata.Destination">new-object system.net.webclient\).downloadstring\(|new-object system.net.webclient\).downloadfile\(|new-object net.webclient\).downloadstring\(|new-object net.webclient\).downloadfile\(| iex\(|WScript.shell| -nop | -noprofile | -decode | -enc </field>
 	<description>ATT&CK T1086: Suspicious Scripting in a WMI Consumer</description>

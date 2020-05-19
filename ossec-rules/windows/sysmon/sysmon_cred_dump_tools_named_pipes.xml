@@ -1,4 +1,5 @@
 <rule id="250130" level="15">
+	<if_group>windows</if_group>
 	<field name="win.system.EventID">^17$</field>
 	<field name="win.eventdata.PipeName">\\\\lsadump|\\\\cachedump|\\\\wceservicepipe</field>
 	<description>ATT&CK T1003: Cred Dump-Tools Named Pipes</description>

@@ -1,4 +1,5 @@
 <rule id="250520" level="15">
+	<if_group>windows</if_group>
 	<field name="win.eventdata.Description">Windows PowerShell</field>
 	<field name="win.eventdata.Company">Microsoft Corporation</field>
 	<match>!\\powershell.exe|\\powershell_ise.exe</match>

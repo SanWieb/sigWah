@@ -1,4 +1,5 @@
 <rule id="250650" level="10">
+	<if_group>windows</if_group>
 	<field name="win.eventdata.Description">^$|^ $|^-$</field>
 	<field name="win.eventdata.FileVersion">^$|^ $|^-$</field>
 	<description>ATT&CK T1064: Suspicious File Characteristics Due to Missing Fields</description>
@@ -11,6 +12,7 @@
 </rule>
 
 <rule id="250651" level="10">
+	<if_group>windows</if_group>
 	<field name="win.eventdata.Description">^$|^ $|^-$</field>
 	<field name="win.eventdata.Product">^$|^ $|^-$</field>
 	<description>ATT&CK T1064: Suspicious File Characteristics Due to Missing Fields</description>
@@ -23,6 +25,7 @@
 </rule>
 
 <rule id="250652" level="10">
+	<if_group>windows</if_group>
 	<field name="win.eventdata.Description">^$|^ $|^-$</field>
 	<field name="win.eventdata.Company">^$|^ $|^-$</field>
 	<description>ATT&CK T1064: Suspicious File Characteristics Due to Missing Fields</description>

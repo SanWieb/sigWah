@@ -1,4 +1,5 @@
 <rule id="250530" level="15">
+	<if_group>windows</if_group>
 	<field name="win.eventdata.OriginalFileName">procdump</field>
 	<match>!\\procdump.exe|\\procdump64.exe</match>
 	<description>ATT&CK T1036: Renamed ProcDump</description>

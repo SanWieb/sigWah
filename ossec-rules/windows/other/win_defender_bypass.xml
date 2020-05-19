@@ -1,4 +1,5 @@
 <rule id="260000" level="14">
+	<if_group>windows</if_group>
 	<field name="win.system.EventID">^4657$|^4656$|^4660$|^4663$</field>
 	<field name="win.eventdata.ObjectName">\\\\Microsoft\\\\Windows Defender\\\\Exclusions\\\\</field>
 	<description>ATT&CK T1089: Windows Defender Exclusion Set</description>

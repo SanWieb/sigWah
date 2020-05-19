@@ -1,4 +1,5 @@
 <rule id="250490" level="14">
+	<if_group>windows</if_group>
 	<field name="win.system.EventID">^3$|^22$</field>
 	<field name="win.eventdata.Image">\\\\regsvr32.exe$</field>
 	<description>ATT&CK T1117: Regsvr32 Network Activity</description>

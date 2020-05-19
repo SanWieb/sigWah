@@ -1,4 +1,5 @@
 <rule id="260160" level="10">
+	<if_group>windows</if_group>
 	<field name="win.eventdata.ScriptBlockText">System.Net.WebClient</field>
 	<field name="win.eventdata.ScriptBlockText">.DownloadFile\(</field>
 	<description>ATT&CK T1086: Suspicious PowerShell Download</description>
@@ -9,6 +10,7 @@
 </rule>
 
 <rule id="260161" level="10">
+	<if_group>windows</if_group>
 	<field name="win.eventdata.ScriptBlockText">System.Net.WebClient</field>
 	<field name="win.eventdata.ScriptBlockText">.DownloadString\(</field>
 	<description>ATT&CK T1086: Suspicious PowerShell Download</description>

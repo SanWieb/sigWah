@@ -1,4 +1,5 @@
 <rule id="250020" level="10">
+	<if_group>windows</if_group>
 	<field name="win.system.EventID">^17$</field>
 	<field name="win.eventdata.PipeName">^\\\\PSHost</field>
 	<description>ATT&CK T1086: Alternate PowerShell Hosts Pipe</description>

@@ -1,4 +1,5 @@
 <rule id="260040" level="15">
+	<if_group>windows</if_group>
 	<field name="win.system.EventID">^4104$</field>
 	<field name="win.eventdata.ScriptBlockText">Start-Dnscat2</field>
 	<description>ATT&CK T1048: Dnscat Execution</description>

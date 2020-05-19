@@ -29,6 +29,7 @@
 </rule>
 
 <rule id="250234" level="14">
+	<if_group>windows</if_group>
 	<field name="win.system.EventID">^11$|^12$|^13$|^14$</field>
 	<field name="win.eventdata.TargetObject">UserInitMprLogonScript</field>
 	<description>ATT&CK T1037: Logon Scripts (UserInitMprLogonScript)</description>

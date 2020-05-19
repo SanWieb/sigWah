@@ -1,4 +1,5 @@
 <rule id="250540" level="14">
+	<if_group>windows</if_group>
 	<field name="win.eventdata.Description">Execute processes remotely</field>
 	<field name="win.eventdata.Product">Sysinternals PsExec</field>
 	<match>!\\PsExec.exe|\\PsExec64.exe</match>
