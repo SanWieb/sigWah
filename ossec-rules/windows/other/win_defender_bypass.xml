@@ -1,0 +1,11 @@
+<rule id="260000" level="14">
+	<field name="win.system.EventID">^4657$|^4656$|^4660$|^4663$</field>
+	<field name="win.eventdata.ObjectName">\\\\Microsoft\\\\Windows Defender\\\\Exclusions\\\\</field>
+	<description>ATT&CK T1089: Windows Defender Exclusion Set</description>
+	<info type="text">Detects scenarios where an windows defender exclusion was added in registry where an entity would want to bypass antivirus scanning from windows defender </info>
+	<info type="text">Falsepositives: Intended inclusions by administrator. </info>
+	<info type="text">Sigma UUID: e9c8808f-4cfb-4ba9-97d4-e5f3beaa244d </info>
+	<info type="link">https://www.bleepingcomputer.com/news/security/gootkit-malware-bypasses-windows-defender-by-setting-path-exclusions/ </info>
+	<group>attack.defense_evasion,attack.t1089,MITRE</group>
+</rule>
+

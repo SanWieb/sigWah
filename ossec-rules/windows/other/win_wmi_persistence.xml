@@ -1,0 +1,23 @@
+<rule id="260030" level="10">
+	<field name="win.system.EventID">^5861$</field>
+	<match>ActiveScriptEventConsumer|CommandLineEventConsumer|CommandLineTemplate</match>
+	<description>ATT&CK T1047: WMI Persistence</description>
+	<info type="text">Detects suspicious WMI event filter and command line event consumer based on event id 5861 and 5859 (Windows 10, 2012 and higher) </info>
+	<info type="text">Falsepositives: Unknown (data set is too small; further testing needed). </info>
+	<info type="text">Sigma UUID: 0b7889b4-5577-4521-a60a-3376ee7f9f7b </info>
+	<info type="link">https://twitter.com/mattifestation/status/899646620148539397 </info>
+	<info type="link">https://www.eideon.com/2018-03-02-THL03-WMIBackdoors/ </info>
+	<group>attack.execution,attack.persistence,attack.t1047,MITRE</group>
+</rule>
+
+<rule id="260032" level="10">
+	<field name="win.system.EventID">^5859$</field>
+	<description>ATT&CK T1047: WMI Persistence</description>
+	<info type="text">Detects suspicious WMI event filter and command line event consumer based on event id 5861 and 5859 (Windows 10, 2012 and higher) </info>
+	<info type="text">Falsepositives: Unknown (data set is too small; further testing needed). </info>
+	<info type="text">Sigma UUID: 0b7889b4-5577-4521-a60a-3376ee7f9f7b </info>
+	<info type="link">https://twitter.com/mattifestation/status/899646620148539397 </info>
+	<info type="link">https://www.eideon.com/2018-03-02-THL03-WMIBackdoors/ </info>
+	<group>attack.execution,attack.persistence,attack.t1047,MITRE</group>
+</rule>
+
