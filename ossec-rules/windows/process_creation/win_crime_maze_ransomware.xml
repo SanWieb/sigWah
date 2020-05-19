@@ -1,0 +1,43 @@
+<rule id="260340" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\\\\WINWORD.exe$</field>
+	<field name="win.eventdata.Image">.tmp$</field>
+	<description>ATT&CK T1204: Maze Ransomware</description>
+	<info type="text">Detects specific process characteristics of Maze ransomware word document droppers </info>
+	<info type="text">Falsepositives: Unlikely. </info>
+	<info type="text">Sigma UUID: 29fd07fc-9cfd-4331-b7fd-cc18dfa21052 </info>
+	<info type="link">https://www.fireeye.com/blog/threat-research/2020/05/tactics-techniques-procedures-associated-with-maze-ransomware-incidents.html </info>
+	<info type="link">https://app.any.run/tasks/51e7185c-52d7-4efb-ac0d-e86340053473/ </info>
+	<info type="link">https://app.any.run/tasks/65a79440-373a-4725-8d74-77db9f2abda4/ </info>
+	<group>attack.execution,attack.t1204,MITRE</group>
+</rule>
+
+<rule id="260341" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\wmic.exe$</field>
+	<field name="win.eventdata.ParentImage">\\\\Temp\\\\</field>
+	<field name="win.eventdata.CommandLine">shadowcopy\s+delete$</field>
+	<description>ATT&CK T1204: Maze Ransomware</description>
+	<info type="text">Detects specific process characteristics of Maze ransomware word document droppers </info>
+	<info type="text">Falsepositives: Unlikely. </info>
+	<info type="text">Sigma UUID: 29fd07fc-9cfd-4331-b7fd-cc18dfa21052 </info>
+	<info type="link">https://www.fireeye.com/blog/threat-research/2020/05/tactics-techniques-procedures-associated-with-maze-ransomware-incidents.html </info>
+	<info type="link">https://app.any.run/tasks/51e7185c-52d7-4efb-ac0d-e86340053473/ </info>
+	<info type="link">https://app.any.run/tasks/65a79440-373a-4725-8d74-77db9f2abda4/ </info>
+	<group>attack.execution,attack.t1204,MITRE</group>
+</rule>
+
+<rule id="260342" level="15">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">shadowcopy\s+delete$</field>
+	<field name="win.eventdata.CommandLine">\\\\..\\\\..\\\\system32</field>
+	<description>ATT&CK T1204: Maze Ransomware</description>
+	<info type="text">Detects specific process characteristics of Maze ransomware word document droppers </info>
+	<info type="text">Falsepositives: Unlikely. </info>
+	<info type="text">Sigma UUID: 29fd07fc-9cfd-4331-b7fd-cc18dfa21052 </info>
+	<info type="link">https://www.fireeye.com/blog/threat-research/2020/05/tactics-techniques-procedures-associated-with-maze-ransomware-incidents.html </info>
+	<info type="link">https://app.any.run/tasks/51e7185c-52d7-4efb-ac0d-e86340053473/ </info>
+	<info type="link">https://app.any.run/tasks/65a79440-373a-4725-8d74-77db9f2abda4/ </info>
+	<group>attack.execution,attack.t1204,MITRE</group>
+</rule>
+
