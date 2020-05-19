@@ -1,4 +1,4 @@
-<rule id="262240" level="14">
+<rule id="262220" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\schtasks.exe$</field>
 	<field name="win.eventdata.CommandLine">/change\.*/TN\.*/RU\.*/RP</field>
