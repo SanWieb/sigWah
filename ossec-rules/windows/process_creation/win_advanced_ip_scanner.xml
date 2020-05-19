@@ -1,0 +1,12 @@
+<rule id="260000" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\advanced_ip_scanner</field>
+	<description>ATT&CK T1046: Advanced IP Scanner</description>
+	<info type="text">Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups. </info>
+	<info type="text">Falsepositives: Legitimate administrative use. </info>
+	<info type="text">Sigma UUID: bef37fa2-f205-4a7b-b484-0759bfd5f86f </info>
+	<info type="link">https://news.sophos.com/en-us/2019/12/09/snatch-ransomware-reboots-pcs-into-safe-mode-to-bypass-protection/ </info>
+	<info type="link">https://www.fireeye.com/blog/threat-research/2020/05/tactics-techniques-procedures-associated-with-maze-ransomware-incidents.html </info>
+	<group>attack.discovery,attack.t1046,MITRE</group>
+</rule>
+
