@@ -1,4 +1,4 @@
-<rule id="260030" level="10">
+<rule id="280030" level="10">
 	<if_group>windows</if_group>
 	<field name="win.system.EventID">^5861$</field>
 	<match>ActiveScriptEventConsumer|CommandLineEventConsumer|CommandLineTemplate</match>
@@ -11,7 +11,7 @@
 	<group>attack.execution,attack.persistence,attack.t1047,MITRE</group>
 </rule>
 
-<rule id="260032" level="10">
+<rule id="280032" level="10">
 	<if_group>windows</if_group>
 	<field name="win.system.EventID">^5859$</field>
 	<description>ATT&CK T1047: WMI Persistence</description>

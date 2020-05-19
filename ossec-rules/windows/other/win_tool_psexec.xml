@@ -12,7 +12,7 @@
 	<group>attack.execution,attack.t1035,attack.s0029,MITRE</group>
 </rule>
 
-<rule id="260021" level="8">
+<rule id="280021" level="8">
 	<if_group>windows</if_group>
 	<field name="win.system.EventID">^7036$</field>
 	<field name="win.eventdata.ServiceName">PSEXESVC</field>
@@ -25,7 +25,7 @@
 	<group>attack.execution,attack.t1035,attack.s0029,MITRE</group>
 </rule>
 
-<rule id="260022" level="8">
+<rule id="280022" level="8">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\PSEXESVC.exe</field>
 	<field name="win.eventdata.User">NT AUTHORITY\\\\SYSTEM</field>

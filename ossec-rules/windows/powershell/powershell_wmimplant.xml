@@ -1,4 +1,4 @@
-<rule id="260220" level="14">
+<rule id="270220" level="14">
 	<if_group>windows</if_group>
 	<field name="win.eventdata.ScriptBlockText">WMImplant| change_user | gen_cli | command_exec | disable_wdigest | disable_winrm | enable_wdigest | enable_winrm | registry_mod | remote_posh | sched_job | service_mod | process_kill | active_users | basic_info | power_off | vacant_system | logon_events </field>
 	<description>ATT&CK T1047: WMImplant Hack Tool</description>

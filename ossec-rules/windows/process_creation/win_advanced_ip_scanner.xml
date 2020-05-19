@@ -1,4 +1,4 @@
-<rule id="260000" level="10">
+<rule id="262300" level="10">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\advanced_ip_scanner</field>
 	<description>ATT&CK T1046: Advanced IP Scanner</description>

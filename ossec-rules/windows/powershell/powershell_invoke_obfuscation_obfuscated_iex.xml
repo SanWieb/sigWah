@@ -1,5 +1,5 @@
 <!-- RegEx has to be converted to Wazuh RegEx -->
-<!-- <rule id="260070" level="14">
+<!-- <rule id="270070" level="14">
 	<if_group>windows</if_group>
 	<field name="win.system.EventID">^4104$</field>
 	<description>ATT&CK T1027: Invoke-Obfuscation Obfuscated IEX Invocation</description>
@@ -9,7 +9,7 @@
 	<group>attack.defense_evasion,attack.t1027,MITRE</group>
 </rule>
 
-<rule id="260072" level="14">
+<rule id="270072" level="14">
 	<if_group>windows</if_group>
 	<field name="win.system.EventID">^4103$</field>
 	<description>ATT&CK T1027: Invoke-Obfuscation Obfuscated IEX Invocation</description>

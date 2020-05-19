@@ -1,4 +1,4 @@
-<rule id="260010" level="10">
+<rule id="270010" level="10">
 	<if_group>windows</if_group>
 	<match>del (Get-PSReadlineOption).HistorySavePath|Set-PSReadlineOption –HistorySaveStyle SaveNothing|Remove-Item (Get-PSReadlineOption).HistorySavePath|rm (Get-PSReadlineOption).HistorySavePath</match>
 	<description>ATT&CK T1146: Clear PowerShell History</description>

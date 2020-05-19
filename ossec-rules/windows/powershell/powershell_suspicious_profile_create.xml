@@ -1,4 +1,4 @@
-<rule id="260201" level="14">
+<rule id="270201" level="14">
 	<if_group>sysmon_event_11</if_group>
 	<field name="win.eventdata.TargetFilename">\\\\My Documents\\\\PowerShell\\\\</field>
 	<field name="win.eventdata.TargetFilename">\\\\profile.ps1</field>
@@ -10,7 +10,7 @@
 	<group>attack.persistence,attack.privilege_escalation,MITRE</group>
 </rule>
 
-<rule id="260202" level="14">
+<rule id="270202" level="14">
 	<if_group>sysmon_event_11</if_group>
 	<field name="win.eventdata.TargetFilename">\.:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\</field>
 	<field name="win.eventdata.TargetFilename">\\\\profile.ps1</field>

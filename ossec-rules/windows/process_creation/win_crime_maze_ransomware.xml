@@ -1,4 +1,4 @@
-<rule id="260340" level="15">
+<rule id="262310" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.ParentImage">\\\\WINWORD.exe$</field>
 	<field name="win.eventdata.Image">.tmp$</field>
@@ -12,7 +12,7 @@
 	<group>attack.execution,attack.t1204,MITRE</group>
 </rule>
 
-<rule id="260341" level="15">
+<rule id="262311" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\wmic.exe$</field>
 	<field name="win.eventdata.ParentImage">\\\\Temp\\\\</field>
@@ -27,7 +27,7 @@
 	<group>attack.execution,attack.t1204,MITRE</group>
 </rule>
 
-<rule id="260342" level="15">
+<rule id="262312" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">shadowcopy\s+delete$</field>
 	<field name="win.eventdata.CommandLine">\\\\..\\\\..\\\\system32</field>

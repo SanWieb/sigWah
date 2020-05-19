@@ -1,4 +1,4 @@
-<rule id="260110" level="14">
+<rule id="270110" level="14">
 	<if_group>windows</if_group>
 	<match>set-content</match>
 	<regex>-stream</regex>

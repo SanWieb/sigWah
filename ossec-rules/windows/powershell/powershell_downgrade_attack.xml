@@ -1,4 +1,4 @@
-<rule id="260050" level="10">
+<rule id="270050" level="10">
 	<if_group>windows</if_group>
 	<field name="win.system.EventID">^400$</field>
 	<field name="win.eventdata.EngineVersion">^2.</field>
@@ -10,8 +10,8 @@
 	<group>attack.defense_evasion,attack.execution,attack.t1086,MITRE</group>
 </rule>
 
-<rule id="260051" level="0">
-	<if_sid>260050</if_sid>
+<rule id="270051" level="0">
+	<if_sid>270050</if_sid>
 	<field name="win.eventdata.HostVersion">^2.</field>
 	<description>Whitelist Interaction: PowerShell Downgrade Attack</description>
 	<group>attack.defense_evasion,attack.execution,attack.t1086,MITRE</group>

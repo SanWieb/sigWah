@@ -1,4 +1,4 @@
-<rule id="260360" level="14">
+<rule id="250980" level="14">
 	<if_group>sysmon_event3</if_group>
 	<field name="win.eventdata.Image">\\\\notepad.exe</field>
 	<description>ATT&CK: Notepad Making Network Connection</description>
@@ -10,8 +10,8 @@
 	<group>attack.command_and_control,attack.execution,MITRE</group>
 </rule>
 
-<rule id="260361" level="0">
-	<if_sid>260360</if_sid>
+<rule id="250981" level="0">
+	<if_sid>250980</if_sid>
 	<field name="win.eventdata.DestinationPort">^9100$</field>
 	<description>Whitelist Interaction: Notepad Making Network Connection</description>
 	<group>attack.command_and_control,attack.execution,MITRE</group>

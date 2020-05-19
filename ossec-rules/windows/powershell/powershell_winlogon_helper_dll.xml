@@ -1,4 +1,4 @@
-<rule id="260210" level="10">
+<rule id="270210" level="10">
 	<if_group>windows</if_group>
 	<field name="win.system.EventID">^4104$</field>
 	<regex>Set-ItemProperty|New-Item</regex>

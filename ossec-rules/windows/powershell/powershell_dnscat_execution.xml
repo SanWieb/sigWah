@@ -1,4 +1,4 @@
-<rule id="260040" level="15">
+<rule id="270040" level="15">
 	<if_group>windows</if_group>
 	<field name="win.system.EventID">^4104$</field>
 	<field name="win.eventdata.ScriptBlockText">Start-Dnscat2</field>

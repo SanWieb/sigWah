@@ -1,4 +1,4 @@
-<rule id="260000" level="10">
+<rule id="270000" level="10">
 	<if_group>windows</if_group>
 	<field name="win.system.EventID">^4103$|^400$</field>
 	<match>!powershell.exe</match>
