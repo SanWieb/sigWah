@@ -1,0 +1,14 @@
+<rule id="300090" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4738$</field>
+	<field name="win.eventdata.Message">DES|Preauth|Encrypted</field>
+	<match>!Enabled</match>
+	<description>ATT&CK T1089: Weak Encryption Enabled and Kerberoast</description>
+	<info type="text">Detects scenario where weak encryption is enabled for a user profile which could be used for hash/password cracking. </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: f6de9536-0441-4b3f-a646-f4e00f300ffd </info>
+	<info type="link">https://adsecurity.org/?p=2053 </info>
+	<info type="link">https://www.harmj0y.net/blog/activedirectory/roasting-as-reps/ </info>
+	<group>attack.defense_evasion,attack.t1089,MITRE</group>
+</rule>
+

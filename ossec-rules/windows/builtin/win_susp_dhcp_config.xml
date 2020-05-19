@@ -1,0 +1,14 @@
+<rule id="300610" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^1033$</field>
+	<field name="win.eventdata.Source">Microsoft-Windows-DHCP-Server</field>
+	<description>ATT&CK T1073: DHCP Server Loaded the CallOut DLL</description>
+	<info type="text">This rule detects a DHCP server in which a specified Callout DLL (in registry) was loaded </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 13fc89a9-971e-4ca6-b9dc-aa53a445bf40 </info>
+	<info type="link">https://blog.3or.de/mimilib-dhcp-server-callout-dll-injection.html </info>
+	<info type="link">https://technet.microsoft.com/en-us/library/cc726884(v=ws.10).aspx </info>
+	<info type="link">https://msdn.microsoft.com/de-de/library/windows/desktop/aa363389(v=vs.85).aspx </info>
+	<group>attack.defense_evasion,attack.t1073,MITRE</group>
+</rule>
+

@@ -1,0 +1,12 @@
+<rule id="300710" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4720$</field>
+	<field name="win.eventdata.SAMAccountName">ANONYMOUS\.*LOGON</field>
+	<description>ATT&CK T1136: Suspicious Windows ANONYMOUS LOGON Local Account Created</description>
+	<info type="text">Detects the creation of suspicious accounts simliar to ANONYMOUS LOGON, such as using additional spaces. Created as an covering detection for exclusion of Logon Type 3 from ANONYMOUS LOGON accounts. </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 1bbf25b9-8038-4154-a50b-118f2a32be27 </info>
+	<info type="link">https://twitter.com/SBousseaden/status/1189469425482829824 </info>
+	<group>attack.persistence,attack.t1136,MITRE</group>
+</rule>
+

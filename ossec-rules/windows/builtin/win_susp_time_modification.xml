@@ -1,0 +1,21 @@
+<rule id="300860" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4616$</field>
+	<match>!\\Program Files\\VMware\\VMware Tools\\vmtoolsd.exe|\\Windows\\System32\\VBoxService.exe</match>
+	<description>ATT&CK T1099: Unauthorized System Time Modification</description>
+	<info type="text">Detect scenarios where a potentially unauthorized application or user is modifying the system time. </info>
+	<info type="text">Falsepositives: HyperV or other virtualization technologies with binary not listed in filter portion of detection. </info>
+	<info type="text">Sigma UUID: faa031b5-21ed-4e02-8881-2591f98d82ed </info>
+	<info type="link">Private Cuckoo Sandbox (from many years ago, no longer have hash, NDA as well) </info>
+	<info type="link">Live environment caused by malware </info>
+	<group>attack.defense_evasion,attack.t1099,MITRE</group>
+</rule>
+
+<rule id="300861" level="0">
+	<if_sid>300860</if_sid>
+	<field name="win.eventdata.ProcessName">\.:\\\\Windows\\\\System32\\\\svchost.exe</field>
+	<field name="win.eventdata.SubjectUserSid">S-1-5-19</field>
+	<description>Whitelist Interaction: Unauthorized System Time Modification</description>
+	<group>attack.defense_evasion,attack.t1099,MITRE</group>
+</rule>
+

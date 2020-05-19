@@ -1,0 +1,13 @@
+<rule id="300420" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^5145$</field>
+	<field name="win.eventdata.ShareName">IPC</field>
+	<field name="win.eventdata.RelativeTargetName">protected_storage</field>
+	<description>ATT&CK T1021: Protected Storage Service Access</description>
+	<info type="text">Detects access to a protected_storage service over the network. Potential abuse of DPAPI to extract domain backup keys from Domain Controllers </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 45545954-4016-43c6-855e-eae8f1c369dc </info>
+	<info type="link">https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/06_credential_access/T1003_credential_dumping/domain_dpapi_backupkey_extraction.md </info>
+	<group>attack.lateral_movement,attack.t1021,MITRE</group>
+</rule>
+

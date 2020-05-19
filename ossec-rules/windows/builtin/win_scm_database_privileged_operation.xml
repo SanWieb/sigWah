@@ -1,0 +1,15 @@
+<rule id="300550" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4674$</field>
+	<field name="win.eventdata.ObjectType">SC_MANAGER OBJECT</field>
+	<field name="win.eventdata.ObjectName">servicesactive</field>
+	<field name="win.eventdata.PrivilegeList">SeTakeOwnershipPrivilege</field>
+	<field name="win.eventdata.SubjectLogonId">0x3e4</field>
+	<description>ATT&CK: SCM Database Privileged Operation</description>
+	<info type="text">Detects non-system users performing privileged operation os the SCM database </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: dae8171c-5ec6-4396-b210-8466585b53e9 </info>
+	<info type="link">https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/07_discovery/T1000_local_admin_check/local_admin_remote_check_openscmanager.md </info>
+	<group>MITRE</group>
+</rule>
+

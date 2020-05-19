@@ -1,0 +1,13 @@
+<rule id="300150" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^7045$</field>
+	<field name="win.eventdata.ServiceName">NtsSrv</field>
+	<field name="win.eventdata.ServiceFileName"> LocalService</field>
+	<description>ATT&CK T1050: StoneDrill Service Install</description>
+	<info type="text">This method detects a service install of the malicious Microsoft Network Realtime Inspection Service service described in StoneDrill report by Kaspersky </info>
+	<info type="text">Falsepositives: Unlikely. </info>
+	<info type="text">Sigma UUID: 9e987c6c-4c1e-40d8-bd85-dd26fba8fdd6 </info>
+	<info type="link">https://securelist.com/blog/research/77725/from-shamoon-to-stonedrill/ </info>
+	<group>attack.persistence,attack.g0064,attack.t1050,MITRE</group>
+</rule>
+

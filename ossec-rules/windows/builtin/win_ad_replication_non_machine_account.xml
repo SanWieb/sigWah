@@ -1,0 +1,21 @@
+<rule id="300050" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4662$</field>
+	<field name="win.eventdata.AccessMask">0x100</field>
+	<field name="win.eventdata.Properties">1131f6aa-9c07-11d1-f79f-00c04fc2dcd2|1131f6ad-9c07-11d1-f79f-00c04fc2dcd2|89e95b76-444d-4c62-991a-0facbeda640c</field>
+	<description>ATT&CK T1003: Active Directory Replication from Non Machine Account</description>
+	<info type="text">Detects potential abuse of Active Directory Replication Service (ADRS) from a non machine account to request credentials. </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 17d619c1-e020-4347-957e-1d1207455c93 </info>
+	<info type="link">https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/06_credential_access/T1003_credential_dumping/ad_replication_non_machine_account.md </info>
+	<group>attack.credential_access,attack.t1003,MITRE</group>
+</rule>
+
+<rule id="300051" level="0">
+	<if_sid>300050</if_sid>
+	<field name="win.eventdata.SubjectUser">\$$</field>
+	<field name="win.eventdata.SubjectUser">^MSOL_</field>
+	<description>Whitelist Interaction: Active Directory Replication from Non Machine Account</description>
+	<group>attack.credential_access,attack.t1003,MITRE</group>
+</rule>
+

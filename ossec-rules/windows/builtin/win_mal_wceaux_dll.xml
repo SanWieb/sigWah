@@ -1,0 +1,13 @@
+<rule id="300330" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4656$|^4658$|^4660$|^4663$</field>
+	<field name="win.eventdata.ObjectName">\\\\wceaux.dll</field>
+	<description>ATT&CK T1003 S0005: WCE wceaux.dll Access</description>
+	<info type="text">Detects wceaux.dll access while WCE pass-the-hash remote command execution on source host </info>
+	<info type="text">Falsepositives: Penetration testing. </info>
+	<info type="text">Sigma UUID: 1de68c67-af5c-4097-9c85-fe5578e09e67 </info>
+	<info type="link">https://www.jpcert.or.jp/english/pub/sr/ir_research.html </info>
+	<info type="link">https://jpcertcc.github.io/ToolAnalysisResultSheet </info>
+	<group>attack.credential_access,attack.t1003,attack.s0005,MITRE</group>
+</rule>
+

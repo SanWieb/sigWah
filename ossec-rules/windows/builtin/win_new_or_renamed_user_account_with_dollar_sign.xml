@@ -1,0 +1,11 @@
+<rule id="300370" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4720$|^4781$</field>
+	<field name="win.eventdata.User">\$</field>
+	<description>ATT&CK T1036: New or Renamed User Account with '$' in Attribute 'SamAccountName'.</description>
+	<info type="text">Detects possible bypass EDR and SIEM via abnormal user account name. </info>
+	<info type="text">Falsepositives: Unkown. </info>
+	<info type="text">Sigma UUID: cfeed607-6aa4-4bbd-9627-b637deb723c8 </info>
+	<group>attack.defense_evasion,attack.t1036,MITRE</group>
+</rule>
+

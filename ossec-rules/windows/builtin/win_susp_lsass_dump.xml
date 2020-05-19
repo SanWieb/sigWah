@@ -1,0 +1,14 @@
+<rule id="300720" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4656$</field>
+	<field name="win.eventdata.ProcessName">\.:\\\\Windows\\\\System32\\\\lsass.exe</field>
+	<field name="win.eventdata.AccessMask">0x705</field>
+	<field name="win.eventdata.ObjectType">SAM_DOMAIN</field>
+	<description>ATT&CK T1003: Password Dumper Activity on LSASS</description>
+	<info type="text">Detects process handle on LSASS process with certain access mask and object type SAM_DOMAIN </info>
+	<info type="text">Falsepositives: Unkown. </info>
+	<info type="text">Sigma UUID: aa1697b7-d611-4f9a-9cb2-5125b4ccfd5c </info>
+	<info type="link">https://twitter.com/jackcr/status/807385668833968128 </info>
+	<group>attack.credential_access,attack.t1003,MITRE</group>
+</rule>
+

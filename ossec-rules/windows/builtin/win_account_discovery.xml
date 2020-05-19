@@ -1,0 +1,13 @@
+<rule id="300010" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4661$</field>
+	<field name="win.eventdata.ObjectType">SAM_USER|SAM_GROUP</field>
+	<field name="win.eventdata.ObjectName">-512|-502|-500|-505|-519|-520|-544|-551|-555|admin</field>
+	<description>ATT&CK T1087: AD Privileged Users or Groups Reconnaissance</description>
+	<info type="text">Detect priv users or groups recon based on 4661 eventid and known privileged users or groups SIDs </info>
+	<info type="text">Falsepositives: if source account name is not an admin then its super suspicious. </info>
+	<info type="text">Sigma UUID: 35ba1d85-724d-42a3-889f-2e2362bcaf23 </info>
+	<info type="link">https://blog.menasec.net/2019/02/threat-hunting-5-detecting-enumeration.html </info>
+	<group>attack.discovery,attack.t1087,MITRE</group>
+</rule>
+

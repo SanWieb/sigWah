@@ -1,0 +1,12 @@
+<rule id="300160" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^7045$</field>
+	<field name="win.eventdata.ServiceName">WerFaultSvc</field>
+	<description>ATT&CK T1050: Turla PNG Dropper Service</description>
+	<info type="text">This method detects malicious services mentioned in Turla PNG dropper report by NCC Group in November 2018 </info>
+	<info type="text">Falsepositives: unlikely. </info>
+	<info type="text">Sigma UUID: 1228f8e2-7e79-4dea-b0ad-c91f1d5016c1 </info>
+	<info type="link">https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2018/november/turla-png-dropper-is-back/ </info>
+	<group>attack.persistence,attack.g0010,attack.t1050,MITRE</group>
+</rule>
+

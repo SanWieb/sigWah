@@ -1,0 +1,13 @@
+<rule id="300470" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4624$</field>
+	<field name="win.eventdata.LogonType">10</field>
+	<field name="win.eventdata.SourceNetworkAddress">::1|127.0.0.1</field>
+	<description>ATT&CK T1076: RDP Login from Localhost</description>
+	<info type="text">RDP login with localhost source address may be a tunnelled login </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 51e33403-2a37-4d66-a574-1fda1782cc31 </info>
+	<info type="link">https://www.fireeye.com/blog/threat-research/2019/01/bypassing-network-restrictions-through-rdp-tunneling.html </info>
+	<group>attack.lateral_movement,attack.t1076,car.2013-07-002,MITRE</group>
+</rule>
+

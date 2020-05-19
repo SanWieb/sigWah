@@ -1,0 +1,12 @@
+<rule id="300920" level="8">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^2003$|^2100$|^2102$</field>
+	<description>ATT&CK T1200: USB Device Plugged</description>
+	<info type="text">Detects plugged USB devices </info>
+	<info type="text">Falsepositives: Legitimate administrative activity. </info>
+	<info type="text">Sigma UUID: 1a4bd6e3-4c6e-405d-a9a3-53a116e341d4 </info>
+	<info type="link">https://df-stream.com/2014/01/the-windows-7-event-log-and-usb-device/ </info>
+	<info type="link">https://www.techrepublic.com/article/how-to-track-down-usb-flash-drive-usage-in-windows-10s-event-viewer/ </info>
+	<group>attack.initial_access,attack.t1200,MITRE</group>
+</rule>
+

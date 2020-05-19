@@ -1,0 +1,14 @@
+<rule id="300840" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4656$|^4663$|^4658$</field>
+	<field name="win.eventdata.ObjectName">.AAA|.ZZZ</field>
+	<description>ATT&CK T1107 T1066 S0195: Secure Deletion with SDelete</description>
+	<info type="text">Detects renaming of file while deletion with SDelete tool </info>
+	<info type="text">Falsepositives: Legitime usage of SDelete. </info>
+	<info type="text">Sigma UUID: 39a80702-d7ca-4a83-b776-525b1f86a36d </info>
+	<info type="link">https://jpcertcc.github.io/ToolAnalysisResultSheet </info>
+	<info type="link">https://www.jpcert.or.jp/english/pub/sr/ir_research.html </info>
+	<info type="link">https://technet.microsoft.com/en-us/en-en/sysinternals/sdelete.aspx </info>
+	<group>attack.defense_evasion,attack.t1107,attack.t1066,attack.s0195,MITRE</group>
+</rule>
+

@@ -1,0 +1,20 @@
+<rule id="300680" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^528$|^529$|^4624$|^4625$</field>
+	<field name="win.eventdata.LogonType">2</field>
+	<field name="win.eventdata.ComputerName">%ServerSystems%|%DomainControllers%</field>
+	<description>ATT&CK T1078: Interactive Logon to Server Systems</description>
+	<info type="text">Detects interactive console logons to </info>
+	<info type="text">Falsepositives: Administrative activity via KVM or ILO board. </info>
+	<info type="text">Sigma UUID: 3ff152b2-1388-4984-9cd9-a323323fdadf </info>
+	<group>attack.lateral_movement,attack.t1078,MITRE</group>
+</rule>
+
+<rule id="300681" level="0">
+	<if_sid>300680</if_sid>
+	<field name="win.eventdata.LogonProcessName">Advapi</field>
+	<field name="win.eventdata.ComputerName">%Workstations%</field>
+	<description>Whitelist Interaction: Interactive Logon to Server Systems</description>
+	<group>attack.lateral_movement,attack.t1078,MITRE</group>
+</rule>
+

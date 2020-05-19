@@ -1,0 +1,19 @@
+<rule id="300520" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^5145$</field>
+	<field name="win.eventdata.RelativeTargetName">\\\\winreg</field>
+	<description>ATT&CK T1112 T1012 S0075: Remote Registry Management Using Reg Utility</description>
+	<info type="text">Remote registry management using REG utility from non-admin workstation </info>
+	<info type="text">Falsepositives: Legitimate usage of remote registry management by administrator. </info>
+	<info type="text">Sigma UUID: 68fcba0d-73a5-475e-a915-e8b4c576827e </info>
+	<info type="link">https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment </info>
+	<group>attack.defense_evasion,attack.discovery,attack.t1112,attack.t1012,attack.s0075,MITRE</group>
+</rule>
+
+<rule id="300521" level="0">
+	<if_sid>300520</if_sid>
+	<field name="win.eventdata.IpAddress">%Admins_Workstations%</field>
+	<description>Whitelist Interaction: Remote Registry Management Using Reg Utility</description>
+	<group>attack.defense_evasion,attack.discovery,attack.t1112,attack.t1012,attack.s0075,MITRE</group>
+</rule>
+

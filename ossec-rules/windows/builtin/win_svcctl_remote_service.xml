@@ -1,0 +1,14 @@
+<rule id="300880" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^5145$</field>
+	<field name="win.eventdata.ShareName">\\\\\.*\\\\IPC\$</field>
+	<field name="win.eventdata.RelativeTargetName">svcctl</field>
+	<field name="win.eventdata.Accesses">WriteData</field>
+	<description>ATT&CK: Remote Service Activity via SVCCTL Named Pipe</description>
+	<info type="text">Detects remote remote service activity via remote access to the svcctl named pipe </info>
+	<info type="text">Falsepositives: pentesting. </info>
+	<info type="text">Sigma UUID: 586a8d6b-6bfe-4ad9-9d78-888cd2fe50c3 </info>
+	<info type="link">https://blog.menasec.net/2019/03/threat-hunting-26-remote-windows.html </info>
+	<group>attack.lateral_movement,attack.persistence,MITRE</group>
+</rule>
+

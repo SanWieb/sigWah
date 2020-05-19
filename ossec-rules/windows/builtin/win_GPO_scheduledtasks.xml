@@ -1,0 +1,15 @@
+<rule id="300250" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^5145$</field>
+	<field name="win.eventdata.ShareName">\\\\\.*\\\\SYSVOL</field>
+	<field name="win.eventdata.RelativeTargetName">ScheduledTasks.xml</field>
+	<field name="win.eventdata.Accesses">WriteData</field>
+	<description>ATT&CK T1053: Persistence and Execution at Scale via GPO Scheduled Task</description>
+	<info type="text">Detect lateral movement using GPO scheduled task, usually used to deploy ransomware at scale </info>
+	<info type="text">Falsepositives: if the source IP is not localhost then it's super suspicious, better to monitor both local and remote changes to GPO scheduledtasks. </info>
+	<info type="text">Sigma UUID: a8f29a7b-b137-4446-80a0-b804272f3da2 </info>
+	<info type="link">https://twitter.com/menasec1/status/1106899890377052160 </info>
+	<info type="link">https://www.secureworks.com/blog/ransomware-as-a-distraction </info>
+	<group>attack.persistence,attack.lateral_movement,attack.t1053,MITRE</group>
+</rule>
+

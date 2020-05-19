@@ -1,0 +1,28 @@
+<rule id="300490" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^5156$</field>
+	<field name="win.eventdata.SourcePort">^3389$</field>
+	<field name="win.eventdata.DestinationAddress">^127.|^::1$</field>
+	<description>ATT&CK T1076 T1090: RDP over Reverse SSH Tunnel WFP</description>
+	<info type="text">Detects svchost hosting RDP termsvcs communicating with the loopback address </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: 5bed80b6-b3e8-428e-a3ae-d3c757589e41 </info>
+	<info type="link">https://twitter.com/SBousseaden/status/1096148422984384514 </info>
+	<info type="link">https://github.com/sbousseaden/EVTX-ATTACK-SAMPLES/blob/master/Command%20and%20Control/DE_RDP_Tunnel_5156.evtx </info>
+	<group>attack.defense_evasion,attack.command_and_control,attack.lateral_movement,attack.t1076,attack.t1090,car.2013-07-002,MITRE</group>
+</rule>
+
+<rule id="300490" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^5156$</field>
+	<field name="win.eventdata.DestinationPort">^3389$</field>
+	<field name="win.eventdata.SourceAddress">^127.|^::1$</field>
+	<description>ATT&CK T1076 T1090: RDP over Reverse SSH Tunnel WFP</description>
+	<info type="text">Detects svchost hosting RDP termsvcs communicating with the loopback address </info>
+	<info type="text">Falsepositives: unknown. </info>
+	<info type="text">Sigma UUID: 5bed80b6-b3e8-428e-a3ae-d3c757589e41 </info>
+	<info type="link">https://twitter.com/SBousseaden/status/1096148422984384514 </info>
+	<info type="link">https://github.com/sbousseaden/EVTX-ATTACK-SAMPLES/blob/master/Command%20and%20Control/DE_RDP_Tunnel_5156.evtx </info>
+	<group>attack.defense_evasion,attack.command_and_control,attack.lateral_movement,attack.t1076,attack.t1090,car.2013-07-002,MITRE</group>
+</rule>
+

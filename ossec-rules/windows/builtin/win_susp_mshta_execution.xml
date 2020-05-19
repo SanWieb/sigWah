@@ -1,0 +1,15 @@
+<rule id="300740" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\mshta.exe</field>
+	<field name="win.eventdata.CommandLine">vbscript|.jpg|.png|.lnk|.xls|.doc|.zip</field>
+	<description>ATT&CK T1140: MSHTA Suspicious Execution 01</description>
+	<info type="text">Detection for mshta.exe suspicious execution patterns sometimes involving file polyglotism </info>
+	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. </info>
+	<info type="text">Sigma UUID: cc7abbd0-762b-41e3-8a26-57ad50d2eea3 </info>
+	<info type="link">http://blog.sevagas.com/?Hacking-around-HTA-files </info>
+	<info type="link">https://0x00sec.org/t/clientside-exploitation-in-2018-how-pentesting-has-changed/7356 </info>
+	<info type="link">https://docs.microsoft.com/en-us/dotnet/standard/data/xml/xslt-stylesheet-scripting-using-msxsl-script </info>
+	<info type="link">https://medium.com/tsscyber/pentesting-and-hta-bypassing-powershell-constrained-language-mode-53a42856c997 </info>
+	<group>attack.defense_evasion,attack.t1140,MITRE</group>
+</rule>
+

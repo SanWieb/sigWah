@@ -1,0 +1,23 @@
+<rule id="300320" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^7045$</field>
+	<field name="win.eventdata.ServiceFileName">\\\\PAExec|net user</field>
+	<description>ATT&CK T1003 T1035 T1050: Malicious Service Installations</description>
+	<info type="text">Detects known malicious service installs that only appear in cases of lateral movement, credential dumping and other suspicious activity </info>
+	<info type="text">Falsepositives: Penetration testing. </info>
+	<info type="text">Sigma UUID: 5a105d34-05fc-401e-8553-272b45c1522d </info>
+	<group>attack.persistence,attack.privilege_escalation,attack.t1003,attack.t1035,attack.t1050,car.2013-09-005,MITRE</group>
+</rule>
+
+<rule id="300321" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^7045$</field>
+	<field name="win.eventdata.ServiceName">mssecsvc2.0</field>
+	<description>ATT&CK T1003 T1035 T1050: Malicious Service Installations</description>
+	<info type="text">Detects known malicious service installs that only appear in cases of lateral movement, credential dumping and other suspicious activity </info>
+	<info type="text">Falsepositives: Penetration testing. </info>
+	<info type="text">Sigma UUID: 5a105d34-05fc-401e-8553-272b45c1522d </info>
+	<group>attack.persistence,attack.privilege_escalation,attack.t1003,attack.t1035,attack.t1050,car.2013-09-005,MITRE</group>
+</rule>
+
+

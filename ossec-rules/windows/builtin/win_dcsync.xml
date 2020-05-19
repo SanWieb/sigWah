@@ -1,0 +1,28 @@
+<rule id="300200" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4662$</field>
+	<field name="win.eventdata.Properties">Replicating Directory Changes All|1131f6ad-9c07-11d1-f79f-00c04fc2dcd2</field>
+	<match>!NT AUTHORITY</match>
+	<description>ATT&CK S0002 T1003: Mimikatz DC Sync</description>
+	<info type="text">Detects Mimikatz DC sync security events </info>
+	<info type="text">Falsepositives: Valid DC Sync that is not covered by the filters; please report. </info>
+	<info type="text">Sigma UUID: 611eab06-a145-4dfa-a295-3ccc5c20f59a </info>
+	<info type="link">https://twitter.com/gentilkiwi/status/1003236624925413376 </info>
+	<info type="link">https://gist.github.com/gentilkiwi/dcc132457408cf11ad2061340dcb53c2 </info>
+	<group>attack.credential_access,attack.s0002,attack.t1003,MITRE</group>
+</rule>
+
+<rule id="300201" level="0">
+	<if_sid>300200</if_sid>
+	<field name="win.eventdata.SubjectDomainName">Window Manager</field>
+	<description>Whitelist Interaction: Mimikatz DC Sync</description>
+	<group>attack.credential_access,attack.s0002,attack.t1003,MITRE</group>
+</rule>
+
+<rule id="300202" level="0">
+	<if_sid>300200</if_sid>
+	<field name="win.eventdata.SubjectUser">NT AUTHORITY|\$</field>
+	<description>Whitelist Interaction: Mimikatz DC Sync</description>
+	<group>attack.credential_access,attack.s0002,attack.t1003,MITRE</group>
+</rule>
+

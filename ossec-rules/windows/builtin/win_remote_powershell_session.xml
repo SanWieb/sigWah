@@ -1,0 +1,13 @@
+<rule id="300510" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^5156$</field>
+	<field name="win.eventdata.DestPort">5985|5986</field>
+	<field name="win.eventdata.LayerRTID">44</field>
+	<description>ATT&CK T1086: Remote PowerShell Sessions</description>
+	<info type="text">Detects basic PowerShell Remoting by monitoring for network inbound connections to ports 5985 OR 5986 </info>
+	<info type="text">Falsepositives: Legitimate use of remote PowerShell execution. </info>
+	<info type="text">Sigma UUID: 13acf386-b8c6-4fe0-9a6e-c4756b974698 </info>
+	<info type="link">https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1086_powershell/powershell_remote_session.md </info>
+	<group>attack.execution,attack.t1086,MITRE</group>
+</rule>
+

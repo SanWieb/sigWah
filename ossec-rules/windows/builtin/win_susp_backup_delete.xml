@@ -1,0 +1,13 @@
+<rule id="300590" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^524$</field>
+	<field name="win.eventdata.Source">Backup</field>
+	<description>ATT&CK T1107: Backup Catalog Deleted</description>
+	<info type="text">Detects backup catalog deletions </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 9703792d-fd9a-456d-a672-ff92efe4806a </info>
+	<info type="link">https://technet.microsoft.com/en-us/library/cc742154(v=ws.11).aspx </info>
+	<info type="link">https://www.hybrid-analysis.com/sample/ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa?environmentId=100 </info>
+	<group>attack.defense_evasion,attack.t1107,MITRE</group>
+</rule>
+

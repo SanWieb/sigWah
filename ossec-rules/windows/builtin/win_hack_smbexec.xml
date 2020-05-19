@@ -1,0 +1,13 @@
+<rule id="300260" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^7045$</field>
+	<field name="win.eventdata.ServiceName">BTOBTO</field>
+	<field name="win.eventdata.ServiceFileName">\\\\execute.bat</field>
+	<description>ATT&CK T1077 T1035: smbexec.py Service Installation</description>
+	<info type="text">Detects the use of smbexec.py tool by detecting a specific service installation </info>
+	<info type="text">Falsepositives: Penetration Test. Unknown. </info>
+	<info type="text">Sigma UUID: 52a85084-6989-40c3-8f32-091e12e13f09 </info>
+	<info type="link">https://blog.ropnop.com/using-credentials-to-own-windows-boxes-part-2-psexec-and-services/ </info>
+	<group>attack.lateral_movement,attack.execution,attack.t1077,attack.t1035,MITRE</group>
+</rule>
+

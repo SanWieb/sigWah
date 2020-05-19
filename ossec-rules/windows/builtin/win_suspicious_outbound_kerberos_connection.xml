@@ -1,0 +1,12 @@
+<rule id="300560" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^5156$</field>
+	<field name="win.eventdata.DestinationPort">^88$</field>
+	<match>!\\lsass.exe$|\\opera.exe$|\\chrome.exe$|\\firefox.exe$<match>
+	<description>ATT&CK T1208: Suspicious Outbound Kerberos Connection</description>
+	<info type="text">Detects suspicious outbound network activity via kerberos default port indicating possible lateral movement or first stage PrivEsc via delegation. </info>
+	<info type="text">Falsepositives: Other browsers. </info>
+	<info type="text">Sigma UUID: eca91c7c-9214-47b9-b4c5-cb1d7e4f2350 </info>
+	<info type="link">https://github.com/GhostPack/Rubeus8 </info>
+	<group>attack.lateral_movement,attack.t1208,MITRE</group>
+</rule>

@@ -1,0 +1,12 @@
+<rule id="300100" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^1121$</field>
+	<field name="win.eventdata.Path">\\\\lsass.exe</field>
+	<description>ATT&CK T1003: LSASS Access Detected via Attack Surface Reduction</description>
+	<info type="text">Detects Access to LSASS Process </info>
+	<info type="text">Falsepositives: Google Chrome GoogleUpdate.exe. Some Taskmgr.exe related activity. </info>
+	<info type="text">Sigma UUID: a0a278fe-2c0e-4de2-ac3c-c68b08a9ba98 </info>
+	<info type="link">https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard?WT.mc_id=twitter </info>
+	<group>attack.credential_access,attack.t1003,MITRE</group>
+</rule>
+

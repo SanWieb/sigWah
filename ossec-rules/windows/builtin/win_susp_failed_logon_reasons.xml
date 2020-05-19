@@ -1,0 +1,12 @@
+<rule id="300660" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4625$|^4776$</field>
+	<field name="win.eventdata.Status">0xC0000072|0xC000006F|0xC0000070|0xC0000413|0xC000018C|0xC000015B</field>
+	<description>ATT&CK T1078: Account Tampering - Suspicious Failed Logon Reasons</description>
+	<info type="text">This method uses uncommon error codes on failed logons to determine suspicious activity and tampering with accounts that have been disabled or somehow restricted. </info>
+	<info type="text">Falsepositives: User using a disabled account. </info>
+	<info type="text">Sigma UUID: 9eb99343-d336-4020-a3cd-67f3819e68ee </info>
+	<info type="link">https://twitter.com/SBousseaden/status/1101431884540710913 </info>
+	<group>attack.persistence,attack.privilege_escalation,attack.t1078,MITRE</group>
+</rule>
+

@@ -1,0 +1,40 @@
+<rule id="300400" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4624$</field>
+	<field name="win.eventdata.SubjectUserSid">S-1-0-0</field>
+	<field name="win.eventdata.LogonType">3</field>
+	<field name="win.eventdata.LogonProcessName">NtLmSsp</field>
+	<description>ATT&CK T1075: Pass the Hash Activity 2</description>
+	<info type="text">Detects the attack technique pass the hash which is used to move laterally inside the network </info>
+	<info type="text">Falsepositives: Administrator activity. Penetration tests. </info>
+	<info type="text">Sigma UUID: 8eef149c-bd26-49f2-9e5a-9b00e3af499b </info>
+	<info type="link">https://github.com/iadgov/Event-Forwarding-Guidance/tree/master/Events </info>
+	<info type="link">https://blog.binarydefense.com/reliably-detecting-pass-the-hash-through-event-log-analysis </info>
+	<info type="link">https://blog.stealthbits.com/how-to-detect-pass-the-hash-attacks/ </info>
+	<group>attack.lateral_movement,attack.t1075,MITRE</group>
+</rule>
+
+<rule id="300401" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4624$</field>
+	<field name="win.eventdata.KeyLength">0</field>
+	<field name="win.eventdata.LogonType">9</field>
+	<field name="win.eventdata.LogonProcessName">seclogo</field>
+	<description>ATT&CK T1075: Pass the Hash Activity 2</description>
+	<info type="text">Detects the attack technique pass the hash which is used to move laterally inside the network </info>
+	<info type="text">Falsepositives: Administrator activity. Penetration tests. </info>
+	<info type="text">Sigma UUID: 8eef149c-bd26-49f2-9e5a-9b00e3af499b </info>
+	<info type="link">https://github.com/iadgov/Event-Forwarding-Guidance/tree/master/Events </info>
+	<info type="link">https://blog.binarydefense.com/reliably-detecting-pass-the-hash-through-event-log-analysis </info>
+	<info type="link">https://blog.stealthbits.com/how-to-detect-pass-the-hash-attacks/ </info>
+	<group>attack.lateral_movement,attack.t1075,MITRE</group>
+</rule>
+
+
+<rule id="300402" level="0">
+	<if_sid>300400, 300401</if_sid>
+	<field name="win.eventdata.AccountName">ANONYMOUS LOGON</field>
+	<description>Whitelist Interaction: Pass the Hash Activity 2</description>
+	<group>attack.lateral_movement,attack.t1075,MITRE</group>
+</rule>
+

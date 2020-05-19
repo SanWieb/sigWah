@@ -1,0 +1,11 @@
+<rule id="300790" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^5145$</field>
+	<field name="win.eventdata.RelativeTargetName">.pst|.ost|.msg|.nst|.oab|.edb|.nsf|.bak|.dmp|.kirbi|\\\\groups.xml|.rdp</field>
+	<description>ATT&CK: Suspicious Access to Sensitive File Extensions</description>
+	<info type="text">Detects known sensitive file extensions </info>
+	<info type="text">Falsepositives: Help Desk operator doing backup or re-imaging end user machine or pentest or backup software. Users working with these data types or exchanging message files. </info>
+	<info type="text">Sigma UUID: 91c945bc-2ad1-4799-a591-4d00198a1215 </info>
+	<group>attack.collection,MITRE</group>
+</rule>
+

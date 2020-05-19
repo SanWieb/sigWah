@@ -1,0 +1,64 @@
+<!-- Whitelist overwrite problem -->
+<!-- <rule id="300080" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4738$</field>
+	<description>ATT&CK T1098: Active Directory User Backdoors</description>
+	<info type="text">Detects scenarios where one can control another users or computers account without having to use their credentials. </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 300bac00-e041-4ee2-9c36-e262656a6ecc </info>
+	<info type="link">https://msdn.microsoft.com/en-us/library/cc220234.aspx </info>
+	<info type="link">https://adsecurity.org/?p=3466 </info>
+	<info type="link">https://www.harmj0y.net/blog/redteaming/another-word-on-delegation/ </info>
+	<group>attack.t1098,attack.credential_access,attack.persistence,MITRE</group>
+</rule>
+
+<rule id="300081" level="0">
+	<if_sid>300080</if_sid>
+	<field name="win.eventdata.AllowedToDelegateTo">null|^$|^ $|^-$|-</field>
+	<description>Whitelist Interaction: Active Directory User Backdoors</description>
+	<group>attack.t1098,attack.credential_access,attack.persistence,MITRE</group>
+</rule> -->
+
+<rule id="300082" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^5136$</field>
+	<field name="win.eventdata.AttributeLDAPDisplayName">msDS-AllowedToDelegateTo</field>
+	<description>ATT&CK T1098: Active Directory User Backdoors</description>
+	<info type="text">Detects scenarios where one can control another users or computers account without having to use their credentials. </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 300bac00-e041-4ee2-9c36-e262656a6ecc </info>
+	<info type="link">https://msdn.microsoft.com/en-us/library/cc220234.aspx </info>
+	<info type="link">https://adsecurity.org/?p=3466 </info>
+	<info type="link">https://www.harmj0y.net/blog/redteaming/another-word-on-delegation/ </info>
+	<group>attack.t1098,attack.credential_access,attack.persistence,MITRE</group>
+</rule>
+
+<rule id="300083" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^5136$</field>
+	<field name="win.eventdata.ObjectClass">user</field>
+	<field name="win.eventdata.AttributeLDAPDisplayName">servicePrincipalName</field>
+	<description>ATT&CK T1098: Active Directory User Backdoors</description>
+	<info type="text">Detects scenarios where one can control another users or computers account without having to use their credentials. </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 300bac00-e041-4ee2-9c36-e262656a6ecc </info>
+	<info type="link">https://msdn.microsoft.com/en-us/library/cc220234.aspx </info>
+	<info type="link">https://adsecurity.org/?p=3466 </info>
+	<info type="link">https://www.harmj0y.net/blog/redteaming/another-word-on-delegation/ </info>
+	<group>attack.t1098,attack.credential_access,attack.persistence,MITRE</group>
+</rule>
+
+<rule id="300084" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^5136$</field>
+	<field name="win.eventdata.AttributeLDAPDisplayName">msDS-AllowedToActOnBehalfOfOtherIdentity</field>
+	<description>ATT&CK T1098: Active Directory User Backdoors</description>
+	<info type="text">Detects scenarios where one can control another users or computers account without having to use their credentials. </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 300bac00-e041-4ee2-9c36-e262656a6ecc </info>
+	<info type="link">https://msdn.microsoft.com/en-us/library/cc220234.aspx </info>
+	<info type="link">https://adsecurity.org/?p=3466 </info>
+	<info type="link">https://www.harmj0y.net/blog/redteaming/another-word-on-delegation/ </info>
+	<group>attack.t1098,attack.credential_access,attack.persistence,MITRE</group>
+</rule>
+

@@ -1,0 +1,11 @@
+<rule id="300870" level="8">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4624$</field>
+	<field name="win.eventdata.ProcessName">\\\\WmiPrvSE.exe</field>
+	<description>ATT&CK T1047: Login with WMI</description>
+	<info type="text">Detection of logins performed with WMI </info>
+	<info type="text">Falsepositives: Monitoring tools. Legitimate system administration. </info>
+	<info type="text">Sigma UUID: 5af54681-df95-4c26-854f-2565e13cfab0 </info>
+	<group>attack.execution,attack.t1047,MITRE</group>
+</rule>
+

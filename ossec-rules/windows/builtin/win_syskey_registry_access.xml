@@ -1,0 +1,13 @@
+<rule id="300890" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4656$|^4663$</field>
+	<field name="win.eventdata.ObjectType">key</field>
+	<field name="win.eventdata.ObjectName">lsa\\\\JD$|lsa\\\\GBG$|lsa\\\\Skew1$|lsa\\\\Data$</field>
+	<description>ATT&CK T1012: SysKey Registry Keys Access</description>
+	<info type="text">Detects handle requests and access operations to specific registry keys to calculate the SysKey </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 9a4ff3b8-6187-4fd2-8e8b-e0eae1129495 </info>
+	<info type="link">https://github.com/hunters-forge/ThreatHunter-Playbook/blob/master/playbooks/windows/07_discovery/T1012_query_registry/syskey_registry_keys_access.md </info>
+	<group>attack.discovery,attack.t1012,MITRE</group>
+</rule>
+

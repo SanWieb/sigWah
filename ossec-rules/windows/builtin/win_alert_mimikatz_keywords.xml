@@ -1,0 +1,10 @@
+<rule id="300110" level="15">
+	<if_group>windows</if_group>
+	<field name="win.eventdata.Message"> mimikatz | mimilib | \<3 eo.oe | eo.oe.kiwi | privilege::debug | sekurlsa::logonpasswords | lsadump::sam | mimidrv.sys | p::d | s::l </field>
+	<description>ATT&CK S0002 T1003: Mimikatz Use</description>
+	<info type="text">This method detects mimikatz keywords in different Eventlogs (some of them only appear in older Mimikatz version that are however still used by different threat groups) </info>
+	<info type="text">Falsepositives: Naughty administrators. Penetration test. </info>
+	<info type="text">Sigma UUID: 06d71506-7beb-4f22-8888-e2e5e2ca7fd8 </info>
+	<group>attack.s0002,attack.t1003,attack.lateral_movement,attack.credential_access,car.2013-07-001,car.2019-04-004,MITRE</group>
+</rule>
+

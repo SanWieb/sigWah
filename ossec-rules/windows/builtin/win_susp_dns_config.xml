@@ -1,0 +1,13 @@
+<rule id="300630" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^150$|^770$</field>
+	<description>ATT&CK T1073: DNS Server Error Failed Loading the ServerLevelPluginDLL</description>
+	<info type="text">This rule detects a DNS server error in which a specified plugin DLL (in registry) could not be loaded </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: cbe51394-cd93-4473-b555-edf0144952d9 </info>
+	<info type="link">https://medium.com/@esnesenon/feature-not-bug-dnsadmin-to-dc-compromise-in-one-line-a0f779b8dc83 </info>
+	<info type="link">https://technet.microsoft.com/en-us/library/cc735829(v=ws.10).aspx </info>
+	<info type="link">https://twitter.com/gentilkiwi/status/861641945944391680 </info>
+	<group>attack.defense_evasion,attack.t1073,MITRE</group>
+</rule>
+

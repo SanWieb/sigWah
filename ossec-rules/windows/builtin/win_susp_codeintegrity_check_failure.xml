@@ -1,0 +1,10 @@
+<rule id="300600" level="8">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^5038$|^6281$</field>
+	<description>ATT&CK T1009: Failed Code Integrity Checks</description>
+	<info type="text">Code integrity failures may indicate tampered executables. </info>
+	<info type="text">Falsepositives: Disk device errors. </info>
+	<info type="text">Sigma UUID: 470ec5fa-7b4e-4071-b200-4c753100f49b </info>
+	<group>attack.defense_evasion,attack.t1009,MITRE</group>
+</rule>
+

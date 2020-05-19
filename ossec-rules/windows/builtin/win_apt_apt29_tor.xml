@@ -1,0 +1,11 @@
+<rule id="300132" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.:\\\\Program Files\(x86\)\\\\Google\\\\GoogleService.exe|\.:\\\\Program Files\(x86\)\\\\Google\\\\GoogleUpdate.exe</field>
+	<description>ATT&CK T1050: APT29 Google Update Service Install</description>
+	<info type="text">This method detects malicious services mentioned in APT29 report by FireEye. The legitimate path for the Google update service is C:\Program Files (x86)\Google\Update\GoogleUpdate.exe so the service names and executable locations used by APT29 are specific enough to be detected in log files. </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: c069f460-2b87-4010-8dcf-e45bab362624 </info>
+	<info type="link">https://www.fireeye.com/blog/threat-research/2017/03/apt29_domain_frontin.html </info>
+	<group>attack.persistence,attack.g0016,attack.t1050,MITRE</group>
+</rule>
+

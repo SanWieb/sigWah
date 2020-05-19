@@ -1,0 +1,20 @@
+<rule id="300300" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4663$|^4656$</field>
+	<field name="win.eventdata.ObjectType">Process</field>
+	<field name="win.eventdata.ObjectName">\\\\lsass.exe$</field>
+	<description>ATT&CK T1003: LSASS Access from Non System Account</description>
+	<info type="text">Detects potential mimikatz-like tools accessing LSASS from non system account </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 962fe167-e48d-4fd6-9974-11e5b9a5d6d1 </info>
+	<info type="link">https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/06_credential_access/T1003_credential_dumping/lsass_access_non_system_account.md </info>
+	<group>attack.credential_access,attack.t1003,MITRE</group>
+</rule>
+
+<rule id="300301" level="0">
+	<if_sid>300300</if_sid>
+	<field name="win.eventdata.SubjectUser">\$$</field>
+	<description>Whitelist Interaction: LSASS Access from Non System Account</description>
+	<group>attack.credential_access,attack.t1003,MITRE</group>
+</rule>
+

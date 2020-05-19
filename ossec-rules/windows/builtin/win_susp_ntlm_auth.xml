@@ -1,0 +1,13 @@
+<rule id="300770" level="8">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^8002$</field>
+	<field name="win.eventdata.CallingProcessName"></field>
+	<description>ATT&CK T1075: NTLM Logon</description>
+	<info type="text">Detects logons using NTLM, which could be caused by a legacy source or attackers </info>
+	<info type="text">Falsepositives: Legacy hosts. </info>
+	<info type="text">Sigma UUID: 98c3bcf1-56f2-49dc-9d8d-c66cf190238b </info>
+	<info type="link">https://twitter.com/JohnLaTwC/status/1004895028995477505 </info>
+	<info type="link">https://goo.gl/PsqrhT </info>
+	<group>attack.lateral_movement,attack.t1075,MITRE</group>
+</rule>
+

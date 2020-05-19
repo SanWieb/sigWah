@@ -1,0 +1,11 @@
+<rule id="300190" level="14">
+	<if_group>windows</if_group>
+	<field name="win.eventdata.Message">HTool|Hacktool|ASP/Backdoor|JSP/Backdoor|PHP/Backdoor|Backdoor.ASP|Backdoor.JSP|Backdoor.PHP|Webshell|Portscan|Mimikatz|WinCred|PlugX|Korplug|Pwdump|Chopper|WmiExec|Xscan|Clearlog|ASPXSpy</field>
+	<match>!Keygen|Crack</match>
+	<description>ATT&CK: Relevant Anti-Virus Event</description>
+	<info type="text">This detection method points out highly relevant Antivirus events </info>
+	<info type="text">Falsepositives: Some software piracy tools (key generators, cracks) are classified as hack tools. </info>
+	<info type="text">Sigma UUID: 78bc5783-81d9-4d73-ac97-59f6db4f72a8 </info>
+	<group>MITRE</group>
+</rule>
+

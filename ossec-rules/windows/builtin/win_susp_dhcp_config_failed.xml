@@ -1,0 +1,14 @@
+<rule id="300620" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^1031$|^1032$|^1034$</field>
+	<field name="win.eventdata.Source">Microsoft-Windows-DHCP-Server</field>
+	<description>ATT&CK T1073: DHCP Server Error Failed Loading the CallOut DLL</description>
+	<info type="text">This rule detects a DHCP server error in which a specified Callout DLL (in registry) could not be loaded </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 75edd3fd-7146-48e5-9848-3013d7f0282c </info>
+	<info type="link">https://blog.3or.de/mimilib-dhcp-server-callout-dll-injection.html </info>
+	<info type="link">https://technet.microsoft.com/en-us/library/cc726884(v=ws.10).aspx </info>
+	<info type="link">https://msdn.microsoft.com/de-de/library/windows/desktop/aa363389(v=vs.85).aspx </info>
+	<group>attack.defense_evasion,attack.t1073,MITRE</group>
+</rule>
+

@@ -1,0 +1,13 @@
+<rule id="300650" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^104$</field>
+	<field name="win.eventdata.Source">Microsoft-Windows-Eventlog</field>
+	<description>ATT&CK T1070: Eventlog Cleared</description>
+	<info type="text">One of the Windows Eventlogs has been cleared. e.g. caused by "wevtutil cl" command execution </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: d99b79d2-0a6f-4f46-ad8b-260b6e17f982 </info>
+	<info type="link">https://twitter.com/deviouspolack/status/832535435960209408 </info>
+	<info type="link">https://www.hybrid-analysis.com/sample/027cc450ef5f8c5f653329641ec1fed91f694e0d229928963b30f6b0d7d3a745?environmentId=100 </info>
+	<group>attack.defense_evasion,attack.t1070,car.2016-04-002,MITRE</group>
+</rule>
+

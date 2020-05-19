@@ -1,0 +1,14 @@
+<rule id="300040" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4662$</field>
+	<field name="win.eventdata.ObjectServer">DS</field>
+	<field name="win.eventdata.AccessMask">262144</field>
+	<field name="win.eventdata.ObjectType">19195a5b-6da0-11d0-afd3-00c04fd930c9|domainDNS</field>
+	<description>ATT&CK T1222: AD Object WriteDAC Access</description>
+	<info type="text">Detects WRITE_DAC access to a domain object </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 028c7842-4243-41cd-be6f-12f3cf1a26c7 </info>
+	<info type="link">https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/05_defense_evasion/T1222_file_permissions_modification/ad_replication_user_backdoor.md </info>
+	<group>attack.defense_evasion,attack.t1222,MITRE</group>
+</rule>
+

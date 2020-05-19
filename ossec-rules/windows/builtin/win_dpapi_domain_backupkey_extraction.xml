@@ -1,0 +1,14 @@
+<rule id="300220" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4662$</field>
+	<field name="win.eventdata.ObjectType">SecretObject</field>
+	<field name="win.eventdata.AccessMask">0x2</field>
+	<field name="win.eventdata.ObjectName">BCKUPKEY</field>
+	<description>ATT&CK T1003: DPAPI Domain Backup Key Extraction</description>
+	<info type="text">Detects tools extracting LSA secret DPAPI domain backup key from Domain Controllers </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 4ac1f50b-3bd0-4968-902d-868b4647937e </info>
+	<info type="link">https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/06_credential_access/T1003_credential_dumping/domain_dpapi_backupkey_extraction.md </info>
+	<group>attack.credential_access,attack.t1003,MITRE</group>
+</rule>
+

@@ -1,0 +1,15 @@
+<rule id="300810" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4624$</field>
+	<field name="win.eventdata.LogonType">3</field>
+	<field name="win.eventdata.TargetUser">ANONYMOUS_LOGON</field>
+	<field name="win.eventdata.WorkstationName">-</field>
+	<field name="win.eventdata.SourceNetworkAddress">127.0.0.1</field>
+	<description>ATT&CK T1171: RottenPotato Like Attack Pattern</description>
+	<info type="text">Detects logon events that have characteristics of events generated during an attack with RottenPotato and the like </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 16f5d8ca-44bd-47c8-acbe-6fc95a16c12f </info>
+	<info type="link">https://twitter.com/SBousseaden/status/1195284233729777665 </info>
+	<group>attack.privilege_escalation,attack.credential_access,attack.t1171,MITRE</group>
+</rule>
+

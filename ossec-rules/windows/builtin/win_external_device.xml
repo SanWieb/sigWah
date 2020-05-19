@@ -1,0 +1,21 @@
+<rule id="300240" level="8">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^6416$</field>
+	<field name="win.eventdata.DeviceClassName">DiskDrive</field>
+	<description>ATT&CK T1091 T1200: External Disk Drive or USB Storage Device</description>
+	<info type="text">Detects external diskdrives or plugged in USB devices </info>
+	<info type="text">Falsepositives: Legitimate administrative activity. </info>
+	<info type="text">Sigma UUID: f69a87ea-955e-4fb4-adb2-bb9fd6685632 </info>
+	<group>attack.t1091,attack.t1200,attack.lateral_movement,attack.initial_access,MITRE</group>
+</rule>
+
+<rule id="300241" level="8">
+	<if_group>windows</if_group>
+	<field name="win.eventdata.DeviceDescription">USB Mass Storage Device</field>
+	<description>ATT&CK T1091 T1200: External Disk Drive or USB Storage Device</description>
+	<info type="text">Detects external diskdrives or plugged in USB devices </info>
+	<info type="text">Falsepositives: Legitimate administrative activity. </info>
+	<info type="text">Sigma UUID: f69a87ea-955e-4fb4-adb2-bb9fd6685632 </info>
+	<group>attack.t1091,attack.t1200,attack.lateral_movement,attack.initial_access,MITRE</group>
+</rule>
+

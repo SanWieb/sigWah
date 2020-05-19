@@ -1,0 +1,29 @@
+<rule id="300580" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4765$|^4766$</field>
+	<description>ATT&CK T1178: Addition of SID History to Active Directory Object</description>
+	<info type="text">An attacker can use the SID history attribute to gain additional privileges. </info>
+	<info type="text">Falsepositives: Migration of an account into a new domain. </info>
+	<info type="text">Sigma UUID: 2632954e-db1c-49cb-9936-67d1ef1d17d2 </info>
+	<info type="link">https://adsecurity.org/?p=1772 </info>
+	<group>attack.persistence,attack.privilege_escalation,attack.t1178,MITRE</group>
+</rule>
+
+<rule id="300581" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4738$</field>
+	<description>ATT&CK T1178: Addition of SID History to Active Directory Object</description>
+	<info type="text">An attacker can use the SID history attribute to gain additional privileges. </info>
+	<info type="text">Falsepositives: Migration of an account into a new domain. </info>
+	<info type="text">Sigma UUID: 2632954e-db1c-49cb-9936-67d1ef1d17d2 </info>
+	<info type="link">https://adsecurity.org/?p=1772 </info>
+	<group>attack.persistence,attack.privilege_escalation,attack.t1178,MITRE</group>
+</rule>
+
+<rule id="300582" level="0">
+	<if_sid>300581</if_sid>
+	<field name="win.eventdata.SidHistory">^-$|%%1793</field>
+	<description>Whitelist Interaction: Addition of SID History to Active Directory Object</description>
+	<group>attack.persistence,attack.privilege_escalation,attack.t1178,MITRE</group>
+</rule>
+

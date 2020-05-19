@@ -1,0 +1,14 @@
+<rule id="300700" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^5136$</field>
+	<field name="win.eventdata.AttributeLDAPDisplayName">primaryInternationalISDNNumber|otherFacsimileTelephoneNumber|primaryTelexNumber</field>
+	<description>ATT&CK T1041: Suspicious LDAP-Attributes Used</description>
+	<info type="text">detects the usage of particular AttributeLDAPDisplayNames, which are known for data exchange via LDAP by the tool LDAPFragger and are additionally not commonly used in companies. </info>
+	<info type="text">Falsepositives: Companies, who may use these default LDAP-Attributes for personal information. </info>
+	<info type="text">Sigma UUID: d00a9a72-2c09-4459-ad03-5e0a23351e36 </info>
+	<info type="link">https://medium.com/@ivecodoe/detecting-ldapfragger-a-newly-released-cobalt-strike-beacon-using-ldap-for-c2-communication-c274a7f00961 </info>
+	<info type="link">https://blog.fox-it.com/2020/03/19/ldapfragger-command-and-control-over-ldap-attributes/ </info>
+	<info type="link">https://github.com/fox-it/LDAPFragger </info>
+	<group>attack.t1041,attack.persistence,MITRE</group>
+</rule>
+

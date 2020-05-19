@@ -1,0 +1,10 @@
+<rule id="300570" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4706$</field>
+	<description>ATT&CK: Addition of Domain Trusts</description>
+	<info type="text">Addition of domains is seldom and should be verified for legitimacy. </info>
+	<info type="text">Falsepositives: Legitimate extension of domain structure. </info>
+	<info type="text">Sigma UUID: 0255a820-e564-4e40-af2b-6ac61160335c </info>
+	<group>attack.persistence,MITRE</group>
+</rule>
+

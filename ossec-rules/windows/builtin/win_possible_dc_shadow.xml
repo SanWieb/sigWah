@@ -1,0 +1,31 @@
+<rule id="300410" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4742$</field>
+	<field name="win.eventdata.ServicePrincipalNames">GC/</field>
+	<description>ATT&CK T1207: Possible DC Shadow</description>
+	<info type="text">Detects DC sync via create new SPN </info>
+	<info type="text">Falsepositives: Exclude known DCs. </info>
+	<info type="text">Sigma UUID: 32e19d25-4aed-4860-a55a-be99cb0bf7ed </info>
+	<info type="link">https://github.com/Neo23x0/sigma/blob/ec5bb710499caae6667c7f7311ca9e92c03b9039/rules/windows/builtin/win_dcsync.yml </info>
+	<info type="link">https://twitter.com/gentilkiwi/status/1003236624925413376 </info>
+	<info type="link">https://gist.github.com/gentilkiwi/dcc132457408cf11ad2061340dcb53c2 </info>
+	<info type="link">https://blog.alsid.eu/dcshadow-explained-4510f52fc19d </info>
+	<group>attack.credential_access,attack.t1207,MITRE</group>
+</rule>
+
+<rule id="300411" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^5136$</field>
+	<field name="win.eventdata.LDAPDisplayName">servicePrincipalName</field>
+	<field name="win.eventdata.Value">GC/</field>
+	<description>ATT&CK T1207: Possible DC Shadow</description>
+	<info type="text">Detects DC sync via create new SPN </info>
+	<info type="text">Falsepositives: Exclude known DCs. </info>
+	<info type="text">Sigma UUID: 32e19d25-4aed-4860-a55a-be99cb0bf7ed </info>
+	<info type="link">https://github.com/Neo23x0/sigma/blob/ec5bb710499caae6667c7f7311ca9e92c03b9039/rules/windows/builtin/win_dcsync.yml </info>
+	<info type="link">https://twitter.com/gentilkiwi/status/1003236624925413376 </info>
+	<info type="link">https://gist.github.com/gentilkiwi/dcc132457408cf11ad2061340dcb53c2 </info>
+	<info type="link">https://blog.alsid.eu/dcshadow-explained-4510f52fc19d </info>
+	<group>attack.credential_access,attack.t1207,MITRE</group>
+</rule>
+

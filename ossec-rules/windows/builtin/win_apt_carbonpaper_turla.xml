@@ -1,0 +1,12 @@
+<rule id="300140" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^7045$</field>
+	<field name="win.eventdata.ServiceName">srservice|ipvpn|hkmsvc</field>
+	<description>ATT&CK T1050: Turla Service Install</description>
+	<info type="text">This method detects a service install of malicious services mentioned in Carbon Paper - Turla report by ESET </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 1df8b3da-b0ac-4d8a-b7c7-6cb7c24160e4 </info>
+	<info type="link">https://www.welivesecurity.com/2017/03/30/carbon-paper-peering-turlas-second-stage-backdoor/ </info>
+	<group>attack.persistence,attack.g0010,attack.t1050,MITRE</group>
+</rule>
+

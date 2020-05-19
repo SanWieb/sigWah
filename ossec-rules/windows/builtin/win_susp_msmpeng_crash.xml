@@ -1,0 +1,28 @@
+<rule id="300750" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^1000$</field>
+	<field name="win.eventdata.Source">Application Error</field>
+	<match>MsMpEng.exe|mpengine.dll</match>
+	<description>ATT&CK T1089 T1211: Microsoft Malware Protection Engine Crash</description>
+	<info type="text">This rule detects a suspicious crash of the Microsoft Malware Protection Engine </info>
+	<info type="text">Falsepositives: MsMpEng.exe can crash when C:\ is full. </info>
+	<info type="text">Sigma UUID: 6c82cf5c-090d-4d57-9188-533577631108 </info>
+	<info type="link">https://bugs.chromium.org/p/project-zero/issues/detail?id=1252&desc=5 </info>
+	<info type="link">https://technet.microsoft.com/en-us/library/security/4022344 </info>
+	<group>attack.defense_evasion,attack.t1089,attack.t1211,MITRE</group>
+</rule>
+
+<rule id="300751" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^1001$</field>
+	<field name="win.eventdata.Source">Windows Error Reporting</field>
+	<match>MsMpEng.exe|mpengine.dll</match>
+	<description>ATT&CK T1089 T1211: Microsoft Malware Protection Engine Crash</description>
+	<info type="text">This rule detects a suspicious crash of the Microsoft Malware Protection Engine </info>
+	<info type="text">Falsepositives: MsMpEng.exe can crash when C:\ is full. </info>
+	<info type="text">Sigma UUID: 6c82cf5c-090d-4d57-9188-533577631108 </info>
+	<info type="link">https://bugs.chromium.org/p/project-zero/issues/detail?id=1252&desc=5 </info>
+	<info type="link">https://technet.microsoft.com/en-us/library/security/4022344 </info>
+	<group>attack.defense_evasion,attack.t1089,attack.t1211,MITRE</group>
+</rule>
+

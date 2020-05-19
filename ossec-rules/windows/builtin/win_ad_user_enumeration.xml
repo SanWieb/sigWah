@@ -1,0 +1,22 @@
+<rule id="300060" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4662$</field>
+	<field name="win.eventdata.ObjectType">bf967aba-0de6-11d0-a285-00aa003049e2</field>
+	<description>ATT&CK T1087: AD User Enumeration</description>
+	<info type="text">Detects access to a domain user from a non-machine account </info>
+	<info type="text">Falsepositives: Administrators configuring new users.. </info>
+	<info type="text">Sigma UUID: ab6bffca-beff-4baa-af11-6733f296d57a </info>
+	<info type="link">https://www.specterops.io/assets/resources/an_ace_up_the_sleeve.pdf </info>
+	<info type="link">http://www.stuffithoughtiknew.com/2019/02/detecting-bloodhound.html </info>
+	<info type="link">https://docs.microsoft.com/en-us/windows/win32/adschema/attributes-all </info>
+	<group>attack.discovery,attack.t1087,MITRE</group>
+</rule>
+
+<rule id="300061" level="0">
+	<if_sid>300060</if_sid>
+	<field name="win.eventdata.SubjectUser">\$$</field>
+	<field name="win.eventdata.SubjectUser">^MSOL_</field>
+	<description>Whitelist Interaction: AD User Enumeration</description>
+	<group>attack.discovery,attack.t1087,MITRE</group>
+</rule>
+

@@ -1,0 +1,43 @@
+<rule id="300900" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4697$</field>
+	<field name="win.eventdata.ImagePath">tap0901</field>
+	<description>ATT&CK T1048: Tap Driver Installation</description>
+	<info type="text">Well-known TAP software installation. Possible preparation for data exfiltration using tunnelling techniques </info>
+	<info type="text">Falsepositives: Legitimate OpenVPN TAP insntallation. </info>
+	<info type="text">Sigma UUID: 8e4cf0e5-aa5d-4dc3-beff-dc26917744a9 </info>
+	<group>attack.exfiltration,attack.t1048,MITRE</group>
+</rule>
+
+<rule id="300901" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^7045$</field>
+	<field name="win.eventdata.ImagePath">tap0901</field>
+	<description>ATT&CK T1048: Tap Driver Installation</description>
+	<info type="text">Well-known TAP software installation. Possible preparation for data exfiltration using tunnelling techniques </info>
+	<info type="text">Falsepositives: Legitimate OpenVPN TAP insntallation. </info>
+	<info type="text">Sigma UUID: 8e4cf0e5-aa5d-4dc3-beff-dc26917744a9 </info>
+	<group>attack.exfiltration,attack.t1048,MITRE</group>
+</rule>
+
+<rule id="300902" level="10">
+	<if_group>sysmon_event6</if_group>
+	<field name="win.eventdata.ImagePath">tap0901</field>
+	<description>ATT&CK T1048: Tap Driver Installation</description>
+	<info type="text">Well-known TAP software installation. Possible preparation for data exfiltration using tunnelling techniques </info>
+	<info type="text">Falsepositives: Legitimate OpenVPN TAP insntallation. </info>
+	<info type="text">Sigma UUID: 8e4cf0e5-aa5d-4dc3-beff-dc26917744a9 </info>
+	<group>attack.exfiltration,attack.t1048,MITRE</group>
+</rule>
+
+<rule id="300903" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4697$</field>
+	<field name="win.eventdata.ImagePath">tap0901</field>
+	<description>ATT&CK T1048: Tap Driver Installation</description>
+	<info type="text">Well-known TAP software installation. Possible preparation for data exfiltration using tunnelling techniques </info>
+	<info type="text">Falsepositives: Legitimate OpenVPN TAP insntallation. </info>
+	<info type="text">Sigma UUID: 8e4cf0e5-aa5d-4dc3-beff-dc26917744a9 </info>
+	<group>attack.exfiltration,attack.t1048,MITRE</group>
+</rule>
+

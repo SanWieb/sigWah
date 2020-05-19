@@ -1,0 +1,47 @@
+<rule id="300340" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^6$|^7045$|^4697$</field>
+	<field name="win.eventdata.ServiceFileName">cmd</field>
+	<field name="win.eventdata.ServiceFileName">/c</field>
+	<field name="win.eventdata.ServiceFileName">echo</field>
+	<field name="win.eventdata.ServiceFileName">\\\\pipe\\\\</field>
+	<description>ATT&CK T1134: Meterpreter or Cobalt Strike Getsystem Service Installation</description>
+	<info type="text">Detects the use of getsystem Meterpreter/Cobalt Strike command by detecting a specific service installation </info>
+	<info type="text">Falsepositives: Highly unlikely. </info>
+	<info type="text">Sigma UUID: 843544a7-56e0-4dcc-a44f-5cc266dd97d6 </info>
+	<info type="link">https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment </info>
+	<info type="link">https://blog.cobaltstrike.com/2014/04/02/what-happens-when-i-type-getsystem/ </info>
+	<group>attack.privilege_escalation,attack.t1134,MITRE</group>
+</rule>
+
+<rule id="300340" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^6$|^7045$|^4697$</field>
+	<field name="win.eventdata.ServiceFileName">%COMSPEC%</field>
+	<field name="win.eventdata.ServiceFileName">/c</field>
+	<field name="win.eventdata.ServiceFileName">echo</field>
+	<field name="win.eventdata.ServiceFileName">\\\\pipe\\\\</field>
+	<description>ATT&CK T1134: Meterpreter or Cobalt Strike Getsystem Service Installation</description>
+	<info type="text">Detects the use of getsystem Meterpreter/Cobalt Strike command by detecting a specific service installation </info>
+	<info type="text">Falsepositives: Highly unlikely. </info>
+	<info type="text">Sigma UUID: 843544a7-56e0-4dcc-a44f-5cc266dd97d6 </info>
+	<info type="link">https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment </info>
+	<info type="link">https://blog.cobaltstrike.com/2014/04/02/what-happens-when-i-type-getsystem/ </info>
+	<group>attack.privilege_escalation,attack.t1134,MITRE</group>
+</rule>
+
+<rule id="300340" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^6$|^7045$|^4697$</field>
+	<field name="win.eventdata.ServiceFileName">rundll32</field>
+	<field name="win.eventdata.ServiceFileName">.dll,a</field>
+	<field name="win.eventdata.ServiceFileName">/p:</field>
+	<description>ATT&CK T1134: Meterpreter or Cobalt Strike Getsystem Service Installation</description>
+	<info type="text">Detects the use of getsystem Meterpreter/Cobalt Strike command by detecting a specific service installation </info>
+	<info type="text">Falsepositives: Highly unlikely. </info>
+	<info type="text">Sigma UUID: 843544a7-56e0-4dcc-a44f-5cc266dd97d6 </info>
+	<info type="link">https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment </info>
+	<info type="link">https://blog.cobaltstrike.com/2014/04/02/what-happens-when-i-type-getsystem/ </info>
+	<group>attack.privilege_escalation,attack.t1134,MITRE</group>
+</rule>
+

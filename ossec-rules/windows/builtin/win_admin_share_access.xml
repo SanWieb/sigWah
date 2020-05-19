@@ -1,0 +1,18 @@
+<rule id="300030" level="8">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^5140$</field>
+	<field name="win.eventdata.ShareName">Admin\$</field>
+	<description>ATT&CK T1077: Access to ADMIN$ Share</description>
+	<info type="text">Detects access to $ADMIN share </info>
+	<info type="text">Falsepositives: Legitimate administrative activity. </info>
+	<info type="text">Sigma UUID: 098d7118-55bc-4912-a836-dc6483a8d150 </info>
+	<group>attack.lateral_movement,attack.t1077,MITRE</group>
+</rule>
+
+<rule id="300031" level="0">
+	<if_sid>300030</if_sid>
+	<field name="win.eventdata.SubjectUser">\$</field>
+	<description>Whitelist Interaction: Access to ADMIN$ Share</description>
+	<group>attack.lateral_movement,attack.t1077,MITRE</group>
+</rule>
+

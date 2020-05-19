@@ -1,0 +1,13 @@
+<rule id="300940" level="14">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4673$</field>
+	<field name="win.eventdata.Service">LsaRegisterLogonProcess\(\)</field>
+	<field name="win.eventdata.Keywords">0x8010000000000000</field>
+	<description>ATT&CK T1208: User Couldn't Call a Privileged Service 'LsaRegisterLogonProcess'</description>
+	<info type="text">The 'LsaRegisterLogonProcess' function verifies that the application making the function call is a logon process by checking that it has the SeTcbPrivilege privilege set. Possible Rubeus tries to get a handle to LSA. </info>
+	<info type="text">Falsepositives: Unkown. </info>
+	<info type="text">Sigma UUID: 6daac7fc-77d1-449a-a71a-e6b4d59a0e54 </info>
+	<info type="link">https://posts.specterops.io/hunting-in-active-directory-unconstrained-delegation-forests-trusts-71f2b33688e1 </info>
+	<group>attack.lateral_movement,attack.privilege_escalation,attack.t1208,MITRE</group>
+</rule>
+

@@ -1,0 +1,14 @@
+<rule id="300000" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^5136$</field>
+	<field name="win.eventdata.LDAPDisplayName">ntSecurityDescriptor</field>
+	<field name="win.eventdata.Value">1131f6ad-9c07-11d1-f79f-00c04fc2dcd2|1131f6aa-9c07-11d1-f79f-00c04fc2dcd2|89e95b76-444d-4c62-991a-0facbeda640c</field>
+	<description>ATT&CK: Powerview Add-DomainObjectAcl DCSync AD Extend Right</description>
+	<info type="text">backdooring domain object to grant the rights associated with DCSync to a regular user or machine account using Powerview\Add-DomainObjectAcl DCSync Extended Right cmdlet, will allow to re-obtain the pwd hashes of any user/computer </info>
+	<info type="text">Falsepositives: New Domain Controller computer account, check user SIDs witin the value attribute of event 5136 and verify if it's a regular user or DC computer account.. </info>
+	<info type="text">Sigma UUID: 2c99737c-585d-4431-b61a-c911d86ff32f </info>
+	<info type="link">https://twitter.com/menasec1/status/1111556090137903104 </info>
+	<info type="link">https://www.specterops.io/assets/resources/an_ace_up_the_sleeve.pdf </info>
+	<group>attack.credential_access,attack.persistence,MITRE</group>
+</rule>
+

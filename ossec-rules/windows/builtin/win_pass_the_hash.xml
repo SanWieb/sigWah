@@ -1,0 +1,37 @@
+<rule id="300390" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4624$</field>
+	<field name="win.eventdata.LogonType">3</field>
+	<field name="win.eventdata.LogonProcessName">NtLmSsp</field>
+	<field name="win.eventdata.WorkstationName">%Workstations%</field>
+	<field name="win.eventdata.ComputerName">%Workstations%</field>
+	<description>ATT&CK T1075: Pass the Hash Activity</description>
+	<info type="text">Detects the attack technique pass the hash which is used to move laterally inside the network </info>
+	<info type="text">Falsepositives: Administrator activity. Penetration tests. </info>
+	<info type="text">Sigma UUID: f8d98d6c-7a07-4d74-b064-dd4a3c244528 </info>
+	<info type="link">https://github.com/iadgov/Event-Forwarding-Guidance/tree/master/Events </info>
+	<group>attack.lateral_movement,attack.t1075,car.2016-04-004,MITRE</group>
+</rule>
+
+<rule id="300391" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4624$</field>
+	<field name="win.eventdata.LogonType">3</field>
+	<field name="win.eventdata.LogonProcessName">NtLmSsp</field>
+	<field name="win.eventdata.WorkstationName">%Workstations%</field>
+	<field name="win.eventdata.ComputerName">%Workstations%</field>
+	<description>ATT&CK T1075: Pass the Hash Activity</description>
+	<info type="text">Detects the attack technique pass the hash which is used to move laterally inside the network </info>
+	<info type="text">Falsepositives: Administrator activity. Penetration tests. </info>
+	<info type="text">Sigma UUID: f8d98d6c-7a07-4d74-b064-dd4a3c244528 </info>
+	<info type="link">https://github.com/iadgov/Event-Forwarding-Guidance/tree/master/Events </info>
+	<group>attack.lateral_movement,attack.t1075,car.2016-04-004,MITRE</group>
+</rule>
+
+<rule id="300392" level="0">
+	<if_sid>300390, 300391</if_sid>
+	<field name="win.eventdata.AccountName">ANONYMOUS LOGON</field>
+	<description>Whitelist Interaction: Pass the Hash Activity</description>
+	<group>attack.lateral_movement,attack.t1075,car.2016-04-004,MITRE</group>
+</rule>
+

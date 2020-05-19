@@ -1,0 +1,12 @@
+<rule id="300430" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^16$</field>
+	<field name="win.eventdata.HiveName">\\\\AppData\\\\Local\\\\Temp\\\\SAM</field>
+	<field name="win.eventdata.HiveName">.dmp$</field>
+	<description>ATT&CK T1003: QuarksPwDump Clearing Access History</description>
+	<info type="text">Detects QuarksPwDump clearing access history in hive </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 39f919f3-980b-4e6f-a975-8af7e507ef2b </info>
+	<group>attack.credential_access,attack.t1003,MITRE</group>
+</rule>
+

@@ -1,0 +1,11 @@
+<rule id="300950" level="8">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4720$</field>
+	<description>ATT&CK T1136: Local User Creation</description>
+	<info type="text">Detects local user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this Sigma Use Case on your windows server logs and not on your DC logs. </info>
+	<info type="text">Falsepositives: Domain Controller Logs. Local accounts managed by privileged account management tools. </info>
+	<info type="text">Sigma UUID: 66b6be3d-55d0-4f47-9855-d69df21740ea </info>
+	<info type="link">https://patrick-bareiss.com/detecting-local-user-creation-in-ad-with-sigma/ </info>
+	<group>attack.persistence,attack.t1136,MITRE</group>
+</rule>
+

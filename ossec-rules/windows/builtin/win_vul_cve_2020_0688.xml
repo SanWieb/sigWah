@@ -1,0 +1,13 @@
+<rule id="300970" level="14">
+	<if_group>sysmon_event4</if_group>
+	<field name="win.eventdata.Source">MSExchange Control Panel</field>
+	<field name="win.eventdata.Level">Error</field>
+	<match>&__VIEWSTATE=</match>
+	<description>ATT&CK T1190: CVE-2020-0688 Exploitation via Eventlog</description>
+	<info type="text">Detects the exploitation of Microsoft Exchange vulnerability as described in CVE-2020-0688 </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: d6266bf5-935e-4661-b477-78772735a7cb </info>
+	<info type="link">https://www.trustedsec.com/blog/detecting-cve-20200688-remote-code-execution-vulnerability-on-microsoft-exchange-server/ </info>
+	<group>attack.initial_access,attack.t1190,MITRE</group>
+</rule>
+

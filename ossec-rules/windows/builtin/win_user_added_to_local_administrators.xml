@@ -1,0 +1,29 @@
+<rule id="300930" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4732$</field>
+	<field name="win.eventdata.GroupName">Administrators</field>
+	<description>ATT&CK T1078: User Added to Local Administrators</description>
+	<info type="text">This rule triggers on user accounts that are added to the local Administrators group, which could be legitimate activity or a sign of privilege escalation activity </info>
+	<info type="text">Falsepositives: Legitimate administrative activity. </info>
+	<info type="text">Sigma UUID: c265cf08-3f99-46c1-8d59-328247057d57 </info>
+	<group>attack.privilege_escalation,attack.t1078,MITRE</group>
+</rule>
+
+<rule id="300931" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4732$</field>
+	<field name="win.eventdata.GroupSid">S-1-5-32-544</field>
+	<description>ATT&CK T1078: User Added to Local Administrators</description>
+	<info type="text">This rule triggers on user accounts that are added to the local Administrators group, which could be legitimate activity or a sign of privilege escalation activity </info>
+	<info type="text">Falsepositives: Legitimate administrative activity. </info>
+	<info type="text">Sigma UUID: c265cf08-3f99-46c1-8d59-328247057d57 </info>
+	<group>attack.privilege_escalation,attack.t1078,MITRE</group>
+</rule>
+
+<rule id="300932" level="0">
+	<if_sid>300930, 300931</if_sid>
+	<field name="win.eventdata.SubjectUser">\$</field>
+	<description>Whitelist Interaction: User Added to Local Administrators</description>
+	<group>attack.privilege_escalation,attack.t1078,MITRE</group>
+</rule>
+

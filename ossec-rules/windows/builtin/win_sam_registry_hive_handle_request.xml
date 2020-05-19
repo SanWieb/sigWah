@@ -1,0 +1,13 @@
+<rule id="300530" level="15">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^4656$</field>
+	<field name="win.eventdata.ObjectType">Key</field>
+	<field name="win.eventdata.ObjectName">\\\\SAM$</field>
+	<description>ATT&CK T1012: SAM Registry Hive Handle Request</description>
+	<info type="text">Detects handles requested to SAM registry hive </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: f8748f2c-89dc-4d95-afb0-5a2dfdbad332 </info>
+	<info type="link">https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/07_discovery/T1012_query_registry/sam_registry_hive_access.md </info>
+	<group>attack.discovery,attack.t1012,MITRE</group>
+</rule>
+

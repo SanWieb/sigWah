@@ -1,0 +1,14 @@
+<rule id="300170" level="10">
+	<if_group>windows</if_group>
+	<field name="win.system.EventID">^5145$</field>
+	<field name="win.eventdata.ShareName">\\\\\.*\\\\IPC\$</field>
+	<field name="win.eventdata.RelativeTargetName">atsvc</field>
+	<field name="win.eventdata.Accesses">WriteData</field>
+	<description>ATT&CK T1053: Remote Task Creation via ATSVC Named Pipe</description>
+	<info type="text">Detects remote task creation via at.exe or API interacting with ATSVC namedpipe </info>
+	<info type="text">Falsepositives: pentesting. </info>
+	<info type="text">Sigma UUID: f6de6525-4509-495a-8a82-1f8b0ed73a00 </info>
+	<info type="link">https://blog.menasec.net/2019/03/threat-hunting-25-scheduled-tasks-for.html </info>
+	<group>attack.lateral_movement,attack.persistence,attack.t1053,car.2013-05-004,car.2015-04-001,MITRE</group>
+</rule>
+
