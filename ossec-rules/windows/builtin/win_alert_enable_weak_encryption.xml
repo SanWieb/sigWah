@@ -1,7 +1,7 @@
 <rule id="300090" level="14">
 	<if_group>windows</if_group>
 	<field name="win.system.EventID">^4738$</field>
-	<field name="win.eventdata.Message">DES|Preauth|Encrypted</field>
+	<regex>DES|Preauth|Encrypted</regex>
 	<match>!Enabled</match>
 	<description>ATT&CK T1089: Weak Encryption Enabled and Kerberoast</description>
 	<info type="text">Detects scenario where weak encryption is enabled for a user profile which could be used for hash/password cracking. </info>

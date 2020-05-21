@@ -1,7 +1,7 @@
 <rule id="300070" level="14">
 	<if_group>windows</if_group>
 	<field name="win.system.EventID">^4704$</field>
-	<field name="win.eventdata.Message">SeEnableDelegationPrivilege</field>
+	<regex>SeEnableDelegationPrivilege</regex>
 	<description>ATT&CK T1078: Enabled User Right in AD to Control User Objects</description>
 	<info type="text">Detects scenario where if a user is assigned the SeEnableDelegationPrivilege right in Active Directory it would allow control of other AD user objects. </info>
 	<info type="text">Falsepositives: Unknown. </info>

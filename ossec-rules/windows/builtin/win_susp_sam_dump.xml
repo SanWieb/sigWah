@@ -1,7 +1,7 @@
 <rule id="300830" level="14">
 	<if_group>windows</if_group>
 	<field name="win.system.EventID">^16$</field>
-	<field name="win.eventdata.Message">\\\\AppData\\\\Local\\\\Temp\\\\SAM-\.*.dmp </field>
+	<regex>\\\\AppData\\\\Local\\\\Temp\\\\SAM-\.*.dmp </regex>
 	<description>ATT&CK T1003: SAM Dump to AppData</description>
 	<info type="text">Detects suspicious SAM dump activity as cause by QuarksPwDump and other password dumpers </info>
 	<info type="text">Falsepositives: Penetration testing. </info>
