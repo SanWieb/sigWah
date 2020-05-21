@@ -22,7 +22,7 @@
 
 <rule id="300582" level="0">
 	<if_sid>300581</if_sid>
-	<field name="win.eventdata.SidHistory">^-$|%%1793</field>
+	<field name="win.eventdata.SidHistory">^-$|%%1793|^$|null</field>
 	<description>Whitelist Interaction: Addition of SID History to Active Directory Object</description>
 	<group>attack.persistence,attack.privilege_escalation,attack.t1178,MITRE</group>
 </rule>
