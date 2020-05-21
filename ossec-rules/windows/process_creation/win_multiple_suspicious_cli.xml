@@ -1,6 +1,7 @@
 <rule id="260830" level="1">
 	<if_group>sysmon_event1</if_group>
-	<field name="win.eventdata.CommandLine">arp.exe|at.exe|attrib.exe|cscript.exe|dsquery.exe|hostname.exe|ipconfig.exe|mimikatz.exe|nbtstat.exe|net.exe|netsh.exe|nslookup.exe|ping.exe|quser.exe|qwinsta.exe|reg.exe|runas.exe|sc.exe|schtasks.exe|ssh.exe|systeminfo.exe|taskkill.exe|telnet.exe|tracert.exe|wscript.exe|xcopy.exe|pscp.exe|copy.exe|robocopy.exe|certutil.exe|vssadmin.exe|powershell.exe|wevtutil.exe|psexec.exe|bcedit.exe|wbadmin.exe|icacls.exe|diskpart.exe</field>
+	<!-- removed schtasks.exe; wevtutil.exe -->
+	<field name="win.eventdata.CommandLine">arp.exe|at.exe|attrib.exe|cscript.exe|dsquery.exe|hostname.exe|ipconfig.exe|mimikatz.exe|nbtstat.exe|net.exe|netsh.exe|nslookup.exe|ping.exe|quser.exe|qwinsta.exe|reg.exe|runas.exe|sc.exe|ssh.exe|systeminfo.exe|taskkill.exe|telnet.exe|tracert.exe|wscript.exe|xcopy.exe|pscp.exe|copy.exe|robocopy.exe|certutil.exe|vssadmin.exe|powershell.exe|psexec.exe|bcedit.exe|wbadmin.exe|icacls.exe|diskpart.exe</field>
 	<description>ATT&CK: Quick Execution of a Series of Suspicious Commands</description>
 	<info type="text">Detects multiple suspicious process in a limited timeframe </info>
 	<info type="text">Falsepositives: False positives depend on scripts and administrative tools used in the monitored environment. </info>
