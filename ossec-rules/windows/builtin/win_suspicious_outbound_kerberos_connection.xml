@@ -2,7 +2,7 @@
 	<if_group>windows</if_group>
 	<field name="win.system.EventID">^5156$</field>
 	<field name="win.eventdata.DestinationPort">^88$</field>
-	<match>!\\lsass.exe$|\\opera.exe$|\\chrome.exe$|\\firefox.exe$<match>
+	<match>!\\lsass.exe$|\\opera.exe$|\\chrome.exe$|\\firefox.exe$</match>
 	<description>ATT&CK T1208: Suspicious Outbound Kerberos Connection</description>
 	<info type="text">Detects suspicious outbound network activity via kerberos default port indicating possible lateral movement or first stage PrivEsc via delegation. </info>
 	<info type="text">Falsepositives: Other browsers. </info>

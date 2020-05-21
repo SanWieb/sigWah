@@ -12,7 +12,7 @@
 	<group>attack.defense_evasion,attack.command_and_control,attack.lateral_movement,attack.t1076,attack.t1090,car.2013-07-002,MITRE</group>
 </rule>
 
-<rule id="300490" level="14">
+<rule id="300491" level="14">
 	<if_group>windows</if_group>
 	<field name="win.system.EventID">^5156$</field>
 	<field name="win.eventdata.DestinationPort">^3389$</field>

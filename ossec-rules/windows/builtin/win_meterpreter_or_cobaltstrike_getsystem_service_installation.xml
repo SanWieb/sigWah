@@ -14,7 +14,7 @@
 	<group>attack.privilege_escalation,attack.t1134,MITRE</group>
 </rule>
 
-<rule id="300340" level="15">
+<rule id="300341" level="15">
 	<if_group>windows</if_group>
 	<field name="win.system.EventID">^6$|^7045$|^4697$</field>
 	<field name="win.eventdata.ServiceFileName">%COMSPEC%</field>
@@ -30,7 +30,7 @@
 	<group>attack.privilege_escalation,attack.t1134,MITRE</group>
 </rule>
 
-<rule id="300340" level="15">
+<rule id="300342" level="15">
 	<if_group>windows</if_group>
 	<field name="win.system.EventID">^6$|^7045$|^4697$</field>
 	<field name="win.eventdata.ServiceFileName">rundll32</field>
