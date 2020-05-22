@@ -2,8 +2,8 @@
 	<if_group>windows</if_group>
 	<field name="win.system.EventID">^4625$</field>
 	<!-- To prevent Whitelist Overriding: -->
-	<match>!^10.|^192.168.|^172.16.|^172.17.|^172.18.|^172.19.|^172.20.|^172.21.|^172.22.|^172.23.|^172.24.|^172.25.|^172.26.|^172.27.|^172.28.|^172.29.|^172.30.|^172.31.|^127.0.0.0/|^169.254.</match>
-	<description>Whitelist Interaction: Failed Logon From Public IP</description>
+	<match>!^10.|^192.168.|^172.16.|^172.17.|^172.18.|^172.19.|^172.20.|^172.21.|^172.22.|^172.23.|^172.24.|^172.25.|^172.26.|^172.27.|^172.28.|^172.29.|^172.30.|^172.31.|^127.0.0.1|^169.254.</match>
+	<description>ATT&CK T1078 T1190 T1133: Failed Logon From Public IP</description>
 	<group>attack.initial_access,attack.persistence,attack.t1078,attack.t1190,attack.t1133,MITRE</group>
 </rule>
 
@@ -16,7 +16,7 @@
 
 <rule id="300672" level="0">
 	<if_sid>300670</if_sid>
-	<field name="win.eventdata.IpAddress">^10.|^192.168.|^172.16.|^172.17.|^172.18.|^172.19.|^172.20.|^172.21.|^172.22.|^172.23.|^172.24.|^172.25.|^172.26.|^172.27.|^172.28.|^172.29.|^172.30.|^172.31.|^127.0.0.0/|^169.254.</field>
+	<field name="win.eventdata.IpAddress">^10.|^192.168.|^172.16.|^172.17.|^172.18.|^172.19.|^172.20.|^172.21.|^172.22.|^172.23.|^172.24.|^172.25.|^172.26.|^172.27.|^172.28.|^172.29.|^172.30.|^172.31.|^127.0.0.1|^169.254.</field>
 	<description>Whitelist Interaction: Failed Logon From Public IP</description>
 	<group>attack.initial_access,attack.persistence,attack.t1078,attack.t1190,attack.t1133,MITRE</group>
 </rule>
