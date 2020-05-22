@@ -1,4 +1,4 @@
-<rule id="300110" level="15">
+<rule id="300110" level="10">
 	<if_group>windows</if_group>
 	<regex> mimikatz | mimilib | \<3 eo.oe | eo.oe.kiwi | privilege::debug | sekurlsa::logonpasswords | lsadump::sam | mimidrv.sys | p::d | s::l </regex>
 	<description>ATT&CK S0002 T1003: Mimikatz Use</description>
