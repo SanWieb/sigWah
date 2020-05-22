@@ -1,4 +1,4 @@
-<rule id="300130" level="15">
+<rule id="262320" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">bitsadmin\s+/transfer</field>
 	<field name="win.eventdata.CommandLine">CSIDL_APPDATA</field>
@@ -10,7 +10,7 @@
 	<group>attack.g0049,MITRE</group>
 </rule>
 
-<rule id="300131" level="15">
+<rule id="262321" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">CSIDL_SYSTEM_DRIVE</field>
 	<description>ATT&CK: Greenbug Campaign Indicators</description>
@@ -21,7 +21,7 @@
 	<group>attack.g0049,MITRE</group>
 </rule>
 
-<rule id="300132" level="15">
+<rule id="262322" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.CommandLine">\\\\msf.ps1|8989\s+-e\s+cmd.exe|system.Data.SqlClient.SqlDataAdapter\(\$cmd\);\s+[void]\$da.fill|-nop\s+-w\s+hidden\s+-c\s+\$k=new-object|[Net.CredentialCache]::DefaultCredentials;IEX | -nop\s+-w\s+hidden\s+-c\s+\$m=new-object\s+net.webclient;\$m|-noninteractive\s+-executionpolicy\s+bypass\s+whoami|-noninteractive\s+-executionpolicy\s+bypass\s+netstat\s+-a|L3NlcnZlc</field>
 	<description>ATT&CK: Greenbug Campaign Indicators</description>
@@ -32,7 +32,7 @@
 	<group>attack.g0049,MITRE</group>
 </rule>
 
-<rule id="300133" level="15">
+<rule id="262323" level="15">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\adobe\\\\Adobe.exe$|\\\\oracle\\\\local.exe$|\\\\revshell.exe$|infopagesbackup\\\\ncat.exe$|CSIDL_SYSTEM\\\\cmd.exe$|\\\\programdata\\\\oracle\\\\java.exe$|CSIDL_COMMON_APPDATA\\\\comms\\\\comms.exe$|\\\\Programdata\\\\VMware\\\\Vmware.exe$</field>
 	<description>ATT&CK: Greenbug Campaign Indicators</description>
