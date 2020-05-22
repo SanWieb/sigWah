@@ -6,7 +6,7 @@
 	<info type="text">Falsepositives: Unknown. </info>
 	<info type="text">Sigma UUID: 51aa9387-1c53-4153-91cc-d73c59ae1ca9 </info>
 	<group>attack.defense_evasion,attack.t1027,MITRE</group>
-</rule> -->
+</rule>
 
 <rule id="300281" level="14">
 	<if_group>windows</if_group>
@@ -35,5 +35,5 @@
 	<info type="text">Falsepositives: Unknown. </info>
 	<info type="text">Sigma UUID: 51aa9387-1c53-4153-91cc-d73c59ae1ca9 </info>
 	<group>attack.defense_evasion,attack.t1027,MITRE</group>
-</rule>
+</rule>  -->
 
