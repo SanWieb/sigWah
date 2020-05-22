@@ -1,0 +1,11 @@
+<rule id="262330" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">cmd.exe\s+/Q\s+/c \.* 1>\s+\\\\\\\\\.*\\\\\.*\\\\\.* 2>&1|cmd.exe\s+/C \.* >\s+\\\\\\\\\.*\\\\\.*\\\\\.* 2>&1|cmd.exe\s+/C \.* > \.*\\\\\\\\Temp\\\\\.* 2>&1|powershell.exe\s+-exec\s+bypass\s+-noni\s+-nop\s+-w\s+1\s+-C\s+"|powershell.exe\s+-noni\s+-nop\s+-w\s+1\s+-enc </field>
+	<description>ATT&CK T1047 T1053 T1086: CrackMapExec Command Execution</description>
+	<info type="text">Detect various execution methods of the CrackMapExec pentesting framework </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 058f4380-962d-40a5-afce-50207d36d7e2 </info>
+	<info type="link">https://github.com/byt3bl33d3r/CrackMapExec </info>
+	<group>attack.execution,attack.t1047,attack.t1053,attack.t1086,MITRE</group>
+</rule>
+

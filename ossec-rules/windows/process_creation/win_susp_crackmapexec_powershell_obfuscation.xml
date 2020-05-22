@@ -1,0 +1,13 @@
+<rule id="262340" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">powershell.exe</field>
+	<field name="win.eventdata.CommandLine">join\.*split|\(\s+\$ShellId[1]\p\$ShellId[13]\p'x'\)|\(\s+\$PSHome[\.*]\p\$PSHOME[\.*]\p|\(\s+\$env:Public[13]\p\$env:Public[5]\p'x'\)|\(\s+\$env:ComSpec[4,\.*,25]-Join''\)|[1,3]\p'x'-Join''\)</field>
+	<description>ATT&CK T1086 T1027: CrackMapExec PowerShell Obfuscation</description>
+	<info type="text">The CrachMapExec pentesting framework implements a PowerShell obfuscation with some static strings detected by this rule. </info>
+	<info type="text">Falsepositives: Unknown. </info>
+	<info type="text">Sigma UUID: 6f8b3439-a203-45dc-a88b-abf57ea15ccf </info>
+	<info type="link">https://github.com/byt3bl33d3r/CrackMapExec </info>
+	<info type="link">https://github.com/byt3bl33d3r/CrackMapExec/blob/0a49f75347b625e81ee6aa8c33d3970b5515ea9e/cme/helpers/powershell.py#L242 </info>
+	<group>attack.execution,attack.t1086,attack.defense_evasion,attack.t1027,MITRE</group>
+</rule>
+
