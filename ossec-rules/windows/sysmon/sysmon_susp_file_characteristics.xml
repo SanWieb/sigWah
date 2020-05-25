@@ -1,7 +1,7 @@
 <rule id="250650" level="10">
 	<if_group>windows</if_group>
-	<field name="win.eventdata.Description">^$|^ $|^-$</field>
-	<field name="win.eventdata.FileVersion">^$|^ $|^-$</field>
+	<field name="win.eventdata.Description">^$|^ $|^-$|?</field>
+	<field name="win.eventdata.FileVersion">^$|^ $|^-$|?</field>
 	<description>ATT&CK T1064: Suspicious File Characteristics Due to Missing Fields</description>
 	<info type="text">Detects Executables without FileVersion,Description,Product,Company likely created with py2exe </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -13,8 +13,8 @@
 
 <rule id="250651" level="10">
 	<if_group>windows</if_group>
-	<field name="win.eventdata.Description">^$|^ $|^-$</field>
-	<field name="win.eventdata.Product">^$|^ $|^-$</field>
+	<field name="win.eventdata.Description">^$|^ $|^-$|?</field>
+	<field name="win.eventdata.Product">^$|^ $|^-$|?</field>
 	<description>ATT&CK T1064: Suspicious File Characteristics Due to Missing Fields</description>
 	<info type="text">Detects Executables without FileVersion,Description,Product,Company likely created with py2exe </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -26,8 +26,8 @@
 
 <rule id="250652" level="10">
 	<if_group>windows</if_group>
-	<field name="win.eventdata.Description">^$|^ $|^-$</field>
-	<field name="win.eventdata.Company">^$|^ $|^-$</field>
+	<field name="win.eventdata.Description">^$|^ $|^-$|?</field>
+	<field name="win.eventdata.Company">^$|^ $|^-$|?</field>
 	<description>ATT&CK T1064: Suspicious File Characteristics Due to Missing Fields</description>
 	<info type="text">Detects Executables without FileVersion,Description,Product,Company likely created with py2exe </info>
 	<info type="text">Falsepositives: Unknown. </info>
