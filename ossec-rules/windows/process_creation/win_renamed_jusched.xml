@@ -1,0 +1,24 @@
+<rule id="262380" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Description">Java Update Scheduler</field>
+	<match>!\\jusched.exe</match>
+	<description>ATT&CK T1036: Renamed jusched.exe</description>
+	<info type="text">Detects renamed jusched.exe used by cobalt group </info>
+	<info type="text">Falsepositives: penetration tests, red teaming. </info>
+	<info type="text">Sigma UUID: edd8a48c-1b9f-4ba1-83aa-490338cd1ccb </info>
+	<info type="link">https://www.bitdefender.com/files/News/CaseStudies/study/262/Bitdefender-WhitePaper-An-APT-Blueprint-Gaining-New-Visibility-into-Financial-Threats-interactive.pdf </info>
+	<group>attack.t1036,attack.execution,MITRE</group>
+</rule>
+
+<rule id="262381" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Description">Java\(TM\) Update Scheduler</field>
+	<match>!\\jusched.exe</match>
+	<description>ATT&CK T1036: Renamed jusched.exe</description>
+	<info type="text">Detects renamed jusched.exe used by cobalt group </info>
+	<info type="text">Falsepositives: penetration tests, red teaming. </info>
+	<info type="text">Sigma UUID: edd8a48c-1b9f-4ba1-83aa-490338cd1ccb </info>
+	<info type="link">https://www.bitdefender.com/files/News/CaseStudies/study/262/Bitdefender-WhitePaper-An-APT-Blueprint-Gaining-New-Visibility-into-Financial-Threats-interactive.pdf </info>
+	<group>attack.t1036,attack.execution,MITRE</group>
+</rule>
+

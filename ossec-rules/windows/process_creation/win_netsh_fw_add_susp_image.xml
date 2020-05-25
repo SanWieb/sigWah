@@ -1,0 +1,30 @@
+<rule id="262370" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">netsh</field>
+	<field name="win.eventdata.CommandLine">firewall\s+add\s+allowedprogram</field>
+	<field name="win.eventdata.CommandLine">%TEMP%|:\\\\RECYCLER\\\\|\.:\\\\\$Recycle.bin\\\\|:\\\\SystemVolumeInformation\\\\|\.:\\\\\\\\Windows\\\\\\\\Tasks\\\\|\.:\\\\\\\\Windows\\\\\\\\debug\\\\|\.:\\\\\\\\Windows\\\\\\\\fonts\\\\|\.:\\\\\\\\Windows\\\\\\\\help\\\\|\.:\\\\\\\\Windows\\\\\\\\drivers\\\\|\.:\\\\\\\\Windows\\\\\\\\addins\\\\|\.:\\\\\\\\Windows\\\\\\\\cursors\\\\|\.:\\\\\\\\Windows\\\\\\\\system32\\\\tasks\\\\|\.:\\\\Windows\\\\Temp\\\\|\.:\\\\Temp\\\\|\.:\\\\Users\\\\Public\\\\|%Public%\\\\|\.:\\\\Users\\\\Default\\\\|\.:\\\\Users\\\\Desktop\\\\|\\\\Downloads\\\\|\\\\Temporary\s+Internet\s+Files\\\\Content.Outlook\\\\|\\\\Local\s+Settings\\\\Temporary\s+Internet\s+Files\\\\</field>
+	<description>ATT&CK T1090: Netsh Program Allowed with Suspcious Location</description>
+	<info type="text">Detects Netsh commands that allows a suspcious application location on Windows Firewall </info>
+	<info type="text">Falsepositives: Legitimate administration. </info>
+	<info type="text">Sigma UUID: a35f5a72-f347-4e36-8895-9869b0d5fc6d </info>
+	<info type="link">https://www.virusradar.com/en/Win32_Kasidet.AD/description </info>
+	<info type="link">https://www.hybrid-analysis.com/sample/07e789f4f2f3259e7559fdccb36e96814c2dbff872a21e1fa03de9ee377d581f?environmentId=100 </info>
+	<group>attack.lateral_movement,attack.command_and_control,attack.t1090,MITRE</group>
+</rule>
+
+<rule id="262371" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">netsh</field>
+	<field name="win.eventdata.CommandLine">advfirewall\s+firewall\s+add\s+rule</field>
+	<field name="win.eventdata.CommandLine">action=allow</field>
+	<field name="win.eventdata.CommandLine">program=</field>
+	<field name="win.eventdata.CommandLine">%TEMP%|:\\\\RECYCLER\\\\|\.:\\\\\$Recycle.bin\\\\|:\\\\SystemVolumeInformation\\\\|\.:\\\\\\\\Windows\\\\\\\\Tasks\\\\|\.:\\\\\\\\Windows\\\\\\\\debug\\\\|\.:\\\\\\\\Windows\\\\\\\\fonts\\\\|\.:\\\\\\\\Windows\\\\\\\\help\\\\|\.:\\\\\\\\Windows\\\\\\\\drivers\\\\|\.:\\\\\\\\Windows\\\\\\\\addins\\\\|\.:\\\\\\\\Windows\\\\\\\\cursors\\\\|\.:\\\\\\\\Windows\\\\\\\\system32\\\\tasks\\\\|\.:\\\\Windows\\\\Temp\\\\|\.:\\\\Temp\\\\|\.:\\\\Users\\\\Public\\\\|%Public%\\\\|\.:\\\\Users\\\\Default\\\\|\.:\\\\Users\\\\Desktop\\\\|\\\\Downloads\\\\|\\\\Temporary\s+Internet\s+Files\\\\Content.Outlook\\\\|\\\\Local\s+Settings\\\\Temporary\s+Internet\s+Files\\\\</field>
+	<description>ATT&CK T1090: Netsh Program Allowed with Suspcious Location</description>
+	<info type="text">Detects Netsh commands that allows a suspcious application location on Windows Firewall </info>
+	<info type="text">Falsepositives: Legitimate administration. </info>
+	<info type="text">Sigma UUID: a35f5a72-f347-4e36-8895-9869b0d5fc6d </info>
+	<info type="link">https://www.virusradar.com/en/Win32_Kasidet.AD/description </info>
+	<info type="link">https://www.hybrid-analysis.com/sample/07e789f4f2f3259e7559fdccb36e96814c2dbff872a21e1fa03de9ee377d581f?environmentId=100 </info>
+	<group>attack.lateral_movement,attack.command_and_control,attack.t1090,MITRE</group>
+</rule>
+
