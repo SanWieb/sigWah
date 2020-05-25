@@ -1,7 +1,7 @@
 <rule id="250220" level="14">
 	<if_group>sysmon_event7</if_group>
 	<field name="win.eventdata.ImageLoaded">\\\\System.Management.Automation.Dll$|\\\\System.Management.Automation.ni.Dll$</field>
-	<match>!\\powershell.exe|\\WINDOWS\\System32\\sdiagnhost.exe</match>
+	<match>!\\powershell.exe|\\WINDOWS\\System32\\sdiagnhost.exe|\\powershell_ise.exe</match>
 	<description>ATT&CK T1086: In-memory PowerShell</description>
 	<info type="text">Detects loading of essential DLL used by PowerShell, but not by the process powershell.exe. Detects meterpreter's "load powershell" extension. </info>
 	<info type="text">Falsepositives: Used by some .NET binaries, minimal on user workstation.. </info>

@@ -1,5 +1,6 @@
 <rule id="250460" level="10">
 	<if_group>sysmon_event_12</if_group>
+	<field name="win.eventdata.EventType">CreateKey</field>
 	<field name="win.eventdata.TargetObject">HKU\\\\\.*_Classes\\\\CLSID\\\\\.*\\\\TreatAs</field>
 	<description>ATT&CK T1122: Windows Registry Persistence COM Key Linking</description>
 	<info type="text">Detects COM object hijacking via TreatAs subkey </info>

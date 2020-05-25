@@ -1,6 +1,7 @@
 <rule id="250150" level="14">
 	<if_group>sysmon_event_12</if_group>
 	<field name="win.eventdata.TargetObject">HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\MiniNt</field>
+	<field name="win.eventdata.EventType">CreateKey</field>
 	<description>ATT&CK T1089: Disable Security Events Logging Adding Reg Key MiniNt</description>
 	<info type="text">Detects the addition of a key 'MiniNt' to the registry. Upon a reboot, Windows Event Log service will stopped write events. </info>
 	<info type="text">Falsepositives: Unkown. </info>

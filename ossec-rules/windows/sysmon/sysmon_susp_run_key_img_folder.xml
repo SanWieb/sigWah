@@ -1,19 +1,12 @@
 <rule id="250780" level="14">
 	<if_group>sysmon_event_13</if_group>
 	<field name="win.eventdata.TargetObject">\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\|\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\RunOnce\\\\</field>
-	<field name="win.eventdata.Details">\.:\\\\Windows\\\\Temp\\\\|\\\\AppData\\\\|AppData\.*\\\\|\.:\\\\\$Recycle.bin\\\\|\.:\\\\Temp\\\\|\.:\\\\Users\\\\Public\\\\|%Public%\\\\|\.:\\\\Users\\\\Default\\\\|\.:\\\\Users\\\\Desktop\\\\|wscript|cscript</field>
+	<field name="win.eventdata.Details">\.:\\\\Windows\\\\Temp\\\\|\.:\\\\\$Recycle.bin\\\\|\.:\\\\Temp\\\\|\.:\\\\Users\\\\Public\\\\|%Public%\\\\|\.:\\\\Users\\\\Default\\\\|\.:\\\\Users\\\\Desktop\\\\|wscript|cscript</field>
 	<description>ATT&CK T1060: New RUN Key Pointing to Suspicious Folder</description>
 	<info type="text">Detects suspicious new RUN key element pointing to an executable in a suspicious folder </info>
-	<info type="text">Falsepositives: Software using the AppData folders for updates. </info>
+	<info type="text">Falsepositives: Software using weird folders for updates. </info>
 	<info type="text">Sigma UUID: 02ee49e2-e294-4d0f-9278-f5b3212fc588 </info>
 	<info type="link">https://www.fireeye.com/blog/threat-research/2018/08/fin7-pursuing-an-enigmatic-and-evasive-global-criminal-operation.html </info>
-	<group>attack.persistence,attack.t1060,MITRE</group>
-</rule>
-
-<rule id="250781" level="0">
-	<if_sid>250780</if_sid>
-	<field name="win.eventdata.Details">\\\\AppData\\\\Local\\\\Microsoft\\\\OneDrive\\\\</field>
-	<description>Whitelist Interaction: New RUN Key Pointing to Suspicious Folder</description>
 	<group>attack.persistence,attack.t1060,MITRE</group>
 </rule>
 

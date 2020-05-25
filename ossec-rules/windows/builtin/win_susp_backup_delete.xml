@@ -1,7 +1,7 @@
 <rule id="300590" level="10">
 	<if_group>windows</if_group>
 	<field name="win.system.EventID">^524$</field>
-	<field name="win.eventdata.Source">Backup</field>
+	<field name="win.eventdata.Source">Microsoft-Windows-Backup</field>
 	<description>ATT&CK T1107: Backup Catalog Deleted</description>
 	<info type="text">Detects backup catalog deletions </info>
 	<info type="text">Falsepositives: Unknown. </info>

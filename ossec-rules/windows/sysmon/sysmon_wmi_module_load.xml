@@ -11,7 +11,7 @@
 
 <rule id="250931" level="0">
 	<if_sid>250930</if_sid>
-	<field name="win.eventdata.Image">\\\\WmiPrvSe.exe$|\\\\WmiPrvSE.exe$|\\\\WmiAPsrv.exe$|\\\\svchost.exe$</field>
+	<field name="win.eventdata.Image">\\\\WmiPrvSe.exe$|\\\\WmiAPsrv.exe$|\\\\svchost.exe$|\\\\DeviceCensus.exe$</field>
 	<description>Whitelist Interaction: WMI Modules Loaded</description>
 	<group>attack.execution,attack.t1047,MITRE</group>
 </rule>

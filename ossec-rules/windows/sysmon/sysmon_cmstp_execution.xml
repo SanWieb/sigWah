@@ -1,6 +1,7 @@
 <rule id="250080" level="14">
 	<if_group>sysmon_event_12</if_group>
 	<field name="win.eventdata.TargetObject">\\\\cmmgr32.exe</field>
+	<field name="win.eventdata.EventType">CreateKey</field>
 	<description>ATT&CK T1191: CMSTP Execution</description>
 	<info type="text">Detects various indicators of Microsoft Connection Manager Profile Installer execution </info>
 	<info type="text">Falsepositives: Legitimate CMSTP use (unlikely in modern enterprise environments). </info>
