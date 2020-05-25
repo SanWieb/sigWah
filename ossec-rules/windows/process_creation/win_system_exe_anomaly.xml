@@ -14,7 +14,7 @@
 <rule id="262091" level="14">
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Image">\\\\explorer.exe</field>
-	<match>!:\\Windows\\explorer.exe</match>
+	<match>!:\\Windows\\explorer.exe|:\\Windows\\SysWow64\\explorer.exe</match>
 	<description>ATT&CK T1036: System File Execution Location Anomaly</description>
 	<info type="text">Detects a Windows program executable started in a suspicious folder </info>
 	<info type="text">Falsepositives: Exotic software. </info>
