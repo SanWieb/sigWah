@@ -1,42 +1,66 @@
 import yaml
 import os
+import time
+import datetime
 import re
 
-directory = 'sigma-rules/windows/process_creation'
-output_dir = 'ossec-rules/windows/process_creation'
+directory = 'GitHub/sigma/rules/windows/powershell'
+output_dir = 'ossec-rules/windows/powershell'
 
 
 class SigmaOssec(object):
     rulenumber = 0
     data = {}
-    events ={}
-    events['system'] = ['Provider', 'EventID', 'Version', 'Level', 'Task', 'Opcode', 'Keywords', 'TimeCreated', 'EventRecordID', 'Correlation', 'Execution', 'Channel', 'Computer', 'Security']
-    events['event1'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'FileVersion', 'CommandLine', 'CurrentDirectory', 'User', 'LogonGuid', 'LogonId', 'TerminalSessionId', 'IntegrityLevel', 'Hashes', 'ParentProcessGuid', 'ParentProcessId', 'ParentImage', 'ParentCommandLine', 'OriginalFilename', 'Description', 'Product', 'Company']
-    events['event2'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'TargetFilename', 'CreationUtcTime', 'PreviousCreationUtcTime']
-    events['event3'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'User', 'Protocol', 'Initiated', 'SourceIsIpv6', 'SourceIp', 'SourceHostname', 'SourcePort', 'SourcePortName', 'DestinationIsIpv6', 'DestinationIp', 'DestinationHostname', 'DestinationPort', 'DestinationPortName']
-    events['event4'] = ['UtcTime', 'State', 'Version', 'SchemaVersion']
-    events['event5'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image']
-    events['event6'] = ['UtcTime', 'ImageLoaded', 'Hashes', 'Signed', 'Signature', 'SignatureStatus']
-    events['event7'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'ImageLoaded', 'Hashes', 'Signed', 'Signature', 'SignatureStatus', 'OriginalFilename']
-    events['event8'] = ['UtcTime', 'SourceProcessGuid', 'SourceProcessId', 'SourceImage', 'TargetProcessGuid', 'TargetProcessId', 'TargetImage', 'NewThreadId', 'StartAddress', 'StartModule', 'StartFunction']
-    events['event9'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'Device']
-    events['event10'] = ['UtcTime', 'SourceProcessGUID', 'SourceProcessId', 'SourceThreadId', 'SourceImage', 'TargetProcessGUID', 'TargetProcessId', 'TargetImage', 'GrantedAccess', 'CallTrace']
-    events['event11'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'TargetFilename', 'CreationUtcTime']
-    events['event12'] = ['EventType', 'UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'TargetObject']
-    events['event13'] = ['EventType', 'UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'TargetObject', 'Details']
-    events['event14'] = ['EventType', 'UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'TargetObject', 'NewName']
-    events['event15'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'TargetFilename', 'CreationUtcTime', 'Hash']
-    events['event16'] = ['UtcTime', 'Configuration', 'ConfigurationFileHash']
-    events['event17'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'PipeName', 'Image']
-    events['event18'] = ['UtcTime', 'ProcessGuid', 'ProcessId', 'PipeName', 'Image']
-    events['event19'] = ['EventType', 'UtcTime', 'Operation', 'User', 'EventNamespace', 'Name', 'Query']
-    events['event20'] = ['EventType', 'UtcTime', 'Operation', 'User', 'Name', 'Type', 'Destination']
-    events['event21'] = ['EventType', 'UtcTime', 'Operation', 'User', 'Consumer', 'Filter']
-    events['event22'] = ['QueryName', 'QueryStatus', 'QueryResults']
-    events['event225'] = []
-    events['powershell'] = ['contextinfo', 'message', 'scriptblocktext', 'engineversion', 'hostversion', 'hostname', 'hostapplication']
-    events['extra_fields'] = ['servicename', 'taskname', 'qname', 'groupname', 'processname', 'parentintegritylevel', 'parentuser']
-    events['syntax_errors'] = ['command', 'username', 'processcommandline', 'newprocessname', 'TargetProcessAddress']
+    events = {'system': ['Provider', 'EventID', 'Version', 'Level', 'Task', 'Opcode', 'Keywords', 'TimeCreated',
+                         'EventRecordID', 'Correlation', 'Execution', 'Channel', 'Computer', 'Security'],
+              'event1': ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'FileVersion', 'CommandLine',
+                         'CurrentDirectory', 'User', 'LogonGuid', 'LogonId', 'TerminalSessionId', 'IntegrityLevel',
+                         'Hashes', 'ParentProcessGuid', 'ParentProcessId', 'ParentImage', 'ParentCommandLine',
+                         'OriginalFilename', 'Description', 'Product', 'Company'],
+              'event2': ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'TargetFilename', 'CreationUtcTime',
+                         'PreviousCreationUtcTime'],
+              'event3': ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'User', 'Protocol', 'Initiated',
+                         'SourceIsIpv6', 'SourceIp', 'SourceHostname', 'SourcePort', 'SourcePortName',
+                         'DestinationIsIpv6', 'DestinationIp', 'DestinationHostname', 'DestinationPort',
+                         'DestinationPortName'], 'event4': ['UtcTime', 'State', 'Version', 'SchemaVersion'],
+              'event5': ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image'],
+              'event6': ['UtcTime', 'ImageLoaded', 'Hashes', 'Signed', 'Signature', 'SignatureStatus'],
+              'event7': ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'ImageLoaded', 'Hashes', 'Signed', 'Signature',
+                         'SignatureStatus', 'OriginalFilename'],
+              'event8': ['UtcTime', 'SourceProcessGuid', 'SourceProcessId', 'SourceImage', 'TargetProcessGuid',
+                         'TargetProcessId', 'TargetImage', 'NewThreadId', 'StartAddress', 'StartModule',
+                         'StartFunction'], 'event9': ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'Device'],
+              'event10': ['UtcTime', 'SourceProcessGUID', 'SourceProcessId', 'SourceThreadId', 'SourceImage',
+                          'TargetProcessGUID', 'TargetProcessId', 'TargetImage', 'GrantedAccess', 'CallTrace'],
+              'event11': ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'TargetFilename', 'CreationUtcTime'],
+              'event12': ['EventType', 'UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'TargetObject'],
+              'event13': ['EventType', 'UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'TargetObject', 'Details'],
+              'event14': ['EventType', 'UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'TargetObject', 'NewName'],
+              'event15': ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'TargetFilename', 'CreationUtcTime', 'Hash'],
+              'event16': ['UtcTime', 'Configuration', 'ConfigurationFileHash'],
+              'event17': ['UtcTime', 'ProcessGuid', 'ProcessId', 'PipeName', 'Image'],
+              'event18': ['UtcTime', 'ProcessGuid', 'ProcessId', 'PipeName', 'Image'],
+              'event19': ['EventType', 'UtcTime', 'Operation', 'User', 'EventNamespace', 'Name', 'Query'],
+              'event20': ['EventType', 'UtcTime', 'Operation', 'User', 'Name', 'Type', 'Destination'],
+              'event21': ['EventType', 'UtcTime', 'Operation', 'User', 'Consumer', 'Filter'],
+              'event22': ['QueryName', 'QueryStatus', 'QueryResults'], 'event225': [],
+              'powershell': ['contextinfo', 'message', 'scriptblocktext', 'engineversion', 'hostversion', 'hostname',
+                             'hostapplication'],
+              'windows_security': ['ObjectName', 'accesses', 'accesslist', 'accessmask', 'accountname',
+                                   'allowedtodelegateto', 'attributeldapdisplayname', 'attributevalue',
+                                   'auditpolicychanges', 'authenticationpackagename', 'callingprocessname',
+                                   'computername', 'destinationaddress', 'destport', 'deviceclassname',
+                                   'devicedescription', 'failurecode', 'groupsid', 'hivename', 'imagepath', 'ipaddress',
+                                   'keylength', 'layerrtid', 'ldapdisplayname', 'logonprocessname', 'logontype',
+                                   'objectclass', 'objectserver', 'objecttype', 'objectvaluename', 'passwordlastset',
+                                   'path', 'privilegelist', 'properties', 'relativetargetname', 'samaccountname',
+                                   'service', 'servicefilename', 'serviceprincipalnames', 'sharename', 'sidhistory',
+                                   'source', 'sourceaddress', 'sourcenetworkaddress', 'status', 'subjectdomainname',
+                                   'subjectlogonid', 'subjectusername', 'subjectusersid', 'targetusername',
+                                   'ticketencryptiontype', 'ticketoptions', 'value', 'workstation', 'workstationname'],
+              'extra_fields': ['servicename', 'taskname', 'qname', 'groupname', 'processname', 'parentintegritylevel',
+                               'parentuser'],
+              'syntax_errors': ['command', 'username', 'processcommandline', 'newprocessname', 'TargetProcessAddress']}
     known_fields = []
     for event in events:
         known_fields += [x.lower() for x in events[event]]
@@ -203,9 +227,12 @@ class SigmaOssec(object):
     # -----------  Condition Checkers ------------- #
     def is_or_statement(self, condition):
         condition_parts = condition.split(' ')
-        if len(condition_parts) == 1 or condition.lower() == '1 of them':
+        if len(condition_parts) == 1:
             return True
-        elif len(condition_parts) > 2:
+        if len(condition_parts) == 3:
+            if condition_parts[0] in ['1', 'one', '(1', '(one'] and condition_parts[1] == 'of':
+                return True
+        if len(condition_parts) > 2:
             i = 1
             while len(condition_parts) > i:
                 if condition_parts[i].lower() != 'or':
@@ -213,6 +240,7 @@ class SigmaOssec(object):
                 # only odd numbers
                 i += 2
             return True
+
     def is_and_statement(self, condition):
         if condition == 'all of them':
             return True
@@ -227,6 +255,7 @@ class SigmaOssec(object):
             return True
         else:
             return False
+
     def is_and_not_statement(self, condition):
         condition_parts = condition.split(' ')
         if len(condition_parts) == 4 and condition_parts[1].lower() == 'and' and condition_parts[2].lower() == 'not':
@@ -264,7 +293,6 @@ class SigmaOssec(object):
                 field_rules.append(self.parse_fieldtype(selection, fieldname))
             elif fieldname_splitted[1].lower() == 'startswith':
                 # modifier type 1
-                print('bingo ' + fieldname)
                 field_rules.append(self.parse_fieldtype(selection, fieldname, 1))
             elif fieldname_splitted[1].lower() == 'endswith':
                 # modifier type 2
@@ -458,6 +486,7 @@ class SigmaOssec(object):
             return '<rule id="{}" level="{}">'.format(self.rulenumber, level)
 
     def get_event_id(self, data, selection):
+        start_string = '\t<if_group>windows</if_group>\n'
         if type(selection) is dict:
             selection_lower = {k.lower(): v for k, v in selection.items()}
             if 'eventid' in selection_lower:
@@ -471,7 +500,7 @@ class SigmaOssec(object):
                         else:
                             first_key = False
                         query += '^{}$'.format(item)
-                    return '\t<field name="win.system.EventID">{}</field>'.format(query)
+                    return start_string + '\t<field name="win.system.EventID">{}</field>'.format(query)
                 else:
                     if event_id < 16:
                         if event_id > 9:
@@ -479,7 +508,7 @@ class SigmaOssec(object):
                         else:
                             return '\t<if_group>sysmon_event{}</if_group>'.format(event_id)
                     else:
-                        return '\t<field name="win.system.EventID">^{}$</field>'.format(event_id)
+                        return start_string + '\t<field name="win.system.EventID">^{}$</field>'.format(event_id)
         if 'logsource' in data and 'category' in data['logsource'] and 'product' in data['logsource']:
             if data['logsource']['category'] == 'process_creation' and data['logsource']['product'] == 'windows':
                 return '\t<if_group>sysmon_event1</if_group>'
@@ -491,7 +520,7 @@ class SigmaOssec(object):
             if 'logsource' in first_document and 'category' in first_document['logsource'] and 'product' in first_document['logsource']:
                 if first_document['logsource']['category'] == 'process_creation' and first_document['logsource']['product'] == 'windows':
                     return '\t<if_group>sysmon_event1</if_group>'
-        return 'Manual check needed! Doublecheck no EventID'
+        return start_string + 'Manual check needed! Doublecheck no EventID'
 
     def get_title(self, data, whitelist=False):
         start_title = ''
@@ -564,15 +593,18 @@ def write_file(output, filename):
 # -----------  Main ------------- #
 
 def main():
-    rule_number = 260000
+    rule_number = 262350
+    dt = datetime.datetime(2020, 5, 25, 11 - 2, 20)
+    unix_time = (dt - datetime.datetime(1970, 1, 1)).total_seconds()
     for filename in os.listdir(directory):
         if filename.endswith(".yml"):
-            print(filename)
-            document_data = read_file(os.path.join(directory, filename))
-            sigmaconvert = SigmaOssec(document_data, rule_number)
-            output = sigmaconvert.get_output()
-            write_file(output, filename)
-            rule_number += 10
+            if unix_time < os.path.getmtime(os.path.join(directory, filename)):
+                print(filename)
+                document_data = read_file(os.path.join(directory, filename))
+                sigmaconvert = SigmaOssec(document_data, rule_number)
+                output = sigmaconvert.get_output()
+                write_file(output, filename)
+                rule_number += 10
 
 
 if __name__ == '__main__':
