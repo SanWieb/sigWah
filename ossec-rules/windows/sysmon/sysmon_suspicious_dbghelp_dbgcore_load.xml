@@ -13,7 +13,7 @@
 	<group>attack.credential_access,attack.t1003,MITRE</group>
 </rule>
 
-<rule id="251000" level="14">
+<rule id="251001" level="14">
 	<if_group>sysmon_event7</if_group>
 	<field name="win.eventdata.ImageLoaded">\\\\dbghelp.dll$|\\\\dbgcore.dll$</field>
 	<field name="win.eventdata.Signed">FALSE</field>
