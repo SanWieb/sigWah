@@ -2,6 +2,7 @@
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Description">?</field>
 	<field name="win.eventdata.FileVersion">?</field>
+	<field name="win.eventdata.Image">\\Downloads\\</field>
 	<description>ATT&CK T1064: Suspicious File Characteristics Due to Missing Fields</description>
 	<info type="text">Detects Executables without FileVersion,Description,Product,Company likely created with py2exe </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -15,6 +16,7 @@
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Description">?</field>
 	<field name="win.eventdata.Product">?</field>
+	<field name="win.eventdata.Image">\\Downloads\\</field>
 	<description>ATT&CK T1064: Suspicious File Characteristics Due to Missing Fields</description>
 	<info type="text">Detects Executables without FileVersion,Description,Product,Company likely created with py2exe </info>
 	<info type="text">Falsepositives: Unknown. </info>
@@ -28,6 +30,7 @@
 	<if_group>sysmon_event1</if_group>
 	<field name="win.eventdata.Description">?</field>
 	<field name="win.eventdata.Company">?</field>
+	<field name="win.eventdata.Image">\\Downloads\\</field>
 	<description>ATT&CK T1064: Suspicious File Characteristics Due to Missing Fields</description>
 	<info type="text">Detects Executables without FileVersion,Description,Product,Company likely created with py2exe </info>
 	<info type="text">Falsepositives: Unknown. </info>
