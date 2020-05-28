@@ -1,0 +1,11 @@
+<rule id="251010" level="14">
+	<if_group>sysmon_event_11</if_group>
+	<field name="win.eventdata.Image">\\\\svchost.exe|\\\\rundll32.exe|\\\\services.exe|\\\\powershell.exe|\\\\regsvr32.exe|\\\\spoolsv.exe|\\\\lsass.exe|\\\\smss.exe|\\\\csrss.exe|\\\\conhost.exe|\\\\wininit.exe|\\\\lsm.exe|\\\\winlogon.exe|\\\\explorer.exe|\\\\taskhost.exe|\\\\Taskmgr.exe|\\\\taskmgr.exe|\\\\sihost.exe|\\\\RuntimeBroker.exe|\\\\runtimebroker.exe|\\\\smartscreen.exe|\\\\dllhost.exe|\\\\audiodg.exe|\\\\wlanext.exe</field>
+	<match>!:\\Windows\\System32\\|:\\Windows\\system32\\|:\\Windows\\SysWow64\\|:\\Windows\\SysWOW64\\|:\\Windows\\winsxs\\|:\\Windows\\WinSxS\\|\\SystemRoot\\System32\\</match>
+	<description>ATT&CK T1036: File Created with System Process Name</description>
+	<info type="text">Detects the creation of a executable with a sytem process name in a suspicious folder </info>
+	<info type="text">Falsepositives: System processes copied outside the default folder. </info>
+	<info type="text">Sigma UUID: d5866ddf-ce8f-4aea-b28e-d96485a20d3d </info>
+	<info type="link">https://attack.mitre.org/techniques/T1036/ </info>
+	<group>attack.defense_evasion,attack.t1036,MITRE</group>
+</rule>
