@@ -1,16 +1,34 @@
+#!/usr/bin/env python3
+# A Sigma to Wazuh converter
+# Copyright 2020 - 2021 Sander Wiebing
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Lesser General Public License for more details.
+
+# You should have received a copy of the GNU Lesser General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
 import yaml
 import os
-import time
 import datetime
 import re
+import argparse
 
-directory = 'GitHub/sigma/rules/windows/powershell'
-output_dir = 'ossec-rules/windows/powershell'
+__version__ = '0.0.1'
 
 
-class SigmaOssec(object):
+class SigWah(object):
     rulenumber = 0
     data = {}
+    # hardcoded known events field to minimize syntax and parse errors
     events = {'system': ['Provider', 'EventID', 'Version', 'Level', 'Task', 'Opcode', 'Keywords', 'TimeCreated',
                          'EventRecordID', 'Correlation', 'Execution', 'Channel', 'Computer', 'Security'],
               'event1': ['UtcTime', 'ProcessGuid', 'ProcessId', 'Image', 'FileVersion', 'CommandLine',
@@ -117,6 +135,7 @@ class SigmaOssec(object):
                 else:
                     condition = data['detection']['condition']
                 if self.is_and_statement(condition):
+                    # manual check needed, still too many times that the AND condition fails
                     output['validation_failed_detection'] = 'Manual check needed! And condition'
                     output = self.handle_and(data, output)
                 elif self.is_or_statement(condition):
@@ -523,7 +542,6 @@ class SigmaOssec(object):
         return start_string + 'Manual check needed! Doublecheck no EventID'
 
     def get_title(self, data, whitelist=False):
-        start_title = ''
         if whitelist:
             start_tile = 'Whitelist Interaction'
         else:
@@ -580,8 +598,8 @@ def read_file(dir):
         return data
 
 
-def write_file(output, filename):
-    with open(os.path.join(output_dir, filename.replace('.yml', '.xml')), 'w+') as file:
+def write_file(output, filename, output_directory):
+    with open(os.path.join(output_directory, filename.replace('.yml', '.xml')), 'w+') as file:
         for line in output:
             if re.match(r"reference", line) or re.match(r"field_rule", line):
                 for item in output[line]:
@@ -590,20 +608,67 @@ def write_file(output, filename):
                 file.write('{}\n'.format(output[line]))
 
 
+# -----------  Print welcome ------------- #
+def print_welcome():
+    print("-" * 35, " SigWah ", "-" * 35)
+    print(" " * 18, "Sigma rules converter for OSSEC and Wazuh", " " * 18)
+    print("  ")
+    print("Copyright by Sander Wiebing, Released under the GNU General Public License")
+    print("Source code:  https://github.com/SanWieb/sigma-ossec")
+    print("Version %s" % __version__)
+    print("  ")
+    print("Please report issues via https://github.com/SanWieb/sigma-ossec/issues")
+    print("Feel free to contribute")
+    print("NOTE - This script is in its very early stage")
+    print("  ")
+    print("-" * 80)
+
+
 # -----------  Main ------------- #
 
 def main():
-    rule_number = 262350
-    dt = datetime.datetime(2020, 5, 25, 11 - 2, 20)
+    # print welcome
+    print_welcome()
+    # Parse Arguments
+    parser = argparse.ArgumentParser()
+    parser.add_argument('input', help='Path to scan for Sigma files', metavar='input_path')
+    parser.add_argument('output', help='Path to output the Wazuh files', metavar='output_path')
+    parser.add_argument('-r', help='Rule number to start with (adds up by 10)', metavar='int', default='250000')
+    parser.add_argument('-t', help='The start modified date with time which files need to be processed, used to only process '
+                                   'the files which changed', metavar='YYYY-MM-DD/HH:MM:SS',
+                        default='1970-01-01/00:00:00')
+    # Set variables
+    args = parser.parse_args()
+    input_directory = args.input
+    output_directory = args.output
+    try:
+        rule_number = int(args.r)
+    except Exception:
+        print('Error: Invalid rule number')
+        exit(0)
+    date_list = re.split(':|-|/', args.t)
+    try:
+        dt = datetime.datetime(int(date_list[0]), int(date_list[1]), int(date_list[2]), int(date_list[3]), int(date_list[4]))
+    except Exception:
+        print("Error: Invalid modified date")
+        exit(0)
     unix_time = (dt - datetime.datetime(1970, 1, 1)).total_seconds()
-    for filename in os.listdir(directory):
+    # check if directory exists
+    if not os.path.isdir(input_directory):
+        print('Error: Invalid input directory')
+        exit(0)
+    if not os.path.isdir(output_directory):
+        print('Error: Invalid output directory')
+        exit(0)
+    # loop all input files
+    for filename in os.listdir(input_directory):
         if filename.endswith(".yml"):
-            if unix_time < os.path.getmtime(os.path.join(directory, filename)):
+            if unix_time < os.path.getmtime(os.path.join(input_directory, filename)):
                 print(filename)
-                document_data = read_file(os.path.join(directory, filename))
-                sigmaconvert = SigmaOssec(document_data, rule_number)
-                output = sigmaconvert.get_output()
-                write_file(output, filename)
+                document_data = read_file(os.path.join(input_directory, filename))
+                sigmaConvert = SigWah(document_data, rule_number)
+                output = sigmaConvert.get_output()
+                write_file(output, filename, output_directory)
                 rule_number += 10
 
 
