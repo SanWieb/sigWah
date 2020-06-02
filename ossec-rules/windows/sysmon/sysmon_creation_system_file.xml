@@ -1,6 +1,6 @@
 <rule id="251010" level="14">
 	<if_group>sysmon_event_11</if_group>
-	<field name="win.eventdata.TargetFilename">\\\\svchost.exe|\\\\rundll32.exe|\\\\services.exe|\\\\powershell.exe|\\\\regsvr32.exe|\\\\spoolsv.exe|\\\\lsass.exe|\\\\smss.exe|\\\\csrss.exe|\\\\conhost.exe|\\\\wininit.exe|\\\\lsm.exe|\\\\winlogon.exe|\\\\explorer.exe|\\\\taskhost.exe|\\\\Taskmgr.exe|\\\\taskmgr.exe|\\\\sihost.exe|\\\\RuntimeBroker.exe|\\\\runtimebroker.exe|\\\\smartscreen.exe|\\\\dllhost.exe|\\\\audiodg.exe|\\\\wlanext.exe</field>
+	<field name="win.eventdata.TargetFilename">\\\\svchost.exe$|\\\\rundll32.exe$|\\\\services.exe$|\\\\powershell.exe$|\\\\regsvr32.exe$|\\\\spoolsv.exe$|\\\\lsass.exe$|\\\\smss.exe$|\\\\csrss.exe$|\\\\conhost.exe$|\\\\wininit.exe$|\\\\lsm.exe$|\\\\winlogon.exe$|\\\\explorer.exe$|\\\\taskhost.exe$|\\\\Taskmgr.exe$|\\\\taskmgr.exe$|\\\\sihost.exe$|\\\\RuntimeBroker.exe$|\\\\runtimebroker.exe$|\\\\smartscreen.exe$|\\\\dllhost.exe$|\\\\audiodg.exe$|\\\\wlanext.exe$</field>
 	<description>ATT&CK T1036: File Created with System Process Name</description>
 	<info type="text">Detects the creation of a executable with a sytem process name in a suspicious folder </info>
 	<info type="text">Falsepositives: System processes copied outside the default folder. </info>
