@@ -22,7 +22,7 @@ gets a `Manual check needed!` note, some examples:
 * `(selection1 AND NOT filter) OR (selection2 AND NOT filter)`
 * `selection_1 and ( selection_2 and selection_3 ) or selection_1 and ( selection_4 and selection_5 )`
 
-A rule may also gets a `Manual check needed!` note if:
+A rule may also get a `Manual check needed!` note if:
 * the field name is unknown
 * it does not have a `title`, `id`, `description`, `level`, `logsource` / `EventID` or `detection` key
 * somethings unexpected fails in the rule parse
@@ -47,7 +47,7 @@ It often happens that 2 spaces are behind each other, this solves this problem. 
 ### Rule information
 The aim was to include as much information as possible for the researcher who gets the alert. The following
 information from the Sigma rule is parsed to the Wazuh rule:
-* The Wazuh title (`discription`) field consist of:
+* The Wazuh title (`description`) field consist of:
   * The first part: `ATT&CK {}` with the Mitre technique from `tags`
   * Followed by the title of the rule
 * The Wazuh `info` field consist of:
@@ -158,8 +158,8 @@ The solution is to use the `<match>` option and negate the expression:
 </rule>
 ```
 
-However this solution would not work for the rule `260300`, the `<match>` option will match on any field (like the image path),
-not only the commandline in this particular case. So it is recommended to double check all rules with a level zero and check
+However, this solution would not work for the rule `260300`, the `<match>` option will match on any field (like the image path),
+not only the commandline in this particular case. So, it is recommended to double check all rules with a level zero and check
 if it can be converted to the negated `<match>` option to prevent the whitelist overriding.
 
 All rules in this repository are double checked for this problem.
