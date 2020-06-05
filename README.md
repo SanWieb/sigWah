@@ -13,7 +13,7 @@ sigWah does not (yet) support all rule conditions, it does support:
 * OR statements like: `one of $` `$ or $ or ..`
 * AND NOT statements like: `$ and not $`
 * AND statements like: `all of them` `$ and $ and ..`
-  *  The AND statement fails to many times due wrong syntax in Sigma, so there will 
+  *  The AND statement fails too many times due wrong syntax in Sigma, so there will 
   be still a `Manual check needed!` note
   
 It does not support more complex conditions, all these rules will be processed as `OR` rules and 
@@ -37,7 +37,7 @@ All detection rules will be converted to the Wazuh Regex syntax, this includes:
 
 In order to avoid a lot of false negatives, some extra adjustments are made:
 * All spaces are replaced with `\s+`, except at start and end of string:  
-It often happens that 2 spaces are behind each other, this solves this problem. Example: `WMIC.exe⋅⋅shadowcopy⋅delete`
+It often happens that 2 spaces are behind each other, this solves the problem. For example: `WMIC.exe⋅⋅shadowcopy⋅delete`
 * The following variables are replaced:
   * `C:\\` with `\.:\\`
   * `%AppData%` with `\.AppData\.`
